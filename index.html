@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="res/js/mui.min.js"></script>
+		<link href="res/css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+		<style>
+			.mui-title {
+				color: white;
+				text-align: left;
+				left: 15px !important;
+			}
+			.navSubDiv {
+				float: left;
+				width: 25%;
+			}
+			.navTitle {
+				margin-top: 5px;
+				font-size: 12px;
+				color: black;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #C91423;">
+			<h1 class="mui-title"><a href="#popover"><b>上海</b><span class="mui-icon mui-icon-arrowdown"></span></a></h1>
+		</header>
+		<div id="navMainDiv" style="margin-top:65px;text-align: center;">
+			<div style="background: white;">
+				<div id="navLifeDiv" class="navSubDiv">
+					<input name="imgbtn" type="image" src="res/images/lifeIcon.png" width="50" height="50" border="0">
+					<p class="navTitle">生活</p>
+				</div>
+				<div id="navTravelDiv" class="navSubDiv">
+					<input name="imgbtn" type="image" src="res/images/travelIcon.png" width="50" height="50" border="0">
+					<p class="navTitle">出行</p>
+				</div>
+				<div id="navEntertainmentDiv" class="navSubDiv">
+					<input name="imgbtn" type="image" src="res/images/entertainmentIcon.png" width="50" height="50" border="0">
+					<p class="navTitle">娱乐</p>
+				</div>
+				<div id="navFinanceDiv" class="navSubDiv">
+					<input name="imgbtn" type="image" src="res/images/financeIcon.png" width="50" height="50" border="0">
+					<p class="navTitle">金融</p>
+				</div>
+			</div>
+
+		</div>
+	</body>
+	<div id="popover" class="mui-popover">
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell"><a href="#">我</a></li>
+			<li class="mui-table-view-cell"><a href="#">不</a></li>
+			<li class="mui-table-view-cell"><a href="#">知</a></li>
+			<li class="mui-table-view-cell"><a href="#">道</a></li>
+			<li class="mui-table-view-cell"><a href="#">这</a></li>
+			<li class="mui-table-view-cell"><a href="#">里</a></li>
+			<li class="mui-table-view-cell"><a href="#">是</a></li>
+			<li class="mui-table-view-cell"><a href="#">什</a></li>
+			<li class="mui-table-view-cell"><a href="#">么</a></li>
+		</ul>
+	</div>
+
+</html>
