@@ -19,11 +19,17 @@
 			.navSubDiv {
 				float: left;
 				width: 25%;
+				background: white;
 			}
 			.navTitle {
 				margin-top: 5px;
 				font-size: 12px;
 				color: black;
+			}
+			.navIcon {
+				margin-top: 15px;
+				width: 50px;
+				height: 50px;
 			}
 		</style>
 	</head>
@@ -32,26 +38,23 @@
 		<header class="mui-bar mui-bar-nav" style="background-color: #C91423;">
 			<h1 class="mui-title"><a href="#popover"><b>上海</b><span class="mui-icon mui-icon-arrowdown"></span></a></h1>
 		</header>
-		<div id="navMainDiv" style="margin-top:65px;text-align: center;">
-			<div style="background: white;">
-				<div id="navLifeDiv" class="navSubDiv">
-					<input name="imgbtn" type="image" src="res/images/lifeIcon.png" width="50" height="50" border="0">
-					<p class="navTitle">生活</p>
-				</div>
-				<div id="navTravelDiv" class="navSubDiv">
-					<input name="imgbtn" type="image" src="res/images/travelIcon.png" width="50" height="50" border="0">
-					<p class="navTitle">出行</p>
-				</div>
-				<div id="navEntertainmentDiv" class="navSubDiv">
-					<input name="imgbtn" type="image" src="res/images/entertainmentIcon.png" width="50" height="50" border="0">
-					<p class="navTitle">娱乐</p>
-				</div>
-				<div id="navFinanceDiv" class="navSubDiv">
-					<input name="imgbtn" type="image" src="res/images/financeIcon.png" width="50" height="50" border="0">
-					<p class="navTitle">金融</p>
-				</div>
+		<div id="navMainDiv" style="margin-top:45px;text-align: center;">
+			<div id="navLifeDiv" class="navSubDiv">
+				<input class="navIcon" name="imgbtn" type="image" src="res/images/lifeIcon.png">
+				<p class="navTitle">生活</p>
 			</div>
-
+			<div id="navTravelDiv" class="navSubDiv">
+				<input class="navIcon" name="imgbtn" type="image" src="res/images/travelIcon.png">
+				<p class="navTitle">出行</p>
+			</div>
+			<div id="navEntertainmentDiv" class="navSubDiv">
+				<input class="navIcon" name="imgbtn" type="image" src="res/images/entertainmentIcon.png">
+				<p class="navTitle">娱乐</p>
+			</div>
+			<div id="navFinanceDiv" class="navSubDiv">
+				<input class="navIcon" name="imgbtn" type="image" src="res/images/financeIcon.png">
+				<p class="navTitle">财富</p>
+			</div>
 		</div>
 	</body>
 	<div id="popover" class="mui-popover">
