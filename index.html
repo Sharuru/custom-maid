@@ -13,12 +13,32 @@
 					url: 'main/main.html',
 					id: 'main.html',
 					styles: {
-						top: '45px', //mui标题栏默认高度为45px；
-						bottom: '0px', //默认为0px，可不定义；
-						height: '80%' //子页面高度，默认为100%
+						top: '45px', //标题导航栏高度为45px；
+						height: '83%', //子页面高度，默认为100%
+						scrollIndicator: "none" //隐藏滚动条
 					}
 				}]
 			});
+			mui.plusReady(function() {
+				console.log("当前页面URL：" + plus.webview.currentWebview().getURL());
+			});
+			 //首页返回键处理
+			 //处理逻辑：2秒内，连续两次按返回键，则退出应用；
+			var first = null;
+			mui.back = function() {
+				//首次按键，提示‘再按一次退出应用’
+				if (!first) {
+					first = new Date().getTime();
+					mui.toast('再按一次退出应用');
+					setTimeout(function() {
+						first = null;
+					}, 1000);
+				} else {
+					if (new Date().getTime() - first < 2000) {
+						plus.runtime.quit();
+					}
+				}
+			};
 		</script>
 		<style>
 			.mui-title {
@@ -32,15 +52,16 @@
 	<body>
 		<header class="mui-bar mui-bar-nav" style="background-color: #C91423;">
 			<h1 class="mui-title"><a href="#popover"><b>上海</b><span class="mui-icon mui-icon-arrowdown"></span></a></h1>
+			<h1><img class=" mui-pull-right" name="imgbtn" type="image" style="margin-right: 25px;margin-top:6px;" src="res/images/locationIcon.png" height="21px" width="17px;"></h1>
 		</header>
-		<nav class="mui-bar mui-bar-tab" style="background: #363636;">
+		<nav class="mui-bar mui-bar-tab" style="background: #363636;border-top:2px solid #C91423;height: 53px;">
 			<a class="mui-tab-item" href="#tabbar">
 				<img class="navIcon" name="imgbtn" type="image" src="res/images/homeNavIcon.png" height="20px">
-				<div class="mui-tab-label">主页</div>
+				<div class="mui-tab-label" style="font-size: 10px;line-height: 6px;">主页</div>
 			</a>
-			<a class="mui-tab-item" href="#tabbar-with-sms">
-				<img class="navIcon" name="imgbtn" type="image" src="res/images/moreNavIcon.png" height="6px">
-				<div class="mui-tab-label">更多</div>
+			<a class="mui-tab-item" href="#tabbar">
+				<img class="navIcon" name="imgbtn" type="image" src="res/images/moreNavIcon.png" height="20px">
+				<div class="mui-tab-label" style="font-size: 10px;line-height: 6px;">更多</div>
 			</a>
 		</nav>
 	</body>
