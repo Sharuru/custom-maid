@@ -7,16 +7,20 @@
 		<title></title>
 		<script src="../res/js/mui.min.js"></script>
 		<link href="../res/css/mui.min.css" rel="stylesheet" />
+		<script src="js/main.js"></script>
 		<script type="text/javascript" charset="utf-8">
 		</script>
 		<style>
+			.navMainDiv {
+				text-align: center;
+			}
 			.navSubDiv {
 				float: left;
 				width: 25%;
 				background: white;
 			}
 			.navTitle {
-				margin-top: 5px;
+				margin-top: 8px;
 				font-size: 12px;
 				color: black;
 			}
@@ -25,12 +29,28 @@
 				width: 50px;
 				height: 50px;
 			}
+			.tabNavIcon {
+				width: 20px;
+				height: 20px;
+			}
+			.mui-tab-label {
+				font-size: 9px;
+				line-height: 6px;
+				padding-bottom: 4px;
+			}
+			.mui-bar-tab {
+				background: #333333;
+				border-top: 6px solid #C91423;
+			}
+			.nav-icon-active{
+				color:#C91423;
+			}
 		</style>
 	</head>
 
 	<body>
 		<div class="mui-content">
-			<div id="navMainDiv" style="text-align: center;">
+			<div id="navMainDiv" class="navMainDiv">
 				<div id="navLifeDiv" class="navSubDiv">
 					<input class="navIcon" name="imgbtn" type="image" src="../res/images/lifeIcon.png">
 					<p class="navTitle">生活</p>
@@ -49,7 +69,7 @@
 				</div>
 			</div>
 			<div id="todayWeatherDiv">
-				<p style="color:black;line-height: 25px;padding-left: 25px;background:url(../res/images/backPattern.jpg);margin-bottom: 6px;">本市今日天气</p>
+				<p style="color:black;line-height: 35px;padding-left: 25px;background:url(../res/images/backPattern.jpg);margin-bottom: 6px;"><b>本市今日天气</b></p>
 				<div id="todayWeatherDetail " style="background:url(../res/images/weatherBackgroundSunny.png);background-size: cover;margin-top: -8px; ">
 					<div>&nbsp;</div>
 					<div>&nbsp;</div>
@@ -68,6 +88,18 @@
 					<div>&nbsp;</div>
 					<div>&nbsp;</div>
 				</div>
+			</div>
+			<div>
+				<nav class="mui-bar mui-bar-tab">
+					<a class="mui-tab-item" href="#tabbar">
+						<img class="tabNavIcon" name="imgbtn" type="image" src="../res/images/homeNavIconActive.png" height="2px">
+						<div class="mui-tab-label nav-icon-active">主页</div>
+					</a>
+					<a class="mui-tab-item" href="#tabbar">
+						<img class="tabNavIcon" name="imgbtn" type="image" src="../res/images/moreNavIcon.png" height="2px">
+						<div class="mui-tab-label">更多</div>
+					</a>
+				</nav>
 			</div>
 		</div>
 	</body>
