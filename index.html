@@ -22,7 +22,7 @@
 			mui.plusReady(function() {
 				console.log("当前页面URL：" + plus.webview.currentWebview().getURL());
 			});
-			 //首页返回键处理
+/*			 //首页返回键处理
 			 //处理逻辑：1秒内，连续两次按返回键，则退出应用；
 			var first = null;
 			mui.back = function() {
@@ -38,7 +38,7 @@
 						plus.runtime.quit();
 					}
 				}
-			};
+			};*/
 		</script>
 		<style>
 			.mui-title {
@@ -58,7 +58,7 @@
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<h1 class="mui-title"><a href="#popover"><b>上海</b><span class="mui-icon mui-icon-arrowdown"></span></a></h1>
-			<h1><img class=" mui-pull-right" name="imgbtn" type="image" style="margin-right: 25px;margin-top:10px;" src="res/images/locationIcon.png" height="30px" width="24px;">
+			<h1><img class=" mui-pull-right" name="imgbtn" type="image" style="margin-right: 25px;margin-top:12px;" src="res/images/locationIcon.png" height="26px" width="22px;">
 		</header>
 	</body>
 	<div id="popover" class="mui-popover">
