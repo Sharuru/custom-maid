@@ -95,34 +95,7 @@
 					<div>&nbsp;</div>
 				</div>
 			</div>
-			<div>
-				<nav class="mui-bar mui-bar-tab">
-					<a class="mui-tab-item" id="mainNavBtn">
-						<img class="tabNavIcon" name="imgbtn" type="image" src="../res/images/homeNavIconActive.png" height="2px">
-						<div class="mui-tab-label ">主页</div>
-					</a>
-					<a class="mui-tab-item" id="moreNavBtn">
-						<img class="tabNavIcon" name="imgbtn" type="image" src="../res/images/moreNavIcon.png" height="2px">
-						<div class="mui-tab-label">更多</div>
-					</a>
-				</nav>
-			</div>
 		</div>
 	</body>
-	<script type="text/javascript" charset="utf-8">
-		document.getElementById('moreNavBtn').addEventListener('tap', function() {
-			console.log("click");
-			//打开关于页面
-			mui.openWindow({
-				url: '../more/more.html',
-				id: 'info',
-				styles: {
-					top: '65px', //标题导航栏高度为45px；
-					height: '100%', //子页面高度，默认为100%
-					scrollIndicator: "none" //隐藏滚动条
-				}
-			});
-		});
-	</script>
 
 </html>
