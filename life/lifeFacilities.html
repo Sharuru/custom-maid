@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="../res/js/mui.min.js"></script>
+		<link href="../res/css/mui.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+			mui.plusReady(function() {
+				console.log("当前页面URL：" + plus.webview.currentWebview().getURL());
+				plus.webview.currentWebview().setStyle({
+					scrollIndicator: 'none'
+				});
+			});
+			window.addEventListener('tap', function() {
+				console.log('resize');
+				mui('#maidContent').scroll().setStopped(true); //暂时禁止滚动
+				var webview = plus.webview.currentWebview();
+			});
+		</script>
+		<style type="text/css">
+			.mui-title {
+				color: white;
+				text-align: left;
+				font-size: 22px;
+				padding-top: 10px;
+				left: 15px !important;
+			}
+			.mui-bar-nav {
+				height: 65px;
+				background-color: #C91423;
+			}
+			.theTitleDiv {
+				color: white;
+				text-align: center;
+				font-size: 22px;
+				padding-top: 16px;
+				left: 15px !important;
+				z-index: 100px;
+			}
+			.mui-content {
+				overflow: hidden !important;
+			}
+			.maid-search {
+				margin-top: 10px;
+				padding: 20px;
+				height: 65px;
+				overflow: hidden;
+				background: url(../res/images/backPattern.jpg);
+			}
+			.mui-search .mui-placeholder{
+				padding-left: 10px;
+				font-size: 14px !important;
+				text-align: left !important;
+				color: white !important;
+				background: darkgrey !important;
+			}
+			.mui-search .mui-placeholder .mui-icon{
+				margin-right: 10px;
+				font-size: 18px !important;
+				color: white !important;
+			}
+			.facilities-list{
+				height: 35px;
+				background: white;
+				border-top: solid darkgrey 2px;
+				border-bottom: solid darkgrey 2px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title"><span class="mui-icon mui-icon-arrowleft"></span></h1>
+			<h1 class="theTitleDiv"><b>周边设施</b></h1>
+		</header>
+		<div id="maidContent" class="mui-content mui-scroll-wrapper">
+			<div class="maid-search">
+				<div class="mui-input-row mui-search">
+					<input type="search" class="mui-input-clear" placeholder="请输入设施名称" />
+				</div>
+				<div class="facilities-list"></div>
+			</div>
+		</div>
+	</body>
+
+</html>
