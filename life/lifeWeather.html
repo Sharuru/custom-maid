@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <title></title>
-    <script src="../res/js/mui.min.js"></script>
-		<link href="../res/css/mui.min.css" rel="stylesheet" />
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="../res/js/mui.min.js"></script>
+		<link href="../res/css/mui.css" rel="stylesheet" />
 		<script type="text/javascript" charset="utf-8">
 			mui.init();
 			mui.plusReady(function() {
@@ -20,8 +21,60 @@
 				var webview = plus.webview.currentWebview();
 			});
 		</script>
-</head>
-<body>
-	
-</body>
+		<style type="text/css">
+			.mui-bar-nav {
+				height: 65px;
+				background-color: #C91423;
+			}
+			.mui-title {
+				color: white;
+				text-align: center;
+				font-size: 22px;
+				padding-top: 10px;
+			}
+			.mui-pull-left {
+				color: white !important;
+				padding-top: 20px !important;
+			}
+			.mui-content {
+				overflow: hidden !important;
+			}
+			.weather-tab-layer {
+				margin-top: 10px;
+				padding-top: 10px;
+				width: 100%;
+				height: auto;
+				background: white;
+				overflow: hidden;
+			}
+			.mui-control-item {
+				font-size: 14px;
+			}
+			/*.aaaa {
+				border-right: solid 1px #ccc !important;
+				border-left: solid 1px #ccc !important;
+			}*/
+			.mui-active {
+				color: red !important;
+				border-bottom: 2px solid red !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title"><b>天气</b></h1>
+		</header>
+		<div class="mui-content">
+			<div class="weather-tab-layer">
+				<div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item mui-active">本地多天</a>
+					<a class="mui-control-item">多地当天</a>
+					<a class="mui-control-item">本地空气质量</a>
+				</div>
+			</div>
+		</div>
+	</body>
+
 </html>
