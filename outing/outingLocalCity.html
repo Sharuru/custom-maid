@@ -39,14 +39,92 @@
 			.mui-content {
 				overflow: hidden !important;
 			}
+			.localCity-tab-layer {
+				margin-top: 10px;
+				padding-top: 10px;
+				width: 100%;
+				height: auto;
+				background: white;
+				position: relative;
+				border-bottom: solid darkgrey 1px;
+				overflow: hidden;
+			}
+			.col-line {
+				width: 33.3%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 33.3%;
+				z-index: 1;
+				border-left: solid #CCCCCC 1px;
+				border-right: solid #CCCCCC 1px;
+			}
+			.mui-control-item {
+				font-size: 14px;
+			}
+			.mui-active {
+				color: red !important;
+				border-bottom: 2px solid red !important;
+			}
+			.localCity-main {
+				width: 100%;
+				height: 100%;
+				background: white;
+				overflow: hidden;
+			}
+			.maid-searchbox {
+				margin-top: -10px;
+				margin-bottom: -5px;
+				padding: 23px;
+				height: 75px;
+				background: url(../res/images/backPattern.jpg);
+				overflow: hidden;
+			}
+			.mui-search .mui-placeholder {
+				padding-left: 10px;
+				font-size: 14px !important;
+				text-align: left !important;
+				color: white !important;
+				background: darkgrey !important;
+			}
+			.mui-search .mui-placeholder .mui-icon {
+				margin-right: 10px;
+				font-size: 18px !important;
+				color: white !important;
+			}
+			.localCity-map {
+				width: 100%;
+				height: 100%;
+				background: white;
+				border-top: solid darkgrey 1px;
+				overflow: hidden;
+			}
 		</style>
 	</head>
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<h1 class="mui-title"><b>本地</b></h1>
+			<h1 class="mui-title"><b>同城</b></h1>
 		</header>
+		<div class="mui-content mui-scroll-wrapper">
+			<div class="localCity-tab-layer">
+				<div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item">本市地图</a>
+					<a class="mui-control-item">道路节点状况</a>
+					<a class="mui-control-item mui-active">地铁实时情报</a>
+				</div>
+				<div class="col-line"></div>
+			</div>
+			<div class="localCity-main">
+				<div class="maid-searchbox">
+					<div class="mui-input-row mui-search">
+						<input type="search" class="mui-input-clear" placeholder="请输入.." />
+					</div>
+				</div>
+				<div class="localCity-map"></div>
+			</div>
+		</div>
 	</body>
 
 </html>
