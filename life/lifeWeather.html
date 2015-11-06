@@ -45,19 +45,94 @@
 				width: 100%;
 				height: auto;
 				background: white;
+				position: relative;
 				overflow: hidden;
+			}
+			.col-line {
+				margin-top: 18px;
+				width: 33%;
+				height: 26px;
+				position: absolute;
+				top: 0;
+				left: 34%;
+				z-index: 1;
+				border-left: solid #CCCCCC 2px;
+				border-right: solid #CCCCCC 2px;
+			}
+			.weather-content-layer {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+			.weather-picture {
+				margin-top: -30px;
+				width: 100%;
+				height: 100%;
+				background: url(../res/images/weatherBackgroundSunny.png);
+				background-size: cover;
+				background-position: center;
+				position: relative;
 			}
 			.mui-control-item {
 				font-size: 14px;
 			}
-			/*.aaaa {
-				border-right: solid 1px #ccc !important;
-				border-left: solid 1px #ccc !important;
-			}*/
 			.mui-active {
 				color: red !important;
 				border-bottom: 2px solid red !important;
 			}
+			.shadow-top-layer {
+				margin-top: 30px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 35px;
+				z-index: 1;
+				background: black;
+				filter: alpha(opacity=20);
+				-moz-opacity: 0.2;
+				-khtml-opacity: 0.2;
+				opacity: 0.2;
+			}
+			.label-style {
+				margin-top: 30px;
+				margin-left: 25px;
+				padding-top: 8px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 30%;
+				height: auto;
+				z-index: 2;
+				background: none;
+				color: white;
+			}
+			.shadow-bottom-layer {
+				margin-bottom: 30px;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 120px;
+				z-index: 1;
+				background: black;
+				filter: alpha(opacity=60);
+				-moz-opacity: 0.6;
+				-khtml-opacity: 0.6;
+				opacity: 0.6;
+			}
+			/*.shadow-left{
+				float: left;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 25%;
+				height: 100px;
+				z-index: 2;
+				border-right: solid snow 2px;
+			}*/
 		</style>
 	</head>
 
@@ -66,12 +141,25 @@
 			<a class="mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title"><b>天气</b></h1>
 		</header>
-		<div class="mui-content">
+		<div class="mui-content mui-scroll-wrapper">
 			<div class="weather-tab-layer">
 				<div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
 					<a class="mui-control-item mui-active">本地多天</a>
 					<a class="mui-control-item">多地当天</a>
 					<a class="mui-control-item">本地空气质量</a>
+				</div>
+				<div class="col-line"></div>
+			</div>
+			<div class="weather-content-layer">
+				<div class="weather-picture">
+					<div class="shadow-top-layer"></div>
+					<div class="label-style">
+						<img src="../res/images/homeNavIcon.png" height="15px" width="20px" />&nbsp;
+						<label>上海</label>
+					</div>
+					<div class="shadow-bottom-layer">
+						<!--<div class="shadow-left"></div>-->
+					</div>
 				</div>
 			</div>
 		</div>
