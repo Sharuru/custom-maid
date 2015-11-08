@@ -11,20 +11,22 @@
 		<script src="res/js/weather.js"></script>
 		<script type="text/javascript" charset="utf-8">
 			mui.init();
-			// 检测是否首次启动程序
-			appInitialize();
-			setIndexWeatherInfo();
 			mui.plusReady(function() {
 				console.log("当前页面URL：" + plus.webview.currentWebview().getURL());
 				plus.webview.currentWebview().setStyle({
 					scrollIndicator: 'none'
 				});
+				setIndexWeatherInfo();
 			});
+			 //禁止滚动
 			window.addEventListener('tap', function() {
 				console.log('resize');
-				mui('#maidContent').scroll().setStopped(true);//暂时禁止滚动
+				mui('#maidContent').scroll().setStopped(true); //暂时禁止滚动
 				var webview = plus.webview.currentWebview();
 			});
+			 //检测是否首次启动程序
+			appInitialize();
+			 //设置首页天气信息
 		</script>
 		<style>
 			.mui-title {
@@ -110,18 +112,26 @@
 				<div id="todayWeatherDetail" style="background:url(res/images/weatherBackgroundSunny.png);background-size: cover;margin-top: -8px; ">
 					<div>&nbsp;</div>
 					<div>&nbsp;</div>
-					<div><span style="font-size:42px;padding-left: 20px;">17℃</span>
-						<span style="font-size:14px;padding-left: 2px;">18℃/20℃</span></div>
-					<div style="font-size:20px;padding-left: 22px;">晴</div>
-					<div style="font-size:12px;padding-left: 22px;">周一 11/02</div>
-					<div style="font-size:12px;padding-left: 22px;">农历九月二一</div>
-					<div style="font-size:12px;padding-left: 22px;">西风一级</div>
-					<div style="font-size:12px;padding-left: 22px;padding-bottom: 240px;">湿度：42%</div>
+					<div><span style="font-size:42px;padding-left: 20px;" id='nowTmp'>加载中...</span>
+						<span style="font-size:14px;padding-left: 4px;" id='todayTmp'>加载中...</span></div>
+					<div style="margin-top: 5px;;">
+						<span style="font-size:20px;padding-left: 22px;" id='nowCond'>加载中...</span>
+						<span style="font-size:12px;padding-left: 4px;" id='nowWind'>加载中...</span>	</div>
+					<div><span style="font-size:12px;padding-left: 22px;" id='todayQlty'>加载中...</span>
+						<span style="font-size:12px;padding-left: 4px;">PM 2.5</span>
+						<span style="font-size:12px;padding-left: 4px;" id='todayPm25'>加载中...</span>
+					</div>
+					<div style="font-size:12px;padding-left: 22px;padding-top:0px;" id='today'>加载中...</div>
+					<div style="font-size:12px;padding-left: 22px;">农历好难做...农历九月二一</div>
+					<div style="font-size:12px;padding-left: 22px;" id='nowWind'>加载中...</div>
+					<div style="font-size:12px;padding-left: 22px;padding-bottom: 240px;">这玩意儿没API...湿度：42%</div>
 				</div>
 			</div>
 		</div>
 		
 	</body>
+<script>
 
+</script>
 
 </html>
