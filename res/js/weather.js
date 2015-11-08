@@ -18,6 +18,7 @@ function setIndexWeatherInfo() {
 		var todayMaxTmp = respObj['HeWeather data service 3.0'][0].daily_forecast[0].tmp.max;
 		var nowCond = respObj['HeWeather data service 3.0'][0].now.cond.txt;
 		var nowWind = respObj['HeWeather data service 3.0'][0].now.wind.dir;
+		var nowHum = respObj['HeWeather data service 3.0'][0].now.hum;
 		var todayPm25 = respObj['HeWeather data service 3.0'][0].aqi.city.pm25;
 		var todayQlty = respObj['HeWeather data service 3.0'][0].aqi.city.qlty;
 		//设置画面
@@ -25,8 +26,9 @@ function setIndexWeatherInfo() {
 		document.getElementById('nowTmp').innerText = nowTmp + '℃';
 		document.getElementById('todayTmp').innerText = todayMinTmp + '℃/' + todayMaxTmp + '℃';
 		document.getElementById('nowCond').innerText = nowCond;
-		document.getElementById('today').innerText = getWeekday(d.getDay()) + ' ' +  d.getMonth() + '/' + d.getDate();
+		document.getElementById('today').innerText = getWeekday(d.getDay()) + ' ' +  (d.getMonth()+1) + '/' + d.getDate();
 		document.getElementById('nowWind').innerText = nowWind;
+		document.getElementById('nowHum').innerText = '湿度：' + nowHum + '%';
 		document.getElementById('todayQlty').innerText = todayQlty;
 		document.getElementById('todayPm25').innerText = todayPm25;
 	
