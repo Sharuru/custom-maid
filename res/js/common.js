@@ -2,9 +2,11 @@
 function appInitialize() {
 	var localStorage = window.localStorage;
 	if (localStorage.getItem("isFirstRun") == "0") {
+		//再次打开
 		console.log('Welcome back');
 		mui.toast('お帰りなさいご主人様');
 	} else {
+		//初次安装设置配置缓存
 		console.log('First run, creating file');
 		mui.toast('初めまして');
 		localStorage.setItem('isFirstRun', '0');
