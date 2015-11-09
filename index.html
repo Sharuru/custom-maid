@@ -52,7 +52,7 @@
 				background: white;
 			}
 			.maid-nav-title {
-				margin-top: 4px;
+				margin-top: 2px;
 				margin-bottom: 0px;
 				font-size: 12px;
 				color: black;
@@ -79,6 +79,11 @@
 			.maid-weather-content {
 				color: white;
 			}
+			.maid-today-weather-detail{
+				background:url(res/images/weatherBackgroundSunny.png);
+				background-size: cover;
+				margin-top: -8px; 
+			}
 		</style>
 	</head>
 
@@ -88,7 +93,7 @@
 			<h1 class="mui-title"><a href="#popover"><b>上海</b><span class="mui-icon mui-icon-arrowdown"></span></a></h1>
 			<h1><img class="mui-pull-right" name="imgbtn" type="image" style="margin-right: 25px;margin-top:16px;" src="res/images/locationIcon.png" height="26px" width="22px;">
 		</header>
-		<div id="maidContent" class="mui-content mui-scroll-wrapper">
+		<div id="maidContent" class="mui-content mui-scroll-wrapper" style="height:100%;">
 			<div id="navMainDiv" class="maid-nav-main">
 				<div id="navLifeDiv" class="maid-nav-sub">
 					<input class="maid-nav-icon" name="imgbtn" type="image" src="res/images/lifeIcon.png">
@@ -107,9 +112,9 @@
 					<p class="maid-nav-title">财富</p>
 				</div>
 			</div>
-			<div id="todayWeatherDiv" class="maid-weather-content">
-				<p style="color:black;line-height: 35px;padding-left: 25px;background:url(res/images/backPattern.jpg);margin-bottom: 6px;"><b>本市今日天气</b></p>
-				<div id="todayWeatherDetail" style="background:url(res/images/weatherBackgroundSunny.png);background-size: cover;margin-top: -8px; ">
+			<div id="todayWeatherDiv" class="maid-weather-content" style="height:100%;">
+				<p style="color:black;line-height: 35px;padding-left: 25px;background:url(res/images/backPattern.jpg);margin-bottom: 6px;"><b>今日天气</b></p>
+				<div id="todayWeatherDetail" class="maid-today-weather-detail">
 					<div>&nbsp;</div>
 					<div>&nbsp;</div>
 					<div><span style="font-size:42px;padding-left: 20px;" id='nowTmp'>加载中...</span>
@@ -123,7 +128,8 @@
 					</div>
 					<div style="font-size:12px;padding-left: 22px;padding-top:0px;" id='today'>加载中...</div>
 					<div style="font-size:12px;padding-left: 22px;">农历好难做...农历九月二一</div>
-					<div style="font-size:12px;padding-left: 22px;padding-bottom: 240px;" id="nowHum">加载中...</div>
+					<div style="font-size:12px;padding-left: 22px;" id='nowHum'>加载中...</div>
+					<div style="font-size:12px;padding-left: 22px;padding-bottom: 220px;" id='updateTime'>加载中...</div>
 				</div>
 			</div>
 		</div>

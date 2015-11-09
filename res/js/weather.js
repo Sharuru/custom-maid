@@ -13,11 +13,13 @@ function setIndexWeatherInfo() {
 		var respObj = getWeatherInfo('shanghai');
 		console.log('Get weather json: ' + JSON.stringify(respObj));
 		//获得指定数据
+		var updateTime = respObj['HeWeather data service 3.0'][0].basic.update.loc;
 		var nowTmp = respObj['HeWeather data service 3.0'][0].now.tmp;
 		var todayMinTmp = respObj['HeWeather data service 3.0'][0].daily_forecast[0].tmp.min;
 		var todayMaxTmp = respObj['HeWeather data service 3.0'][0].daily_forecast[0].tmp.max;
 		var nowCond = respObj['HeWeather data service 3.0'][0].now.cond.txt;
 		var nowWind = respObj['HeWeather data service 3.0'][0].now.wind.dir;
+		var nowWindSc = respObj['HeWeather data service 3.0'][0].now.wind.sc;
 		var nowHum = respObj['HeWeather data service 3.0'][0].now.hum;
 		var todayPm25 = respObj['HeWeather data service 3.0'][0].aqi.city.pm25;
 		var todayQlty = respObj['HeWeather data service 3.0'][0].aqi.city.qlty;
@@ -26,12 +28,13 @@ function setIndexWeatherInfo() {
 		document.getElementById('nowTmp').innerText = nowTmp + '℃';
 		document.getElementById('todayTmp').innerText = todayMinTmp + '℃/' + todayMaxTmp + '℃';
 		document.getElementById('nowCond').innerText = nowCond;
-		document.getElementById('today').innerText = getWeekday(d.getDay()) + ' ' +  (d.getMonth()+1) + '/' + d.getDate();
-		document.getElementById('nowWind').innerText = nowWind;
+		document.getElementById('today').innerText = getWeekday(d.getDay()) + ' ' + (d.getMonth() + 1) + '/' + d.getDate();
+		document.getElementById('nowWind').innerText = nowWind + ' ' + nowWindSc + '级';
 		document.getElementById('nowHum').innerText = '湿度：' + nowHum + '%';
 		document.getElementById('todayQlty').innerText = todayQlty;
 		document.getElementById('todayPm25').innerText = todayPm25;
-	
+		document.getElementById('updateTime').innerText = '更新时间：' + updateTime;
+
 	}
 }
 
@@ -43,7 +46,7 @@ function getWeatherInfo(reqCity) {
 }
 
 // 获得星期
-function getWeekday(day){
+function getWeekday(day) {
 	var weekDays = new Array(7);
 	weekDays[0] = "周日";
 	weekDays[1] = "周一";
