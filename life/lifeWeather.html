@@ -87,7 +87,7 @@
 				background-position: center;
 				position: relative;
 			}
-			.weather-detail{
+			.weather-detail {
 				position: absolute;
 				left: 0;
 				top: 100px;
@@ -139,7 +139,7 @@
 				-khtml-opacity: 0.6;
 				opacity: 0.6;
 			}
-			.copyright-updateTime{
+			.copyright-updateTime {
 				position: absolute;
 				right: 0;
 				bottom: 150px;
@@ -185,10 +185,26 @@
 						<img src="../res/images/homeNavIcon.png" height="12px" width="17px" />&nbsp;
 						<label>上海</label>
 					</div>
-					<div class="weather-detail"></div>
-					<div class="copyright-updateTime"></div>
+					<div class="weather-detail">
+						<div>&nbsp;</div>
+						<div>&nbsp;</div>
+						<div><span style="font-size:42px;padding-left: 20px;" id='nowTmp'>加载中...</span>
+							<span style="font-size:14px;padding-left: 4px;" id='todayTmp'>加载中...</span>
+						</div>
+						<div style="margin-top: 10px;">
+							<span style="font-size:20px;padding-left: 22px;" id='nowCond'>加载中...</span>
+						</div>
+						<div style="font-size:12px;margin-top: 5px;padding-left: 22px;padding-top:0px;" id='today'>加载中...</div>
+						<div>
+							<span style="font-size:12px;padding-left: 22px;" id='nowWind'>加载中...</span>
+						</div>
+						<div style="font-size:12px;padding-left: 22px;" id='nowHum'>加载中...</div>
+					</div>
+					<div class="copyright-updateTime">
+						<div style="font-size:12px;padding-left: 22px;padding-bottom: 20px;" id='updateTime'>加载中...</div>
+					</div>
 					<div class="shadow-bottom-layer">
-						
+
 					</div>
 				</div>
 			</div>
