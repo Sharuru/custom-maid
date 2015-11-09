@@ -107,7 +107,7 @@
 			}
 			.tabLitleTitle {
 				padding-top: 3px;
-				padding-left: 15px;
+				padding-left: 25px;
 				height: 28px;
 				font-size: 12px;
 				background: white;
@@ -120,7 +120,6 @@
 				text-align: center;
 				background: url(../res/images/backPattern.jpg);
 				overflow: hidden;
-				padding-bottom: 10px;
 			}
 			.maid-nav-sub {
 				float: left;
@@ -128,7 +127,7 @@
 				width: 25%;
 			}
 			.navTitle {
-				margin-bottom: 0px;
+				margin-bottom: 20px;
 				font-size: 12px;
 				color: grey;
 			}
@@ -138,7 +137,6 @@
 				height: 45px;
 			}
 			.maid-weather-layer {
-				margin-top: -3px;
 				height: 28px;
 				background: white;
 				border-top: solid darkgrey 1px;
@@ -156,7 +154,7 @@
 			.weather-temp {
 				float: left;
 				padding-top: 3px;
-				width: 34%;
+				width: 33%;
 				height: 100%;
 				font-size: 12px;
 				text-align: center;
@@ -166,6 +164,9 @@
 				height: 100%;
 				overflow: hidden;
 				background: url(../res/images/backPattern.jpg);
+			}
+			.mui-slider-indicator{
+				padding-bottom: -5px;
 			}
 			/*.recommend-layer {
 				width: auto;
@@ -222,40 +223,54 @@
 			<div class="tabLitleTitle">周边快搜</div>
 
 			<div class="maid-nav-main">
-				<div class="maid-nav-sub">
-					<input class="maid-nav-icon" name="imgbtn" type="image" src="../res/images/Restaurant.png">
-					<p class="navTitle">餐厅</p>
+				<div class="mui-slider maid-nav-main">
+					<div class="mui-slider-group">
+						<!--第一个内容区容器-->
+						<div class="mui-slider-item">
+							<div class="maid-nav-sub">
+								<input class="maid-nav-icon" name="imgbtn" type="image" src="../res/images/Restaurant.png">
+								<p class="navTitle">餐厅</p>
+							</div>
+							<div id="navTravelDiv" class="maid-nav-sub">
+								<input class="maid-nav-icon" name="imgbtn" type="image" src="../res/images/KTV.png">
+								<p class="navTitle">KTV</p>
+							</div>
+							<div id="navToolDiv" class="maid-nav-sub">
+								<input class="maid-nav-icon" name="imgbtn" type="image" src="../res/images/Supermarket.png">
+								<p class="navTitle">超市</p>
+							</div>
+							<div id="navFinanceDiv" class="maid-nav-sub">
+								<input class="maid-nav-icon" name="imgbtn" type="image" src="../res/images/InternetBar.png">
+								<p class="navTitle">网吧</p>
+							</div>
+						</div>
+						<!--第二个内容区-->
+						<div class="mui-slider-item">
+							<div class="maid-nav-sub">
+								<input class="maid-nav-icon" name="imgbtn" type="image" src="../res/images/Bank.png">
+								<p class="navTitle">银行</p>
+							</div>
+							<div id="navTravelDiv" class="maid-nav-sub">
+								<input class="maid-nav-icon" name="imgbtn" type="image" src="../res/images/BusStop.png">
+								<p class="navTitle">公交站</p>
+							</div>
+							<div id="navToolDiv" class="maid-nav-sub">
+								<input class="maid-nav-icon" name="imgbtn" type="image" src="../res/images/Toilet.png">
+								<p class="navTitle">厕所</p>
+							</div>
+							<div id="navFinanceDiv" class="maid-nav-sub">
+								<input class="maid-nav-icon" name="imgbtn" type="image" src="../res/images/GasStation.png">
+								<p class="navTitle">加油站</p>
+							</div>
+						</div>
+					</div>
+					<div class="mui-slider-indicator">
+						<div class="mui-indicator mui-active"></div>
+						<div class="mui-indicator"></div>
+					</div>
 				</div>
-				<div id="navTravelDiv" class="maid-nav-sub">
-					<input class="maid-nav-icon" name="imgbtn" type="image" src="../res/images/KTV.png">
-					<p class="navTitle">KTV</p>
-				</div>
-				<div id="navToolDiv" class="maid-nav-sub">
-					<input class="maid-nav-icon" name="imgbtn" type="image" src="../res/images/Supermarket.png">
-					<p class="navTitle">超市</p>
-				</div>
-				<div id="navFinanceDiv" class="maid-nav-sub">
-					<input class="maid-nav-icon" name="imgbtn" type="image" src="../res/images/InternetBar.png">
-					<p class="navTitle">网吧</p>
-				</div>
-				<div class="maid-nav-sub">
-					<input class="maid-nav-icon" name="imgbtn" type="image" src="../res/images/Bank.png">
-					<p class="navTitle">银行</p>
-				</div>
-				<div id="navTravelDiv" class="maid-nav-sub">
-					<input class="maid-nav-icon" name="imgbtn" type="image" src="../res/images/BusStop.png">
-					<p class="navTitle">公交站</p>
-				</div>
-				<div id="navToolDiv" class="maid-nav-sub">
-					<input class="maid-nav-icon" name="imgbtn" type="image" src="../res/images/Toilet.png">
-					<p class="navTitle">厕所</p>
-				</div>
-				<div id="navFinanceDiv" class="maid-nav-sub">
-					<input class="maid-nav-icon" name="imgbtn" type="image" src="../res/images/GasStation.png">
-					<p class="navTitle">加油站</p>
-				</div>
-			</div>
 
+			</div>
 			<div class="maid-weather-layer">
 				<div class="weather-info" id='todayCond'>今日天气：加载中...</div>
 				<div class="weather-temp" id='todayTmp'>温度： 加载中...</div>
