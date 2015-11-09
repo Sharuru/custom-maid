@@ -67,6 +67,9 @@ function indexWeatherInfoHandler(jsonObj) {
 		case '雾':
 			document.getElementById('todayWeatherDetail').style.backgroundImage="url(res/images/weatherBackgroundFog.jpg)";
 			break;
+		case '晴':
+			document.getElementById('todayWeatherDetail').style.backgroundImage="url(res/images/weatherBackgroundSunny.png)";
+			break;
 		default:
 			break;
 	}
