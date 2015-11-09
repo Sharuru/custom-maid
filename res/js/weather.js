@@ -48,7 +48,7 @@ function indexWeatherInfoHandler(jsonObj) {
 	var nowHum = jsonObj['HeWeather data service 3.0'][0].now.hum;
 	var todayPm25 = jsonObj['HeWeather data service 3.0'][0].aqi.city.pm25;
 	var todayQlty = jsonObj['HeWeather data service 3.0'][0].aqi.city.qlty;
-	//设置画面
+	//设置画面信息
 	var d = new Date();
 	document.getElementById('nowTmp').innerText = nowTmp + '℃';
 	document.getElementById('todayTmp').innerText = todayMinTmp + '℃/' + todayMaxTmp + '℃';
@@ -59,6 +59,14 @@ function indexWeatherInfoHandler(jsonObj) {
 	document.getElementById('todayQlty').innerText = todayQlty;
 	document.getElementById('todayPm25').innerText = todayPm25;
 	document.getElementById('updateTime').innerText = '更新时间：' + updateTime;
+	//设置背景图片
+	switch (nowCond){
+		case '阴':
+			document.getElementById('todayWeatherDetail').style.backgroundImage="url(res/images/weatherBackgroundOvercast.jpg)";
+			break;
+		default:
+			break;
+	}
 }
 
 //获取天气信息
