@@ -92,6 +92,17 @@
 				background-size: cover;
 				background-position: center;
 				margin-top: -8px;
+				position: relative;
+			}
+			.copyright-layer{
+				margin-bottom: 30px;
+				width: 100%;
+				height: 50px;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				z-index: 1;
+				background: lightblue;
 			}
 		</style>
 	</head>
@@ -140,6 +151,7 @@
 					<div style="font-size:12px;padding-left: 22px;padding-bottom: 20px;" id='updateTime'>加载中...</div>
 					<div style="font-size:12px;padding-left: 22px;">数据提供方：和风天气</div>
 				</div>
+				<div class="copyright-layer"></div>
 			</div>
 		</div>
 	</body>
