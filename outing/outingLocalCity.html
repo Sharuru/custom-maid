@@ -14,6 +14,12 @@
 				plus.webview.currentWebview().setStyle({
 					scrollIndicator: 'none'
 				});
+				document.getElementById('btnGoBack').addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'outingMain.html',
+						id: 'outingMain',
+					});
+				});
 			});
 			window.addEventListener('tap', function() {
 				console.log('resize');
@@ -105,7 +111,7 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<a class="mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" id='btnGoBack'></a>
 			<h1 class="mui-title"><b>同城</b></h1>
 		</header>
 		<div class="mui-content mui-scroll-wrapper">

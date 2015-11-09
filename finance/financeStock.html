@@ -12,10 +12,15 @@
 			mui.plusReady(function() {
 				console.log("当前页面URL：" + plus.webview.currentWebview().getURL());
 				plus.webview.currentWebview().setStyle({
-					scrollIndicator: 'none'
-				});
-			});
-			window.addEventListener('tap', function() {
+					scrollIndicator: 'none'});
+document.getElementById('btnGoBack').addEventListener('tap', function() {
+mui.openWindow({
+	url: 'financeMain.html',
+	id: 'financeMain',
+});
+});
+});
+window.addEventListener('tap', function() {
 				console.log('resize');
 				mui('#maidContent').scroll().setStopped(true); //暂时禁止滚动
 				var webview = plus.webview.currentWebview();
@@ -65,7 +70,7 @@
 				font-size: 18px !important;
 				color: white !important;
 			}
-			.stock-List-title{
+			.stock-List-title {
 				margin-top: 0px;
 				margin: 10px;
 				padding-top: 3px;
@@ -81,7 +86,7 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<a class="mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" id='btnGoBack'></a>
 			<h1 class="mui-title"><b>股票</b></h1>
 		</header>
 

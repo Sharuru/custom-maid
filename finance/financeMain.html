@@ -21,6 +21,18 @@
 						id: 'index',
 					});
 				});
+				document.getElementById('btnGoStock').addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'financeStock.html',
+						id: 'financeStock',
+					});
+				});
+				document.getElementById('btnGoLottery').addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'financeLottery.html',
+						id: 'financeLottery',
+					});
+				});
 			});
 			window.addEventListener('tap', function() {
 				console.log('resize');
@@ -127,10 +139,10 @@
 			<h1 class="mui-title"><b>金融</b></h1>
 		</header>
 
-		<div id="maidContent" class="mui-content mui-scroll-wrapper">
+		<div id="maidContent" class="mui-content mui-scroll-wrapper" id='btnGoBack'>
 			<div class="maid-title-main">
-				<div class="left-title">股票</div>
-				<div class="right-title">彩票结果</div>
+				<div class="left-title" id='btnGoStock'>股票</div>
+				<div class="right-title" id='btnGoLottery'>彩票结果</div>
 			</div>
 			<div class="finance-main">
 				<div class="finance-title">股市行情</div>

@@ -14,6 +14,24 @@
 				plus.webview.currentWebview().setStyle({
 					scrollIndicator: 'none'
 				});
+				document.getElementById('btnGoLifeFood').addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'lifeFood.html',
+						id: 'lifeFood',
+					});
+				});
+				document.getElementById('btnGoLifeFact').addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'lifeFacilities.html',
+						id: 'lifeFace',
+					});
+				});
+				document.getElementById('btnGoLifeWeather').addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'lifeWeather.html',
+						id: 'lifeWeather',
+					});
+				});
 				//返回按钮绑定
 				document.getElementById('btnGoBack').addEventListener('tap', function() {
 					mui.openWindow({
@@ -196,9 +214,9 @@
 		</header>
 		<div id="maidContent" class="mui-content mui-scroll-wrapper">
 			<div class="maid-title-main">
-				<div class="otherTitleType">美食</div>
-				<div class="midTitleType">周边设施</div>
-				<div class="otherTitleType">天气</div>
+				<div class="otherTitleType" id='btnGoLifeFood'>美食</div>
+				<div class="midTitleType" id='btnGoLifeFact'>周边设施</div>
+				<div class="otherTitleType" id='btnGoLifeWeather'>天气</div>
 			</div>
 
 			<div class="tabLitleTitle">周边快搜</div>
