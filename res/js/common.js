@@ -13,6 +13,9 @@ function appInitialize() {
 		//设置 API key
 		//天气 API key
 		localStorage.setItem('weatherAPIKey', 'ffeb476b3fe24929959cfadd168fdf1d');
+		//百度 API key
+		localStorage.setIem('baiduAPIKey','Wikpdmp0xVzHMSDYjQ5arfAi');
+		
 	}
 }
 
@@ -26,7 +29,7 @@ function getJsonObj(reqUrl) {
 		dataType:'json',//服务器返回json格式数据
 		type:'post',//HTTP请求类型
 		async: false,
-		timeout:10000,//超时时间设置为10秒；
+		timeout:5000,//超时时间设置为5秒；
 		success:function(data){
 			console.log("Get json: " + JSON.stringify(data));
 			returnData = data;
