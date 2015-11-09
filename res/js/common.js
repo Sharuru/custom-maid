@@ -3,8 +3,10 @@ function appInitialize() {
 	var localStorage = window.localStorage;
 	if (localStorage.getItem("isFirstRun") == "0") {
 		console.log('Welcome back');
+		mui.toast('お帰りなさいご主人様');
 	} else {
 		console.log('First run, creating file');
+		mui.toast('初めまして');
 		localStorage.setItem('isFirstRun', '0');
 		//设置 API key
 		//天气 API key
