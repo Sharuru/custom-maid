@@ -20,14 +20,14 @@ function setIndexWeatherInfo() {
 	//		
 	//	} else {
 	console.log('Weather info need update');
-	mui.toast('Updating weather info...');
+	//mui.toast('Updating weather info...');
 	//需要更新天气信息的场合
 	//城市硬编码
 	var respObj = getWeatherInfo('shanghai');
 	//成功获得结果
 	if (respObj['HeWeather data service 3.0'][0].status == 'ok') {
 		indexWeatherInfoHandler(respObj);
-		mui.toast('Updating weather complete.');
+		mui.toast('天气信息更新完成');
 		//写入本地缓存
 		//localStorage.setItem('cachedWeatherInfo', JSON.stringify(respObj, '123'));
 	} else {
