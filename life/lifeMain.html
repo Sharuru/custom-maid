@@ -14,13 +14,17 @@
 				plus.webview.currentWebview().setStyle({
 					scrollIndicator: 'none'
 				});
+				//设置传值参数
+				var self = plus.webview.currentWebview();
+				document.getElementById('todayCond').innerText = self.passNowCond;
+				document.getElementById('todayTmp').innerText = self.passTodayTmp;
+				document.getElementById('todayWind').innerText = self.passNowWind;
 			});
 			window.addEventListener('tap', function() {
 				console.log('resize');
 				mui('#maidContent').scroll().setStopped(true); //暂时禁止滚动
 				var webview = plus.webview.currentWebview();
 			});
-
 		</script>
 		<style type="text/css">
 			.mui-bar-nav {
@@ -228,9 +232,9 @@
 			</div>
 
 			<div class="maid-weather-layer">
-				<div class="weather-info">今日天气： 晴</div>
-				<div class="weather-temp">温度： 12℃-18℃</div>
-				<div class="weather-info">风向： 西风一级</div>
+				<div class="weather-info" id='todayCond'>今日天气：加载中...</div>
+				<div class="weather-temp" id='todayTmp'>温度： 加载中...</div>
+				<div class="weather-info" id='todayWind'>风向： 加载中...</div>
 			</div>
 
 			<div class="tabLitleTitle">热门推荐</div>

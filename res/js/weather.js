@@ -51,7 +51,7 @@ function indexWeatherInfoHandler(jsonObj) {
 	//设置画面信息
 	var d = new Date();
 	document.getElementById('nowTmp').innerText = nowTmp + '℃';
-	document.getElementById('todayTmp').innerText = todayMinTmp + '℃/' + todayMaxTmp + '℃';
+	document.getElementById('todayTmp').innerText = todayMinTmp + '℃-' + todayMaxTmp + '℃';
 	document.getElementById('nowCond').innerText = nowCond;
 	document.getElementById('today').innerText = getWeekday(d.getDay()) + ' ' + (d.getMonth() + 1) + '/' + d.getDate();
 	document.getElementById('nowWind').innerText = nowWind + ' ' + nowWindSc + '级';

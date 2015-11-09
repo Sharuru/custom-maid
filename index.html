@@ -17,6 +17,18 @@
 					scrollIndicator: 'none'
 				});
 				setIndexWeatherInfo();
+				//页面加载完毕后绑定事件
+				document.getElementById('navLifeDiv').addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'life/lifeMain.html',
+						id: 'lifeMain',
+						extras: {
+							passNowCond: '今日天气：' + document.getElementById('nowCond').innerText,
+							passTodayTmp: '温度：' + document.getElementById('todayTmp').innerText,
+							passNowWind: '风向:' + document.getElementById('nowWind').innerText
+						}
+					});
+				});
 			});
 			 //禁止滚动
 			window.addEventListener('tap', function() {
@@ -198,13 +210,4 @@
 			</div>
 		</div>
 	</body>
-	<script>
-		//页面加载完毕后绑定事件
-		document.getElementById('navLifeDiv').addEventListener('tap', function() {
-			mui.openWindow({
-				url: 'life/lifeMain.html',
-			id: 'info'
-			});
-		});
-	</script>
 </html>
