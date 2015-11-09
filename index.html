@@ -34,18 +34,18 @@
 				text-align: left;
 				font-size: 22px;
 				font-family: "微软雅黑";
-				padding-top: 10px;
+				padding-top: 3px;
 				padding-left: 36px;
 				left: 15px !important;
 			}
 			.mui-bar-nav {
-				height: 65px;
+				height: 55px;
 				background-color: #C91423;
 			}
 			.maid-nav-main {
 				width: auto;
 				height: auto;
-				margin-top: 20px;
+				margin-top: 10px;
 				text-align: center;
 				overflow: hidden;
 			}
@@ -96,7 +96,7 @@
 			.copyright-layer {
 				font-size: 12px;
 				padding-left: 22px;
-				margin-bottom: 5px;
+				padding-bottom: 0px;
 				width: 100%;
 				height: 50px;
 				position: absolute;
@@ -105,7 +105,7 @@
 				z-index: 1;
 			}
 			.shadow-top-layer {
-				margin-top: 230px;
+				margin-top: 210px;
 				position: absolute;
 				top: 0;
 				left: 0;
@@ -119,7 +119,7 @@
 				opacity: 0.5;
 			}
 			.maid-today-weather-text {
-				margin-top: 230px;
+				margin-top: 210px;
 				position: absolute;
 				top: 0;
 				left: 0;
@@ -132,9 +132,9 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<h1><img class="mui-pull-left" name="imgbtn" type="image" style="margin-top:12px;" src="res/images/appLogo.png" height="36px;" width="36px;">
+			<h1><img class="mui-pull-left" name="imgbtn" type="image" style="margin-top:7px;" src="res/images/appLogo.png" height="32px;" width="32px;">
 			<h1 class="mui-title"><a href="#popover"><b>上海</b><span class="mui-icon mui-icon-arrowdown"></span></a></h1>
-			<h1><img class="mui-pull-right" name="imgbtn" type="image" style="margin-right: 25px;margin-top:16px;" src="res/images/locationIcon.png" height="26px" width="22px;">
+			<h1><img class="mui-pull-right" name="imgbtn" type="image" style="margin-right: 25px;margin-top:9px;" src="res/images/locationIcon.png" height="26px" width="22px;">
 		</header>
 		<div id="maidContent" class="mui-content mui-scroll-wrapper">
 			<div id="navMainDiv" class="maid-nav-main">
@@ -181,4 +181,13 @@
 			</div>
 		</div>
 	</body>
+	<script>
+		//页面加载完毕后绑定事件
+		document.getElementById('navLifeDiv').addEventListener('tap', function() {
+			mui.openWindow({
+				url: 'life/lifeMain.html',
+			id: 'info'
+			});
+		});
+	</script>
 </html>
