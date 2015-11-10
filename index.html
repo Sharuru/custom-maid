@@ -8,6 +8,7 @@
 		<script src="res/js/mui.min.js"></script>
 		<link href="res/css/mui.min.css" rel="stylesheet" />
 		<script src="res/js/common.js"></script>
+		<script src="index.js"></script>
 		<script src="res/js/weather.js"></script>
 		<script type="text/javascript" charset="utf-8">
 			mui.init();
@@ -16,25 +17,14 @@
 				plus.webview.currentWebview().setStyle({
 					scrollIndicator: 'none'
 				});
-				// 使用百度地图地位模块获取位置信息
-				plus.geolocation.getCurrentPosition(function(p) {
-					alert("B-Geolocation\nLatitude:" + p.coords.latitude + "\nLongitude:" + p.coords.longitude + "\nAltitude:" + p.coords.altitude);
-				}, function(e) {
-					alert("B-Geolocation error: " + e.message);
-				}, {
-					provider: 'baidu'
-				});
 				//检测是否首次启动程序
 				appInitialize();
 				//设置首页天气信息
 				setIndexWeatherInfo();
-				//禁止滚动
-				window.addEventListener('tap', function() {
-					console.log('resize');
-					mui('#maidContent').scroll().setStopped(true); //暂时禁止滚动
-					var webview = plus.webview.currentWebview();
-				});
 				//页面加载完毕后绑定事件
+				document.getElementById('btnGetLocation').addEventListener('tap', function() {
+					getLocation();
+				});
 				document.getElementById('navLifeDiv').addEventListener('tap', function() {
 					mui.openWindow({
 						url: 'life/lifeMain.html',
@@ -57,6 +47,12 @@
 						url: 'finance/financeMain.html',
 						id: 'financeMain'
 					});
+				});
+				//禁止滚动
+				window.addEventListener('tap', function() {
+					console.log('resize');
+					mui('#maidContent').scroll().setStopped(true); //暂时禁止滚动
+					var webview = plus.webview.currentWebview();
 				});
 				//首页返回键处理
 				//处理逻辑：1秒内，连续两次按返回键，则退出应用；
@@ -86,6 +82,7 @@
 				padding-top: 3px;
 				padding-left: 36px;
 				left: 15px !important;
+				width:50% !important;
 			}
 			.mui-bar-nav {
 				height: 55px;
@@ -182,8 +179,8 @@
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<h1><img class="mui-pull-left" name="imgbtn" type="image" style="margin-top:7px;" src="res/images/appLogo.png" height="32px;" width="32px;">
-			<h1 class="mui-title"><a href="#popover"><b>上海</b><span class="mui-icon mui-icon-arrowdown"></span></a></h1>
-			<h1><img class="mui-pull-right" name="imgbtn" type="image" style="margin-right: 25px;margin-top:9px;" src="res/images/locationIcon.png" height="26px" width="22px;">
+			<p class="mui-title"><b>上海</b><span class="mui-icon mui-icon-arrowdown"></span></p>
+			<h1><a id='btnGetLocation'><img class="mui-pull-right" name="imgbtn" type="image" style="margin-right: 25px;margin-top:9px;" src="res/images/locationIcon.png" height="26px" width="22px;"></a></h1>
 		</header>
 		<div id="maidContent" class="mui-content mui-scroll-wrapper">
 			<div id="navMainDiv" class="maid-nav-main">
