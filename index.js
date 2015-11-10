@@ -30,41 +30,31 @@ function setIndexWeatherInfo() {
 		}
 		//比对更新时间
 		if (localUTCDay != cacheUTCDay || localUTCHour != cacheUTCHour) {
-			//不在同一时间区间内
-			console.log('Weather info need update');
-			//需要更新天气信息的场合
-			//城市硬编码
-			var respObj = getWeatherInfo('shanghai');
-			//成功获得结果
-			if (respObj['HeWeather data service 3.0'][0].status == 'ok') {
-				indexWeatherInfoHandler(respObj);
-				mui.toast('天气信息更新完成');
-				//写入本地缓存
-				console.log('Writing in local');
-				localStorage.setItem('cachedWeatherInfo', JSON.stringify(respObj));
-			} else {
-				mui.toast('天气信息获取失败！');
-			}
+			getIndexWeatherInfo();
 		} else {
 			//同一时间区间，直接读取缓存设置数据
 			console.log('Do with cache')
 			indexWeatherInfoHandler(cleanObj);
 		}
 	} else {
-		console.log('Weather info need update');
-		//mui.toast('Updating weather info...');
-		//需要更新天气信息的场合
-		//城市硬编码
-		var respObj = getWeatherInfo('shanghai');
-		//成功获得结果
-		if (respObj['HeWeather data service 3.0'][0].status == 'ok') {
-			indexWeatherInfoHandler(respObj);
-			mui.toast('天气信息更新完成');
-			//写入本地缓存
-			localStorage.setItem('cachedWeatherInfo', JSON.stringify(respObj));
-		} else {
-			mui.toast('天气信息获取失败！');
-		}
+		getIndexWeatherInfo();
+	}
+}
+
+function getIndexWeatherInfo() {
+	console.log('Weather info need update');
+	//mui.toast('Updating weather info...');
+	//需要更新天气信息的场合
+	//城市硬编码
+	var respObj = getWeatherInfo('shanghai');
+	//成功获得结果
+	if (respObj['HeWeather data service 3.0'][0].status == 'ok') {
+		indexWeatherInfoHandler(respObj);
+		mui.toast('天气信息更新完成');
+		//写入本地缓存
+		localStorage.setItem('cachedWeatherInfo', JSON.stringify(respObj));
+	} else {
+		mui.toast('天气信息获取失败！');
 	}
 }
 
