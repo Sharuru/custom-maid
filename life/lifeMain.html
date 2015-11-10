@@ -45,11 +45,11 @@
 				document.getElementById('todayTmp').innerText = self.passTodayTmp;
 				document.getElementById('todayWind').innerText = self.passNowWind;
 			});
-			window.addEventListener('tap', function() {
-				console.log('resize');
-				mui('#maidContent').scroll().setStopped(true); //暂时禁止滚动
-				var webview = plus.webview.currentWebview();
-			});
+			 //			window.addEventListener('tap', function() {
+			 //				console.log('resize');
+			 //				mui('#maidContent').scroll().setStopped(true); //暂时禁止滚动
+			 //				var webview = plus.webview.currentWebview();
+			 //			});
 		</script>
 		<style type="text/css">
 			.mui-bar-nav {
@@ -165,7 +165,7 @@
 				overflow: hidden;
 				background: url(../res/images/backPattern.jpg);
 			}
-			.mui-slider-indicator{
+			.mui-slider-indicator {
 				padding-bottom: -5px;
 			}
 			/*.recommend-layer {
@@ -280,6 +280,7 @@
 			<div class="tabLitleTitle">热门推荐</div>
 
 			<div class="recommend-main">
+
 				<!--<div class="recommend-layer">
 					<div class="recommend-picture-layer">
 						<input class="recommend-picture" type="image"></input>
