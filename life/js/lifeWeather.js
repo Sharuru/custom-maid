@@ -79,10 +79,10 @@ function lifeWeatherInfoHandler(jsonObj) {
 	document.getElementById('firstDayAfter').innerText = getWeekday(d.getDay() + 1);
 	document.getElementById('secondDayAfter').innerText = getWeekday(d.getDay() + 2);
 	document.getElementById('lastDayAfter').innerText = getWeekday(d.getDay() + 3);
-	document.getElementById('theDayNowIconTem').innerText = todayMinTmp + '℃/' + todayMaxTmp + '℃';
-	document.getElementById('firstDayAfterIconTem').innerText = firstDayMinTmp + '℃/' + firstDayMaxTmp + '℃';
-	document.getElementById('secondDayAfterIconTem').innerText = secondDayMinTmp + '℃/' + secondDayMaxTmp + '℃';
-	document.getElementById('lastDayAfterIconTem').innerText = lastDayMinTmp + '℃/' + lastDayMaxTmp + '℃';
+	document.getElementById('theDayNowTem').innerText = todayMinTmp + '℃/' + todayMaxTmp + '℃';
+	document.getElementById('firstDayAfterTem').innerText = firstDayMinTmp + '℃/' + firstDayMaxTmp + '℃';
+	document.getElementById('secondDayAfterTem').innerText = secondDayMinTmp + '℃/' + secondDayMaxTmp + '℃';
+	document.getElementById('lastDayAfterTem').innerText = lastDayMinTmp + '℃/' + lastDayMaxTmp + '℃';
 	switch (nowCond) {
 		case '晴':
 			document.getElementById('theDayNowIcon').src = "../res/images/sun.png";
