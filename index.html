@@ -16,6 +16,17 @@
 				plus.webview.currentWebview().setStyle({
 					scrollIndicator: 'none'
 				});
+				// 使用百度地图地位模块获取位置信息
+				plus.geolocation.getCurrentPosition(function(p) {
+					alert("B-Geolocation\nLatitude:" + p.coords.latitude + "\nLongitude:" + p.coords.longitude + "\nAltitude:" + p.coords.altitude);
+				}, function(e) {
+					alert("B-Geolocation error: " + e.message);
+				}, {
+					provider: 'baidu'
+				});
+				//检测是否首次启动程序
+				appInitialize();
+				//设置首页天气信息
 				setIndexWeatherInfo();
 				//禁止滚动
 				window.addEventListener('tap', function() {
@@ -64,9 +75,6 @@
 						}
 					}
 				};
-				//检测是否首次启动程序
-				appInitialize();
-				//设置首页天气信息
 			});
 		</script>
 		<style>

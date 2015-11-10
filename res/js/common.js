@@ -14,7 +14,7 @@ function appInitialize() {
 		//天气 API key
 		localStorage.setItem('weatherAPIKey', 'ffeb476b3fe24929959cfadd168fdf1d');
 		//百度 API key
-		localStorage.setIem('baiduAPIKey','Wikpdmp0xVzHMSDYjQ5arfAi');
+		localStorage.setItem('baiduAPIKey','Wikpdmp0xVzHMSDYjQ5arfAi');
 		
 	}
 }
