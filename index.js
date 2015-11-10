@@ -23,11 +23,12 @@ function setIndexWeatherInfo() {
 		if (localUTCDay < 10) {
 			localUTCDay = '0' + localUTCDay;
 		}
-		var localUTCHour = (d.getUTCHours() - 1);
+		var localUTCHour = d.getUTCHours();
 		//补足两位数
 		if (localUTCHour < 10) {
 			localUTCHour = '0' + localUTCHour;
 		}
+		console.log(localUTCDay + ',' + localUTCHour + ',' + cacheUTCDay + ',' + cacheUTCHour + ',' + cachedUTC);
 		//比对更新时间
 		if (localUTCDay != cacheUTCDay || localUTCHour != cacheUTCHour) {
 			getIndexWeatherInfo();
