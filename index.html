@@ -7,173 +7,16 @@
 		<title></title>
 		<script src="res/js/mui.min.js"></script>
 		<link href="res/css/mui.min.css" rel="stylesheet" />
+		<link href="index.css" rel="stylesheet" />
 		<script src="res/js/common.js"></script>
 		<script src="index.js"></script>
 		<script src="res/js/weather.js"></script>
 		<script type="text/javascript" charset="utf-8">
 			mui.init();
 			mui.plusReady(function() {
-				console.log("当前页面URL：" + plus.webview.currentWebview().getURL());
-				plus.webview.currentWebview().setStyle({
-					scrollIndicator: 'none'
-				});
-				//检测是否首次启动程序
-				appInitialize();
-				//设置首页天气信息
-				setIndexWeatherInfo();
-				//页面加载完毕后绑定事件
-				document.getElementById('btnGetLocation').addEventListener('tap', function() {
-					getLocation();
-				});
-				document.getElementById('navLifeDiv').addEventListener('tap', function() {
-					mui.openWindow({
-						url: 'life/lifeMain.html',
-						id: 'lifeMain',
-						extras: {
-							passNowCond: '今日天气：' + document.getElementById('nowCond').innerText,
-							passTodayTmp: '温度：' + document.getElementById('todayTmp').innerText,
-							passNowWind: '风向:' + document.getElementById('nowWind').innerText
-						}
-					});
-				});
-				document.getElementById('navTravelDiv').addEventListener('tap', function() {
-					mui.openWindow({
-						url: 'outing/outingMain.html',
-						id: 'outgingMain'
-					});
-				});
-				document.getElementById('navFinanceDiv').addEventListener('tap', function() {
-					mui.openWindow({
-						url: 'finance/financeMain.html',
-						id: 'financeMain'
-					});
-				});
-				//禁止滚动
-				window.addEventListener('tap', function() {
-					console.log('resize');
-					mui('#maidContent').scroll().setStopped(true); //暂时禁止滚动
-					var webview = plus.webview.currentWebview();
-				});
-				//首页返回键处理
-				//处理逻辑：1秒内，连续两次按返回键，则退出应用；
-				var first = null;
-				mui.back = function() {
-					//首次按键，提示‘再按一次退出应用’
-					if (!first) {
-						first = new Date().getTime();
-						mui.toast('再按一次退出应用');
-						setTimeout(function() {
-							first = null;
-						}, 1000);
-					} else {
-						if (new Date().getTime() - first < 1000) {
-							plus.runtime.quit();
-						}
-					}
-				};
+				afterLoad();
 			});
 		</script>
-		<style>
-			.mui-title {
-				color: white;
-				text-align: left;
-				font-size: 22px;
-				font-family: "微软雅黑";
-				padding-top: 3px;
-				padding-left: 36px;
-				left: 15px !important;
-				width:50% !important;
-			}
-			.mui-bar-nav {
-				height: 55px;
-				background-color: #C91423;
-			}
-			.maid-nav-main {
-				width: auto;
-				height: auto;
-				margin-top: 10px;
-				text-align: center;
-				overflow: hidden;
-			}
-			.maid-nav-sub {
-				float: left;
-				width: 25%;
-				background: white;
-			}
-			.maid-nav-title {
-				margin-top: 2px;
-				margin-bottom: 0px;
-				font-size: 12px;
-				color: black;
-			}
-			.maid-nav-icon {
-				margin-top: 10px;
-				width: 50px;
-				height: 50px;
-			}
-			.mui-content {
-				font-family: "微软雅黑";
-				overflow: hidden !important;
-			}
-			.mui-tab-label {
-				font-size: 12px;
-				line-height: 10px;
-				margin-top: -3px;
-				padding-bottom: 18px;
-			}
-			.mui-bar-tab {
-				background: #333333;
-				border-top: 4px solid #C91423;
-			}
-			.maid-weather-content {
-				width: auto;
-				height: 100%;
-				color: white;
-				overflow: hidden;
-			}
-			.maid-today-weather-detail {
-				width: auto;
-				height: 85%;
-				background-size: cover;
-				background-position: center;
-				margin-top: -8px;
-				position: relative;
-			}
-			.copyright-layer {
-				font-size: 12px;
-				padding-left: 22px;
-				padding-bottom: 0px;
-				width: 100%;
-				height: 50px;
-				position: absolute;
-				left: 0;
-				bottom: 0;
-				z-index: 1;
-			}
-			.shadow-top-layer {
-				margin-top: 210px;
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 220px;
-				z-index: 1;
-				background: black;
-				filter: alpha(opacity=50);
-				-moz-opacity: 0.5;
-				-khtml-opacity: 0.5;
-				opacity: 0.5;
-			}
-			.maid-today-weather-text {
-				margin-top: 210px;
-				position: absolute;
-				top: 0;
-				left: 0;
-				z-index: 2;
-				width: auto;
-				height: auto;
-			}
-		</style>
 	</head>
 
 	<body>
@@ -227,4 +70,5 @@
 			</div>
 		</div>
 	</body>
+
 </html>
