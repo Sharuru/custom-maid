@@ -101,17 +101,6 @@ function indexWeatherInfoHandler(jsonObj) {
 	}
 }
 
-function getLocation() {
-	// 使用百度地图地位模块获取位置信息
-	plus.geolocation.getCurrentPosition(function(p) {
-		alert("B-Geolocation\nLatitude:" + p.coords.latitude + "\nLongitude:" + p.coords.longitude + "\nAltitude:" + p.coords.altitude);
-	}, function(e) {
-		alert("B-Geolocation error: " + e.message);
-	}, {
-		provider: 'baidu'
-	});
-}
-
 function afterLoad() {
 	console.log("当前页面URL：" + plus.webview.currentWebview().getURL());
 	plus.webview.currentWebview().setStyle({
