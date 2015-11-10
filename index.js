@@ -14,20 +14,42 @@ function setIndexWeatherInfo() {
 		//获得缓存 UTC 时间
 		var cachedUTC = cleanObj['HeWeather data service 3.0'][0].basic.update.utc;
 		//解析缓存 UTC 时间
-		var cacheUTCDay = cachedUTC.substr(8,2);
-		var cacheUTCHour = cachedUTC.substr(10,2);
+		var cacheUTCDay = cachedUTC.substr(8, 2);
+		var cacheUTCHour = cachedUTC.substr(11, 2);
 		//获得本地 UTC 时间
 		var d = new Date();
 		var localUTCDay = d.getUTCDate();
 		//补足两位数
-		if(localUTCDay < 10){
+		if (localUTCDay < 10) {
 			localUTCDay = '0' + localUTCDay;
 		}
-		var localUTCHour = d.getUTCHours();
+		var localUTCHour = (d.getUTCHours() - 1);
 		//补足两位数
-		if(localUTCHour < 10){
+		if (localUTCHour < 10) {
 			localUTCHour = '0' + localUTCHour;
-		}		
+		}
+		//比对更新时间
+		if (localUTCDay != cacheUTCDay || localUTCHour != cacheUTCHour) {
+			//不在同一时间区间内
+			console.log('Weather info need update');
+			//需要更新天气信息的场合
+			//城市硬编码
+			var respObj = getWeatherInfo('shanghai');
+			//成功获得结果
+			if (respObj['HeWeather data service 3.0'][0].status == 'ok') {
+				indexWeatherInfoHandler(respObj);
+				mui.toast('天气信息更新完成');
+				//写入本地缓存
+				console.log('Writing in local');
+				localStorage.setItem('cachedWeatherInfo', JSON.stringify(respObj));
+			} else {
+				mui.toast('天气信息获取失败！');
+			}
+		} else {
+			//同一时间区间，直接读取缓存设置数据
+			console.log('Do with cache')
+			indexWeatherInfoHandler(cleanObj);
+		}
 	} else {
 		console.log('Weather info need update');
 		//mui.toast('Updating weather info...');
@@ -39,7 +61,7 @@ function setIndexWeatherInfo() {
 			indexWeatherInfoHandler(respObj);
 			mui.toast('天气信息更新完成');
 			//写入本地缓存
-			localStorage.setItem('cachedWeatherInfo', JSON.stringify(respObj, '123'));
+			localStorage.setItem('cachedWeatherInfo', JSON.stringify(respObj));
 		} else {
 			mui.toast('天气信息获取失败！');
 		}
