@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="../res/js/mui.min.js"></script>
+		<script src="js/lifeWeather.js"></script>
+		<script src="../res/js/common.js"></script>
+		<link href="../res/css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+			mui.plusReady(function() {
+				console.log("当前页面URL：" + plus.webview.currentWebview().getURL());
+				plus.webview.currentWebview().setStyle({
+					scrollIndicator: 'none'
+				});
+				document.getElementById('btnGoBack').addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'lifeMain.html',
+						id: 'lifeMain',
+					});
+				});
+				setLifeWeatherInfo();
+			});
+			window.addEventListener('tap', function() {
+				console.log('resize');
+				//mui('#maidContent').scroll().setStopped(true); //暂时禁止滚动
+				var webview = plus.webview.currentWebview();
+			});
+		</script>
+		<style type="text/css">
+			.mui-bar-nav {
+				height: 55px;
+				background-color: #C91423;
+			}
+			.mui-title {
+				color: white;
+				text-align: center;
+				font-size: 22px;
+				font-family: "微软雅黑";
+				padding-top: 6px;
+			}
+			.mui-pull-left {
+				color: white !important;
+				padding-top: 17px !important;
+			}
+			.mui-content {
+				font-family: "微软雅黑";
+				overflow: hidden !important;
+			}
+			.weather-tab-layer {
+				padding-top: 10px;
+				width: auto;
+				height: auto;
+				background: white;
+				position: relative;
+				overflow: hidden;
+			}
+			.col-line {
+				margin-top: 18px;
+				width: 33.3%;
+				height: 26px;
+				position: absolute;
+				top: 0;
+				left: 33.3%;
+				z-index: 1;
+				border-left: solid #CCCCCC 1px;
+				border-right: solid #CCCCCC 1px;
+			}
+			.mui-control-item {
+				font-size: 14px;
+			}
+			.mui-active {
+				color: red !important;
+				border-bottom: 2px solid red !important;
+			}
+			.weather-content-layer {
+				width: auto;
+				height: 100%;
+				overflow: hidden;
+			}
+			.weather-picture {
+				margin-top: -30px;
+				width: auto;
+				height: 100%;
+				background: lightblue;
+				background-size: cover;
+				background-position: center;
+				position: relative;
+			}
+			.weather-detail {
+				position: absolute;
+				left: 0;
+				top: 100px;
+				width: 100%;
+				height: 280px;
+				z-index: 1;
+				color: white;
+				overflow: hidden;
+			}
+			.shadow-top-layer {
+				margin-top: 30px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 40px;
+				z-index: 1;
+				background: black;
+				filter: alpha(opacity=20);
+				-moz-opacity: 0.2;
+				-khtml-opacity: 0.2;
+				opacity: 0.2;
+			}
+			.label-style {
+				margin-top: 32px;
+				margin-left: 25px;
+				padding-top: 8px;
+				font-size: 14px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: auto;
+				z-index: 2;
+				background: none;
+				color: white;
+			}
+			.shadow-bottom-layer {
+				margin-bottom: 20px;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 100px;
+				z-index: 1;
+				background: black;
+				filter: alpha(opacity=50);
+				-moz-opacity: 0.5;
+				-khtml-opacity: 0.5;
+				opacity: 0.5;
+			}
+			.copyright-updateTime {
+				position: absolute;
+				right: 0;
+				bottom: 125px;
+				width: 100%;
+				height: auto;
+				z-index: 1;
+				color: white;
+				overflow: hidden;
+			}
+			.shadow-left {
+				margin-bottom: 20px;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 100px;
+				z-index: 2;
+				overflow: hidden;
+			}
+			.daily-weather {
+				float: left;
+				width: 25%;
+				height: 100px;
+				color: white;
+				font-size: 14px;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" id='btnGoBack'></a>
+			<h1 class="mui-title"><b>天气</b></h1>
+		</header>
+		<div class="mui-content mui-scroll-wrapper">
+			<div class="weather-tab-layer">
+				<div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item">本地多天</a>
+					<a class="mui-control-item">多地当天</a>
+					<a class="mui-control-item mui-active">本地空气质量</a>
+				</div>
+				<div class="col-line"></div>
+			</div>
+			<div class="weather-content-layer">
+				<div class="weather-picture">
+					<div class="shadow-top-layer"></div>
+					<div class="label-style">
+						<img src="../res/images/homeNavIcon.png" height="12px" width="17px" />&nbsp;
+						<label>上海</label>
+					</div>
+					<div class="weather-detail">
+						<div>&nbsp;</div>
+						<div>实时空气质量指数</div>
+						<div>
+							<span style="font-size:42px;padding-left: 20px;" id='nowTmp'>加载中...</span>
+							<span style="font-size:14px;padding-left: 5px;" id='todayTmp'>加载中...</span>
+						</div>
+						<div style="margin-top: 10px;">
+							<span style="font-size:20px;padding-left: 22px;" id='nowCond'>加载中...</span>
+						</div>
+						<div style="font-size:12px;margin-top: 5px;padding-left: 22px;padding-top:0px;" id='today'>加载中...</div>
+						<div>
+							<span style="font-size:12px;padding-left: 22px;" id='nowWind'>加载中...</span>
+						</div>
+						<div style="font-size:12px;padding-left: 22px;" id='nowHum'>加载中...</div>
+					</div>
+					<div class="copyright-updateTime">
+						<div style="float:right;font-size:12px;padding-right: 22px;" id='updateTime'>加载中...</div>
+					</div>
+					<div class="shadow-bottom-layer"></div>
+					<div class="shadow-left">
+						<div class="daily-weather">
+							<div style="margin-top: 4px;" id="theDayNow">加载中...</div>
+							<div style="margin-top: 1px;">
+								<img src="" width="40px" height="40px" id="theDayNowIcon" />
+							</div>
+							<div style="margin-top: -3px;" id="theDayNowTem">加载中...</div>
+						</div>
+						<div class="daily-weather">
+							<div style="margin-top: 4px;" id="firstDayAfter">加载中...</div>
+							<div style="margin-top: 1px;">
+								<img src="" width="40px" height="40px" id="firstDayAfterIcon" />
+							</div>
+							<div style="margin-top: -3px;" id="firstDayAfterTem">加载中...</div>
+						</div>
+						<div class="daily-weather">
+							<div style="margin-top: 4px;" id="secondDayAfter">加载中...</div>
+							<div style="margin-top: 1px;">
+								<img src="" width="40px" height="40px" id="secondDayAfterIcon" />
+							</div>
+							<div style="margin-top: -3px;" id="secondDayAfterTem">加载中...</div>
+						</div>
+						<div class="daily-weather">
+							<div style="margin-top: 4px;" id="lastDayAfter">加载中...</div>
+							<div style="margin-top: 1px;">
+								<img width="40px" height="40px" id="lastDayAfterIcon" />
+							</div>
+							<div style="margin-top: -3px;" id="lastDayAfterTem">加载中...</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
