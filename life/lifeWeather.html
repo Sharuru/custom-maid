@@ -23,6 +23,18 @@
 						id: 'lifeMain',
 					});
 				});
+				document.getElementById('btnGoBack').addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'lifeMain.html',
+						id: 'lifeMain',
+					});
+				});
+				document.getElementById('btnGoBack').addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'lifeMain.html',
+						id: 'lifeMain',
+					});
+				});
 				setLifeWeatherInfo();
 			});
 			window.addEventListener('tap', function() {
@@ -208,8 +220,8 @@
 			<div class="weather-tab-layer">
 				<div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
 					<a class="mui-control-item mui-active">本地多天</a>
-					<a class="mui-control-item">多地当天</a>
-					<a class="mui-control-item">本地空气质量</a>
+					<a id="btnCitysWeather" class="mui-control-item">多地当天</a>
+					<a id="btnAQI" class="mui-control-item">本地空气质量</a>
 				</div>
 				<div class="col-line-left"></div>
 				<div class="col-line-right"></div>
