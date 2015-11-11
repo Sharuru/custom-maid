@@ -83,38 +83,22 @@ function lifeWeatherInfoHandler(jsonObj) {
 	document.getElementById('firstDayAfterTem').innerText = firstDayMinTmp + '℃/' + firstDayMaxTmp + '℃';
 	document.getElementById('secondDayAfterTem').innerText = secondDayMinTmp + '℃/' + secondDayMaxTmp + '℃';
 	document.getElementById('lastDayAfterTem').innerText = lastDayMinTmp + '℃/' + lastDayMaxTmp + '℃';
-	getImageSrc(nowCond,'theDayNowIcon');
+	setImageSrc(nowCond,'theDayNowIcon');
 	if (d.getHours() < firstDaySS) {
-		getImageSrc(firstDayCondDay,'firstDayAfterIcon');
+		setImageSrc(firstDayCondDay,'firstDayAfterIcon');
 	} else {
-		getImageSrc(firstDayCondNight,'firstDayAfterIcon');
+		setImageSrc(firstDayCondNight,'firstDayAfterIcon');
 	}
 	if (d.getHours() < secondDaySS) {
-		getImageSrc(secondDayCondDay,'secondDayAfterIcon');
+		setImageSrc(secondDayCondDay,'secondDayAfterIcon');
 	} else {
-		getImageSrc(secondDayCondNight,'secondDayAfterIcon');
+		setImageSrc(secondDayCondNight,'secondDayAfterIcon');
 	}
 	if (d.getHours() < lastDaySS) {
-		getImageSrc(lastDayCondDay,'lastDayAfterIcon');
+		setImageSrc(lastDayCondDay,'lastDayAfterIcon');
 	} else {
-		getImageSrc(lastDayCondNight,'lastDayAfterIcon');
+		setImageSrc(lastDayCondNight,'lastDayAfterIcon');
 	}
 	//设置背景图片
-	getBackgroundImage(nowCond,'todayWeatherPicture');
-}
-
-//获取天气信息
-function getWeatherInfo(reqCity) {
-	//拼接请求地址
-	var reqUrl = 'https://api.heweather.com/x3/weather?city=' + reqCity + '&key=' + getAPIKey('weatherAPIKey');
-	return getJsonObj(reqUrl);
-}
-
-// 获得星期
-function getWeekday(day) {
-	if (day > 6) {
-		day = day - 7;
-	}
-	var weekDays = new Array("周日", "周一", "周二", "周三", "周四", "周五", "周六");
-	return weekDays[day];
+	setBackgroundImage(nowCond,'todayWeatherPicture');
 }
