@@ -1,5 +1,6 @@
 //设置天气信息
 function setLifeWeatherInfo() {
+	//缓存检测与读取
 	console.log('In setLifeWeatherInfo');
 	//var localStorage = window.localStorage;
 	//	if (localStorage.getItem('cachedWeatherInfo') != null) {
@@ -20,7 +21,7 @@ function setLifeWeatherInfo() {
 	//		
 	//	} else {
 	console.log('Weather info need update');
-	//mui.toast('Updating weather info...');
+
 	//需要更新天气信息的场合
 	//城市硬编码
 	var respObj = getWeatherInfo('shanghai');
@@ -83,22 +84,33 @@ function lifeWeatherInfoHandler(jsonObj) {
 	document.getElementById('firstDayAfterTem').innerText = firstDayMinTmp + '℃/' + firstDayMaxTmp + '℃';
 	document.getElementById('secondDayAfterTem').innerText = secondDayMinTmp + '℃/' + secondDayMaxTmp + '℃';
 	document.getElementById('lastDayAfterTem').innerText = lastDayMinTmp + '℃/' + lastDayMaxTmp + '℃';
-	setImageSrc(nowCond,'theDayNowIcon');
+	//设置天气小图标
+	setLifeWeatherIcon(nowCond,'theDayNowIcon');
 	if (d.getHours() < firstDaySS) {
-		setImageSrc(firstDayCondDay,'firstDayAfterIcon');
+		setLifeWeatherIcon(firstDayCondDay,'firstDayAfterIcon');
 	} else {
-		setImageSrc(firstDayCondNight,'firstDayAfterIcon');
+		setLifeWeatherIcon(firstDayCondNight,'firstDayAfterIcon');
 	}
 	if (d.getHours() < secondDaySS) {
-		setImageSrc(secondDayCondDay,'secondDayAfterIcon');
+		setLifeWeatherIcon(secondDayCondDay,'secondDayAfterIcon');
 	} else {
-		setImageSrc(secondDayCondNight,'secondDayAfterIcon');
+		setLifeWeatherIcon(secondDayCondNight,'secondDayAfterIcon');
 	}
 	if (d.getHours() < lastDaySS) {
-		setImageSrc(lastDayCondDay,'lastDayAfterIcon');
+		setLifeWeatherIcon(lastDayCondDay,'lastDayAfterIcon');
 	} else {
-		setImageSrc(lastDayCondNight,'lastDayAfterIcon');
+		setLifeWeatherIcon(lastDayCondNight,'lastDayAfterIcon');
 	}
 	//设置背景图片
-	setBackgroundImage(nowCond,'todayWeatherPicture');
+	setLifeWeatherBackground(nowCond,'todayWeatherPicture');
+}
+
+//设置天气小图标
+function setLifeWeatherIcon(cond,eleId){
+	document.getElementById(eleId).src = '../' + getWeatherIconSrc(cond);
+}
+
+//设置背景图片
+function setLifeWeatherBackground(cond, eleId){
+	document.getElementById(eleId).style.backgroundImage = 'url(../' + getWeatherBackgroundImageSrc(cond)+')'
 }

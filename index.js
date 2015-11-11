@@ -128,3 +128,8 @@ function afterLoad() {
 		var webview = plus.webview.currentWebview();
 	});
 }
+
+function setBackgroundImage(cond, eleId) {
+	console.log(getWeatherBackgroundImageSrc(cond));
+	document.getElementById(eleId).style.backgroundImage = 'url(' + getWeatherBackgroundImageSrc(cond) + ')'
+}

@@ -36,6 +36,7 @@
 				height: 55px;
 				background-color: #C91423;
 			}
+			
 			.mui-title {
 				color: white;
 				text-align: center;
@@ -43,14 +44,17 @@
 				font-family: "微软雅黑";
 				padding-top: 6px;
 			}
+			
 			.mui-pull-left {
 				color: white !important;
 				padding-top: 17px !important;
 			}
+			
 			.mui-content {
 				font-family: "微软雅黑";
 				overflow: hidden !important;
 			}
+			
 			.weather-tab-layer {
 				padding-top: 10px;
 				width: auto;
@@ -59,6 +63,7 @@
 				position: relative;
 				overflow: hidden;
 			}
+			
 			.col-line {
 				margin-top: 18px;
 				width: 33.3%;
@@ -70,27 +75,31 @@
 				border-left: solid #CCCCCC 1px;
 				border-right: solid #CCCCCC 1px;
 			}
+			
 			.mui-control-item {
 				font-size: 14px;
 			}
+			
 			.mui-active {
 				color: red !important;
 				border-bottom: 2px solid red !important;
 			}
+			
 			.weather-content-layer {
 				width: auto;
 				height: 100%;
 				overflow: hidden;
 			}
+			
 			.weather-picture {
 				margin-top: -30px;
 				width: auto;
 				height: 100%;
-				background: url(../res/images/weatherBackgroundSunny.png);
 				background-size: cover;
 				background-position: center;
 				position: relative;
 			}
+			
 			.weather-detail {
 				position: absolute;
 				left: 0;
@@ -101,6 +110,7 @@
 				color: white;
 				overflow: hidden;
 			}
+			
 			.shadow-top-layer {
 				margin-top: 30px;
 				position: absolute;
@@ -115,6 +125,7 @@
 				-khtml-opacity: 0.2;
 				opacity: 0.2;
 			}
+			
 			.label-style {
 				margin-top: 32px;
 				margin-left: 25px;
@@ -129,6 +140,7 @@
 				background: none;
 				color: white;
 			}
+			
 			.shadow-bottom-layer {
 				margin-bottom: 20px;
 				position: absolute;
@@ -143,6 +155,7 @@
 				-khtml-opacity: 0.5;
 				opacity: 0.5;
 			}
+			
 			.copyright-updateTime {
 				position: absolute;
 				right: 0;
@@ -153,6 +166,7 @@
 				color: white;
 				overflow: hidden;
 			}
+			
 			.shadow-left {
 				margin-bottom: 20px;
 				position: absolute;
@@ -163,6 +177,7 @@
 				z-index: 2;
 				overflow: hidden;
 			}
+			
 			.daily-weather {
 				float: left;
 				width: 25%;
@@ -182,14 +197,14 @@
 		<div class="mui-content mui-scroll-wrapper">
 			<div class="weather-tab-layer">
 				<div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-					<a class="mui-control-item mui-active">本地多天</a>
+					<a class="mui-control-item ">本地多天</a>
 					<a class="mui-control-item">多地当天</a>
 					<a class="mui-control-item">本地空气质量</a>
 				</div>
 				<div class="col-line"></div>
 			</div>
 			<div class="weather-content-layer">
-				<div class="weather-picture">
+				<div class="weather-picture" id="todayWeatherPicture">
 					<div class="shadow-top-layer"></div>
 					<div class="label-style">
 						<img src="../res/images/homeNavIcon.png" height="12px" width="17px" />&nbsp;
