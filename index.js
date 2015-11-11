@@ -1,40 +1,10 @@
 //设置首页天气信息
 function setIndexWeatherInfo() {
 	console.log('In setIndexWeatherInfo');
-	getIndexWeatherInfo();
+	indexWeatherInfoHandler(getIndexWeatherInfo());
 }
 
-//获得本地天气信息
-function getIndexWeatherInfo() {
-	var localStorage = window.localStorage;
-	if (localStorage.getItem('cachedWeatherInfo') != null) {
-		//本地存在缓存天气记录
-		console.log('Weather info have cache.');
-		//取出记录
-		var localObj = localStorage.getItem('cachedWeatherInfo')
-		var updateObj;
-		var cleanStr = JSON.stringify(localObj).replace(/\\/g, '');
-		cleanStr = cleanStr.substr(1, cleanStr.length - 2);
-		var cleanObj = JSON.parse(cleanStr);
-		var d = new Date();
-		var updateUTCTimeStamp = parseInt(Date.parse(new Date(cleanObj['HeWeather data service 3.0'][0].basic.update.utc)));
-		var localUTCTime = d.getUTCFullYear() + '-' + (d.getUTCMonth() + 1) + '-' + d.getUTCDate() + ' ' + d.getUTCHours() + ':' + d.getUTCMinutes();
-		var localUTCTimeStamp = parseInt(Date.parse(localUTCTime));
-		if (localUTCTimeStamp > (updateUTCTimeStamp + 3600000)) {
-			updateObj = updateIndexWeatherInfo();
-			indexWeatherInfoHandler(updateObj);
-			return updateObj;
-		} else {
-			console.log('Do with cache')
-			indexWeatherInfoHandler(cleanObj);
-			return cleanObj;
-		}
-	} else {
-		updateObj = updateIndexWeatherInfo();
-		indexWeatherInfoHandler(updateObj);
-		return updateObj;
-	}
-}
+
 
 function updateIndexWeatherInfo() {
 	console.log('Weather info need update');

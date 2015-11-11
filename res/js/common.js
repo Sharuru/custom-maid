@@ -42,6 +42,35 @@ function getJsonObj(reqUrl) {
 	return returnData;
 }
 
+//获得本地天气信息
+function getIndexWeatherInfo() {
+	var localStorage = window.localStorage;
+	if (localStorage.getItem('cachedWeatherInfo') != null) {
+		//本地存在缓存天气记录
+		console.log('Weather info have cache.');
+		//取出记录
+		var localObj = localStorage.getItem('cachedWeatherInfo')
+		var updateObj;
+		var cleanStr = JSON.stringify(localObj).replace(/\\/g, '');
+		cleanStr = cleanStr.substr(1, cleanStr.length - 2);
+		var cleanObj = JSON.parse(cleanStr);
+		var d = new Date();
+		var updateUTCTimeStamp = parseInt(Date.parse(new Date(cleanObj['HeWeather data service 3.0'][0].basic.update.utc)));
+		var localUTCTime = d.getUTCFullYear() + '-' + (d.getUTCMonth() + 1) + '-' + d.getUTCDate() + ' ' + d.getUTCHours() + ':' + d.getUTCMinutes();
+		var localUTCTimeStamp = parseInt(Date.parse(localUTCTime));
+		if (localUTCTimeStamp > (updateUTCTimeStamp + 3600000)) {
+			updateObj = updateIndexWeatherInfo();
+			return updateObj;
+		} else {
+			console.log('Do with cache')
+			return cleanObj;
+		}
+	} else {
+		updateObj = updateIndexWeatherInfo();
+		return updateObj;
+	}
+}
+
 function getLocation() {
 	//TODO: 虚拟机调试不能使用百度 SDK 应当使用 GPS 模拟
 	// 使用百度地图地位模块获取位置信息

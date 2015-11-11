@@ -2,10 +2,8 @@
 function setLifeWeatherInfo() {
 	//缓存检测与读取
 	console.log('In setLifeWeatherInfo');
-		var respObj = window.localStorage.getItem('cachedWeatherInfo');
-		console.log(JSON.stringify(respObj));
-		lifeWeatherInfoHandler(respObj);
-		//mui.toast('天气信息更新完成');
+	var respObj = getIndexWeatherInfo();
+	lifeWeatherInfoHandler(respObj);
 }
 
 function lifeWeatherInfoHandler(jsonObj) {
@@ -56,32 +54,32 @@ function lifeWeatherInfoHandler(jsonObj) {
 	document.getElementById('secondDayAfterTem').innerText = secondDayMinTmp + '℃/' + secondDayMaxTmp + '℃';
 	document.getElementById('lastDayAfterTem').innerText = lastDayMinTmp + '℃/' + lastDayMaxTmp + '℃';
 	//设置天气小图标
-	setLifeWeatherIcon(nowCond,'theDayNowIcon');
+	setLifeWeatherIcon(nowCond, 'theDayNowIcon');
 	if (d.getHours() < firstDaySS) {
-		setLifeWeatherIcon(firstDayCondDay,'firstDayAfterIcon');
+		setLifeWeatherIcon(firstDayCondDay, 'firstDayAfterIcon');
 	} else {
-		setLifeWeatherIcon(firstDayCondNight,'firstDayAfterIcon');
+		setLifeWeatherIcon(firstDayCondNight, 'firstDayAfterIcon');
 	}
 	if (d.getHours() < secondDaySS) {
-		setLifeWeatherIcon(secondDayCondDay,'secondDayAfterIcon');
+		setLifeWeatherIcon(secondDayCondDay, 'secondDayAfterIcon');
 	} else {
-		setLifeWeatherIcon(secondDayCondNight,'secondDayAfterIcon');
+		setLifeWeatherIcon(secondDayCondNight, 'secondDayAfterIcon');
 	}
 	if (d.getHours() < lastDaySS) {
-		setLifeWeatherIcon(lastDayCondDay,'lastDayAfterIcon');
+		setLifeWeatherIcon(lastDayCondDay, 'lastDayAfterIcon');
 	} else {
-		setLifeWeatherIcon(lastDayCondNight,'lastDayAfterIcon');
+		setLifeWeatherIcon(lastDayCondNight, 'lastDayAfterIcon');
 	}
 	//设置背景图片
-	setLifeWeatherBackground(nowCond,'todayWeatherPicture');
+	setLifeWeatherBackground(nowCond, 'todayWeatherPicture');
 }
 
 //设置天气小图标
-function setLifeWeatherIcon(cond,eleId){
+function setLifeWeatherIcon(cond, eleId) {
 	document.getElementById(eleId).src = '../' + getWeatherIconSrc(cond);
 }
 
 //设置背景图片
-function setLifeWeatherBackground(cond, eleId){
-	document.getElementById(eleId).style.backgroundImage = 'url(../' + getWeatherBackgroundImageSrc(cond)+')'
+function setLifeWeatherBackground(cond, eleId) {
+	document.getElementById(eleId).style.backgroundImage = 'url(../' + getWeatherBackgroundImageSrc(cond) + ')'
 }
