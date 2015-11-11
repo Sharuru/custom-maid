@@ -10,8 +10,12 @@ function setIndexWeatherInfo() {
 		var cleanStr = JSON.stringify(localObj).replace(/\\/g, '');
 		cleanStr = cleanStr.substr(1, cleanStr.length - 2);
 		var cleanObj = JSON.parse(cleanStr);
-		var last = localStorage.getItem('cachedWeatherInfoUpdateTime')
-		if (parseInt(new Date().getTime()) > (parseInt(last) + 3600000)) {
+		var d = new Date();
+		var updateUTCTimeStamp = parseInt(Date.parse(new Date(cleanObj['HeWeather data service 3.0'][0].basic.update.utc)));
+		var localUTCTime = d.getUTCFullYear() + '-' + (d.getUTCMonth() + 1) + '-' + d.getUTCDate() + ' ' + d.getUTCHours() + ':' + d.getUTCMinutes();
+		var localUTCTimeStamp = parseInt(Date.parse(localUTCTime));
+		console.log(localUTCTimeStamp > (parseInt(updateUTCTimeStamp) + 3600000));
+		if (localUTCTimeStamp > (updateUTCTimeStamp + 3600000)) {
 			getIndexWeatherInfo();
 		} else {
 			console.log('Do with cache')
@@ -33,9 +37,6 @@ function getIndexWeatherInfo() {
 		mui.toast('天气信息更新完成');
 		//写入本地缓存
 		localStorage.setItem('cachedWeatherInfo', JSON.stringify(respObj));
-		//写入更新信息
-		localStorage.setItem('cachedWeatherInfoUpdateTime', new Date().getTime());
-		console.log('Update time: ' + localStorage.getItem('cachedWeatherInfoUpdateTime'));
 	} else {
 		mui.toast('天气信息获取失败！');
 	}
