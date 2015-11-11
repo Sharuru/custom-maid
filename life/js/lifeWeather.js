@@ -83,180 +83,24 @@ function lifeWeatherInfoHandler(jsonObj) {
 	document.getElementById('firstDayAfterTem').innerText = firstDayMinTmp + '℃/' + firstDayMaxTmp + '℃';
 	document.getElementById('secondDayAfterTem').innerText = secondDayMinTmp + '℃/' + secondDayMaxTmp + '℃';
 	document.getElementById('lastDayAfterTem').innerText = lastDayMinTmp + '℃/' + lastDayMaxTmp + '℃';
-	switch (nowCond) {
-		case '晴':
-			document.getElementById('theDayNowIcon').src = "../res/images/sun.png";
-			break;
-		case '多云':
-			document.getElementById('theDayNowIcon').src = "../res/images/cloudy.png";
-			break;
-		case '阴':
-			document.getElementById('theDayNowIcon').src = "../res/images/overcast.png";
-			break;
-		case '小雨':
-			document.getElementById('theDayNowIcon').src = "../res/images/spitRain.png";
-			break;
-		case '中雨':
-			document.getElementById('theDayNowIcon').src = "../res/images/moderateRain.png";
-			break;
-		case '大雨':
-			document.getElementById('theDayNowIcon').src = "../res/images/heavyRain.png";
-			break;
-		default:
-			break;
-	}
+	getImageSrc(nowCond,'theDayNowIcon');
 	if (d.getHours() < firstDaySS) {
-		switch (firstDayCondDay) {
-			case '晴':
-				document.getElementById('firstDayAfterIcon').src = "../res/images/sun.png";
-				break;
-			case '多云':
-				document.getElementById('firstDayAfterIcon').src = "../res/images/cloudy.png";
-				break;
-			case '阴':
-				document.getElementById('firstDayAfterIcon').src = "../res/images/overcast.png";
-				break;
-			case '小雨':
-				document.getElementById('firstDayAfterIcon').src = "../res/images/spitRain.png";
-				break;
-			case '中雨':
-				document.getElementById('firstDayAfterIcon').src = "../res/images/moderateRain.png";
-				break;
-			case '大雨':
-				document.getElementById('firstDayAfterIcon').src = "../res/images/heavyRain.png";
-				break;
-			default:
-				break;
-		}
+		getImageSrc(firstDayCondDay,'firstDayAfterIcon');
 	} else {
-		switch (firstDayCondNight) {
-			case '晴':
-				document.getElementById('firstDayAfterIcon').src = "../res/images/sun.png";
-				break;
-			case '多云':
-				document.getElementById('firstDayAfterIcon').src = "../res/images/cloudy.png";
-				break;
-			case '阴':
-				document.getElementById('firstDayAfterIcon').src = "../res/images/overcast.png";
-				break;
-			case '小雨':
-				document.getElementById('firstDayAfterIcon').src = "../res/images/spitRain.png";
-				break;
-			case '中雨':
-				document.getElementById('firstDayAfterIcon').src = "../res/images/moderateRain.png";
-				break;
-			case '大雨':
-				document.getElementById('firstDayAfterIcon').src = "../res/images/heavyRain.png";
-				break;
-			default:
-				break;
-		}
+		getImageSrc(firstDayCondNight,'firstDayAfterIcon');
 	}
 	if (d.getHours() < secondDaySS) {
-		switch (secondDayCondDay) {
-			case '晴':
-				document.getElementById('secondDayAfterIcon').src = "../res/images/sun.png";
-				break;
-			case '多云':
-				document.getElementById('secondDayAfterIcon').src = "../res/images/cloudy.png";
-				break;
-			case '阴':
-				document.getElementById('secondDayAfterIcon').src = "../res/images/overcast.png";
-				break;
-			case '小雨':
-				document.getElementById('secondDayAfterIcon').src = "../res/images/spitRain.png";
-				break;
-			case '中雨':
-				document.getElementById('secondDayAfterIcon').src = "../res/images/moderateRain.png";
-				break;
-			case '大雨':
-				document.getElementById('secondDayAfterIcon').src = "../res/images/heavyRain.png";
-				break;
-			default:
-				break;
-		}
+		getImageSrc(secondDayCondDay,'secondDayAfterIcon');
 	} else {
-		switch (secondDayCondNight) {
-			case '晴':
-				document.getElementById('secondDayAfterIcon').src = "../res/images/sun.png";
-				break;
-			case '多云':
-				document.getElementById('secondDayAfterIcon').src = "../res/images/cloudy.png";
-				break;
-			case '阴':
-				document.getElementById('secondDayAfterIcon').src = "../res/images/overcast.png";
-				break;
-			case '小雨':
-				document.getElementById('secondDayAfterIcon').src = "../res/images/spitRain.png";
-				break;
-			case '中雨':
-				document.getElementById('secondDayAfterIcon').src = "../res/images/moderateRain.png";
-				break;
-			case '大雨':
-				document.getElementById('secondDayAfterIcon').src = "../res/images/heavyRain.png";
-				break;
-			default:
-				break;
-		}
+		getImageSrc(secondDayCondNight,'secondDayAfterIcon');
 	}
 	if (d.getHours() < lastDaySS) {
-		switch (lastDayCondDay) {
-			case '晴':
-				document.getElementById('lastDayAfterIcon').src = "../res/images/sun.png";
-				break;
-			case '多云':
-				document.getElementById('lastDayAfterIcon').src = "../res/images/cloudy.png";
-				break;
-			case '阴':
-				document.getElementById('lastDayAfterIcon').src = "../res/images/overcast.png";
-				break;
-			case '小雨':
-				document.getElementById('lastDayAfterIcon').src = "../res/images/spitRain.png";
-				break;
-			case '中雨':
-				document.getElementById('lastDayAfterIcon').src = "../res/images/moderateRain.png";
-				break;
-			case '大雨':
-				document.getElementById('lastDayAfterIcon').src = "../res/images/heavyRain.png";
-				break;
-			default:
-				break;
-		}
+		getImageSrc(lastDayCondDay,'lastDayAfterIcon');
 	} else {
-		switch (lastDayCondNight) {
-			case '晴':
-				document.getElementById('lastDayAfterIcon').src = "../res/images/sun.png";
-				break;
-			case '多云':
-				document.getElementById('lastDayAfterIcon').src = "../res/images/cloudy.png";
-				break;
-			case '阴':
-				document.getElementById('lastDayAfterIcon').src = "../res/images/overcast.png";
-				break;
-			case '小雨':
-				document.getElementById('lastDayAfterIcon').src = "../res/images/spitRain.png";
-				break;
-			case '中雨':
-				document.getElementById('lastDayAfterIcon').src = "../res/images/moderateRain.png";
-				break;
-			case '大雨':
-				document.getElementById('lastDayAfterIcon').src = "../res/images/heavyRain.png";
-				break;
-			default:
-				break;
-		}
+		getImageSrc(lastDayCondNight,'lastDayAfterIcon');
 	}
 	//设置背景图片
-	switch (nowCond) {
-		case '阴':
-			document.getElementById('todayWeatherDetail').style.backgroundImage = "url(res/images/weatherBackgroundOvercast.jpg)";
-			break;
-		case '雾':
-			document.getElementById('todayWeatherDetail').style.backgroundImage = "url(res/images/weatherBackgroundFog.jpg)";
-			break;
-		default:
-			break;
-	}
+	getBackgroundImage(nowCond,'todayWeatherPicture');
 }
 
 //获取天气信息
