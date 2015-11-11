@@ -7,6 +7,9 @@ function getWeatherInfo(reqCity) {
 
 // 获得星期
 function getWeekday(day) {
+	if (day > 6) {
+		day = day - 7;
+	}
 	var weekDays = new Array("周日", "周一", "周二", "周三", "周四", "周五", "周六");
 	return weekDays[day];
 }
