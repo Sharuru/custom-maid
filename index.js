@@ -11,7 +11,7 @@ function setIndexWeatherInfo() {
 		cleanStr = cleanStr.substr(1, cleanStr.length - 2);
 		var cleanObj = JSON.parse(cleanStr);
 		var last = localStorage.getItem('cachedWeatherInfoUpdateTime')
-		if (parseInt(new Date().getTime()) > (parseInt(last)+3600000)) {
+		if (parseInt(new Date().getTime()) > (parseInt(last) + 3600000)) {
 			getIndexWeatherInfo();
 		} else {
 			console.log('Do with cache')

@@ -8,10 +8,12 @@
 				left: 15px !important;
 				width: 50% !important;
 			}
+			
 			.mui-bar-nav {
 				height: 55px;
 				background-color: #C91423;
 			}
+			
 			.maid-nav-main {
 				width: auto;
 				height: auto;
@@ -19,42 +21,50 @@
 				text-align: center;
 				overflow: hidden;
 			}
+			
 			.maid-nav-sub {
 				float: left;
 				width: 25%;
 				background: white;
 			}
+			
 			.maid-nav-title {
 				margin-top: 2px;
 				margin-bottom: 0px;
 				font-size: 14px;
 				color: black;
 			}
+			
 			.maid-nav-icon {
 				margin-top: 10px;
 				width: 50px;
 				height: 50px;
 			}
+			
 			.mui-content {
 				font-family: "微软雅黑";
 				overflow: hidden !important;
 			}
+			
 			.mui-tab-label {
 				font-size: 12px;
 				line-height: 10px;
 				margin-top: -3px;
 				padding-bottom: 18px;
 			}
+			
 			.mui-bar-tab {
 				background: #333333;
 				border-top: 4px solid #C91423;
 			}
+			
 			.maid-weather-content {
 				width: auto;
 				height: 100%;
 				color: white;
 				overflow: hidden;
 			}
+			
 			.maid-today-weather-detail {
 				width: auto;
 				height: 85%;
@@ -63,6 +73,7 @@
 				margin-top: -8px;
 				position: relative;
 			}
+			
 			.copyright-layer {
 				font-size: 12px;
 				padding-left: 22px;
@@ -74,6 +85,7 @@
 				bottom: 0;
 				z-index: 1;
 			}
+			
 			.shadow-top-layer {
 				margin-top: 210px;
 				position: absolute;
@@ -88,6 +100,7 @@
 				-khtml-opacity: 0.5;
 				opacity: 0.5;
 			}
+			
 			.maid-today-weather-text {
 				margin-top: 210px;
 				position: absolute;
