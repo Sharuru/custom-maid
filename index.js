@@ -14,7 +14,6 @@ function setIndexWeatherInfo() {
 		var updateUTCTimeStamp = parseInt(Date.parse(new Date(cleanObj['HeWeather data service 3.0'][0].basic.update.utc)));
 		var localUTCTime = d.getUTCFullYear() + '-' + (d.getUTCMonth() + 1) + '-' + d.getUTCDate() + ' ' + d.getUTCHours() + ':' + d.getUTCMinutes();
 		var localUTCTimeStamp = parseInt(Date.parse(localUTCTime));
-		console.log(localUTCTimeStamp > (parseInt(updateUTCTimeStamp) + 3600000));
 		if (localUTCTimeStamp > (updateUTCTimeStamp + 3600000)) {
 			getIndexWeatherInfo();
 		} else {
