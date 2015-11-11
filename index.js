@@ -65,22 +65,7 @@ function indexWeatherInfoHandler(jsonObj) {
 	document.getElementById('todayPm25').innerText = todayPm25;
 	document.getElementById('updateTime').innerText = '更新时间：' + updateTime;
 	//设置背景图片
-	switch (nowCond) {
-		case '阴':
-			document.getElementById('todayWeatherDetail').style.backgroundImage = "url(res/images/weatherBackgroundOvercast.jpg)";
-			break;
-		case '雾':
-			document.getElementById('todayWeatherDetail').style.backgroundImage = "url(res/images/weatherBackgroundFog.jpg)";
-			break;
-		case '晴':
-			document.getElementById('todayWeatherDetail').style.backgroundImage = "url(res/images/weatherBackgroundSunny.png)";
-			break;
-		case '多云':
-			document.getElementById('todayWeatherDetail').style.backgroundImage = "url(res/images/weatherBackgroundCloudy.jpg)";
-			break;
-		default:
-			break;
-	}
+	setBackgroundImage(nowCond, 'todayWeatherDetail');
 }
 
 function afterLoad() {
