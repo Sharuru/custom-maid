@@ -22,7 +22,7 @@
 						id: 'lifeMain',
 					});
 				});
-				setLifeWeatherInfo();
+				setAirQualityInfo();
 			});
 			window.addEventListener('tap', function() {
 				console.log('resize');
@@ -76,31 +76,38 @@
 				color: red !important;
 				border-bottom: 2px solid red !important;
 			}
-			.weather-content-layer {
+			.air-quality-content {
 				width: auto;
 				height: 100%;
 				overflow: hidden;
 			}
-			.weather-picture {
+			.background-picture {
 				margin-top: -30px;
 				width: auto;
 				height: 100%;
-				background: lightblue;
+				background: url(../res/images/airBackground.png);
 				background-size: cover;
 				background-position: center;
 				position: relative;
 			}
-			.weather-detail {
+			.air-quality-detail {
 				position: absolute;
 				left: 0;
-				top: 100px;
+				top: 80px;
 				width: 100%;
-				height: 280px;
+				height: auto;
 				z-index: 1;
 				color: white;
 				overflow: hidden;
 			}
-			.shadow-top-layer {
+			.copyright-updateTime {
+				margin-top: 10px;
+				width: 100%;
+				height: auto;
+				color: white;
+				overflow: hidden;
+			}
+			/*.shadow-top-layer {
 				margin-top: 30px;
 				position: absolute;
 				top: 0;
@@ -142,16 +149,6 @@
 				-khtml-opacity: 0.5;
 				opacity: 0.5;
 			}
-			.copyright-updateTime {
-				position: absolute;
-				right: 0;
-				bottom: 125px;
-				width: 100%;
-				height: auto;
-				z-index: 1;
-				color: white;
-				overflow: hidden;
-			}
 			.shadow-left {
 				margin-bottom: 20px;
 				position: absolute;
@@ -169,7 +166,7 @@
 				color: white;
 				font-size: 14px;
 				text-align: center;
-			}
+			}*/
 		</style>
 	</head>
 
@@ -187,61 +184,38 @@
 				</div>
 				<div class="col-line"></div>
 			</div>
-			<div class="weather-content-layer">
-				<div class="weather-picture">
-					<div class="shadow-top-layer"></div>
-					<div class="label-style">
-						<img src="../res/images/homeNavIcon.png" height="12px" width="17px" />&nbsp;
-						<label>上海</label>
-					</div>
-					<div class="weather-detail">
-						<div>&nbsp;</div>
-						<div>实时空气质量指数</div>
-						<div>
-							<span style="font-size:42px;padding-left: 20px;" id='nowTmp'>加载中...</span>
-							<span style="font-size:14px;padding-left: 5px;" id='todayTmp'>加载中...</span>
+			<div class="air-quality-content">
+				<div class="background-picture">
+					<div class="air-quality-detail">
+						<div style="padding-top: 5px;padding-left: 20px;font-size: 24px;">
+							<span>实时空气质量指数</span>
 						</div>
-						<div style="margin-top: 10px;">
-							<span style="font-size:20px;padding-left: 22px;" id='nowCond'>加载中...</span>
+						<div style="margin-top: 30px;">
+							<span style="font-size:40px;padding-left: 20px;">加载中...</span>
+							<span style="font-size:14px;padding-left: 5px;">加载中...</span>
 						</div>
-						<div style="font-size:12px;margin-top: 5px;padding-left: 22px;padding-top:0px;" id='today'>加载中...</div>
-						<div>
-							<span style="font-size:12px;padding-left: 22px;" id='nowWind'>加载中...</span>
+						<div style="margin-top: 25px;">
+							<table border="0" cellpadding="0" cellspacing="0" style="margin-left: 20px;width: 75%;font-size: 12px;text-align: center;">
+								<tr>
+									<td width="17%">PM10</td>
+									<td width="17%">PM2.5</td>
+									<td width="17%">NO2</td>
+									<td width="17%">SO2</td>
+									<td width="16%">O3</td>
+									<td width="16%">CO</td>
+								</tr>
+								<tr style="background: lightblue;">
+									<td>PM10</td>
+									<td>PM2.5</td>
+									<td>NO2</td>
+									<td>SO2</td>
+									<td>O3</td>
+									<td>CO</td>
+								</tr>
+							</table>
 						</div>
-						<div style="font-size:12px;padding-left: 22px;" id='nowHum'>加载中...</div>
-					</div>
-					<div class="copyright-updateTime">
-						<div style="float:right;font-size:12px;padding-right: 22px;" id='updateTime'>加载中...</div>
-					</div>
-					<div class="shadow-bottom-layer"></div>
-					<div class="shadow-left">
-						<div class="daily-weather">
-							<div style="margin-top: 4px;" id="theDayNow">加载中...</div>
-							<div style="margin-top: 1px;">
-								<img src="" width="40px" height="40px" id="theDayNowIcon" />
-							</div>
-							<div style="margin-top: -3px;" id="theDayNowTem">加载中...</div>
-						</div>
-						<div class="daily-weather">
-							<div style="margin-top: 4px;" id="firstDayAfter">加载中...</div>
-							<div style="margin-top: 1px;">
-								<img src="" width="40px" height="40px" id="firstDayAfterIcon" />
-							</div>
-							<div style="margin-top: -3px;" id="firstDayAfterTem">加载中...</div>
-						</div>
-						<div class="daily-weather">
-							<div style="margin-top: 4px;" id="secondDayAfter">加载中...</div>
-							<div style="margin-top: 1px;">
-								<img src="" width="40px" height="40px" id="secondDayAfterIcon" />
-							</div>
-							<div style="margin-top: -3px;" id="secondDayAfterTem">加载中...</div>
-						</div>
-						<div class="daily-weather">
-							<div style="margin-top: 4px;" id="lastDayAfter">加载中...</div>
-							<div style="margin-top: 1px;">
-								<img width="40px" height="40px" id="lastDayAfterIcon" />
-							</div>
-							<div style="margin-top: -3px;" id="lastDayAfterTem">加载中...</div>
+						<div class="copyright-updateTime">
+							<div style="font-size:12px;padding-left: 20px;" id='updateTime'>加载中...</div>
 						</div>
 					</div>
 				</div>

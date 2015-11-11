@@ -64,15 +64,24 @@
 				overflow: hidden;
 			}
 			
-			.col-line {
+			.col-line-left {
 				margin-top: 18px;
-				width: 33.3%;
+				width: 3%;
 				height: 26px;
 				position: absolute;
 				top: 0;
 				left: 33.3%;
 				z-index: 1;
 				border-left: solid #CCCCCC 1px;
+			}
+			.col-line-right{
+				margin-top: 18px;
+				width: 3%;
+				height: 26px;
+				position: absolute;
+				top: 0;
+				right: 33.3%;
+				z-index: 1;
 				border-right: solid #CCCCCC 1px;
 			}
 			
@@ -197,11 +206,12 @@
 		<div class="mui-content mui-scroll-wrapper">
 			<div class="weather-tab-layer">
 				<div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-					<a class="mui-control-item ">本地多天</a>
+					<a class="mui-control-item mui-active">本地多天</a>
 					<a class="mui-control-item">多地当天</a>
 					<a class="mui-control-item">本地空气质量</a>
 				</div>
-				<div class="col-line"></div>
+				<div class="col-line-left"></div>
+				<div class="col-line-right"></div>
 			</div>
 			<div class="weather-content-layer">
 				<div class="weather-picture" id="todayWeatherPicture">
@@ -220,11 +230,11 @@
 						<div style="margin-top: 10px;">
 							<span style="font-size:20px;padding-left: 22px;" id='nowCond'>加载中...</span>
 						</div>
-						<div style="font-size:12px;margin-top: 5px;padding-left: 22px;padding-top:0px;" id='today'>加载中...</div>
+						<div style="font-size:14px;margin-top: 5px;padding-left: 22px;padding-top:0px;" id='today'>加载中...</div>
 						<div>
-							<span style="font-size:12px;padding-left: 22px;" id='nowWind'>加载中...</span>
+							<span style="font-size:14px;padding-left: 22px;" id='nowWind'>加载中...</span>
 						</div>
-						<div style="font-size:12px;padding-left: 22px;" id='nowHum'>加载中...</div>
+						<div style="font-size:14px;padding-left: 22px;" id='nowHum'>加载中...</div>
 					</div>
 					<div class="copyright-updateTime">
 						<div style="float:right;font-size:12px;padding-right: 22px;" id='updateTime'>加载中...</div>
@@ -232,31 +242,35 @@
 					<div class="shadow-bottom-layer"></div>
 					<div class="shadow-left">
 						<div class="daily-weather">
-							<div style="margin-top: 4px;" id="theDayNow">加载中...</div>
-							<div style="margin-top: 1px;">
+							
+							<div style="margin-top: 10px;">
 								<img src="" width="40px" height="40px" id="theDayNowIcon" />
 							</div>
+							<div id="theDayNow">加载中...</div>
 							<div style="margin-top: -3px;" id="theDayNowTem">加载中...</div>
 						</div>
 						<div class="daily-weather">
-							<div style="margin-top: 4px;" id="firstDayAfter">加载中...</div>
-							<div style="margin-top: 1px;">
+							
+							<div style="margin-top: 10px;">
 								<img src="" width="40px" height="40px" id="firstDayAfterIcon" />
 							</div>
+							<div id="firstDayAfter">加载中...</div>
 							<div style="margin-top: -3px;" id="firstDayAfterTem">加载中...</div>
 						</div>
 						<div class="daily-weather">
-							<div style="margin-top: 4px;" id="secondDayAfter">加载中...</div>
-							<div style="margin-top: 1px;">
+			
+							<div style="margin-top: 10px;">
 								<img src="" width="40px" height="40px" id="secondDayAfterIcon" />
 							</div>
+							<div id="secondDayAfter">加载中...</div>
 							<div style="margin-top: -3px;" id="secondDayAfterTem">加载中...</div>
 						</div>
 						<div class="daily-weather">
-							<div style="margin-top: 4px;" id="lastDayAfter">加载中...</div>
-							<div style="margin-top: 1px;">
+							
+							<div style="margin-top: 10px;">
 								<img width="40px" height="40px" id="lastDayAfterIcon" />
 							</div>
+							<div id="lastDayAfter">加载中...</div>
 							<div style="margin-top: -3px;" id="lastDayAfterTem">加载中...</div>
 						</div>
 					</div>
