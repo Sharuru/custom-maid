@@ -17,7 +17,7 @@ function getWeekday(day) {
 function setImageSrc(compareElement, elementId) {
 	switch (compareElement) {
 		case '晴':
-			document.getElementById(elementId).src = "../res/images/sun.png";
+			document.getElementById(elementId).src = "res/images/sun.png";
 			break;
 		case '多云':
 			document.getElementById(elementId).src = "../res/images/cloudy.png";
