@@ -166,16 +166,12 @@
 				background: url(../res/images/backPattern.jpg);
 				position: relative;
 			}
-			.mui-scroll-wrapper {
-				position: absolute !important;
-				top: 280px !important;
-				left: 0 !important;
-				width: 100% !important;
-				height: auto !important;
-				overflow: hidden !important;
-			}
-			.mui-slider-indicator {
-				padding-bottom: -5px;
+			.recommend-scroll {
+				width: auto;
+				height: 100%;
+				overflow-y: auto;
+				overflow-x: visible;
+				-webkit-overflow-scrolling: touch;
 			}
 			.recommend-layer {
 				width: auto;
@@ -222,7 +218,7 @@
 			<a class="mui-icon mui-icon-left-nav mui-pull-left" id='btnGoBack'></a>
 			<h1 class="mui-title"><b>生活</b></h1>
 		</header>
-		<div id="maidContent" class="mui-content">
+		<div id="maidContent" class="mui-content mui-scroll-wrapper">
 			<div class="maid-title-main">
 				<div class="otherTitleType" id='btnGoLifeFood'>美食</div>
 				<div class="midTitleType" id='btnGoLifeFact'>周边设施</div>
@@ -289,9 +285,7 @@
 			<div class="tabLitleTitle">热门推荐</div>
 
 			<div class="recommend-main">
-			</div>
-			<div class="mui-scroll-wrapper">
-				<div class="mui-scroll">
+				<div class="recommend-scroll">
 					<div class="recommend-layer">
 						<div class="recommend-picture-layer">
 							<input class="recommend-picture" type="image"></input>
