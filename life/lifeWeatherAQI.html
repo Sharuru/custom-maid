@@ -22,6 +22,18 @@
 						id: 'lifeMain',
 					});
 				});
+				document.getElementById('btnCitysWeather').addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'lifeWeatherCitys.html',
+						id: 'lifeWeatherCitys',
+					});
+				});
+				document.getElementById('btnLocalWeather').addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'lifeWeather.html',
+						id: 'lifeWeather',
+					});
+				});
 				setAirQualityInfo();
 			});
 			window.addEventListener('tap', function() {
@@ -93,7 +105,7 @@
 			.air-quality-detail {
 				position: absolute;
 				left: 0;
-				top: 80px;
+				top: 70px;
 				width: 100%;
 				height: auto;
 				z-index: 1;
@@ -178,8 +190,8 @@
 		<div class="mui-content mui-scroll-wrapper">
 			<div class="weather-tab-layer">
 				<div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-					<a class="mui-control-item">本地多天</a>
-					<a class="mui-control-item">多地当天</a>
+					<a id="btnLocalWeather" class="mui-control-item">本地多天</a>
+					<a id="btnCitysWeather" class="mui-control-item">多地当天</a>
 					<a class="mui-control-item mui-active">本地空气质量</a>
 				</div>
 				<div class="col-line"></div>
@@ -191,8 +203,8 @@
 							<span>实时空气质量指数</span>
 						</div>
 						<div style="margin-top: 30px;">
-							<span style="font-size:40px;padding-left: 20px;">加载中...</span>
-							<span style="font-size:14px;padding-left: 5px;">加载中...</span>
+							<span style="font-size:40px;padding-left: 20px;" id="intAQIData">加载中...</span>
+							<span style="font-size:14px;padding-left: 5px;" id="strAQIData">加载中...</span>
 						</div>
 						<div style="margin-top: 25px;">
 							<table border="0" cellpadding="0" cellspacing="0" style="margin-left: 20px;width: 75%;font-size: 12px;text-align: center;">
@@ -205,12 +217,12 @@
 									<td width="16%">CO</td>
 								</tr>
 								<tr style="background: lightblue;">
-									<td>PM10</td>
-									<td>PM2.5</td>
-									<td>NO2</td>
-									<td>SO2</td>
-									<td>O3</td>
-									<td>CO</td>
+									<td id="AQIDataPM">--</td>
+									<td id="AQIDataP">--</td>
+									<td id="AQIDataNO">--</td>
+									<td id="AQIDataSO">--</td>
+									<td id="AQIDataO">--</td>
+									<td id="AQIDataCO">--</td>
 								</tr>
 							</table>
 						</div>

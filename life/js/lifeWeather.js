@@ -6,6 +6,13 @@ function setLifeWeatherInfo() {
 	lifeWeatherInfoHandler(respObj);
 }
 
+function setAirQualityInfo() {
+	//缓存检测与读取
+	console.log('In setLifeWeatherInfo');
+	var respObj = getIndexWeatherInfo();
+	lifeWeatherAQIHandler(respObj);
+}
+
 function lifeWeatherInfoHandler(jsonObj) {
 	//获得指定数据
 	var updateTime = jsonObj['HeWeather data service 3.0'][0].basic.update.loc;
@@ -72,6 +79,28 @@ function lifeWeatherInfoHandler(jsonObj) {
 	}
 	//设置背景图片
 	setLifeWeatherBackground(nowCond, 'todayWeatherPicture');
+}
+
+function lifeWeatherAQIHandler(jsonObj) {
+	var intAQI = jsonObj['HeWeather data service 3.0'][0].aqi.city.aqi;
+	var strAQI = jsonObj['HeWeather data service 3.0'][0].aqi.city.qlty;
+	var dataPM = jsonObj['HeWeather data service 3.0'][0].aqi.city.pm10;
+	var dataP = jsonObj['HeWeather data service 3.0'][0].aqi.city.pm25;
+	var dataNO = jsonObj['HeWeather data service 3.0'][0].aqi.city.no2;
+	var dataSO = jsonObj['HeWeather data service 3.0'][0].aqi.city.so2;
+	var dataO = jsonObj['HeWeather data service 3.0'][0].aqi.city.o3;
+	var dataCO = jsonObj['HeWeather data service 3.0'][0].aqi.city.co;
+	var updateTime=jsonObj['HeWeather data service 3.0'][0].basic.update.loc;
+	
+	document.getElementById("intAQIData").innerText=intAQI;
+	document.getElementById("strAQIData").innerText=strAQI;
+	document.getElementById("AQIDataPM").innerText=dataPM;
+	document.getElementById("AQIDataP").innerText=dataP;
+	document.getElementById("AQIDataNO").innerText=dataNO;
+	document.getElementById("AQIDataSO").innerText=dataSO;
+	document.getElementById("AQIDataO").innerText=dataO;
+	document.getElementById("AQIDataCO").innerText=dataCO;
+	document.getElementById("updateTime").innerText=updateTime+" 和风天气更新";
 }
 
 //设置天气小图标
