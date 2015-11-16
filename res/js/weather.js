@@ -34,6 +34,9 @@ function getWeatherIconSrc(compareElement) {
 		case '大雨':
 			return '/res/images/heavyRain.png';
 			break;
+		case '阵雨':
+			return 'res/images/showerRain.png';
+			break;
 		default:
 			break;
 	}
@@ -52,6 +55,9 @@ function getWeatherBackgroundImageSrc(compareElement) {
 			break;
 		case '多云':
 			return 'res/images/weatherBackgroundCloudy.jpg';
+			break;
+		case '阵雨':
+			return 'res/images/weatherBackgroundShower.jpg';
 			break;
 		default:
 			break;
