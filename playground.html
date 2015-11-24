@@ -1,0 +1,80 @@
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>Map Example</title>
+		<script type="text/javascript">
+			var em = null,
+				map = null;
+			// H5 plus事件处理
+			if (window.plus) {
+				plusReady();
+			} else {
+				document.addEventListener("plusready", plusReady, false);
+			}
+			// DOMContentloaded事件处理
+			document.addEventListener("DOMContentLoaded", function() {
+				em = document.getElementById("map");
+				plusReady();
+			}, false);
+
+			function plusReady() {
+				// 确保DOM解析完成
+				if (!em || !window.plus || map) {
+					return
+				};
+				map = new plus.maps.Map("map");
+				alert('ready');
+				plus.geolocation.getCurrentPosition(function(p) {
+					alert("Geolocation\nLatitude:" + p.coords.latitude + "\nLongitude:" + p.coords.longitude + "\nAltitude:" + p.coords.altitude);
+					setTimeout(function() {
+						map.setCenter(new plus.maps.Point(p.coords.longitude, p.coords.latitude));
+						map.setZoom(16);
+						map.setTraffic(true);
+						var searchObj = new plus.maps.Search(map);
+						var pt = new plus.maps.Point(p.coords.longitude, p.coords.latitude);
+						searchObj.poiSearchNearBy("便利店", pt, 5000);
+						searchObj.onPoiSearchComplete = function(state, result) {
+							console.log("onPoiSearchComplete: " + state + " , " + result.currentNumber);
+							if (state == 0) {
+								if (result.currentNumber <= 0) {
+									alert("没有检索到结果");
+								}
+								for (var i = 0; i < result.currentNumber; i++) {
+									var pos = result.getPosition(i);
+									var marker = new plus.maps.Marker(pos.point);
+									marker.setLabel(pos.name);
+									map.addOverlay(marker);
+								}
+							} else {
+								alert("检索失败");
+							}
+						}
+					}, 1000);
+				}, function(e) {
+					alert("Geolocation error: " + e.message);
+				}, {
+					provider: 'baidu'
+				});
+				//map.setCenter(new plus.maps.Point( 121.54321,  31.12345));
+			}
+		</script>
+		<style type="text/css">
+			#map {
+				width: 100%;
+				position: fixed;
+				top: 0px;
+				bottom: 0px;
+				line-height: 200px;
+				text-align: center;
+				background: #FFFFFF;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="map" style="height: 50%;">地图加载中...</div>
+	</body>
+
+</html>
