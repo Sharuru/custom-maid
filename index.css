@@ -1,9 +1,14 @@
 .mui-bar-nav {
-	height: 155px;
+	height: 154px;
 	color: white;
 	background: #20428A;
 }
-
+.mui-active{
+	color: #20428A !important;
+}
+.mui-bar-tab{
+	background: #EEEEEE;
+}
 .header-text-line-1 {
 	padding-top: 15px;
 	font-size: 22px;
@@ -17,7 +22,7 @@
 }
 .header-text-line-1-marker{
 	float: right;
-	margin-top: -1px;
+	margin-top: -2px;
 	text-align: right;
 	height: 30px;
 	overflow: hidden;
@@ -36,7 +41,7 @@
 	background: #647BAF;
 	margin-left: -10px;
 	margin-right: -10px;
-	margin-top: 35px;
+	margin-top: 34px;
 }
 
 .header-weather-main {
@@ -56,7 +61,8 @@
 }
 
 .header-weather-main-current-weather-pic {
-	margin-top: 6px;
+	margin-top: 4px;
+	padding-left: 8px;
 	float: left;
 	display: inline;
 	width: auto;
@@ -75,18 +81,17 @@
 
 .header-weather-sub {
 	padding-top: 22px;
-	padding-left: 6px;
+	margin-right: 2px;
 	height:85px;
-	width: 60%;
-	float: left;
+	width: 50%;
+	float: right;
 	display: inline;
 }
 
 .header-weather-forcast {
 	width: 33%;
-	/*margin-left: 20px;*/
 	float: left;
-	display: inline;
+	display: inline-block;
 }
 .header-weather-forcast-pic{
 	text-align: center;
@@ -94,18 +99,18 @@
 	overflow: hidden;
 }
 .adj{
-	padding-top: 5px;
+	padding-top: 6px;
 }
 
 .header-weather-forcast-text {
-	font-size: 10px;
+	font-size: 8px;
 	text-align: center;
 	line-height: 6px;
 	width:auto;
 }
 
 .header-update-time{
+	padding-right: 5px;
 	font-size: 10px;
 	text-align: right;
-	padding-right: 5px;
 }
