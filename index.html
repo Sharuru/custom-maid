@@ -17,16 +17,19 @@
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<div class="header-text-line-1">
-				<span class="header-text-line-1-left">11月17日 星期二</span>
-				<span class="header-text-line-1-right mui-icon iconfont icon-dingwei">上海市</span>
+				<div class="header-text-line-1-left">11月17日 星期二</div>
+				<div class="header-text-line-1-right">上海</div>
+				<div class="header-text-line-1-marker">
+					<img src="res/images/icons/location-mark.png" width="22"></img>
+				</div>
 			</div>
 			<div class="header-weather">
 				<div class="header-weather-main">
 					<div class="header-weather-main-current-temperature">
 						<div><b>16℃</b></div>
 					</div>
-					<div class="header-weather-main-current-weather-icon">
-						<div class="mui-icon iconfont icon-tianqi"></div>
+					<div class="header-weather-main-current-weather-pic">
+						<img src="res/images/icons/weather/rain-with-snow.png" width="50"></img>
 					</div>
 					<div class="header-weather-main-current-weather-text">
 						<div>14℃~18℃</div>
@@ -36,18 +39,27 @@
 				<div class="header-weather-sub">
 					<div class="header-weather-forcast">
 						<div class="header-weather-forcast-text">星期三</div>
-						<div class="mui-icon iconfont icon-tianqi mod1"></div>
+						<div class="header-weather-forcast-pic">
+							<div class="adj"><img src="res/images/icons/weather/rain-with-snow.png" width="25"></img>
+							</div>
+						</div>
 						<div class="header-weather-forcast-text">10℃~11℃</div>
 					</div>
 					<div class="header-weather-forcast">
-						<div class="header-weather-forcast-text">星期四</div>
-						<div class="mui-icon iconfont icon-tianqi mod1"></div>
-						<div class="header-weather-forcast-text">9℃~10℃</div>
+						<div class="header-weather-forcast-text">星期三</div>
+						<div class="header-weather-forcast-pic">
+							<div class="adj"><img src="res/images/icons/weather/rain-with-snow.png" width="25"></img>
+							</div>
+						</div>
+						<div class="header-weather-forcast-text">10℃~11℃</div>
 					</div>
 					<div class="header-weather-forcast">
-						<div class="header-weather-forcast-text">星期五</div>
-						<div class="mui-icon iconfont icon-tianqi mod1"></div>
-						<div class="header-weather-forcast-text">0℃~5℃</div>
+						<div class="header-weather-forcast-text">星期三</div>
+						<div class="header-weather-forcast-pic">
+							<div class="adj"><img src="res/images/icons/weather/rain-with-snow.png" width="25"></img>
+							</div>
+						</div>
+						<div class="header-weather-forcast-text">10℃~11℃</div>
 					</div>
 				</div>
 			</div>
@@ -55,6 +67,24 @@
 				<div>更新时间: 18:00</div>
 			</div>
 		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item mui-active" href="#tabbar">
+				<span class="mui-icon iconfont icon-"></span>
+				<span class="mui-tab-label">主界面</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-chat">
+				<span class="mui-icon mui-icon-chat"></span>
+				<span class="mui-tab-label">天气</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-sms">
+				<span class="mui-icon mui-icon-sms"></span>
+				<span class="mui-tab-label">物流</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-map">
+				<span class="mui-icon iconfont icon-shezhi"></span>
+				<span class="mui-tab-label">设置</span>
+			</a>
+		</nav>
 	</body>
 
 </html>

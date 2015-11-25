@@ -13,16 +13,22 @@
 	float: left;
 	text-align: left;
 	margin-left: 5px;
-	width: 50%;
-	display: inline;
+	display: inline-block;
+}
+.header-text-line-1-marker{
+	float: right;
+	margin-top: -1px;
+	text-align: right;
+	height: 30px;
+	overflow: hidden;
+	display: inline-block;
 }
 
 .header-text-line-1-right {
-	float: left;
+	float: right;
 	text-align: right;
 	margin-right: 5px;
-	width: 50%;
-	display: inline;
+	display: inline-block;
 }
 
 .header-weather {
@@ -36,7 +42,8 @@
 .header-weather-main {
 	padding-top: 15px;
 	padding-left: 15px;
-	width: 35%;
+	height: 85px;
+	width: 40%;
 	float: left;
 	display: inline;
 }
@@ -44,63 +51,61 @@
 .header-weather-main-current-temperature {
 	font-size: 26px;
 	text-align: right;
+	width:55%;
+	float:right;
 }
 
-.header-weather-main-current-weather-icon {
+.header-weather-main-current-weather-pic {
 	margin-top: 6px;
 	float: left;
 	display: inline;
-	width: 30%;
+	width: auto;
 }
 
 .header-weather-main-current-weather-text {
-	margin-top: 6px;
-	float: left;
+	margin-top: 10px;
+	float: right;
 	text-align: right;
 	display: inline;
-	width: 70%;
+	width:55%;
 	font-size: 10px;
+	overflow: hidden;
 	line-height: 13px;
 }
 
 .header-weather-sub {
-	padding-top: 20px;
-	padding-left: 25px;
-	width: 65%;
+	padding-top: 22px;
+	padding-left: 6px;
+	height:85px;
+	width: 60%;
 	float: left;
 	display: inline;
 }
 
 .header-weather-forcast {
-	width: 21%;
-	margin-left: 20px;
+	width: 33%;
+	/*margin-left: 20px;*/
 	float: left;
 	display: inline;
+}
+.header-weather-forcast-pic{
+	text-align: center;
+	height:35px;
+	overflow: hidden;
+}
+.adj{
+	padding-top: 5px;
 }
 
 .header-weather-forcast-text {
 	font-size: 10px;
 	text-align: center;
-	line-height: 12px;
+	line-height: 6px;
+	width:auto;
 }
 
 .header-update-time{
 	font-size: 10px;
 	text-align: right;
-	padding-right: 10px;
-}
-
-.icon-dingwei {
-	line-height: 1px;
-}
-
-.icon-tianqi {
-	line-height: 1px;
-	font-size: 40px !important;
-}
-
-.mod1 {
-	line-height: 1px !important;
-	padding-left: 18px !important;
-	font-size: 25px !important;
+	padding-right: 5px;
 }
