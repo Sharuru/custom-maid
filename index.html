@@ -6,187 +6,55 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
 		<script src="res/js/mui.min.js"></script>
-		<script src="res/js/common.js"></script>
-		<script src="res/index.js"></script>
 		<link href="res/css/mui.min.css" rel="stylesheet" />
 		<link href="res/css/iconfont.css" rel="stylesheet" />
+		<link href="index.css" rel="stylesheet" />
 		<script type="text/javascript" charset="utf-8">
 			mui.init();
 		</script>
-		<style type="text/css">
-			.mui-content {
-				overflow: hidden !important;
-			}
-			
-			.mui-tab-item {
-				padding-top: 5px !important;
-			}
-			
-			.mui-active {
-				color: #20428A !important;
-			}
-			
-			.maid-top-panel {
-				background: #20428A;
-				height: auto;
-				width: auto;
-				position: relative;
-				overflow: hidden;
-			}
-			
-			.maid-localDateTime {
-				float: left;
-				padding-top: 20px;
-				padding-left: 25px;
-				width: auto;
-				color: white;
-				font-size: 22px;
-			}
-			
-			.maid-locationCity {
-				float: right;
-				padding-top: 20px;
-				padding-right: 20px;
-				width: auto;
-				height: auto;
-				color: white;
-				font-size: 22px;
-			}
-			
-			.maid-weather-info-shadow {
-				width: auto;
-				height: 110px;
-				background: white;
-				filter: alpha(opacity=40);
-				-moz-opacity: 0.4;
-				-khtml-opacity: 0.4;
-				opacity: 0.4;
-			}
-			
-			.maid-weather-info {
-				position: absolute;
-				top: 65px;
-				left: 0;
-				width: 100%;
-				height: 110px;
-				overflow: hidden;
-			}
-			
-			.weather-today {
-				float: left;
-				padding-top: 10px;
-				padding-left: 25px;
-				width: 40%;
-				height: 100%;
-				color: white;
-			}
-			
-			.weather-other {
-				float: left;
-				padding-top: 35px;
-				width: 20%;
-				height: 100%;
-				color: white;
-				text-align: center;
-			}
-			
-			.maid-weather-updateTime {
-				padding-top: 2px;
-				padding-right: 15px;
-				height: 25px;
-				width: auto;
-				color: white;
-				text-align: right;
-				font-size: 12px;
-			}
-			
-			.icon-gengxin {
-				font-size: 12px;
-				padding-top: 1px;
-			}
-			
-			.maid-center-panel {
-				width: 100%;
-				height: 100%;
-				background: white;
-				overflow: hidden;
-			}
-			
-			.debug {
-				border: 1px solid #FF0099;
-			}
-		</style>
 	</head>
 
 	<body>
-		<div class="mui-content  mui-scroll-wrapper">
-			<div class="maid-top-panel">
-				<div style="height: 65px;width: auto; ">
-					<div class="maid-localDateTime">11月23号 星期一</div>
-					<div class="maid-locationCity">
-						<span class="mui-icon iconfont icon-dingwei" style="font-size: 24px;"></span>
-						<span>上海</span>
+		<header class="mui-bar mui-bar-nav">
+			<div class="header-text-line-1">
+				<span class="header-text-line-1-left">11月17日 星期二</span>
+				<span class="header-text-line-1-right mui-icon iconfont icon-dingwei">上海市</span>
+			</div>
+			<div class="header-weather">
+				<div class="header-weather-main">
+					<div class="header-weather-main-current-temperature">
+						<div><b>16℃</b></div>
+					</div>
+					<div class="header-weather-main-current-weather-icon">
+						<div class="mui-icon iconfont icon-tianqi"></div>
+					</div>
+					<div class="header-weather-main-current-weather-text">
+						<div>14℃~18℃</div>
+						<div>中雨转大暴雨</div>
 					</div>
 				</div>
-				<div class="maid-weather-info-shadow"></div>
-				<div class="maid-weather-info">
-					<div class="weather-today">
-						<div><span style="font-size: 30px;">17℃</span></div>
-						<div style="float: left;width: auto;">
-							<span class="mui-icon iconfont icon-tianqi" style="font-size: 58px;line-height: 30px;"></span>
-							<span>17℃/14℃</span>
-							<span>阴</span>
-						</div>
+				<div class="header-weather-sub">
+					<div class="header-weather-forcast">
+						<div class="header-weather-forcast-text">星期三</div>
+						<div class="mui-icon iconfont icon-tianqi mod1"></div>
+						<div class="header-weather-forcast-text">10℃~11℃</div>
 					</div>
-					<div class="weather-other">
-						<span style="font-size: 12px;">周三</span>
-						<br />
-						<span class="mui-icon iconfont icon-tianqi" style="font-size: 34px;line-height: 25px;"></span>
-						<br />
-						<span style="font-size: 12px;">17℃/14℃</span>
+					<div class="header-weather-forcast">
+						<div class="header-weather-forcast-text">星期四</div>
+						<div class="mui-icon iconfont icon-tianqi mod1"></div>
+						<div class="header-weather-forcast-text">9℃~10℃</div>
 					</div>
-					<div class="weather-other">
-						<span style="font-size: 12px;">周三</span>
-						<br />
-						<span class="mui-icon iconfont icon-tianqi" style="font-size: 34px;line-height: 25px;"></span>
-						<br />
-						<span style="font-size: 12px;">17℃/14℃</span>
+					<div class="header-weather-forcast">
+						<div class="header-weather-forcast-text">星期五</div>
+						<div class="mui-icon iconfont icon-tianqi mod1"></div>
+						<div class="header-weather-forcast-text">0℃~5℃</div>
 					</div>
-					<div class="weather-other">
-						<span style="font-size: 12px;">周三</span>
-						<br />
-						<span class="mui-icon iconfont icon-tianqi" style="font-size: 34px;line-height: 25px;"></span>
-						<br />
-						<span style="font-size: 12px;">17℃/14℃</span>
-					</div>
-				</div>
-				<div class="debug maid-weather-updateTime">
-					<span class="mui-icon iconfont icon-gengxin"></span>&nbsp;
-					<span>更新于 09:00</span>
 				</div>
 			</div>
-			<div class="maid-center-panel">
-
+			<div class="header-update-time">
+				<div>更新时间: 18:00</div>
 			</div>
-		</div>
-		<nav class="mui-bar mui-bar-tab">
-			<a class="mui-tab-item mui-active">
-				<span class="mui-icon iconfont icon-shouye"></span>
-				<span class="mui-tab-label">首页</span>
-			</a>
-			<a class="mui-tab-item">
-				<span class="mui-icon iconfont icon-tianqi"></span>
-				<span class="mui-tab-label">天气</span>
-			</a>
-			<a class="mui-tab-item">
-				<span class="mui-icon iconfont icon-wuliu"></span>
-				<span class="mui-tab-label">物流</span>
-			</a>
-			<a class="mui-tab-item">
-				<span class="mui-icon iconfont icon-shezhi"></span>
-				<span class="mui-tab-label">设置</span>
-			</a>
-		</nav>
+		</header>
 	</body>
 
 </html>
