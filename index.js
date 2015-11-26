@@ -25,30 +25,39 @@ function setDateTimeHeader() {
 
 function setLocationHeader() {
 	//获得地理位置
-	var fakeLocation = "31.12345,121.54321";
-	//上报获取省市名
-	mui.ajax('http://192.157.231.72:8080/MaidGuild/initialize/modules', {
-		data: {
-			location: fakeLocation
+	var currLocation = "";
+	plus.geolocation.getCurrentPosition(function(p) {
+			currLocation = p.coords.latitude + "," + p.coords.longitude;
+			//上报获取省市名
+			alert(currLocation);
+			mui.ajax('http://192.157.231.72:8080/MaidGuild/initialize/modules', {
+				data: {
+					location: currLocation
+				},
+				dataType: 'json', //服务器返回json格式数据
+				type: 'get', //HTTP请求类型
+				timeout: 10000, //超时时间设置为 10 秒；
+				success: function(data) {
+					//本地保存结果
+					var localStorage = window.localStorage;
+					localStorage.setItem("province", data.province);
+					localStorage.setItem("modules", data.avalModuleList);
+					//赋值
+					document.getElementById('headerLoaction').innerHTML = localStorage.getItem("province");
+					console.log("Modules: " + localStorage.getItem("modules"));
+				},
+				error: function(xhr, type, errorThrown) {
+					//异常处理
+					console.log(type);
+					mui.alert("在连接服务器时发生异常");
+				}
+			});
 		},
-		dataType: 'json', //服务器返回json格式数据
-		type: 'get', //HTTP请求类型
-		timeout: 5000, //超时时间设置为 5 秒；
-		success: function(data) {
-			//本地保存结果
-			var localStorage = window.localStorage;
-			localStorage.setItem("province", data.province);
-			localStorage.setItem("modules", data.avalModuleList);
-			//赋值
-			document.getElementById('headerLoaction').innerHTML = localStorage.getItem("province");
-			console.log("Modules: " + localStorage.getItem("modules"));
-		},
-		error: function(xhr, type, errorThrown) {
-			//异常处理
-			console.log(type);
-			mui.alert("在连接服务器时发生异常");
-		}
-	});
+		function(e) {
+			alert("获取地理位置时发生异常");
+		}, {
+			provider: 'baidu'
+		});
 }
 
 function setIndexWeather() {
@@ -60,14 +69,16 @@ function setIndexWeather() {
 		data: {
 			cityName: currProvince
 		},
+		//async:false,
 		dataType: 'json', //服务器返回json格式数据
 		type: 'get', //HTTP请求类型
-		timeout: 5000, //超时时间设置为 5 秒；
+		timeout: 10000, //超时时间设置为 10 秒；
 		success: function(data) {
 			//本地保存结果
 			//TODO: 本地缓存
 			localStorage.setItem("weatherJson", JSON.stringify(data));
-			console.log("Weather json: " + localStorage.getItem("weatherJson"));
+			//console.log("Weather json: " + localStorage.getItem("weatherJson"));
+			console.log("Weather json: " + JSON.stringify(data));
 			//赋值
 			//设置今日信息
 			document.getElementById('todayCurrWeatherTemp').innerText = data.retData.today.curTemp;
@@ -88,7 +99,6 @@ function setIndexWeather() {
 			setIndexWeatherIcon('weatherForecastIcon3', data.retData.forecast[2].type);
 			document.getElementById('weatherForecastTempRange3').innerText = data.retData.forecast[2].lowtemp + "~" + data.retData.forecast[1].hightemp;
 			document.getElementById('headerLoaction').innerHTML = localStorage.getItem("province");
-			console.log("Modules: " + localStorage.getItem("modules"));
 		},
 		error: function(xhr, type, errorThrown) {
 			//异常处理
