@@ -11,18 +11,9 @@
 		<link href="res/css/iconfont.css" rel="stylesheet" />
 		<link href="index.css" rel="stylesheet" />
 		<script type="text/javascript" charset="utf-8">
-			mui.init({
-				subpages: [{
-					url: 'modules.html',
-					id: 'list.html',
-					styles: {
-						top: '154px',
-						bottom: '51px'
-					}
-				}]
-			});
+			mui.init();
 			mui.plusReady(function() {
-				initialize();
+				initialize(); //主界面加载时初始化
 			});
 		</script>
 	</head>
@@ -47,17 +38,17 @@
 					<div class="header-weather-main-current-weather-text">
 						<div id="todayWeatherTempRange">正在获取...</div>
 						<div id="todayWeatherType">正在获取...</div>
-					</div> 
+					</div>
 				</div>
 				<div class="header-weather-sub">
 					<div class="header-weather-forcast">
-						<div class="header-weather-forcast-text" id="weatherForecastDay1">正在获取...</div> 
+						<div class="header-weather-forcast-text" id="weatherForecastDay1">正在获取...</div>
 						<div class="header-weather-forcast-pic">
 							<div class="header-weather-forcast-pic-adj"><img id="weatherForecastIcon1" src="res/images/icons/loading.png" width="22 "></img>
 							</div>
 						</div>
 						<div class="header-weather-forcast-text" id="weatherForecastTempRange1">正在获取...</div>
-					</div> 
+					</div>
 					<div class="header-weather-forcast ">
 						<div class="header-weather-forcast-text " id="weatherForecastDay2">正在获取...</div>
 						<div class="header-weather-forcast-pic ">

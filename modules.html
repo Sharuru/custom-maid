@@ -5,46 +5,19 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
+		<script type="text/javascript" src="modules.js"></script>
 		<script src="res/js/mui.min.js"></script>
 		<link href="res/css/mui.min.css" rel="stylesheet" />
 		<link href="res/css/iconfont.css" rel="stylesheet" />
 		<link href="index.css" rel="stylesheet" />
 		<script type="text/javascript" charset="utf-8">
-			mui.init();
+			mui.plusReady(function() {
+				setModuleList(); //页面加载完毕时设置可用模块
+			})
 		</script>
 	</head>
 
-	<body>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">1</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">2</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">3</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">4</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">5</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">6</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">7</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">8</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">9</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">10</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">11</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">12</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">13</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">14</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">15</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">16</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">17</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">18</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">19</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">20</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">21</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">22</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">23</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">24</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">25</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">26</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">27</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">28</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">29</div>
-		<div style="width:25%;height:80px;float:left;border:1px solid red;}">30</div>
+	<body id="moduleBody">
 	</body>
 
 </html>

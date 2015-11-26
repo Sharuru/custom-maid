@@ -27,7 +27,6 @@ function setLocationHeader(callback) {
 	plus.geolocation.getCurrentPosition(function(p) {
 			currLocation = p.coords.latitude + "," + p.coords.longitude;
 			//上报获取省市名
-			//alert(currLocation);
 			mui.ajax('http://192.157.231.72:8080/MaidGuild/initialize/modules', {
 				data: {
 					location: currLocation
@@ -43,7 +42,7 @@ function setLocationHeader(callback) {
 					//赋值
 					document.getElementById('headerLoaction').innerHTML = localStorage.getItem("province");
 					console.log("Modules: " + localStorage.getItem("modules"));
-					callback();
+					callback(loadModulesPage);
 				},
 				error: function(xhr, type, errorThrown) {
 					//异常处理
@@ -59,7 +58,7 @@ function setLocationHeader(callback) {
 		});
 }
 
-function setIndexWeather() {
+function setIndexWeather(callback) {
 	//读取当前省市
 	var localStorage = window.localStorage;
 	var currProvince = localStorage.getItem("province");
@@ -76,7 +75,6 @@ function setIndexWeather() {
 			//本地保存结果
 			//TODO: 本地缓存
 			localStorage.setItem("weatherJson", JSON.stringify(data));
-			//console.log("Weather json: " + localStorage.getItem("weatherJson"));
 			console.log("Weather json: " + JSON.stringify(data));
 			//赋值
 			//设置今日信息
@@ -98,12 +96,25 @@ function setIndexWeather() {
 			setIndexWeatherIcon('weatherForecastIcon3', data.retData.forecast[2].type);
 			document.getElementById('weatherForecastTempRange3').innerText = data.retData.forecast[2].lowtemp + "~" + data.retData.forecast[1].hightemp;
 			document.getElementById('headerLoaction').innerHTML = localStorage.getItem("province");
+			callback();
 		},
 		error: function(xhr, type, errorThrown) {
 			//异常处理
 			console.log(type);
 			mui.alert("在连接服务器时发生异常");
 		}
+	});
+}
+
+function loadModulesPage() {
+	currView = plus.webview.currentWebview();
+	var content = plus.webview.create('modules.html', 'content', {
+		top: '154px',
+		bottom: '51px',
+	});
+	currView.append(content);
+	content.addEventListener('loaded', function() {
+		mui.toast("信息更新完毕");
 	});
 }
 
