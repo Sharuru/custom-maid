@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
 		<script src="res/js/mui.min.js"></script>
+		<script type="text/javascript" src="index.js"></script>
 		<link href="res/css/mui.min.css" rel="stylesheet" />
 		<link href="res/css/iconfont.css" rel="stylesheet" />
 		<link href="index.css" rel="stylesheet" />
@@ -15,10 +16,13 @@
 					url: 'modules.html',
 					id: 'list.html',
 					styles: {
-						top: '154px', //mui标题栏默认高度为45px；
-						bottom: '51px' //默认为0px，可不定义；
+						top: '154px',
+						bottom: '51px'
 					}
 				}]
+			});
+			mui.plusReady(function() {
+				initialize();
 			});
 		</script>
 	</head>
@@ -26,8 +30,8 @@
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<div class="header-text-line-1">
-				<div class="header-text-line-1-left">11月17日 星期二</div>
-				<div class="header-text-line-1-right">上海</div>
+				<div class="header-text-line-1-left" id="headerDate">正在获取...</div>
+				<div class="header-text-line-1-right" id="headerLoaction">正在定位...</div>
 				<div class="header-text-line-1-marker">
 					<img src="res/images/icons/location-mark.png" width="22"></img>
 				</div>
@@ -35,21 +39,21 @@
 			<div class="header-weather">
 				<div class="header-weather-main">
 					<div class="header-weather-main-current-temperature">
-						<div><b>16℃</b></div>
+						<div><b id="todayCurrWeatherTemp">...</b></div>
 					</div>
 					<div class="header-weather-main-current-weather-pic">
 						<img src="res/images/icons/weather/rain-with-snow.png" width="50"></img>
 					</div>
 					<div class="header-weather-main-current-weather-text">
-						<div>14℃~18℃</div>
-						<div>中雨转大暴雨</div>
+						<div id="todayWeatherTempRange">正在获取...</div>
+						<div id="todayWeatherType">正在获取...</div>
 					</div>
 				</div>
 				<div class="header-weather-sub">
 					<div class="header-weather-forcast">
 						<div class="header-weather-forcast-text">星期三</div>
 						<div class="header-weather-forcast-pic">
-							<div class="adj"><img src="res/images/icons/weather/rain-with-snow.png" width="22"></img>
+							<div class="header-weather-forcast-pic-adj"><img src="res/images/icons/weather/rain-with-snow.png" width="22"></img>
 							</div>
 						</div>
 						<div class="header-weather-forcast-text">10℃~11℃</div>
@@ -57,7 +61,7 @@
 					<div class="header-weather-forcast">
 						<div class="header-weather-forcast-text">星期四</div>
 						<div class="header-weather-forcast-pic">
-							<div class="adj"><img src="res/images/icons/weather/rain-with-snow.png" width="22"></img>
+							<div class="header-weather-forcast-pic-adj"><img src="res/images/icons/weather/rain-with-snow.png" width="22"></img>
 							</div>
 						</div>
 						<div class="header-weather-forcast-text">10℃~11℃</div>
@@ -65,7 +69,7 @@
 					<div class="header-weather-forcast">
 						<div class="header-weather-forcast-text">星期五</div>
 						<div class="header-weather-forcast-pic">
-							<div class="adj"><img src="res/images/icons/weather/rain-with-snow.png" width="22"></img>
+							<div class="header-weather-forcast-pic-adj"><img src="res/images/icons/weather/rain-with-snow.png" width="22"></img>
 							</div>
 						</div>
 						<div class="header-weather-forcast-text">10℃~11℃</div>
