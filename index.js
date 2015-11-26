@@ -18,7 +18,7 @@ function setDateTimeHeader() {
 	//拼接日
 	dateString += d.getDate() + "日";
 	//拼接星期
-	dateString += " 星期" + "日一二三四五六".charAt(d.getDay());
+	dateString += " 星期" + "天一二三四五六".charAt(d.getDay());
 	//赋值
 	document.getElementById('headerDate').innerText = dateString
 }
@@ -58,7 +58,7 @@ function setIndexWeather() {
 	//上报获得天气信息
 	mui.ajax('http://192.157.231.72:8080/MaidGuild/weather/recent', {
 		data: {
-			cityName : currProvince
+			cityName: currProvince
 		},
 		dataType: 'json', //服务器返回json格式数据
 		type: 'get', //HTTP请求类型
@@ -69,11 +69,26 @@ function setIndexWeather() {
 			localStorage.setItem("weatherJson", JSON.stringify(data));
 			console.log("Weather json: " + localStorage.getItem("weatherJson"));
 			//赋值
+			//设置今日信息
 			document.getElementById('todayCurrWeatherTemp').innerText = data.retData.today.curTemp;
-			document.getElementById('todayWeatherTempRange').innerText = data.retData.today.lowtemp + "~" +data.retData.today.hightemp;
+			document.getElementById('todayWeatherTempRange').innerText = data.retData.today.lowtemp + "~" + data.retData.today.hightemp;
 			document.getElementById('todayWeatherType').innerText = data.retData.today.type;
-//			document.getElementById('headerLoaction').innerHTML = localStorage.getItem("province");
-//			console.log("Modules: " + localStorage.getItem("modules"));
+			setIndexWeatherIcon('todayWeatherIcon', data.retData.today.type);
+			//设置预报信息 
+			//+1
+			document.getElementById('weatherForecastDay1').innerText = data.retData.forecast[0].week;
+			setIndexWeatherIcon('weatherForecastIcon1', data.retData.forecast[0].type);
+			document.getElementById('weatherForecastTempRange1').innerText = data.retData.forecast[0].lowtemp + "~" + data.retData.forecast[0].hightemp;
+			//+2
+			document.getElementById('weatherForecastDay2').innerText = data.retData.forecast[1].week;
+			setIndexWeatherIcon('weatherForecastIcon2', data.retData.forecast[1].type);
+			document.getElementById('weatherForecastTempRange2').innerText = data.retData.forecast[1].lowtemp + "~" + data.retData.forecast[1].hightemp;
+			//+3
+			document.getElementById('weatherForecastDay3').innerText = data.retData.forecast[2].week;
+			setIndexWeatherIcon('weatherForecastIcon3', data.retData.forecast[2].type);
+			document.getElementById('weatherForecastTempRange3').innerText = data.retData.forecast[2].lowtemp + "~" + data.retData.forecast[1].hightemp;
+			document.getElementById('headerLoaction').innerHTML = localStorage.getItem("province");
+			console.log("Modules: " + localStorage.getItem("modules"));
 		},
 		error: function(xhr, type, errorThrown) {
 			//异常处理
@@ -81,6 +96,29 @@ function setIndexWeather() {
 			mui.alert("在连接服务器时发生异常");
 		}
 	});
+}
 
-
+function setIndexWeatherIcon(targetId, weatherType) {
+	var targetObj = document.getElementById(targetId);
+	var imgSrc = "res/images/icons/weather/";
+	switch (weatherType) {
+		case "多云":
+			imgSrc += "cloudy.png";
+			targetObj.src = imgSrc;
+			break;
+		case "晴":
+			imgSrc += "sunny.png";
+			targetObj.src = imgSrc;
+			break;
+		case "小雨":
+			imgSrc += "rain.png";
+			targetObj.src = imgSrc;
+			break;
+		case "阵雨":
+			imgSrc += "heavy-rain.png";
+			targetObj.src = imgSrc;
+			break;
+		default:
+			break;
+	}
 }
