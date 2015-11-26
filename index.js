@@ -95,7 +95,19 @@ function setIndexWeather(callback) {
 			document.getElementById('weatherForecastDay3').innerText = data.retData.forecast[2].week;
 			setIndexWeatherIcon('weatherForecastIcon3', data.retData.forecast[2].type);
 			document.getElementById('weatherForecastTempRange3').innerText = data.retData.forecast[2].lowtemp + "~" + data.retData.forecast[1].hightemp;
-			document.getElementById('headerLoaction').innerHTML = localStorage.getItem("province");
+			document.getElementById('headerLoaction').innerText = localStorage.getItem("province");
+			//设置更新时间
+			var d = new Date();
+			var nowHour = d.getHours();
+			if(nowHour >= 18){
+				document.getElementById('headerUpdateTime').innerText = "更新时间： 18:00";
+			}
+			else if(nowHour >= 11){
+				document.getElementById('headerUpdateTime').innerText = "更新时间： 11:00";
+			}
+			else{
+				document.getElementById('headerUpdateTime').innerText = "更新时间： 08:00";
+			}
 			callback();
 		},
 		error: function(xhr, type, errorThrown) {
