@@ -2,14 +2,10 @@
 function initialize() {
 	console.log("Setting landing page...");
 	//设置顶部导航栏日期
-	setDateTimeHeader();
-	//设置顶部地理位置
-	setLocationHeader();
-	//设置首页天气信息
-	setIndexWeather();
+	setDateTimeHeader(setLocationHeader);
 }
 
-function setDateTimeHeader() {
+function setDateTimeHeader(callback) {
 	//声明 Date Object
 	var d = new Date();
 	//拼接日期字符串
@@ -20,16 +16,18 @@ function setDateTimeHeader() {
 	//拼接星期
 	dateString += " 星期" + "天一二三四五六".charAt(d.getDay());
 	//赋值
-	document.getElementById('headerDate').innerText = dateString
+	document.getElementById('headerDate').innerText = dateString;
+	callback(setIndexWeather);
+
 }
 
-function setLocationHeader() {
+function setLocationHeader(callback) {
 	//获得地理位置
 	var currLocation = "";
 	plus.geolocation.getCurrentPosition(function(p) {
 			currLocation = p.coords.latitude + "," + p.coords.longitude;
 			//上报获取省市名
-			alert(currLocation);
+			//alert(currLocation);
 			mui.ajax('http://192.157.231.72:8080/MaidGuild/initialize/modules', {
 				data: {
 					location: currLocation
@@ -45,6 +43,7 @@ function setLocationHeader() {
 					//赋值
 					document.getElementById('headerLoaction').innerHTML = localStorage.getItem("province");
 					console.log("Modules: " + localStorage.getItem("modules"));
+					callback();
 				},
 				error: function(xhr, type, errorThrown) {
 					//异常处理
@@ -64,12 +63,12 @@ function setIndexWeather() {
 	//读取当前省市
 	var localStorage = window.localStorage;
 	var currProvince = localStorage.getItem("province");
+	console.log(currProvince);
 	//上报获得天气信息
 	mui.ajax('http://192.157.231.72:8080/MaidGuild/weather/recent', {
 		data: {
 			cityName: currProvince
 		},
-		//async:false,
 		dataType: 'json', //服务器返回json格式数据
 		type: 'get', //HTTP请求类型
 		timeout: 10000, //超时时间设置为 10 秒；
