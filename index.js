@@ -98,16 +98,16 @@ function setIndexWeather(callback) {
 			document.getElementById('headerLoaction').innerText = localStorage.getItem("province");
 			//设置更新时间
 			var d = new Date();
-			var nowHour = d.getHours();
-			if(nowHour >= 18){
-				document.getElementById('headerUpdateTime').innerText = "更新时间： 18:00";
+			var nowHours = d.getHours();
+			var nowMinutes = d.getMinutes();
+			//Trim
+			if (nowHours < 10) {
+				nowHours = '0' + nowHours;
 			}
-			else if(nowHour >= 11){
-				document.getElementById('headerUpdateTime').innerText = "更新时间： 11:00";
+			if (nowMinutes < 10) {
+				nowMinutes = '0' + nowMinutes;
 			}
-			else{
-				document.getElementById('headerUpdateTime').innerText = "更新时间： 08:00";
-			}
+			document.getElementById('headerUpdateTime').innerText = '更新时间： ' + nowHours + ':' + nowMinutes;
 			callback();
 		},
 		error: function(xhr, type, errorThrown) {
@@ -132,22 +132,26 @@ function loadModulesPage() {
 
 function setIndexWeatherIcon(targetId, weatherType) {
 	var targetObj = document.getElementById(targetId);
-	var imgSrc = "res/images/icons/weather/";
+	var imgSrc = 'res/images/icons/weather/';
 	switch (weatherType) {
-		case "多云":
-			imgSrc += "cloudy.png";
+		case '多云':
+			imgSrc += 'cloudy.png';
 			targetObj.src = imgSrc;
 			break;
-		case "晴":
-			imgSrc += "sunny.png";
+		case '阴':
+			imgSrc += 'overcast.png';
 			targetObj.src = imgSrc;
 			break;
-		case "小雨":
-			imgSrc += "rain.png";
+		case '晴':
+			imgSrc += 'sunny.png';
 			targetObj.src = imgSrc;
 			break;
-		case "阵雨":
-			imgSrc += "heavy-rain.png";
+		case '小雨':
+			imgSrc += 'rain.png';
+			targetObj.src = imgSrc;
+			break;
+		case '阵雨':
+			imgSrc += 'heavy-rain.png';
 			targetObj.src = imgSrc;
 			break;
 		default:
