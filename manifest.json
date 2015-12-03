@@ -1,7 +1,7 @@
 {
 	"@platforms": ["android", "iPhone", "iPad"],
 	"id": "H55E8A4A1",/*应用的标识，创建应用时自动生成，勿手动修改*/
-	"name": "CustomMaid",/*应用名称，程序桌面图标名称*/
+	"name": "随身管家",/*应用名称，程序桌面图标名称*/
 	"version": {
 		"name": "1.0.0",/*应用版本名称*/
 		"code": "83"
@@ -196,6 +196,71 @@
 					"xxhdpi": ""
 				}
 			}
+		}
+	},
+	"dependencies": {
+		"pages": {
+			"index.html": {
+				"resources": [
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/fonts/iconfont.ttf",
+					"res/images/icons/loading.png",
+					"res/js/mui.min.js",
+					"res/images/icons/location-mark.png",
+					"index.js",
+					"index.css",
+					"modules.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules.html": {
+				"resources": [
+					"res/css/mui.min.css",
+					"res/images/icons/modules/SH004.png",
+					"res/images/icons/modules/HJ003.png",
+					"res/images/icons/modules/SH002.png",
+					"res/images/icons/modules/GJ001.png",
+					"res/images/icons/modules/SH005.png",
+					"res/images/icons/modules/SH001.png",
+					"res/images/icons/modules/GJ003.png",
+					"res/images/icons/modules/CX006.png",
+					"res/images/icons/modules/CX007.png",
+					"res/images/icons/modules/CX005.png",
+					"res/images/icons/modules/HJ002.png",
+					"res/images/icons/modules/SH003.png",
+					"res/css/iconfont.css",
+					"res/images/icons/modules/GJ002.png",
+					"modules.js",
+					"res/images/icons/modules/CX003.png",
+					"res/images/icons/modules/CX001.png",
+					"index.css",
+					"res/images/icons/modules/CX004.png",
+					"res/images/icons/modules/GJ005.png",
+					"res/images/icons/modules/GJ004.png",
+					"res/js/mui.min.js",
+					"res/images/icons/modules/HJ001.png",
+					"res/images/icons/modules/CX002.png"
+				],
+				"refer": [],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"res/images/icons/weather/sunny.png",
+				"res/fonts/mui.ttf",
+				"res/images/icons/weather/rain-with-snow.png",
+				"res/js/common.js",
+				"res/images/icons/weather/cloudy.png",
+				"res/css/mui.css",
+				"res/js/mui.js",
+				"res/images/icons/weather/overcast.png",
+				"res/images/icons/weather/rain.png",
+				"playground.html",
+				"res/images/icons/weather/heavy-rain.png"
+			]
 		}
 	}
 }

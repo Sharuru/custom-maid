@@ -1,8 +1,29 @@
 //主页加载后设置各个元素
 function initialize() {
 	console.log("Setting landing page...");
-	//设置顶部导航栏日期
-	setDateTimeHeader(setLocationHeader);
+	//初次运行检查
+	checkIsFirstRun(setDateTimeHeader);	
+//	//设置顶部导航栏日期
+//	setDateTimeHeader(setLocationHeader);
+}
+
+function checkIsFirstRun(callback){
+	var localStorage = window.localStorage;
+	if(localStorage.getItem("isFirstRun") == '0'){
+		mui.toast('欢迎回来');
+	}
+	//不存在键值或标记为 1 的场合
+	else{
+		mui.toast('正在配置资源，请稍候...');
+		//设置天气资源信息
+		localStorage.setItem('多云','res/images/icons/weather/cloudy.png');
+		localStorage.setItem('阴','res/images/icons/weather/overcast.png');
+		localStorage.setItem('晴','res/images/icons/weather/sunny.png');
+		localStorage.setItem('小雨','res/images/icons/weather/rain.png');
+		localStorage.setItem('阵雨','res/images/icons/weather/heavy-rain.png');
+		console.log('--->' + localStorage.getItem('晴'));
+	}
+	callback(setLocationHeader);
 }
 
 function setDateTimeHeader(callback) {
@@ -29,7 +50,9 @@ function setLocationHeader(callback) {
 			//上报获取省市名
 			mui.ajax('http://192.157.231.72:8080/MaidGuild/initialize/modules', {
 				data: {
-					location: currLocation
+					//TODO: 虚拟机调试用
+					location: "31.223421,121.53847"
+					//location: currLocation
 				},
 				dataType: 'json', //服务器返回json格式数据
 				type: 'get', //HTTP请求类型
@@ -131,30 +154,36 @@ function loadModulesPage() {
 }
 
 function setIndexWeatherIcon(targetId, weatherType) {
+	var localStorage = window.localStorage;
 	var targetObj = document.getElementById(targetId);
-	var imgSrc = 'res/images/icons/weather/';
-	switch (weatherType) {
-		case '多云':
-			imgSrc += 'cloudy.png';
-			targetObj.src = imgSrc;
-			break;
-		case '阴':
-			imgSrc += 'overcast.png';
-			targetObj.src = imgSrc;
-			break;
-		case '晴':
-			imgSrc += 'sunny.png';
-			targetObj.src = imgSrc;
-			break;
-		case '小雨':
-			imgSrc += 'rain.png';
-			targetObj.src = imgSrc;
-			break;
-		case '阵雨':
-			imgSrc += 'heavy-rain.png';
-			targetObj.src = imgSrc;
-			break;
-		default:
-			break;
-	}
+	console.log(weatherType);
+	console.log('晴' == weatherType);
+	console.log(localStorage.getItem('weatherType'));
+	console.log(localStorage.getItem('晴') + '<-----');
+	targetObj.src = localStorage.getItem('weatherType');
+//	var imgSrc = 'res/images/icons/weather/';
+//	switch (weatherType) {
+//		case '多云':
+//			imgSrc += 'cloudy.png';
+//			targetObj.src = imgSrc;
+//			break;
+//		case '阴':
+//			imgSrc += 'overcast.png';
+//			targetObj.src = imgSrc;
+//			break;
+//		case '晴':
+//			imgSrc += 'sunny.png';
+//			targetObj.src = imgSrc;
+//			break;
+//		case '小雨':
+//			imgSrc += 'rain.png';
+//			targetObj.src = imgSrc;
+//			break;
+//		case '阵雨':
+//			imgSrc += 'heavy-rain.png';
+//			targetObj.src = imgSrc;
+//			break;
+//		default:
+//			break;
+//	}
 }
