@@ -12,14 +12,14 @@ function setModuleList() {
 
 //添加功能模块
 function setModuleBlock(moduleId) {
-console.log('Se');
+	var localStorage = window.localStorage;
 	var moduleSize = document.body.clientWidth / 4;
 	var contentStr = "";
-	contentStr +='<div style="width:' + moduleSize + 'px;height:' + moduleSize+'px;float:left;border-bottom:1px solid lightgray;border-right:1px solid lightgray;">';
+	contentStr += '<div style="width:' + moduleSize + 'px;height:' + moduleSize + 'px;float:left;border-bottom:1px solid lightgray;border-right:1px solid lightgray;">';
 	contentStr += '		<div style="text-align: center;height:60%;padding-top: 20%;">';
 	contentStr += '			<img src="res/images/icons/modules/' + moduleId + '.png" width=45%></img>';
 	contentStr += '		</div>';
-	contentStr += '		<div style="text-align: center;height:40%;font-size: 12px;color:black;">'+moduleId +'</div>';
+	contentStr += '		<div style="text-align: center;height:40%;font-size: 12px;color:black;">' + localStorage.getItem(moduleId) + '</div>';
 	contentStr += '</div>'
 	document.getElementById('moduleBody').innerHTML += contentStr;
 }

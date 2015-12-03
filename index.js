@@ -2,26 +2,53 @@
 function initialize() {
 	console.log("Setting landing page...");
 	//初次运行检查
-	checkIsFirstRun(setDateTimeHeader);	
-//	//设置顶部导航栏日期
-//	setDateTimeHeader(setLocationHeader);
+	checkIsFirstRun(setDateTimeHeader);
+	//	//设置顶部导航栏日期
+	//	setDateTimeHeader(setLocationHeader);
 }
 
-function checkIsFirstRun(callback){
+function checkIsFirstRun(callback) {
 	var localStorage = window.localStorage;
-	if(localStorage.getItem("isFirstRun") == '0'){
+	if (localStorage.getItem("isFirstRun") == '0') {
 		mui.toast('欢迎回来');
 	}
 	//不存在键值或标记为 1 的场合
-	else{
+	else {
 		mui.toast('正在配置资源，请稍候...');
 		//设置天气资源信息
-		localStorage.setItem('多云','res/images/icons/weather/cloudy.png');
-		localStorage.setItem('阴','res/images/icons/weather/overcast.png');
-		localStorage.setItem('晴','res/images/icons/weather/sunny.png');
-		localStorage.setItem('小雨','res/images/icons/weather/rain.png');
-		localStorage.setItem('阵雨','res/images/icons/weather/heavy-rain.png');
-		console.log('--->' + localStorage.getItem('晴'));
+		localStorage.setItem('多云', 'res/images/icons/weather/cloudy.png');
+		localStorage.setItem('阴', 'res/images/icons/weather/overcast.png');
+		localStorage.setItem('晴', 'res/images/icons/weather/sunny.png');
+		localStorage.setItem('小雨', 'res/images/icons/weather/rain.png');
+		localStorage.setItem('阵雨', 'res/images/icons/weather/heavy-rain.png');
+		//设置模块资源信息
+		localStorage.setItem('SH001', '快递');
+		localStorage.setItem('SH002', '美食');
+		localStorage.setItem('SH003', '团购');
+		localStorage.setItem('SH004', '银行');
+		localStorage.setItem('SH005', '影院');
+		localStorage.setItem('CX001', '火车');
+		localStorage.setItem('CX002', '地铁');
+		localStorage.setItem('CX003', '航班');
+		localStorage.setItem('CX004', '路况');
+		localStorage.setItem('CX005', '公交');
+		localStorage.setItem('CX006', '长途');
+		localStorage.setItem('CX007', '出行');
+		localStorage.setItem('GJ001', '汇率换算');
+		localStorage.setItem('GJ002', '彩票信息');
+		localStorage.setItem('GJ003', '股票信息');
+		localStorage.setItem('GJ004', '114 查号');
+		localStorage.setItem('GJ005', '在线翻译');
+		localStorage.setItem('HJ001', '台风查询');
+		localStorage.setItem('HJ002', '空气水质查询');
+		localStorage.setItem('HJ003', '天气');
+		localStorage.setItem('SP001', '图书馆服务');
+		localStorage.setItem('SP002', '志愿者服务');
+		localStorage.setItem('JS001', '电子监控');
+		localStorage.setItem('JS002', '违章提醒');
+		localStorage.setItem('JS003', '驾照违法查询');
+		localStorage.setItem('JS004', '车辆年检预约');
+		localStorage.setItem('isFirstRun', '0');
 	}
 	callback(setLocationHeader);
 }
@@ -52,7 +79,7 @@ function setLocationHeader(callback) {
 				data: {
 					//TODO: 虚拟机调试用
 					location: "31.223421,121.53847"
-					//location: currLocation
+						//location: currLocation
 				},
 				dataType: 'json', //服务器返回json格式数据
 				type: 'get', //HTTP请求类型
