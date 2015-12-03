@@ -156,34 +156,5 @@ function loadModulesPage() {
 function setIndexWeatherIcon(targetId, weatherType) {
 	var localStorage = window.localStorage;
 	var targetObj = document.getElementById(targetId);
-	console.log(weatherType);
-	console.log('晴' == weatherType);
-	console.log(localStorage.getItem('weatherType'));
-	console.log(localStorage.getItem('晴') + '<-----');
-	targetObj.src = localStorage.getItem('weatherType');
-//	var imgSrc = 'res/images/icons/weather/';
-//	switch (weatherType) {
-//		case '多云':
-//			imgSrc += 'cloudy.png';
-//			targetObj.src = imgSrc;
-//			break;
-//		case '阴':
-//			imgSrc += 'overcast.png';
-//			targetObj.src = imgSrc;
-//			break;
-//		case '晴':
-//			imgSrc += 'sunny.png';
-//			targetObj.src = imgSrc;
-//			break;
-//		case '小雨':
-//			imgSrc += 'rain.png';
-//			targetObj.src = imgSrc;
-//			break;
-//		case '阵雨':
-//			imgSrc += 'heavy-rain.png';
-//			targetObj.src = imgSrc;
-//			break;
-//		default:
-//			break;
-//	}
+	targetObj.src = localStorage.getItem(weatherType);
 }

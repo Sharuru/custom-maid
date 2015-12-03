@@ -210,7 +210,11 @@
 					"res/images/icons/location-mark.png",
 					"index.js",
 					"index.css",
-					"modules.html"
+					"modules.html",
+					"res/images/icons/weather/sunny.png",
+					"res/images/icons/weather/heavy-rain.png",
+					"res/images/icons/weather/cloudy.png",
+					"res/images/icons/weather/rain.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -249,17 +253,13 @@
 		},
 		"idle": {
 			"resources": [
-				"res/images/icons/weather/sunny.png",
 				"res/fonts/mui.ttf",
 				"res/images/icons/weather/rain-with-snow.png",
 				"res/js/common.js",
-				"res/images/icons/weather/cloudy.png",
 				"res/css/mui.css",
 				"res/js/mui.js",
 				"res/images/icons/weather/overcast.png",
-				"res/images/icons/weather/rain.png",
-				"playground.html",
-				"res/images/icons/weather/heavy-rain.png"
+				"playground.html"
 			]
 		}
 	}
