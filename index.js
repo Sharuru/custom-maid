@@ -48,6 +48,8 @@ function checkIsFirstRun(callback) {
 		localStorage.setItem('JS002', '违章提醒');
 		localStorage.setItem('JS003', '驾照违法查询');
 		localStorage.setItem('JS004', '车辆年检预约');
+		//通用模块
+		localStorage.setItem('comModuleList','SH001,CX001,CX003,CX006,GJ001,GJ002,GJ003,GJ004,GJ005,GJ005,HJ001');
 		localStorage.setItem('isFirstRun', '0');
 	}
 	callback(setLocationHeader);
