@@ -214,7 +214,8 @@
 					"res/images/icons/weather/sunny.png",
 					"res/images/icons/weather/heavy-rain.png",
 					"res/images/icons/weather/cloudy.png",
-					"res/images/icons/weather/rain.png"
+					"res/images/icons/weather/rain.png",
+					"res/js/common.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -245,7 +246,23 @@
 					"res/images/icons/modules/GJ004.png",
 					"res/js/mui.min.js",
 					"res/images/icons/modules/HJ001.png",
-					"res/images/icons/modules/CX002.png"
+					"res/images/icons/modules/CX002.png",
+					"res/images/icons/modules/JS003.png",
+					"res/images/icons/modules/SP002.png",
+					"res/images/icons/modules/JS002.png",
+					"res/images/icons/modules/JS001.png",
+					"res/images/icons/modules/SP001.png"
+				],
+				"refer": [
+					"modules/SH001/SH001.html"
+				],
+				"priority": 0
+			},
+			"modules/SH001/SH001.html": {
+				"resources": [
+					"res/css/mui.min.css",
+					"res/js/mui.min.js",
+					"res/js/common.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -255,7 +272,6 @@
 			"resources": [
 				"res/fonts/mui.ttf",
 				"res/images/icons/weather/rain-with-snow.png",
-				"res/js/common.js",
 				"res/css/mui.css",
 				"res/js/mui.js",
 				"res/images/icons/weather/overcast.png",

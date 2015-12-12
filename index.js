@@ -49,8 +49,9 @@ function checkIsFirstRun(callback) {
 		localStorage.setItem('JS003', '驾照违法查询');
 		localStorage.setItem('JS004', '车辆年检预约');
 		//通用模块
-		localStorage.setItem('comModuleList','SH001,CX001,CX003,CX006,GJ001,GJ002,GJ003,GJ004,GJ005,GJ005,HJ001');
+		localStorage.setItem('comModuleList', 'SH001,CX001,CX003,CX006,GJ001,GJ002,GJ003,GJ004,GJ005,GJ005,HJ001');
 		localStorage.setItem('isFirstRun', '0');
+		mui.toast('配置完毕');
 	}
 	callback(setLocationHeader);
 }
@@ -77,7 +78,7 @@ function setLocationHeader(callback) {
 	plus.geolocation.getCurrentPosition(function(p) {
 			currLocation = p.coords.latitude + "," + p.coords.longitude;
 			//上报获取省市名
-			mui.ajax('http://192.157.231.72:8080/MaidGuild/initialize/modules', {
+			mui.ajax(serverAddr + 'initialize/modules', {
 				data: {
 					//TODO: 虚拟机调试用
 					location: "31.223421,121.53847"
@@ -116,7 +117,7 @@ function setIndexWeather(callback) {
 	var currProvince = localStorage.getItem("province");
 	console.log(currProvince);
 	//上报获得天气信息
-	mui.ajax('http://192.157.231.72:8080/MaidGuild/weather/recent', {
+	mui.ajax(serverAddr + 'weather/recent', {
 		data: {
 			cityName: currProvince
 		},

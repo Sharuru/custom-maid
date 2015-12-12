@@ -13,11 +13,21 @@
 		<script type="text/javascript" charset="utf-8">
 			mui.plusReady(function() {
 				setModuleList(); //页面加载完毕时设置可用模块
+				document.getElementById('BlockSH001').addEventListener('tap', function() {
+					//打开关于页面
+					mui.openWindow({
+						url: 'modules/SH001/SH001.html',
+						id: 'Page-SH001',
+						styles:{
+							top:'49px'
+						}
+					});
+				});
 			})
 		</script>
 	</head>
 
-	<body id="moduleBody">		
+	<body id="moduleBody">
 	</body>
 
 </html>
