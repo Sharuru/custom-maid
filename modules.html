@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
 		<script type="text/javascript" src="modules.js"></script>
+		<link href="modules.css" rel="stylesheet" />
 		<script src="res/js/mui.min.js"></script>
 		<link href="res/css/mui.min.css" rel="stylesheet" />
 		<link href="res/css/iconfont.css" rel="stylesheet" />
@@ -13,16 +14,6 @@
 		<script type="text/javascript" charset="utf-8">
 			mui.plusReady(function() {
 				setModuleList(); //页面加载完毕时设置可用模块
-				document.getElementById('BlockSH001').addEventListener('tap', function() {
-					//打开关于页面
-					mui.openWindow({
-						url: 'modules/SH001/SH001.html',
-						id: 'Page-SH001',
-						styles:{
-							top:'49px'
-						}
-					});
-				});
 			})
 		</script>
 	</head>

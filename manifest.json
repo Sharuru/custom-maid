@@ -251,10 +251,12 @@
 					"res/images/icons/modules/SP002.png",
 					"res/images/icons/modules/JS002.png",
 					"res/images/icons/modules/JS001.png",
-					"res/images/icons/modules/SP001.png"
+					"res/images/icons/modules/SP001.png",
+					"modules.css"
 				],
 				"refer": [
-					"modules/SH001/SH001.html"
+					"modules/SH001/SH001.html",
+					"modules/GJ001/GJ001.html"
 				],
 				"priority": 0
 			},
@@ -263,6 +265,14 @@
 					"res/css/mui.min.css",
 					"res/js/mui.min.js",
 					"res/js/common.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/GJ001/GJ001.html": {
+				"resources": [
+					"res/css/mui.min.css",
+					"res/js/mui.min.js"
 				],
 				"refer": [],
 				"priority": 0

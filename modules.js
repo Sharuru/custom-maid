@@ -7,6 +7,23 @@ function setModuleList() {
 	for (var i = 0; i < avalModuleList.length; i++) {
 		setModuleBlock(avalModuleList[i]);
 	}
+	//绑定模块点击事件
+	mui("#moduleBody").on('tap', '.module-block', function() {
+		var moduleId = this.getAttribute("id").substr(5);
+		mui.openWindow({
+			url: 'modules/' + moduleId + '/' + moduleId + '.html',
+			id: 'Page-' + moduleId,
+//			url: 'modules/SH001/SH001.html',
+//			id: 'Page-SH001',
+//			styles: {
+//				top: '49px'
+//			}
+			waiting:{
+				//取消加载动画，模拟原生感
+				autoShow:false
+			}
+		});
+	});
 	console.log("Setting modules finished.");
 }
 
@@ -15,7 +32,7 @@ function setModuleBlock(moduleId) {
 	var localStorage = window.localStorage;
 	var moduleSize = document.body.clientWidth / 4;
 	var contentStr = "";
-	contentStr += '<div id="Block' + moduleId + '" style="width:' + moduleSize + 'px;height:' + moduleSize + 'px;float:left;border-bottom:1px solid lightgray;border-right:1px solid lightgray;">';
+	contentStr += '<div class="module-block" id="Block' + moduleId + '" style="width:' + moduleSize + 'px;height:' + moduleSize + 'px;">';
 	contentStr += '		<div style="text-align: center;height:60%;padding-top: 20%;">';
 	contentStr += '			<img src="res/images/icons/modules/' + moduleId + '.png" width=40%></img>';
 	contentStr += '		</div>';
