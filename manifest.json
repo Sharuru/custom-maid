@@ -272,7 +272,12 @@
 			"modules/GJ001/GJ001.html": {
 				"resources": [
 					"res/css/mui.min.css",
-					"res/js/mui.min.js"
+					"res/js/mui.min.js",
+					"res/css/common.css",
+					"modules/GJ001/css/GJ001.css",
+					"res/fonts/mui.ttf",
+					"res/images/modules/GJ001/USA.png",
+					"res/images/modules/GJ001/CHN.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -280,7 +285,6 @@
 		},
 		"idle": {
 			"resources": [
-				"res/fonts/mui.ttf",
 				"res/images/icons/weather/rain-with-snow.png",
 				"res/css/mui.css",
 				"res/js/mui.js",

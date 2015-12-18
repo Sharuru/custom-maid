@@ -18,6 +18,10 @@ function setModuleList() {
 //			styles: {
 //				top: '49px'
 //			}
+			show:{
+				aniShow:"pop-in",
+				duration:200
+			},
 			waiting:{
 				//取消加载动画，模拟原生感
 				autoShow:false

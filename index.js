@@ -51,7 +51,7 @@ function checkIsFirstRun(callback) {
 		//通用模块
 		localStorage.setItem('comModuleList', 'SH001,CX001,CX003,CX006,GJ001,GJ002,GJ003,GJ004,GJ005,GJ005,HJ001');
 		localStorage.setItem('isFirstRun', '0');
-		mui.toast('配置完毕');
+		//mui.toast('配置完毕');
 	}
 	callback(setLocationHeader);
 }

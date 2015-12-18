@@ -1,16 +1,82 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <title></title>
-    <script src="../../res/js/mui.min.js"></script>
-    <link href="../../res/css/mui.min.css" rel="stylesheet"/>
-    <script type="text/javascript" charset="utf-8">
-      	mui.init();
-    </script>
-</head>
-<body>
-	123456
-</body>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="../../res/js/mui.min.js"></script>
+		<link href="../../res/css/mui.min.css" rel="stylesheet" />
+		<link href="css/GJ001.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div class="header-text-line-1">
+				<a class="mui-icon mui-icon-back" style="color:white;"></a>
+				汇率换算
+			</div>
+		</header>
+		<div style="margin-top: 49px;background: white;padding-top: 15px;padding-bottom: 15px;	border-bottom: 1px solid lightgray;">
+			<table border="0">
+				<tr>
+					<td style="height: 60px;text-align: center;width:30%;"><img src="../../res/images/modules/GJ001/USA.png" width="70%;"></img>
+					</td>
+					<td></td>
+					<td rowspan="2" style="height: 80px;">
+						<input type="text" style="text-align: right;padding-top:25px;padding-left:15px;width: 95%;height: 100%;font-size:30px;border:0px;" placeholder="请输入金额">
+					</td>
+				</tr>
+				<tr>
+					<td style="color:gray;text-align: center;font-size:14px; height: 20px;">美元</td>
+					<td>◢</td>
+
+				</tr>
+			</table>
+		</div>
+		<div style="background: white;padding-top: 15px;padding-bottom: 15px;	border-bottom: 1px solid lightgray;">
+			<table border="0">
+				<tr>
+					<td style="height: 60px;text-align: center;width:30%;"><img src="../../res/images/modules/GJ001/CHN.png" width="70%;"></img>
+					</td>
+					<td></td>
+					<td rowspan="2" style="height: 80px;">
+						<input type="text" style="text-align: right;padding-top:25px;padding-left:15px;width: 95%;height: 100%;font-size:30px;border:0px;" placeholder="请输入金额">
+					</td>
+				</tr>
+				<tr>
+					<td style="color:gray;text-align: center;font-size:14px; height: 20px;">人民币</td>
+					<td>◢</td>
+				</tr>
+			</table>
+		</div>
+		<div style="font-size:14px;color:gray;padding-top: 2px;">&nbsp;&nbsp;&nbsp;&nbsp;1人民币 = 1美元，更新时间 2015-12-18 16:03</div>
+		<select class="mui-btn mui-btn-block">
+			<option value="item-1">人民币 CNY</option>
+			<option value="item-1">美元 USD</option>
+			<option value="item-2">欧元 EUR</option>
+			<option value="item-3">港币 HKD</option>
+			<option value="item-4">日元 JPY</option>
+			<option value="item-5">英镑 GBP</option>
+			<option value="item-1">澳大利元 AUD</option>
+			<option value="item-2">加拿大元 CAD</option>
+			<option value="item-3">泰国铢 THB</option>
+			<option value="item-4">新加坡元 SGD</option>
+			<option value="item-5">挪威克朗 NOK</option>
+			<option value="item-1">林吉特 MYR</option>
+			<option value="item-2">澳门元 MOP</option>
+			<option value="item-3">韩国元 KRW</option>
+			<option value="item-4">瑞士法郎 CHF</option>
+			<option value="item-5">丹麦克朗 DKK</option>
+			<option value="item-1">瑞典克朗 SEK</option>
+			<option value="item-2">卢布 RUB</option>
+			<option value="item-3">新西兰元 NZD</option>
+			<option value="item-4">菲律宾比索 PHP</option>
+			<option value="item-5">新台币 TWD</option>
+		</select>
+	</body>
+
 </html>
