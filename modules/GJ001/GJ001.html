@@ -29,14 +29,32 @@
 			<table border="0">
 				<tr>
 					<td style="height: 60px;text-align: center;width:30%;"><img src="../../res/images/modules/GJ001/USA.png" width="70%;"></img>
+						<select style="opacity:0;position: absolute;left:0px;width:30%;height:80px;">
+							<option value="item-1">美元 USD</option>
+							<option value="item-2">欧元 EUR</option>
+							<option value="item-3">港币 HKD</option>
+							<option value="item-4">日元 JPY</option>
+							<option value="item-5">英镑 GBP</option>
+							<option value="item-1">澳大利元 AUD</option>
+							<option value="item-2">加拿大元 CAD</option>
+							<option value="item-3">泰国铢 THB</option>
+							<option value="item-4">新加坡元 SGD</option>
+							<option value="item-5">挪威克朗 NOK</option>
+							<option value="item-1">林吉特 MYR</option>
+							<option value="item-2">澳门元 MOP</option>
+							<option value="item-3">韩国元 KRW</option>
+							<option value="item-4">瑞士法郎 CHF</option>
+						</select>
 					</td>
 					<td></td>
 					<td rowspan="2" style="height: 80px;">
-						<input  type="text" placeholder="请输入金额">
+						<input type="text" placeholder="请输入金额">
 					</td>
 				</tr>
 				<tr>
-					<td style="color:gray;text-align: center;font-size:14px; height: 20px;">美元</td>
+					<td style="color:gray;text-align: center;font-size:14px; height: 20px;">美元
+						
+					</td>
 					<td>◢</td>
 
 				</tr>
@@ -82,7 +100,11 @@
 			<option value="item-4">菲律宾比索 PHP</option>
 			<option value="item-5">新台币 TWD</option>
 		</select>
+		<select id="abc" class="mui-btn mui-btn-block">
+			<option value="item-1">人民币 CNY</option>
+		</select>
 		<p>汇率数据由 中国银行 提供</p>
+		<button onclick="create()">Create</button>
 	</body>
 
 </html>

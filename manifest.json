@@ -282,7 +282,9 @@
 					"modules/GJ001/js/GJ001.js",
 					"res/js/common.js"
 				],
-				"refer": [],
+				"refer": [
+					"index.html"
+				],
 				"priority": 0
 			}
 		},

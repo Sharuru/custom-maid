@@ -15,6 +15,12 @@ function setGJ001(){
 	
 }
 
+function create(){
+	var w = plus.webview.create( "../../index.html" );
+	w.setStyle({top:"200px",height:"250px"});
+	plus.webview.show(w,"pop-in");
+}
+
 function getExchangeRate(callback) {
 	var localStorage = window.localStorage;
 	mui.ajax(serverAddr + 'tools/exchange', {
