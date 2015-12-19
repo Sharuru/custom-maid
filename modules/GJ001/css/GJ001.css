@@ -17,3 +17,14 @@
 	padding-top: 8px;
 	font-size: 30px;
 }
+
+input[type="text"] {
+	border: 0px;
+	text-align: right;
+	padding-top: 25px;
+	padding-right: 0px;
+	width: 95%;
+	height: 100%;
+	font-size: 30px;
+	border: 0px;
+}

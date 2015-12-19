@@ -6,10 +6,15 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
 		<script src="../../res/js/mui.min.js"></script>
+		<script type="text/javascript" src="../../res/js/common.js"></script>
 		<link href="../../res/css/mui.min.css" rel="stylesheet" />
 		<link href="css/GJ001.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/GJ001.js"></script>
 		<script type="text/javascript" charset="utf-8">
 			mui.init();
+			mui.plusReady(function() {
+				initializeGJ001();
+			})
 		</script>
 	</head>
 
@@ -27,7 +32,7 @@
 					</td>
 					<td></td>
 					<td rowspan="2" style="height: 80px;">
-						<input type="text" style="text-align: right;padding-top:25px;padding-left:15px;width: 95%;height: 100%;font-size:30px;border:0px;" placeholder="请输入金额">
+						<input  type="text" placeholder="请输入金额">
 					</td>
 				</tr>
 				<tr>
@@ -44,7 +49,7 @@
 					</td>
 					<td></td>
 					<td rowspan="2" style="height: 80px;">
-						<input type="text" style="text-align: right;padding-top:25px;padding-left:15px;width: 95%;height: 100%;font-size:30px;border:0px;" placeholder="请输入金额">
+						<input type="text" style="" placeholder="请输入金额">
 					</td>
 				</tr>
 				<tr>
@@ -53,7 +58,7 @@
 				</tr>
 			</table>
 		</div>
-		<div style="font-size:14px;color:gray;padding-top: 2px;">&nbsp;&nbsp;&nbsp;&nbsp;1人民币 = 1美元，更新时间 2015-12-18 16:03</div>
+		<div id="exchangeRateText" style="font-size:14px;color:gray;padding-top: 2px;padding-left: 5px;">正在获取...</div>
 		<select class="mui-btn mui-btn-block">
 			<option value="item-1">人民币 CNY</option>
 			<option value="item-1">美元 USD</option>
@@ -77,6 +82,7 @@
 			<option value="item-4">菲律宾比索 PHP</option>
 			<option value="item-5">新台币 TWD</option>
 		</select>
+		<p>汇率数据由 中国银行 提供</p>
 	</body>
 
 </html>

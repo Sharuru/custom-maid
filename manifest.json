@@ -215,7 +215,8 @@
 					"res/images/icons/weather/heavy-rain.png",
 					"res/images/icons/weather/cloudy.png",
 					"res/images/icons/weather/rain.png",
-					"res/js/common.js"
+					"res/js/common.js",
+					"res/images/icons/weather/overcast.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -277,7 +278,9 @@
 					"modules/GJ001/css/GJ001.css",
 					"res/fonts/mui.ttf",
 					"res/images/modules/GJ001/USA.png",
-					"res/images/modules/GJ001/CHN.png"
+					"res/images/modules/GJ001/CHN.png",
+					"modules/GJ001/js/GJ001.js",
+					"res/js/common.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -288,7 +291,6 @@
 				"res/images/icons/weather/rain-with-snow.png",
 				"res/css/mui.css",
 				"res/js/mui.js",
-				"res/images/icons/weather/overcast.png",
 				"playground.html"
 			]
 		}

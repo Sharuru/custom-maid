@@ -51,6 +51,28 @@ function checkIsFirstRun(callback) {
 		//通用模块
 		localStorage.setItem('comModuleList', 'SH001,CX001,CX003,CX006,GJ001,GJ002,GJ003,GJ004,GJ005,GJ005,HJ001');
 		localStorage.setItem('isFirstRun', '0');
+		//币种字典
+		localStorage.setItem('人民币', 'CNY');
+		localStorage.setItem('美元', 'USD');
+		localStorage.setItem('欧元', 'EUR');
+		localStorage.setItem('港币', 'HKD');
+		localStorage.setItem('日元', 'JPY');
+		localStorage.setItem('英镑', 'GBP');
+		localStorage.setItem('澳大利元', 'AUD');
+		localStorage.setItem('加拿大元', 'CAD');
+		localStorage.setItem('泰国铢', 'THB');
+		localStorage.setItem('新加坡元', 'SGD');
+		localStorage.setItem('挪威克朗', 'NOK');
+		localStorage.setItem('林吉特', 'MYR');
+		localStorage.setItem('澳门元', 'MOP');
+		localStorage.setItem('韩国元', 'KRW');
+		localStorage.setItem('瑞士法郎', 'CHF');
+		localStorage.setItem('丹麦克朗', 'DKK');
+		localStorage.setItem('瑞典克朗', 'SEK');
+		localStorage.setItem('卢布', 'RUB');
+		localStorage.setItem('新西兰元', 'NZD');
+		localStorage.setItem('菲律宾比索', 'PHP');
+		localStorage.setItem('新台币', 'TWD');
 		//mui.toast('配置完毕');
 	}
 	callback(setLocationHeader);
@@ -160,7 +182,7 @@ function setIndexWeather(callback) {
 			if (nowMinutes < 10) {
 				nowMinutes = '0' + nowMinutes;
 			}
-			document.getElementById('headerUpdateTime').innerText = '更新时间： ' + nowHours + ':' + nowMinutes;
+			document.getElementById('headerUpdateTime').innerText = '更新时间: ' + nowHours + ':' + nowMinutes;
 			callback();
 		},
 		error: function(xhr, type, errorThrown) {
