@@ -47,7 +47,8 @@ function getExchangeRate(callback) {
 	});
 }
 
-function abcd(val) {
-	console.log(val);
+function abcd(id, val) {
+	var localStorage = window.localStorage
+	document.getElementById(id.substring(0,11) + 'Pic').src = '../../res/images/modules/GJ001/' + localStorage.getItem(val) + '.png';
 	document.getElementById('pppp').innerText = val;
 }

@@ -28,10 +28,51 @@
 		<div style="margin-top: 49px;background: white;padding-top: 15px;padding-bottom: 15px;	border-bottom: 1px solid lightgray;">
 			<table border="0">
 				<tr>
-					<td style="height: 60px;text-align: center;width:30%;"><img src="../../res/images/modules/GJ001/USA.png" width="70%;"></img>
-						<select style="opacity:0;position: absolute;left:0px;width:30%;height:80px;" onchange="abcd(this.value);">
+					<td style="height: 60px;text-align: center;width:30%;"><img id="exchangeOnePic" src="../../res/images/modules/GJ001/USD.png" width="70%;"></img>
+						<select id="exchangeOneSelect" style="opacity:0;position: absolute;left:0px;width:30%;height:80px;" onchange="abcd(this.id, this.value);">
 							<option value="人民币">人民币 CNY</option>
-							<option value="美元">美元 USD</option>
+							<option value="美元" selected="selected">美元 USD</option>
+							<option value="欧元">欧元 EUR</option>
+							<option value="港币">港币 HKD</option>
+							<option value="日元">日元 JPY</option>
+							<option value="英镑">英镑 GBP</option>
+							<option value="澳大利元">澳大利元 AUD</option>
+							<option value="加拿大元">加拿大元 CAD</option>
+							<option value="泰国铢">泰国铢 THB</option>
+							<option value="新加坡元">新加坡元 SGD</option>
+							<option value="挪威克朗">挪威克朗 NOK</option>
+							<option value="林吉特">林吉特 MYR</option>
+							<option value="澳门元">澳门元 MOP</option>
+							<option value="韩国元">韩国元 KRW</option>
+							<option value="瑞士法郎">瑞士法郎 CHF</option>
+							<option value="丹麦克朗">丹麦克朗 DKK</option>
+							<option value="瑞典克朗">瑞典克朗 SEK</option>
+							<option value="卢布">卢布 RUB</option>
+							<option value="新西兰元">新西兰元 NZD</option>
+							<option value="菲律宾比索">菲律宾比索 PHP</option>
+							<option value="新台币">新台币 TWD</option>
+						</select>
+					</td>
+					<td></td>
+					<td rowspan="2" style="height: 80px;">
+						<input type="text" placeholder="请输入金额">
+					</td>
+				</tr>
+				<tr>
+					<td style="color:gray;text-align: center;font-size:14px; height: 20px;" id="pppp">美元
+					</td>
+					<td>◢</td>
+
+				</tr>
+			</table>
+		</div>
+		<div style="background: white;padding-top: 15px;padding-bottom: 15px;	border-bottom: 1px solid lightgray;">
+			<table border="0">
+				<tr>
+					<td style="height: 60px;text-align: center;width:30%;"><img src="../../res/images/modules/GJ001/CNY.png" width="70%;"></img>
+						<select style="opacity:0;position: absolute;left:0px;width:30%;height:80px;">
+							<option value="人民币" selected="selected">人民币 CNY</option>
+							<option value="美元" >美元 USD</option>
 							<option value="欧元">欧元 EUR</option>
 							<option value="港币">港币 HKD</option>
 							<option value="日元">日元 JPY</option>
@@ -52,24 +93,6 @@
 							<option value="菲力宾比索">菲律宾比索 PHP</option>
 							<option value="新台币">新台币 TWD</option>
 						</select>
-					</td>
-					<td></td>
-					<td rowspan="2" style="height: 80px;">
-						<input type="text" placeholder="请输入金额">
-					</td>
-				</tr>
-				<tr>
-					<td style="color:gray;text-align: center;font-size:14px; height: 20px;" id="pppp">美元
-					</td>
-					<td>◢</td>
-
-				</tr>
-			</table>
-		</div>
-		<div style="background: white;padding-top: 15px;padding-bottom: 15px;	border-bottom: 1px solid lightgray;">
-			<table border="0">
-				<tr>
-					<td style="height: 60px;text-align: center;width:30%;"><img src="../../res/images/modules/GJ001/CHN.png" width="70%;"></img>
 					</td>
 					<td></td>
 					<td rowspan="2" style="height: 80px;">
@@ -105,9 +128,6 @@
 			<option value="item-3">新西兰元 NZD</option>
 			<option value="item-4">菲律宾比索 PHP</option>
 			<option value="item-5">新台币 TWD</option>
-		</select>
-		<select id="abc" class="mui-btn mui-btn-block">
-			<option value="item-1">人民币 CNY</option>
 		</select>
 		<p>汇率数据由 中国银行 提供</p>
 		<button onclick="create()">Create</button>

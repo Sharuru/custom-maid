@@ -282,7 +282,19 @@
 					"res/images/modules/GJ001/USA.png",
 					"res/images/modules/GJ001/CHN.png",
 					"modules/GJ001/js/GJ001.js",
-					"res/js/common.js"
+					"res/js/common.js",
+					"res/images/modules/GJ001/CNY.png",
+					"res/images/modules/GJ001/USD.png",
+					"res/images/modules/GJ001/EUR.png",
+					"res/images/modules/GJ001/AUD.png",
+					"res/images/modules/GJ001/DKK.png",
+					"res/images/modules/GJ001/NZD.png",
+					"res/images/modules/GJ001/CHF.png",
+					"res/images/modules/GJ001/PHP.png",
+					"res/images/modules/GJ001/SEK.png",
+					"res/images/modules/GJ001/RUB.png",
+					"res/images/modules/GJ001/KRW.png",
+					"res/images/modules/GJ001/HKD.png"
 				],
 				"refer": [
 					"index.html"
