@@ -9,6 +9,7 @@ function setModuleList() {
 	}
 	//绑定模块点击事件
 	mui("#moduleBody").on('tap', '.module-block', function() {
+		//TODO: 点击后黑色遮罩反馈
 		var moduleId = this.getAttribute("id").substr(5);
 		mui.openWindow({
 			url: 'modules/' + moduleId + '/' + moduleId + '.html',

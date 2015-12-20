@@ -7,18 +7,21 @@ function initializeGJ001() {
 	//绑定点击动作
 }
 
-function setGJ001(){
+function setGJ001() {
 	//默认汇率对为美元-人民币
-	var str ='1美元=' + (exchangeRate.result[0].data1.bankConversionPri/100).toString().substring(0,6) +'元, ';
-	str += ' 更新时间: ' + exchangeRate.result[0].data1.date  + ' ' + exchangeRate.result[0].data1.time;
+	var str = '1美元=' + (exchangeRate.result[0].data1.bankConversionPri / 100).toString().substring(0, 6) + '元, ';
+	str += ' 更新时间: ' + exchangeRate.result[0].data1.date + ' ' + exchangeRate.result[0].data1.time;
 	document.getElementById('exchangeRateText').innerText = str;
-	
+
 }
 
-function create(){
-	var w = plus.webview.create( "../../index.html" );
-	w.setStyle({top:"200px",height:"250px"});
-	plus.webview.show(w,"pop-in");
+function create() {
+	var w = plus.webview.create("../../index.html");
+	w.setStyle({
+		top: "200px",
+		height: "250px"
+	});
+	plus.webview.show(w, "pop-in");
 }
 
 function getExchangeRate(callback) {
@@ -42,4 +45,9 @@ function getExchangeRate(callback) {
 			mui.alert("在连接服务器时发生异常");
 		}
 	});
+}
+
+function abcd(val) {
+	console.log(val);
+	document.getElementById('pppp').innerText = val;
 }
