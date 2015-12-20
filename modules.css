@@ -3,3 +3,12 @@
 	border-bottom: 1px solid lightgray;
 	border-right: 1px solid lightgray;
 }
+
+.mui-table-view-cell > a:not(.mui-btn).mui-active {
+	padding-bottom: 100px;
+	background-color: lightgray !important;
+}
+
+.mui-table-view-cell:after {
+	height: 0px !important;
+}

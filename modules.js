@@ -37,11 +37,11 @@ function setModuleBlock(moduleId) {
 	var localStorage = window.localStorage;
 	var moduleSize = document.body.clientWidth / 4;
 	var contentStr = "";
-	contentStr += '<div class="module-block" id="Block' + moduleId + '" style="width:' + moduleSize + 'px;height:' + moduleSize + 'px;">';
-	contentStr += '		<div style="text-align: center;height:60%;padding-top: 20%;">';
+	contentStr += '<div class="module-block mui-table-view-cell " id="Block' + moduleId + '" style="width:' + moduleSize + 'px;height:' + moduleSize + 'px;">';
+	contentStr += '		<a href="#"><div style="text-align: center;height:60%;padding-top: 20%;">';
 	contentStr += '			<img src="res/images/icons/modules/' + moduleId + '.png" width=40%></img>';
 	contentStr += '		</div>';
-	contentStr += '		<div style="text-align: center;height:40%;font-size: 12px;color:black;">' + localStorage.getItem(moduleId) + '</div>';
+	contentStr += '		<div style="text-align: center;height:40%;font-size: 12px;color:black;">' + localStorage.getItem(moduleId) + '</div></a>';
 	contentStr += '</div>'
 	document.getElementById('moduleBody').innerHTML += contentStr;
 }

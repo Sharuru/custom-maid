@@ -253,7 +253,9 @@
 					"res/images/icons/modules/JS002.png",
 					"res/images/icons/modules/JS001.png",
 					"res/images/icons/modules/SP001.png",
-					"modules.css"
+					"modules.css",
+					"res/fonts/mui.ttf",
+					"res/css/mui.css"
 				],
 				"refer": [
 					"modules/SH001/SH001.html",
@@ -291,7 +293,6 @@
 		"idle": {
 			"resources": [
 				"res/images/icons/weather/rain-with-snow.png",
-				"res/css/mui.css",
 				"res/js/mui.js",
 				"playground.html"
 			]
