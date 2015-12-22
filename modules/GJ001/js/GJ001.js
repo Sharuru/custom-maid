@@ -7,8 +7,13 @@ function initializeGJ001() {
 	//获取数据并显示默认
 	getExchangeRate(setDefaultPair);
 	//初始化其他元素
-	document.getElementById('exchangeTwoInput').value = 0;
+//	document.getElementById('exchangeTwoInput').value = 0;
 	//绑定动作
+	//清除按钮
+	mui("body").on('click', '.mui-icon-close-filled', function() {
+		document.getElementById('exchangeOneInput').value = '';
+		document.getElementById('exchangeTwoInput').value = '';
+	});
 	//货币选择动作
 	mui("body").on('change', '.money-type-select', function() {
 		document.getElementById(this.id.substring(0, 11) + 'Pic').src = '../../res/images/modules/GJ001/' + localStorage.getItem(this.value) + '.png';
@@ -59,7 +64,7 @@ function setDefaultPair() {
 	//默认汇率对为美元-人民币
 	currRate = (exchangeRate.result[0].data1.bankConversionPri / 100).toString().substring(0, 6);
 	console.log('currRate set: ' + currRate);
-	var str = '1美元=' + (currRate + '元, ');
+	var str = '1美元=' + (currRate + '人民币, ');
 	str += ' 更新时间: ' + exchangeRate.result[0].data1.date + ' ' + exchangeRate.result[0].data1.time;
 	document.getElementById('exchangeRateText').innerText = str;
 }

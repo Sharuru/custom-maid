@@ -50,10 +50,15 @@
 input[type="number"] {
 	border: 0px;
 	text-align: right;
-	padding-top: 14px;
 	padding-right: 0px;
+	padding-top: 14px;
 	width: 95%;
 	height: 100%;
 	font-size: 28px;
-	border: 0px;
+}
+
+.mui-icon-close-filled{
+	padding-right: 10px;
+	padding-bottom: 10px;
+	color:gray;
 }
