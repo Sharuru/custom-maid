@@ -3,13 +3,10 @@ var localStorage = window.localStorage;
 var currRate;
 
 function initializeGJ001() {
-	console.log("In GJ001");
-	//获取数据并显示默认
-	getExchangeRate(setDefaultPair);
-	//初始化其他元素
-//	document.getElementById('exchangeTwoInput').value = 0;
+	//获取汇率数据
+	getExchangeRate();
 	//绑定动作
-	//清除按钮
+	//清除按钮点击
 	mui("body").on('click', '.mui-icon-close-filled', function() {
 		document.getElementById('exchangeOneInput').value = '';
 		document.getElementById('exchangeTwoInput').value = '';
@@ -18,7 +15,7 @@ function initializeGJ001() {
 	mui("body").on('change', '.money-type-select', function() {
 		document.getElementById(this.id.substring(0, 11) + 'Pic').src = '../../res/images/modules/GJ001/' + localStorage.getItem(this.value) + '.png';
 		document.getElementById(this.id.substring(0, 11) + 'Text').innerText = this.value;
-		calculateRate(document.getElementById('exchangeOneSelect').value, document.getElementById('exchangeTwoSelect').value, 100);
+		calculateRate(document.getElementById('exchangeOneSelect').value, document.getElementById('exchangeTwoSelect').value);
 		if (this.id == 'exchangeOneSelect') {
 			document.getElementById('exchangeOneInput').value = (document.getElementById('exchangeTwoInput').value * (1 / currRate)).toFixed(2);
 		} else {
@@ -35,7 +32,8 @@ function initializeGJ001() {
 	});
 }
 
-function calculateRate(m1, m2, balance) {
+//汇率计算
+function calculateRate(m1, m2) {
 	var m1Rate, m2Rate;
 	//循环获得对应汇率
 	for (currObj in exchangeRate.result[0]) {
@@ -52,23 +50,13 @@ function calculateRate(m1, m2, balance) {
 	if (m2 == '人民币') {
 		m2Rate = 100;
 	}
-	console.log(m1Rate + " - " + m2Rate);
 	currRate = (m1Rate / m2Rate).toString().substring(0, 6);
-	console.log('currRate set: ' + currRate);
 	var str = '1' + m1 + '=' + (currRate + m2 + ', ');
 	str += ' 更新时间: ' + exchangeRate.result[0].data1.date + ' ' + exchangeRate.result[0].data1.time;
 	document.getElementById('exchangeRateText').innerText = str;
 }
 
-function setDefaultPair() {
-	//默认汇率对为美元-人民币
-	currRate = (exchangeRate.result[0].data1.bankConversionPri / 100).toString().substring(0, 6);
-	console.log('currRate set: ' + currRate);
-	var str = '1美元=' + (currRate + '人民币, ');
-	str += ' 更新时间: ' + exchangeRate.result[0].data1.date + ' ' + exchangeRate.result[0].data1.time;
-	document.getElementById('exchangeRateText').innerText = str;
-}
-
+//获得汇率 JSON
 function getExchangeRate(callback) {
 	mui.ajax(serverAddr + 'tools/exchange', {
 		data: {
@@ -81,7 +69,7 @@ function getExchangeRate(callback) {
 		success: function(data) {
 			//赋值
 			exchangeRate = data;
-			callback();
+			calculateRate("美元", "人民币");
 		},
 		error: function(xhr, type, errorThrown) {
 			//异常处理
