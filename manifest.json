@@ -216,7 +216,9 @@
 					"res/images/icons/weather/cloudy.png",
 					"res/images/icons/weather/rain.png",
 					"res/js/common.js",
-					"res/images/icons/weather/overcast.png"
+					"res/images/icons/weather/overcast.png",
+					"res/images/icons/weather/rain-s.png",
+					"res/images/icons/weather/rain-m.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -294,7 +296,16 @@
 					"res/images/modules/GJ001/SEK.png",
 					"res/images/modules/GJ001/RUB.png",
 					"res/images/modules/GJ001/KRW.png",
-					"res/images/modules/GJ001/HKD.png"
+					"res/images/modules/GJ001/HKD.png",
+					"res/images/modules/GJ001/TWD.png",
+					"res/images/modules/GJ001/JPY.png",
+					"res/images/modules/GJ001/GBP.png",
+					"res/images/modules/GJ001/THB.png",
+					"res/images/modules/GJ001/NOK.png",
+					"res/images/modules/GJ001/SGD.png",
+					"res/images/modules/GJ001/MYR.png",
+					"res/images/modules/GJ001/CAD.png",
+					"res/images/modules/GJ001/MOP.png"
 				],
 				"refer": [
 					"index.html"

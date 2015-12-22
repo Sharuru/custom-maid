@@ -19,7 +19,8 @@ function checkIsFirstRun(callback) {
 		localStorage.setItem('多云', 'res/images/icons/weather/cloudy.png');
 		localStorage.setItem('阴', 'res/images/icons/weather/overcast.png');
 		localStorage.setItem('晴', 'res/images/icons/weather/sunny.png');
-		localStorage.setItem('小雨', 'res/images/icons/weather/rain.png');
+		localStorage.setItem('小雨', 'res/images/icons/weather/rain-s.png');
+		localStorage.setItem('中雨', 'res/images/icons/weather/rain-m.png');
 		localStorage.setItem('阵雨', 'res/images/icons/weather/heavy-rain.png');
 		//设置模块资源信息
 		localStorage.setItem('SH001', '快递');
@@ -58,7 +59,7 @@ function checkIsFirstRun(callback) {
 		localStorage.setItem('港币', 'HKD');
 		localStorage.setItem('日元', 'JPY');
 		localStorage.setItem('英镑', 'GBP');
-		localStorage.setItem('澳大利元', 'AUD');
+		localStorage.setItem('澳大利亚元', 'AUD');
 		localStorage.setItem('加拿大元', 'CAD');
 		localStorage.setItem('泰国铢', 'THB');
 		localStorage.setItem('新加坡元', 'SGD');

@@ -9,7 +9,7 @@ function setModuleList() {
 		setModuleBlock(avalModuleList[i]);
 	}
 	//绑定模块点击事件
-	mui("#moduleBody").on('tap', '.module-block', function() {
+	mui("body").on('tap', '.module-block', function() {
 		var moduleId = this.getAttribute("id").substr(5);
 		mui.openWindow({
 			url: 'modules/' + moduleId + '/' + moduleId + '.html',
