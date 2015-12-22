@@ -14,12 +14,19 @@ function initializeGJ001() {
 		document.getElementById(this.id.substring(0, 11) + 'Pic').src = '../../res/images/modules/GJ001/' + localStorage.getItem(this.value) + '.png';
 		document.getElementById(this.id.substring(0, 11) + 'Text').innerText = this.value;
 		calculateRate(document.getElementById('exchangeOneSelect').value, document.getElementById('exchangeTwoSelect').value, 100);
+		if (this.id == 'exchangeOneSelect') {
+			document.getElementById('exchangeOneInput').value = (document.getElementById('exchangeTwoInput').value * (1 / currRate)).toFixed(2);
+		} else {
+			document.getElementById('exchangeTwoInput').value = (document.getElementById('exchangeOneInput').value * currRate).toFixed(2);
+		}
 	});
 	//TODO: 输入格式化与检测
 	document.getElementById('exchangeOneInput').addEventListener('input', function() {
-		//console.log('Input1: ' + this.value);
 		document.getElementById('exchangeTwoInput').value = (this.value * currRate).toFixed(2);
-
+	});
+	document.getElementById('exchangeTwoInput').addEventListener('input', function() {
+		console.log('currRate:' + currRate);
+		document.getElementById('exchangeOneInput').value = (this.value * (1 / currRate)).toFixed(2);
 	});
 }
 
