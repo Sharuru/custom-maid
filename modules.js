@@ -14,11 +14,6 @@ function setModuleList() {
 		mui.openWindow({
 			url: 'modules/' + moduleId + '/' + moduleId + '.html',
 			id: 'Page-' + moduleId,
-			//			url: 'modules/SH001/SH001.html',
-			//			id: 'Page-SH001',
-			//			styles: {
-			//				top: '49px'
-			//			}
 			show: {
 				aniShow: "pop-in",
 				duration: 200

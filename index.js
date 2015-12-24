@@ -123,7 +123,9 @@ function setLocationHeader(callback) {
 				error: function(xhr, type, errorThrown) {
 					//异常处理
 					console.log(type);
-					mui.alert("在连接服务器时发生异常");
+					mui.alert('远程服务器连接失败', '无法获得地理信息', '重试', function() {
+						setLocationHeader(setIndexWeather);
+					});
 				}
 			});
 		},
@@ -189,7 +191,9 @@ function setIndexWeather(callback) {
 		error: function(xhr, type, errorThrown) {
 			//异常处理
 			console.log(type);
-			mui.alert("在连接服务器时发生异常");
+			mui.alert('远程服务器连接失败', '无法获得天气信息', '重试', function() {
+				setIndexHeader(loadModulesPage);
+			});
 		}
 	});
 }
