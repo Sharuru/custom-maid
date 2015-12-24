@@ -84,7 +84,7 @@ function setCurrRate(m1, m2) {
 	currRate = (m1Rate / m2Rate).toString().substring(0, 6);
 	console.log('currRate is setted: ' + currRate);
 	if (currRate == 'NaN') {
-		mui.alert('所选银行暂无该货币对报价','无法计算');
+		mui.alert('所选银行暂无该货币对报价', '无法计算');
 	}
 	setRateText(m1, m2);
 }
@@ -127,7 +127,9 @@ function getExchangeRate(m1, m2) {
 		error: function(xhr, type, errorThrown) {
 			//异常处理
 			console.log(type);
-			mui.alert('在连接服务器时发生异常');
+			mui.alert('远程服务器连接失败', '无法获得汇率信息', '重试', function() {
+				getExchangeRate(m1, m2);
+			});
 		}
 	});
 }
