@@ -84,7 +84,7 @@ function setCurrRate(m1, m2) {
 	currRate = (m1Rate / m2Rate).toString().substring(0, 6);
 	console.log('currRate is setted: ' + currRate);
 	if (currRate == 'NaN') {
-		alert('该银行暂无报价');
+		mui.alert('所选银行暂无该货币对报价','无法计算');
 	}
 	setRateText(m1, m2);
 }
