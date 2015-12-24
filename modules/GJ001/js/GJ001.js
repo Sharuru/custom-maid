@@ -7,7 +7,9 @@ var currRate;
 //GJ001 画面初始化
 function initializeGJ001() {
 	//获取汇率数据
-	getExchangeRate();
+	getExchangeRate('美元', '人民币');
+	//设置默认焦点
+	document.getElementById('exchangeOneInput').focus();
 	//绑定动作
 	//输入框清除按钮点击
 	mui("body").on('click', '.mui-icon-close-filled', function() {
@@ -23,16 +25,11 @@ function initializeGJ001() {
 		setCurrRate(document.getElementById('exchangeOneSelect').value, document.getElementById('exchangeTwoSelect').value);
 		//根据触发事件的控件id来更改对应计算值
 		if (this.id == 'exchangeOneSelect') {
-			if (currRate == 'NaN') {
-				alert('该银行暂无报价');
-			}
 			document.getElementById('exchangeOneInput').value = (document.getElementById('exchangeTwoInput').value * (1 / currRate)).toFixed(2);
 		} else {
-			if (currRate == 'NaN') {
-				alert('该银行暂无报价');
-			}
 			document.getElementById('exchangeTwoInput').value = (document.getElementById('exchangeOneInput').value * currRate).toFixed(2);
 		}
+
 	});
 	//TODO: 输入格式化与检测
 	//输入值时实时计算对应货币对的值
@@ -42,6 +39,19 @@ function initializeGJ001() {
 	document.getElementById('exchangeTwoInput').addEventListener('input', function() {
 		console.log('currRate:' + currRate);
 		document.getElementById('exchangeOneInput').value = (this.value * (1 / currRate)).toFixed(2);
+	});
+	//银行选择
+	mui("body").on('change', '.bank-select', function() {
+		//银行名变更
+		document.getElementById('selectedBankName').innerText = this.options[this.selectedIndex].text;
+		//清除输入
+		document.getElementById('exchangeOneInput').value = '';
+		document.getElementById('exchangeTwoInput').value = '';
+		//选择后更新汇率
+		getExchangeRate(document.getElementById('exchangeOneSelect').value, document.getElementById('exchangeTwoSelect').value);
+		//切换后设置焦点
+		document.getElementById('exchangeOneInput').focus();
+
 	});
 }
 
@@ -73,6 +83,9 @@ function setCurrRate(m1, m2) {
 	//设置计算使用汇率并样式截取
 	currRate = (m1Rate / m2Rate).toString().substring(0, 6);
 	console.log('currRate is setted: ' + currRate);
+	if (currRate == 'NaN') {
+		alert('该银行暂无报价');
+	}
 	setRateText(m1, m2);
 }
 
@@ -90,13 +103,15 @@ function setRateText(m1, m2) {
 
 /*
  * 获得汇率数据
+ * 
+ * @param m1 String 货币种类名1
+ * @param m2 String 货币种类名2
  */
-function getExchangeRate() {
+function getExchangeRate(m1, m2) {
 	//TODO:考虑缓存数据
 	mui.ajax(serverAddr + 'tools/exchange', {
 		data: {
-			//默认获得中国银行的报价
-			bank: '5'
+			bank: document.getElementById('bankSelect').value
 		},
 		//服务器返回json格式数据
 		dataType: 'json',
@@ -107,7 +122,7 @@ function getExchangeRate() {
 		success: function(data) {
 			//赋值
 			exchangeRate = data;
-			setCurrRate('美元', '人民币');
+			setCurrRate(m1, m2);
 		},
 		error: function(xhr, type, errorThrown) {
 			//异常处理
