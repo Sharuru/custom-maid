@@ -5,7 +5,9 @@ var localStorage = window.localStorage;
 //计算时使用汇率
 var currRate;
 
-//GJ001 画面初始化
+/*
+ * GJ001 画面初始化
+ */
 function initializeGJ001() {
 	//获取汇率数据
 	getExchangeRate('美元', '人民币');

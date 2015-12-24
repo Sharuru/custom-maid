@@ -261,7 +261,8 @@
 				],
 				"refer": [
 					"modules/SH001/SH001.html",
-					"modules/GJ001/GJ001.html"
+					"modules/GJ001/GJ001.html",
+					"modules/HJ001/HJ001.html"
 				],
 				"priority": 0
 			},
@@ -310,6 +311,18 @@
 				"refer": [
 					"index.html"
 				],
+				"priority": 0
+			},
+			"modules/HJ001/HJ001.html": {
+				"resources": [
+					"res/css/mui.min.css",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/fonts/mui.ttf",
+					"modules/HJ001/css/HJ001.css",
+					"modules/HJ001/js/HJ001.js"
+				],
+				"refer": [],
 				"priority": 0
 			}
 		},
