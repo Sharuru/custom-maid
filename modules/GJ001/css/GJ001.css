@@ -51,9 +51,10 @@
 .bank-text {
 	position: absolute;
 	width: 100%;
-	bottom: 0px;
+	bottom: 1px;
 	text-align: center;
 	color: gray;
+	overflow: hidden;
 	font-size: 14px;
 }
 
@@ -62,7 +63,6 @@
 	position: absolute;
 	left: 0px;
 	width: 100%;
-	bottom:0px;
 }
 
 ::-webkit-input-placeholder {
