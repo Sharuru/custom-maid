@@ -8,6 +8,12 @@
 	background: #EEEEEE;
 }
 
+.mui-icon-close-filled {
+	padding-right: 10px;
+	padding-bottom: 10px;
+	color: gray;
+}
+
 .header-text-line-1 {
 	padding-top: 4px;
 	font-size: 22px;
@@ -55,10 +61,4 @@ input[type="number"] {
 	width: 95%;
 	height: 100%;
 	font-size: 28px;
-}
-
-.mui-icon-close-filled{
-	padding-right: 10px;
-	padding-bottom: 10px;
-	color:gray;
 }
