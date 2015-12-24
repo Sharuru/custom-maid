@@ -1,3 +1,4 @@
+//数据 obj
 var exchangeRate = new Object();
 //本地 cache 读写 object
 var localStorage = window.localStorage;
@@ -37,7 +38,6 @@ function initializeGJ001() {
 		document.getElementById('exchangeTwoInput').value = (this.value * currRate).toFixed(2);
 	});
 	document.getElementById('exchangeTwoInput').addEventListener('input', function() {
-		console.log('currRate:' + currRate);
 		document.getElementById('exchangeOneInput').value = (this.value * (1 / currRate)).toFixed(2);
 	});
 	//银行选择
