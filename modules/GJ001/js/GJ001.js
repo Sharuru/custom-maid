@@ -51,7 +51,6 @@ function initializeGJ001() {
 		getExchangeRate(document.getElementById('exchangeOneSelect').value, document.getElementById('exchangeTwoSelect').value);
 		//切换后设置焦点
 		document.getElementById('exchangeOneInput').focus();
-
 	});
 }
 
@@ -108,7 +107,6 @@ function setRateText(m1, m2) {
  * @param m2 String 货币种类名2
  */
 function getExchangeRate(m1, m2) {
-	//TODO:考虑缓存数据
 	mui.ajax(serverAddr + 'tools/exchange', {
 		data: {
 			bank: document.getElementById('bankSelect').value

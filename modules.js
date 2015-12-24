@@ -1,6 +1,5 @@
 //设置功能列表
 function setModuleList() {
-	//TODO: 超时时默认功能
 	console.log("Setting module list...");
 	//获取可用模块列表
 	var localStorage = window.localStorage;
