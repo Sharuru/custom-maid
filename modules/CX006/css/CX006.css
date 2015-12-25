@@ -1,0 +1,69 @@
+.mui-bar-nav {
+	height: 49px;
+	color: white;
+	background: #20428A;
+}
+
+.mui-bar-tab {
+	background: #EEEEEE;
+}
+
+.mui-icon-close-filled {
+	padding-right: 10px;
+	padding-bottom: 10px;
+	color: gray;
+}
+
+.header-text-line-1 {
+	padding-top: 4px;
+	font-size: 22px;
+}
+
+.base-div {
+	background: white;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid lightgrey;
+}
+
+.guide-text-left {
+	font-size: 15px;
+	color: gray;
+	text-align: left;
+}
+
+.guide-text-right {
+	font-size: 15px;
+	color: gray;
+	text-align: right;
+}
+
+.guide-change-button {
+	text-align: center;
+	vertical-align: middle;
+	color: gray;
+	padding-top: 0px;
+}
+
+.from-text {
+	text-align: left;
+	font-size: 26px;
+	padding: 0px;
+	width: 100%;
+	border: 0px;
+}
+
+.to-text {
+	text-align: right;
+	font-size: 26px;
+	padding: 0px;
+	width: 100%;
+	border: 0px;
+}
+
+.search-button {
+	height: 40px;
+	width: 80%;
+	top: 5px;
+	font-size: 16px;
+}

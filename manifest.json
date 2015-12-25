@@ -262,7 +262,8 @@
 				"refer": [
 					"modules/SH001/SH001.html",
 					"modules/GJ001/GJ001.html",
-					"modules/HJ001/HJ001.html"
+					"modules/HJ001/HJ001.html",
+					"modules/CX006/CX006.html"
 				],
 				"priority": 0
 			},
@@ -321,6 +322,33 @@
 					"res/fonts/mui.ttf",
 					"modules/HJ001/css/HJ001.css",
 					"modules/HJ001/js/HJ001.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/CX006/CX006.html": {
+				"resources": [
+					"res/css/mui.min.css",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/fonts/mui.ttf",
+					"modules/CX006/js/CX006.js",
+					"modules/CX006/css/CX006.css"
+				],
+				"refer": [
+					"modules/CX006/CITY_LIST.html"
+				],
+				"priority": 0
+			},
+			"modules/CX006/CITY_LIST.html": {
+				"resources": [
+					"res/css/mui.min.css",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"modules/CX006/css/CITY_LIST.css",
+					"modules/CX006/css/CX006.css",
+					"res/fonts/mui.ttf",
+					"modules/CX006/js/CITY_LIST.js"
 				],
 				"refer": [],
 				"priority": 0

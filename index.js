@@ -33,7 +33,7 @@ function checkIsFirstRun(callback) {
 		localStorage.setItem('CX003', '航班');
 		localStorage.setItem('CX004', '路况');
 		localStorage.setItem('CX005', '公交');
-		localStorage.setItem('CX006', '长途');
+		localStorage.setItem('CX006', '长途汽车');
 		localStorage.setItem('CX007', '出行');
 		localStorage.setItem('GJ001', '汇率换算');
 		localStorage.setItem('GJ002', '彩票信息');
@@ -116,7 +116,7 @@ function setLocationHeader(callback) {
 					localStorage.setItem("province", data.province);
 					localStorage.setItem("modules", data.avalModuleList);
 					//赋值
-					document.getElementById('headerLoaction').innerHTML = localStorage.getItem("province");
+					//document.getElementById('headerLoaction').innerHTML = localStorage.getItem("province");
 					console.log("Modules: " + localStorage.getItem("modules"));
 					callback(loadModulesPage);
 				},
@@ -154,6 +154,8 @@ function setIndexWeather(callback) {
 			//TODO: 本地缓存
 			localStorage.setItem("weatherJson", JSON.stringify(data));
 			console.log("Weather json: " + JSON.stringify(data));
+			//TODO： 省市覆盖
+			localStorage.setItem('province',data.retData.city);
 			//赋值
 			//设置今日信息
 			document.getElementById('todayCurrWeatherTemp').innerText = data.retData.today.curTemp;

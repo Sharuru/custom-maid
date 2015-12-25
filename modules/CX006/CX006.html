@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="../../res/js/mui.min.js"></script>
+		<script type="text/javascript" src="../../res/js/common.js"></script>
+		<link href="../../res/css/mui.min.css" rel="stylesheet" />
+		<link href="css/CX006.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/CX006.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+			mui.plusReady(function() {
+				initializeCX006();
+			})
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div class="header-text-line-1">
+				<a class="mui-action-back  mui-icon mui-icon-back" style="color:white;"></a>
+				长途汽车
+			</div>
+		</header>
+		<div style="height:100%;margin-top: 49px;">
+			<div class="base-div">
+				<table border="0" style="width:90%;margin: auto;">
+					<tr>
+						<td width="35%;" class="guide-text-left">出发城市</td>
+						<td rowspan="3" width="30%;" class="guide-change-button">
+							<button style="border: 0px;height:100%;"><span class="mui-icon mui-icon-arrowleft" style="font-size: 20px;"></span>交换<span class="mui-icon mui-icon-arrowright" style="font-size: 20px;"></span></button>
+						</td>
+						<td width="35%;" class="guide-text-right">到达城市</td>
+					</tr>
+					<tr style="height: 24px;font-size: 26px;">
+						<td width="35%;" style="text-align:left;">
+							<button id="fromButton" class="from-text">上海</button>
+						</td>
+						<td width="35%;" style="text-align:right;">
+							<button class="to-text">请选择</button>
+						</td>
+					</tr>
+					<tr style="height: 1px;">
+						<td width="35%;" bgcolor="#ACACB4"></td>
+						<td width="35%;" bgcolor="#ACACB4"></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="60px;" style="text-align: center;">
+							<button  type="button" class="mui-btn-primary search-button" onclick="abcd();">
+								开始查询
+							</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+
+</html>
