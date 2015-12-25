@@ -11,8 +11,8 @@ var currRate;
 function initializeGJ001() {
 	//获取汇率数据
 	getExchangeRate('美元', '人民币');
-	//设置默认焦点
-	document.getElementById('exchangeOneInput').focus();
+	//	//设置默认焦点
+	//	document.getElementById('exchangeOneInput').focus();
 	//绑定动作
 	//输入框清除按钮点击
 	mui("body").on('click', '.mui-icon-close-filled', function() {
@@ -109,6 +109,11 @@ function setRateText(m1, m2) {
  * @param m2 String 货币种类名2
  */
 function getExchangeRate(m1, m2) {
+	//锁定界面
+	document.getElementById('exchangeOneInput').disabled = 'disabled';
+	document.getElementById('exchangeTwoInput').disabled = 'disabled';
+	document.getElementById('exchangeOneInput').placeholder = '请等待...';
+	document.getElementById('exchangeTwoInput').placeholder = '请等待...';
 	mui.ajax(serverAddr + 'tools/exchange', {
 		data: {
 			bank: document.getElementById('bankSelect').value
@@ -123,6 +128,10 @@ function getExchangeRate(m1, m2) {
 			//赋值
 			exchangeRate = data;
 			setCurrRate(m1, m2);
+			document.getElementById('exchangeOneInput').disabled = '';
+			document.getElementById('exchangeTwoInput').disabled = '';
+			document.getElementById('exchangeOneInput').placeholder = '请输入金额';
+			document.getElementById('exchangeTwoInput').placeholder = '请输入金额';
 		},
 		error: function(xhr, type, errorThrown) {
 			//异常处理
