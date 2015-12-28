@@ -1,0 +1,24 @@
+.mui-bar-nav {
+	height: 49px;
+	color: white;
+	background: #20428A;
+}
+
+.mui-bar-tab {
+	background: #EEEEEE;
+}
+
+.mui-icon-close-filled {
+	padding-right: 10px;
+	padding-bottom: 10px;
+	color: gray;
+}
+
+.header-text-line-1 {
+	padding-top: 4px;
+	font-size: 22px;
+}
+
+.indexed-fixed{
+	height: 35px;
+}

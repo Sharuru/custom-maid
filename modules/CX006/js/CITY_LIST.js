@@ -1,13 +1,23 @@
-
 function initializeCITY_LIST() {
 	console.log('In cityList');
 	var self = plus.webview.currentWebview();
 	console.log('Get passed: ' + self.triggerId);
 	//设置标题
-	if(self.triggerId == 'fromButton'){
+	if (self.triggerId == 'fromButton') {
 		document.getElementById('titleText').innerText = '出发城市';
-	}
-	else{
+	} else {
 		document.getElementById('titleText').innerText = '到达城市';
 	}
+	//城市点击事件
+	mui('.mui-indexed-list-item').each(function() {
+		this.addEventListener('tap', function() {
+			console.log('Choosed: ' + this.innerText);
+			var backPage = plus.webview.getWebviewById('PAGE_CX006');
+			mui.fire(backPage, 'setLocation', {
+				loc: this.innerText,
+				triggerId: self.triggerId
+			});
+			mui.back();
+		});
+	});
 }

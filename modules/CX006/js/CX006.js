@@ -2,8 +2,10 @@ var localStorage = window.localStorage;
 
 function initializeCX006() {
 	console.log('In CX006');
-	//	var self = plus.webview.currentWebview();
-	//	console.log(self.id);
+	//传值事件绑定
+	window.addEventListener('setLocation', function(event) {
+		document.getElementById(event.detail.triggerId).innerText = event.detail.loc;
+	});
 	document.getElementById('fromButton').innerText = localStorage.getItem("province");
 	//给两个城市按钮绑定点击事件
 	mui('.button-text').each(function() {
