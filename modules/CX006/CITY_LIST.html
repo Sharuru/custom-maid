@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
 		<script src="../../res/js/mui.min.js"></script>
+		<script src="../../res/js/mui.indexedlist.js"></script>
 		<script type="text/javascript" src="../../res/js/common.js"></script>
 		<link href="../../res/css/mui.min.css" rel="stylesheet" />
 		<link href="css/CITY_LIST.css" rel="stylesheet" />
@@ -16,6 +17,10 @@
 			mui.init();
 			mui.plusReady(function() {
 				initializeCITY_LIST();
+				//计算高度，魔法！显示高度 - 搜索栏高度 - 顶栏高度 + 诡异的边框高度
+				list.style.height = plus.screen.resolutionHeight - 35 - 49 + 15 + 'px';
+				//create
+				window.indexedList = new mui.IndexedList(list);
 			})
 		</script>
 	</head>
@@ -698,18 +703,6 @@
 				</div>
 			</div>
 		</div>
-		<script src="../../res/js/mui.indexedlist.js"></script>
-		<script type="text/javascript" charset="utf-8">
-			mui.init();
-			mui.plusReady(function() {
-				var header = document.querySelector('header.mui-bar');
-				var list = document.getElementById('list');
-				//计算高度，魔法！显示高度 - 搜索栏高度 - 顶栏高度 + 诡异的边框高度
-				list.style.height = plus.screen.resolutionHeight-35-49+15+ 'px';
-				//create
-				window.indexedList = new mui.IndexedList(list);
-			});
-		</script>
 	</body>
 
 </html>
