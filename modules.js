@@ -12,7 +12,7 @@ function setModuleList() {
 		var moduleId = this.getAttribute("id").substr(5);
 		mui.openWindow({
 			url: 'modules/' + moduleId + '/' + moduleId + '.html',
-			id: 'Page-' + moduleId,
+			id: 'PAGE_' + moduleId,
 			show: {
 				aniShow: "pop-in",
 				duration: 200

@@ -45,20 +45,19 @@
 	padding-top: 0px;
 }
 
-.from-text {
-	text-align: left;
+.button-text {
 	font-size: 26px;
 	padding: 0px;
 	width: 100%;
 	border: 0px;
 }
 
-.to-text {
+.left {
+	text-align: left;
+}
+
+.right {
 	text-align: right;
-	font-size: 26px;
-	padding: 0px;
-	width: 100%;
-	border: 0px;
 }
 
 .search-button {

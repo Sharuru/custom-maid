@@ -348,7 +348,9 @@
 					"modules/CX006/css/CITY_LIST.css",
 					"modules/CX006/css/CX006.css",
 					"res/fonts/mui.ttf",
-					"modules/CX006/js/CITY_LIST.js"
+					"modules/CX006/js/CITY_LIST.js",
+					"res/js/mui.indexedlist.js",
+					"res/css/mui.indexedlist.css"
 				],
 				"refer": [],
 				"priority": 0
