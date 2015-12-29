@@ -5,51 +5,42 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
-		<script src="../../res/js/mui.min.js"></script>
-		<script type="text/javascript" src="../../res/js/common.js"></script>
 		<link href="../../res/css/mui.min.css" rel="stylesheet" />
 		<link href="css/CX006.css" rel="stylesheet" />
-		<script type="text/javascript" src="js/CX006.js"></script>
-		<script type="text/javascript" charset="utf-8">
-			mui.init();
-			mui.plusReady(function() {
-				initializeCX006();
-			})
-		</script>
 	</head>
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<div class="header-text-line-1">
-				<a class="mui-action-back  mui-icon mui-icon-back" style="color:white;"></a>
+				<a class="mui-action-back  mui-icon mui-icon-back"></a>
 				长途汽车
 			</div>
 		</header>
 		<div style="height:100%;margin-top: 49px;">
 			<div class="base-div">
-				<table border="0" style="width:90%;margin: auto;">
+				<table class="base-table">
 					<tr>
-						<td width="35%;" class="guide-text-left">出发城市</td>
-						<td rowspan="3" width="30%;" class="guide-change-button">
-							<button style="border: 0px;height:100%;"><span class="mui-icon mui-icon-arrowleft" style="font-size: 20px;"></span>交换<span class="mui-icon mui-icon-arrowright" style="font-size: 20px;"></span></button>
+						<td class="guide-text-left">出发城市</td>
+						<td rowspan="3" class="guide-change-button">
+							<button id="changeButton" class="change-button"><span class="mui-icon mui-icon-arrowleft"></span>交换<span class="mui-icon mui-icon-arrowright"></span></button>
 						</td>
-						<td width="35%;" class="guide-text-right">到达城市</td>
+						<td class="guide-text-right">到达城市</td>
 					</tr>
-					<tr style="height: 24px;font-size: 26px;">
-						<td width="35%;" style="text-align:left;">
+					<tr class="text-tr">
+						<td>
 							<button id="fromButton" class="button-text left">上海</button>
 						</td>
-						<td width="35%;" style="text-align:right;">
+						<td>
 							<button id="toButton" class="button-text right">请选择</button>
 						</td>
 					</tr>
-					<tr style="height: 1px;">
-						<td width="35%;" bgcolor="#ACACB4"></td>
-						<td width="35%;" bgcolor="#ACACB4"></td>
+					<tr class="line-tr">
+						<td bgcolor="#ACACB4"></td>
+						<td bgcolor="#ACACB4"></td>
 					</tr>
 					<tr>
-						<td colspan="3" height="60px;" style="text-align: center;">
-							<button  type="button" class="mui-btn-primary search-button">
+						<td colspan="3" class="search-td">
+							<button type="button" id="searchButton" class="mui-btn-primary search-button">
 								开始查询
 							</button>
 						</td>
@@ -57,6 +48,16 @@
 				</table>
 			</div>
 		</div>
+		<div class="footer">信息数据由 <a>360搜索</a> 提供</div>
 	</body>
+	<script src="../../res/js/mui.min.js"></script>
+	<script type="text/javascript" src="../../res/js/common.js"></script>
+	<script type="text/javascript" src="js/CX006.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+		mui.plusReady(function() {
+			initializeCX006();
+		})
+	</script>
 
 </html>

@@ -30,12 +30,14 @@
 	font-size: 15px;
 	color: gray;
 	text-align: left;
+	width: 35%;
 }
 
 .guide-text-right {
 	font-size: 15px;
 	color: gray;
 	text-align: right;
+	width: 35%;
 }
 
 .guide-change-button {
@@ -43,6 +45,7 @@
 	vertical-align: middle;
 	color: gray;
 	padding-top: 0px;
+	width: 30%;
 }
 
 .button-text {
@@ -65,4 +68,49 @@
 	width: 80%;
 	top: 5px;
 	font-size: 16px;
+}
+
+.base-table {
+	border: 0;
+	width: 90%;
+	margin: auto;
+}
+
+.change-button {
+	border: 0px;
+	height: 100%;
+}
+
+.mui-icon {
+	font-size: 20px;
+}
+
+.mui-icon-back {
+	color: white;
+}
+
+.text-tr {
+	height: 24px;
+	font-size: 26px;
+	width: 35%;
+}
+
+.line-tr {
+	height: 1px;
+	width: 35%;
+}
+
+.search-td {
+	height: 60px;
+	text-align: center;
+}
+
+.footer {
+	position: absolute;
+	width: 100%;
+	bottom: 1px;
+	text-align: center;
+	color: gray;
+	overflow: hidden;
+	font-size: 14px;
 }

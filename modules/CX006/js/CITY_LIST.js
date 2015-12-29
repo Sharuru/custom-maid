@@ -9,15 +9,13 @@ function initializeCITY_LIST() {
 		document.getElementById('titleText').innerText = '到达城市';
 	}
 	//城市点击事件
-	mui('.mui-indexed-list-item').each(function() {
-		this.addEventListener('tap', function() {
-			console.log('Choosed: ' + this.innerText);
-			var backPage = plus.webview.getWebviewById('PAGE_CX006');
-			mui.fire(backPage, 'setLocation', {
-				loc: this.innerText,
-				triggerId: self.triggerId
-			});
-			mui.back();
+	mui('.mui-table-view').on('tap', '.mui-indexed-list-item', function() {
+		console.log('Choosed: ' + this.innerText);
+		var backPage = plus.webview.getWebviewById('PAGE_CX006');
+		mui.fire(backPage, 'setLocation', {
+			loc: this.innerText,
+			triggerId: self.triggerId
 		});
+		mui.back();
 	});
 }

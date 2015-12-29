@@ -336,7 +336,8 @@
 					"modules/CX006/css/CX006.css"
 				],
 				"refer": [
-					"modules/CX006/CITY_LIST.html"
+					"modules/CX006/CITY_LIST.html",
+					"modules/CX006/RESULT_LIST.html"
 				],
 				"priority": 0
 			},
@@ -350,7 +351,20 @@
 					"res/fonts/mui.ttf",
 					"modules/CX006/js/CITY_LIST.js",
 					"res/js/mui.indexedlist.js",
-					"res/css/mui.indexedlist.css"
+					"res/css/mui.indexedlist.css",
+					"res/js/mui.indexedlist.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/CX006/RESULT_LIST.html": {
+				"resources": [
+					"modules/CX006/css/RESULT_LIST.css",
+					"res/css/mui.min.css",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"modules/CX006/js/RESULT_LIST.js",
+					"res/js/common.js"
 				],
 				"refer": [],
 				"priority": 0
