@@ -5,7 +5,20 @@
 }
 
 .mui-bar-tab {
-	background: #EEEEEE;
+	background: lightgray;
+}
+
+.border-right {
+	border-right: 1px solid gray;
+}
+
+.mui-tab-label {
+	font-size: 15px;
+	color: gray;
+}
+
+.mui-active {
+	color: gray !important;
 }
 
 .mui-icon-close-filled {
@@ -19,6 +32,61 @@
 	font-size: 22px;
 }
 
-.content{
-	margin-top: 0px;
+.content {
+	margin-top: 49px;
+	margin-bottom: 50px;
+}
+
+.result {
+	padding: 12px 20px;
+	border-bottom: 1px solid lightgray;
+}
+
+.time-td {
+	height: 32px;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.circle-td {
+	height: 25px;
+	width: 8%;
+}
+
+.price-td {
+	text-align: right;
+	color: #FF3366;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.money-mark {
+	font-size: 20px;
+}
+
+.start-circle {
+	width: 20px;
+	height: 20px;
+	background-color: dodgerblue;
+	border-radius: 25px;
+}
+
+.arrive-circle {
+	width: 20px;
+	height: 20px;
+	background-color: lightseagreen;
+	border-radius: 25px;
+}
+
+.arrive-text {
+	color: grey;
+}
+
+.circle-text {
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	display: block;
+	color: #FFF;
+	text-align: center
 }

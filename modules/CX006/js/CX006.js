@@ -62,9 +62,7 @@ function getJsonData(from, to) {
 	mui.ajax(serverAddr + 'travel/longDBus', {
 		data: {
 			from: from,
-			//TODO: debug
-			to: '嘉善'
-				//to: to
+			to: to
 		},
 		//服务器返回json格式数据
 		dataType: 'json',
@@ -74,9 +72,12 @@ function getJsonData(from, to) {
 		timeout: 10000,
 		success: function(data) {
 			//设置
-			operateData(from, '嘉善', data);
-			searchButton.disabled = '';
-			searchButton.innerText = '开始查询';
+			operateData(from, to, data);
+			searchButton.innerText = '正在跳转';
+			setTimeout(function() {
+				searchButton.disabled = '';
+				searchButton.innerHTML = '开始查询';
+			}, 200);
 		},
 		error: function(xhr, type, errorThrown) {
 			//异常处理
@@ -98,9 +99,6 @@ function operateData(from, to, data) {
 		mui.openWindow({
 			url: 'RESULT_LIST.html',
 			id: 'PAGE_RESULT_LIST',
-			styles: {
-				top: "49px"
-			},
 			show: {
 				aniShow: 'pop-in',
 				duration: 200

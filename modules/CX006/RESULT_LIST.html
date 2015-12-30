@@ -10,13 +10,29 @@
 	</head>
 
 	<body>
-		<!--<header class="mui-bar mui-bar-nav">
+		<header class="mui-bar mui-bar-nav">
 			<div class="header-text-line-1">
 				<a class="mui-action-back  mui-icon mui-icon-back" style="color:white;"></a>
 				<span id="titleText"></span>
 			</div>
-		</header>-->
-		<div class="content" id="test">
+		</header>
+		<div class="content" id="resultContent">
+		</div>
+
+		<nav class="mui-bar mui-bar-tab ">
+			<a class="mui-tab-item border-right">
+				<span class="mui-tab-label" id="sortByTime" value="0">按发车时间排序 ▲</span>
+			</a>
+
+			<a class="mui-tab-item" href="#stationPopover">
+				<span class="mui-tab-label" id="sortByStart">按始发车站筛选</span>
+			</a>
+		</nav>
+
+		<div id="stationPopover" class="mui-popover">
+			<ul id="stationPopoverView" class="mui-table-view">
+				<li class="mui-table-view-cell" >清空筛选</li>
+			</ul>
 		</div>
 	</body>
 	<script src="../../res/js/mui.min.js"></script>
