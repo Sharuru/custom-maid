@@ -1,3 +1,6 @@
+/**
+ * 初始化城市列表 
+ */
 function initializeCITY_LIST() {
 	console.log('In cityList');
 	var self = plus.webview.currentWebview();

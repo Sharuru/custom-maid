@@ -1,8 +1,12 @@
+//缓存 obj select
 var localStorage = window.localStorage;
 var fromButton = document.getElementById('fromButton');
 var toButton = document.getElementById('toButton');
 var searchButton = document.getElementById('searchButton');
 
+/**
+ * 初始化CX006
+ */
 function initializeCX006() {
 	console.log('In CX006');
 	//文本初始化
@@ -55,6 +59,12 @@ function initializeCX006() {
 	})
 }
 
+/**
+ * 获得 json 数据 
+ * 
+ * @param String from 出发城市
+ * @param String to 到达城市
+ */
 function getJsonData(from, to) {
 	console.log('Ask from ' + from + ' to ' + to);
 	searchButton.disabled = 'disabled';
@@ -89,6 +99,13 @@ function getJsonData(from, to) {
 	});
 }
 
+/**
+ * 对数据进行处理并传递参数
+ * 
+ * @param String from 出发城市
+ * @param String to 到达城市
+ * @param Json data json数据
+ */
 function operateData(from, to, data) {
 	console.log('Setting screen...');
 	//没有数据

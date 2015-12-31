@@ -155,7 +155,8 @@ function setIndexWeather(callback) {
 			localStorage.setItem("weatherJson", JSON.stringify(data));
 			console.log("Weather json: " + JSON.stringify(data));
 			//TODO： 省市覆盖
-			localStorage.setItem('province',data.retData.city);
+			localStorage.setItem('province', data.retData.city);
+			localStorage.setItem('cityId', data.retData.cityid);
 			//赋值
 			//设置今日信息
 			document.getElementById('todayCurrWeatherTemp').innerText = data.retData.today.curTemp;

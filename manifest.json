@@ -263,7 +263,8 @@
 					"modules/SH001/SH001.html",
 					"modules/GJ001/GJ001.html",
 					"modules/HJ001/HJ001.html",
-					"modules/CX006/CX006.html"
+					"modules/CX006/CX006.html",
+					"modules/CX002/CX002.html"
 				],
 				"priority": 0
 			},
@@ -365,6 +366,22 @@
 					"res/js/mui.min.js",
 					"modules/CX006/js/RESULT_LIST.js",
 					"res/js/common.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/CX002/CX002.html": {
+				"resources": [
+					"modules/CX002/css/CX002.css",
+					"modules/CX002/js/CX002.js",
+					"res/css/mui.min.css",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/fonts/mui.ttf",
+					"res/images/modules/CX002/lujing.png",
+					"res/js/mui.zoom.js",
+					"res/js/mui.previewimage.js",
+					"modules/CX002/101020100.html"
 				],
 				"refer": [],
 				"priority": 0

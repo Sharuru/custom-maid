@@ -1,7 +1,11 @@
+//缓存 obj select
 var resultContent = document.getElementById('resultContent');
 var stationPopover = document.getElementById('stationPopoverView');
 var selectedStation = '清空筛选';
 
+/**
+ * 初始化结果列表 
+ */
 function initializeRESULT_LIST() {
 	//设置标题
 	var self = plus.webview.currentWebview();
@@ -18,32 +22,35 @@ function initializeRESULT_LIST() {
 	document.getElementById('sortByTime').addEventListener('tap', function() {
 		if (this.innerText.substr(-1) == '▲') {
 			this.innerText = '按发车时间排序 ▼';
-			setContent(1, self, selectedStation);
+			this.value = '1';
+			setContent(this.value, self, selectedStation);
 			setSelector(self);
 		} else {
 			this.innerText = '按发车时间排序 ▲';
-			setContent(0, self, selectedStation);
+			this.value = '0';
+			setContent(this.value, self, selectedStation);
 		}
 	});
 	mui('#stationPopoverView').on('tap', '.mui-table-view-cell', function() {
-		var type;
-		if (document.getElementById('sortByTime').innerHTML.substr(-1) == '▲') {
-			type = 0;
-		} else {
-			type = 1;
-		}
 		console.log(this.innerText)
 		selectedStation = this.innerText;
-		setContent(type, self, selectedStation);
+		setContent(document.getElementById('sortByTime').value, self, selectedStation);
 		mui('.mui-popover').popover('toggle');
 	})
 }
 
+/**
+ * 根据排序种类生成内容
+ * 
+ * @param String sortType 排序类型，0为按发车时间升序，1为降序
+ * @param Webview self webview obj
+ * @param String keyWord 出发城市关键字
+ */
 function setContent(sortType, self, keyWord) {
 	//清除旧内容
 	resultContent.innerHTML = '';
-	var headContent = ''
-	var tailContent = ''
+	var headContent = '';
+	var tailContent = '';
 	for (currIndex in self.data.result.list) {
 		if (sortType == 0) {
 			headContent = resultContent.innerHTML;
@@ -86,7 +93,12 @@ function setContent(sortType, self, keyWord) {
 	}
 }
 
-//TODO: popover 值过多时无法滚动
+//TODO 已知BUG：popover 值过多时无法滚动
+/**
+ * 设置筛选 popover
+ * 
+ * @param Webview self webview obj
+ */
 function setSelector(self) {
 	var station = []
 	for (currIndex in self.data.result.list) {
