@@ -4,20 +4,23 @@ var exchangeRate = new Object();
 var localStorage = window.localStorage;
 //计算时使用汇率
 var currRate;
+var exchangeOneInput = document.getElementById('exchangeOneInput');
+var exchangeTwoInput = document.getElementById('exchangeTwoInput');
 
-/*
+/**
  * GJ001 画面初始化
  */
 function initializeGJ001() {
+	console.log(exchangeOneInput);
 	//获取汇率数据
 	getExchangeRate('美元', '人民币');
 	//	//设置默认焦点
-	//	document.getElementById('exchangeOneInput').focus();
+	//	exchangeOneInput.focus();
 	//绑定动作
 	//输入框清除按钮点击
 	mui("body").on('click', '.mui-icon-close-filled', function() {
-		document.getElementById('exchangeOneInput').value = '';
-		document.getElementById('exchangeTwoInput').value = '';
+		exchangeOneInput.value = '';
+		exchangeTwoInput.value = '';
 	});
 	//货币对选择
 	mui("body").on('change', '.money-type-select', function() {
@@ -28,39 +31,39 @@ function initializeGJ001() {
 		setCurrRate(document.getElementById('exchangeOneSelect').value, document.getElementById('exchangeTwoSelect').value);
 		//根据触发事件的控件id来更改对应计算值
 		if (this.id == 'exchangeOneSelect') {
-			document.getElementById('exchangeOneInput').value = (document.getElementById('exchangeTwoInput').value * (1 / currRate)).toFixed(2);
+			exchangeOneInput.value = (exchangeTwoInput.value * (1 / currRate)).toFixed(2);
 		} else {
-			document.getElementById('exchangeTwoInput').value = (document.getElementById('exchangeOneInput').value * currRate).toFixed(2);
+			exchangeTwoInput.value = (exchangeOneInput.value * currRate).toFixed(2);
 		}
 
 	});
 	//TODO: 输入格式化与检测
 	//输入值时实时计算对应货币对的值
-	document.getElementById('exchangeOneInput').addEventListener('input', function() {
-		document.getElementById('exchangeTwoInput').value = (this.value * currRate).toFixed(2);
+	exchangeOneInput.addEventListener('input', function() {
+		exchangeTwoInput.value = (this.value * currRate).toFixed(2);
 	});
-	document.getElementById('exchangeTwoInput').addEventListener('input', function() {
-		document.getElementById('exchangeOneInput').value = (this.value * (1 / currRate)).toFixed(2);
+	exchangeTwoInput.addEventListener('input', function() {
+		exchangeOneInput.value = (this.value * (1 / currRate)).toFixed(2);
 	});
 	//银行选择
 	mui("body").on('change', '.bank-select', function() {
 		//银行名变更
 		document.getElementById('selectedBankName').innerText = this.options[this.selectedIndex].text;
 		//清除输入
-		document.getElementById('exchangeOneInput').value = '';
-		document.getElementById('exchangeTwoInput').value = '';
+		exchangeOneInput.value = '';
+		exchangeTwoInput.value = '';
 		//选择后更新汇率
 		getExchangeRate(document.getElementById('exchangeOneSelect').value, document.getElementById('exchangeTwoSelect').value);
 		//切换后设置焦点
-		document.getElementById('exchangeOneInput').focus();
+		exchangeOneInput.focus();
 	});
 }
 
 /*
  * 设置计算时使用汇率
  * 
- * @param m1 String 货币种类名1
- * @param m2 String 货币种类名2
+ * @param String m1 货币种类名1
+ * @param String m2 货币种类名2
  */
 function setCurrRate(m1, m2) {
 	//货币汇率
@@ -93,8 +96,8 @@ function setCurrRate(m1, m2) {
 /*
  * 设置汇率文字
  * 
- * @param m1 String 货币种类名1
- * @param m2 String 货币种类名2
+ * @param String m1 货币种类名1
+ * @param String m2 货币种类名2
  */
 function setRateText(m1, m2) {
 	var str = '1' + m1 + '=' + (currRate + m2 + ', ');
@@ -105,15 +108,15 @@ function setRateText(m1, m2) {
 /*
  * 获得汇率数据
  * 
- * @param m1 String 货币种类名1
- * @param m2 String 货币种类名2
+ * @param String m1 货币种类名1
+ * @param String m2 货币种类名2
  */
 function getExchangeRate(m1, m2) {
 	//锁定界面
-	document.getElementById('exchangeOneInput').disabled = 'disabled';
-	document.getElementById('exchangeTwoInput').disabled = 'disabled';
-	document.getElementById('exchangeOneInput').placeholder = '请等待...';
-	document.getElementById('exchangeTwoInput').placeholder = '请等待...';
+	exchangeOneInput.disabled = 'disabled';
+	exchangeTwoInput.disabled = 'disabled';
+	exchangeOneInput.placeholder = '请等待...';
+	exchangeTwoInput.placeholder = '请等待...';
 	mui.ajax(serverAddr + 'tools/exchange', {
 		data: {
 			bank: document.getElementById('bankSelect').value
@@ -128,10 +131,10 @@ function getExchangeRate(m1, m2) {
 			//赋值
 			exchangeRate = data;
 			setCurrRate(m1, m2);
-			document.getElementById('exchangeOneInput').disabled = '';
-			document.getElementById('exchangeTwoInput').disabled = '';
-			document.getElementById('exchangeOneInput').placeholder = '请输入金额';
-			document.getElementById('exchangeTwoInput').placeholder = '请输入金额';
+			exchangeOneInput.disabled = '';
+			exchangeTwoInput.disabled = '';
+			exchangeOneInput.placeholder = '请输入金额';
+			exchangeTwoInput.placeholder = '请输入金额';
 		},
 		error: function(xhr, type, errorThrown) {
 			//异常处理
