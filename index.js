@@ -104,8 +104,8 @@ function setLocationHeader(callback) {
 			mui.ajax(serverAddr + 'initialize/modules', {
 				data: {
 					//TODO: 虚拟机调试用
-					location: "31.223421,121.53847"
-						//location: currLocation
+					//location: "31.223421,121.53847"
+					location: currLocation
 				},
 				dataType: 'json', //服务器返回json格式数据
 				type: 'get', //HTTP请求类型
