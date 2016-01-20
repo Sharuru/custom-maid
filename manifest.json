@@ -218,7 +218,8 @@
 					"res/js/common.js",
 					"res/images/icons/weather/overcast.png",
 					"res/images/icons/weather/rain-s.png",
-					"res/images/icons/weather/rain-m.png"
+					"res/images/icons/weather/rain-m.png",
+					"res/images/icons/weather/rain-with-snow.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -389,7 +390,6 @@
 		},
 		"idle": {
 			"resources": [
-				"res/images/icons/weather/rain-with-snow.png",
 				"res/js/mui.js",
 				"playground.html"
 			]

@@ -22,6 +22,7 @@ function checkIsFirstRun(callback) {
 		localStorage.setItem('小雨', 'res/images/icons/weather/rain-s.png');
 		localStorage.setItem('中雨', 'res/images/icons/weather/rain-m.png');
 		localStorage.setItem('阵雨', 'res/images/icons/weather/heavy-rain.png');
+		localStorage.setItem('雨夹雪', 'res/images/icons/weather/rain-with-snow.png');
 		//设置模块资源信息
 		localStorage.setItem('SH001', '快递');
 		localStorage.setItem('SH002', '美食');
@@ -104,8 +105,9 @@ function setLocationHeader(callback) {
 			mui.ajax(serverAddr + 'initialize/modules', {
 				data: {
 					//TODO: 虚拟机调试用
-					//location: "31.223421,121.53847"
-					location: currLocation
+					location: "31.223421,121.53847"
+						//location: currLocation
+
 				},
 				dataType: 'json', //服务器返回json格式数据
 				type: 'get', //HTTP请求类型
