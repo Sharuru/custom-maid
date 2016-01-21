@@ -11,7 +11,7 @@ var exchangeTwoInput = document.getElementById('exchangeTwoInput');
  * GJ001 画面初始化
  */
 function initializeGJ001() {
-	console.log(exchangeOneInput);
+	//console.log(exchangeOneInput);
 	//获取汇率数据
 	getExchangeRate('美元', '人民币');
 	//	//设置默认焦点
