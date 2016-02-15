@@ -27,6 +27,8 @@ function initializeGJ001() {
 		//选择后设置代表国旗与货币名称
 		document.getElementById(this.id.substring(0, 11) + 'Pic').src = '../../res/images/modules/GJ001/' + localStorage.getItem(this.value) + '.png';
 		document.getElementById(this.id.substring(0, 11) + 'Text').innerText = this.value;
+		//等待提示
+		document.getElementById('exchangeRateText').innerText = '正在获取汇率信息...';
 		//计算汇率
 		setCurrRate(document.getElementById('exchangeOneSelect').value, document.getElementById('exchangeTwoSelect').value);
 		//根据触发事件的控件id来更改对应计算值
@@ -100,9 +102,14 @@ function setCurrRate(m1, m2) {
  * @param String m2 货币种类名2
  */
 function setRateText(m1, m2) {
-	var str = '1' + m1 + '=' + (currRate + m2 + ', ');
-	str += ' 更新时间: ' + exchangeRate.result[0].data1.date + ' ' + exchangeRate.result[0].data1.time;
-	document.getElementById('exchangeRateText').innerText = str;
+	if (currRate == 'NaN') {
+		document.getElementById('exchangeRateText').innerText = '所选银行暂无该货币对报价';
+	} else {
+		var str = '1' + m1 + '=' + (currRate + m2 + ', ');
+		str += ' 更新时间: ' + exchangeRate.result[0].data1.date + ' ' + exchangeRate.result[0].data1.time;
+		document.getElementById('exchangeRateText').innerText = str;
+	}
+
 }
 
 /*
