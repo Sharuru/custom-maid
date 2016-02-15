@@ -1,0 +1,38 @@
+.mui-bar-nav {
+	height: 49px;
+	color: white;
+	background: #20428A;
+}
+
+.mui-bar-tab {
+	background: #EEEEEE;
+}
+
+.header-text-line-1 {
+	padding-top: 4px;
+	font-size: 22px;
+}
+
+.mui-slider-item {
+	border-bottom: 0px !important;
+}
+
+.mui-input-group {
+	margin-left: -5px;
+	margin-right: -5px;
+}
+
+input[type="text"] {
+	/*text-align: right;*/
+}
+
+
+/*	padding-right: 0px;*/
+
+
+/*padding-top: 10px;*/
+
+
+/*width: 95%;
+	height: 35px;
+	font-size: 30px;*/

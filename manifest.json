@@ -265,7 +265,8 @@
 					"modules/GJ001/GJ001.html",
 					"modules/HJ001/HJ001.html",
 					"modules/CX006/CX006.html",
-					"modules/CX002/CX002.html"
+					"modules/CX002/CX002.html",
+					"modules/CX001/CX001.html"
 				],
 				"priority": 0
 			},
@@ -383,6 +384,19 @@
 					"res/js/mui.zoom.js",
 					"res/js/mui.previewimage.js",
 					"modules/CX002/101020100.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/CX001/CX001.html": {
+				"resources": [
+					"modules/CX001/js/CX001.js",
+					"res/fonts/mui.ttf",
+					"res/css/mui.min.css",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"modules/CX001/css/CX001.css",
+					"res/images/modules/GJ001/USD.png"
 				],
 				"refer": [],
 				"priority": 0

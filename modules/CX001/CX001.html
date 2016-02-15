@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../../res/css/mui.min.css" rel="stylesheet" />
+		<link href="css/CX001.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div class="header-text-line-1">
+				<a class="mui-action-back  mui-icon mui-icon-back" style="color:white;"></a>
+				火车班次
+			</div>
+		</header>
+		<div class="mui-content" style="height:100%;">
+			<div id="slider" class="mui-slider">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item" href="#byTrainContent">
+				按车次查询
+			</a>
+					<a class="mui-control-item" href="#byStationContent">
+				按站到站查询
+			</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6"></div>
+				<div class="mui-slider-group">
+					<div id="byTrainContent" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1">
+							<div class="mui-content-padded" style="margin: 5px;">
+								<form class="mui-input-group">
+									<div class="mui-input-row">
+										<label>车次</label>
+										<input id="trainNumberInput" type="text" class="mui-input-clear" placeholder="请输入车次">
+									</div>
+									<div class="mui-button-row">
+										<button id="buttonFindByTrain" type="button" style="width:60%;" class="mui-btn mui-btn-primary">开始查询</button>
+									</div>
+								</form>
+							</div>
+							<div>
+								<h5>查询结果：</h5>
+								<div id="findByTrainResultDiv">
+									<div id="findByTrainResulTitle">D1234 高铁</div>
+									<table border="1" width="100%;">
+										<tr>
+											<td width="5%;"></td>
+											<td width="30%;" id="AStartStation" style="height:28px;font-weight: bold;font-size: 28px;text-align: right;">非洲虹桥</td>
+											<td width="25%;" rowspan="1">图标</td>
+											<td width="30%;" id="AEndStation" style="font-weight: bold;font-size: 28px;text-align: left;">阿富汗</td>
+											<td width="5%;"></td>
+										</tr>
+										<tr>
+											<td width="5%;"></td>
+											<td id="AStartTime" style="text-align: right;font-size: 20px;">99:01</td>
+											<td id="ADuration" style="text-align: center;font-size: 14px;">25小时92分</td>
+											<td id="AEndTime" style="text-align: left;font-size: 20px;">12:32</td>
+											<td width="5%;"></td>
+										</tr>
+									</table>
+									<div id="findByTrainResultSeat">
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="byStationContent" class="mui-slider-item mui-control-content">
+						<div id=" scroll2 ">
+							54321
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+
+	</body>
+	<script src="../../res/js/mui.min.js "></script>
+	<script type="text/javascript " src="../../res/js/common.js "></script>
+	<script type="text/javascript " src="js/CX001.js "></script>
+	<script type="text/javascript " charset="utf-8 ">
+		mui.init();
+		mui.plusReady(function() {
+			initializeCX001();
+		})
+	</script>
+
+</html>
