@@ -219,7 +219,18 @@
 					"res/images/icons/weather/overcast.png",
 					"res/images/icons/weather/rain-s.png",
 					"res/images/icons/weather/rain-m.png",
-					"res/images/icons/weather/rain-with-snow.png"
+					"res/images/icons/weather/rain-with-snow.png",
+					"img2/3.jpg",
+					"img2/10.jpg",
+					"img2/6.jpg",
+					"img2/11.jpg",
+					"img2/8.jpg",
+					"img2/2.jpg",
+					"img2/9.jpg",
+					"img2/7.jpg",
+					"img2/4.jpg",
+					"img2/1.jpg",
+					"img2/5.jpg"
 				],
 				"refer": [],
 				"priority": 0
@@ -274,7 +285,11 @@
 				"resources": [
 					"res/css/mui.min.css",
 					"res/js/mui.min.js",
-					"res/js/common.js"
+					"res/js/common.js",
+					"res/fonts/mui.ttf",
+					"res/css/common.css",
+					"res/css/iconfont.css",
+					"res/fonts/iconfont.ttf"
 				],
 				"refer": [],
 				"priority": 0
