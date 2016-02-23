@@ -11,7 +11,10 @@
 			"res/js/common.js",
 			"index.css",
 			"res/images/icons/weather/sunny.png",
-			"modules.html"
+			"modules.html",
+			"res/images/icons/weather/rain-m.png",
+			"res/images/icons/weather/rain-s.png",
+			"res/images/icons/weather/cloudy.png"
 		],
 		"refer": [
 			"modules.html"
@@ -50,7 +53,9 @@
 		"refer": [
 			"modules/GJ001/GJ001.html",
 			"modules/CX006/CX006.html",
-			"modules/CX001/CX001.html"
+			"modules/CX001/CX001.html",
+			"modules/HJ002/HJ002.html",
+			"modules/HJ001/HJ001.html"
 		]
 	},
 	"modules/GJ001/GJ001.html": {
@@ -110,6 +115,24 @@
 			"res/js/common.js",
 			"modules/CX001/css/CX001.css",
 			"res/images/modules/GJ001/USD.png"
+		]
+	},
+	"modules/HJ002/HJ002.html": {
+		"resources": [
+			"res/fonts/mui.ttf",
+			"res/css/mui.min.css",
+			"res/js/mui.min.js",
+			"res/js/common.js"
+		]
+	},
+	"modules/HJ001/HJ001.html": {
+		"resources": [
+			"res/css/mui.min.css",
+			"res/fonts/mui.ttf",
+			"modules/HJ001/css/HJ001.css",
+			"res/js/mui.min.js",
+			"res/js/common.js",
+			"modules/HJ001/js/HJ001.js"
 		]
 	}
 }
