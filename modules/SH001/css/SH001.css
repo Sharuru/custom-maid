@@ -1,0 +1,56 @@
+.search-layer {
+	height: auto;
+	overflow: hidden;
+}
+
+.mui-input-row {
+	padding-top: 10px;
+	width: 80%;
+	margin: auto;
+}
+
+.mui-search .mui-placeholder {
+	padding-top: 10px;
+	padding-left: 10px;
+	text-align: left !important;
+}
+
+.mui-search.mui-active:before {
+	padding-top: 5px;
+	left: 10px !important;
+}
+
+.mui-search.mui-active .mui-placeholder {
+	display: none;
+}
+
+.list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.list > li {
+	position: relative;
+}
+
+.list-timeline {
+	position: relative;
+	padding-top: 10px;
+}
+
+.list-timeline > li {
+	margin-bottom: 10px;
+}
+
+.list-timeline:before {
+	position: absolute;
+	top: 0;
+	left: 50px;
+	bottom: 0;
+	display: block;
+	width: 5px;
+	content: '';
+	background-color: #F7F7F7;
+	z-index: 1;
+}

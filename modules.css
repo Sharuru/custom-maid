@@ -12,3 +12,53 @@
 .mui-table-view-cell:after {
 	height: 0px !important;
 }
+
+.module-title {
+	color: #929292;
+	font-size: 18px;
+	height: 35px;
+	padding-top: 8px;
+	padding-left: 10px;
+	border-right: 2px solid lightgray;
+	border-left: 2px solid lightgray;
+	border-bottom: 1px solid lightgray;
+	background-color: white;
+}
+
+.module-layer {
+	height: auto;
+	overflow: hidden;
+	border-right: 2px solid lightgray;
+	border-left: 2px solid lightgray;
+	border-bottom: 2px solid lightgray;
+	background-color: white;
+}
+
+.module-item {
+	height: 80px;
+	width: 20%;
+	float: left;
+}
+
+.module-icon {
+	padding-top: 15%;
+	height: 70%;
+	text-align: center;
+}
+
+.module-name {
+	margin: auto;
+	font-size: 14px;
+	color: black;
+	width: auto;
+	text-align: center;
+}
+
+.module-iconfont {
+	font-family: "iconfont" !important;
+	font-size: 34px !important;
+	color: dimgray;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.2px;
+}

@@ -269,7 +269,9 @@
 					"res/images/icons/modules/SP001.png",
 					"modules.css",
 					"res/fonts/mui.ttf",
-					"res/css/mui.css"
+					"res/css/mui.css",
+					"res/fonts/iconfont.ttf",
+					"res/css/common.css"
 				],
 				"refer": [
 					"modules/SH001/SH001.html",
@@ -279,7 +281,8 @@
 					"modules/CX002/CX002.html",
 					"modules/CX001/CX001.html",
 					"modules/HJ002/HJ002.html",
-					"modules/GJ004/GJ004.html"
+					"modules/GJ004/GJ004.html",
+					"modules/CX005/CX005.html"
 				],
 				"priority": 0
 			},
@@ -291,7 +294,8 @@
 					"res/fonts/mui.ttf",
 					"res/css/common.css",
 					"res/css/iconfont.css",
-					"res/fonts/iconfont.ttf"
+					"res/fonts/iconfont.ttf",
+					"modules/SH001/css/SH001.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -436,6 +440,14 @@
 					"res/css/mui.min.css",
 					"res/js/mui.min.js",
 					"res/js/common.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/CX005/CX005.html": {
+				"resources": [
+					"modules/CX005/js/CX005.js",
+					"modules/CX005/css/CX005.css"
 				],
 				"refer": [],
 				"priority": 0

@@ -8,7 +8,7 @@ function setModuleList() {
 		setModuleBlock(avalModuleList[i]);
 	}
 	//绑定模块点击事件
-	mui("body").on('tap', '.module-block', function() {
+	mui("body").on('tap', '.module-item', function() {
 		var moduleId = this.getAttribute("id").substr(5);
 		mui.openWindow({
 			url: 'modules/' + moduleId + '/' + moduleId + '.html',
@@ -29,13 +29,46 @@ function setModuleList() {
 //添加功能模块
 function setModuleBlock(moduleId) {
 	var localStorage = window.localStorage;
-	var moduleSize = document.body.clientWidth / 4;
-	var contentStr = "";
-	contentStr += '<div class="module-block mui-table-view-cell " id="Block' + moduleId + '" style="width:' + moduleSize + 'px;height:' + moduleSize + 'px;">';
-	contentStr += '		<a href="#"><div style="text-align: center;height:60%;padding-top: 20%;">';
-	contentStr += '			<img src="res/images/icons/modules/' + moduleId + '.png" width=50%></img>';
-	contentStr += '		</div>';
-	contentStr += '		<div style="text-align: center;height:40%;font-size: 12px;color:black;">' + localStorage.getItem(moduleId) + '</div></a>';
-	contentStr += '</div>'
-	document.getElementById('moduleBody').innerHTML += contentStr;
+	var SHContentStr = "";
+	var CXContentStr = "";
+	var GJContentStr = "";
+	var HJContentStr = "";
+	var SPContentStr = "";
+	var JSContentStr = "";
+	if (moduleId.indexOf('SH') == 0) {
+		SHContentStr += '<a class="module-item" href="#" id="Block' + moduleId + '"><div class="module-icon">';
+		SHContentStr += '<img src="res/images/icons/modules/' + moduleId + '.png" width=50%></img></div>';
+		SHContentStr += '<div class="module-name">' + localStorage.getItem(moduleId) + '</div></a>';
+		document.getElementById('SHModule').innerHTML += SHContentStr;
+	}
+	if (moduleId.indexOf('CX') == 0) {
+		CXContentStr += '<a class="module-item" href="#" id="Block' + moduleId + '"><div class="module-icon">';
+		CXContentStr += '<img src="res/images/icons/modules/' + moduleId + '.png" width=50%></img></div>';
+		CXContentStr += '<div class="module-name">' + localStorage.getItem(moduleId) + '</div></a>';
+		document.getElementById('CXModule').innerHTML += CXContentStr;
+	}
+	if (moduleId.indexOf('GJ') == 0) {
+		GJContentStr += '<a class="module-item" href="#" id="Block' + moduleId + '"><div class="module-icon">';
+		GJContentStr += '<img src="res/images/icons/modules/' + moduleId + '.png" width=50%></img></div>';
+		GJContentStr += '<div class="module-name">' + localStorage.getItem(moduleId) + '</div></a>';
+		document.getElementById('GJModule').innerHTML += GJContentStr;
+	}
+	if (moduleId.indexOf('HJ') == 0) {
+		HJContentStr += '<a class="module-item" href="#" id="Block' + moduleId + '"><div class="module-icon">';
+		HJContentStr += '<img src="res/images/icons/modules/' + moduleId + '.png" width=50%></img></div>';
+		HJContentStr += '<div class="module-name">' + localStorage.getItem(moduleId) + '</div></a>';
+		document.getElementById('HJModule').innerHTML += HJContentStr;
+	}
+	if (moduleId.indexOf('SP') == 0) {
+		SPContentStr += '<a class="module-item" href="#" id="Block' + moduleId + '"><div class="module-icon">';
+		SPContentStr += '<img src="res/images/icons/modules/' + moduleId + '.png" width=50%></img></div>';
+		SPContentStr += '<div class="module-name">' + localStorage.getItem(moduleId) + '</div></a>';
+		document.getElementById('SPModule').innerHTML += SPContentStr;
+	}
+	if (moduleId.indexOf('JS') == 0) {
+		JSContentStr += '<a class="module-item" href="#" id="Block' + moduleId + '"><div class="module-icon">';
+		JSContentStr += '<img src="res/images/icons/modules/' + moduleId + '.png" width=50%></img></div>';
+		JSContentStr += '<div class="module-name">' + localStorage.getItem(moduleId) + '</div></a>';
+		document.getElementById('JSModule').innerHTML += JSContentStr;
+	}
 }

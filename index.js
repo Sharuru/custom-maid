@@ -106,6 +106,7 @@ function setLocationHeader(callback) {
 				data: {
 					//TODO: 虚拟机调试用
 					location: "31.223421,121.53847"
+//					location: "32.123456,101.654321"
 						//location: currLocation
 
 				},
