@@ -9,7 +9,70 @@
 	font-size: 22px;
 }
 
-.mui-content{
+.mui-content {
 	padding-top: 49px !important;
 	background-color: white;
+}
+
+.hidden-select {
+	opacity: 0;
+	position: absolute;
+	left: 0px;
+	width: 100%;
+}
+
+.color-white {
+	color: white;
+}
+
+.remove-margin {
+	margin: 0 !important;
+}
+
+.remove-margin-l {
+	margin-left: 0 !important;
+}
+
+.remove-margin-r {
+	margin-right: 0 !important;
+}
+
+.remove-margin-b {
+	margin-bottom: 0 !important;
+}
+
+.remove-margin-t {
+	margin-top: 0 !important;
+}
+
+.remove-padding {
+	padding: 0 !important;
+}
+
+.remove-padding-l {
+	padding-left: 0 !important;
+}
+
+.remove-padding-r {
+	padding-right: 0 !important;
+}
+
+.remove-padding-b {
+	padding-bottom: 0 !important;
+}
+
+.remove-padding-t {
+	padding-top: 0 !important;
+}
+
+.align-right {
+	text-align: right !important;
+}
+
+.align-left {
+	text-align: left !important;
+}
+
+.align-center {
+	text-align: center !important;
 }

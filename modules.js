@@ -1,12 +1,38 @@
+var contentStr = '';
+var SHContentStr = '';
+var CXContentStr = '';
+var GJContentStr = '';
+var HJContentStr = '';
+var SPContentStr = '';
+var JSContentStr = '';
+
 //设置功能列表
-function setModuleList() {
+function setModuleBody() {
 	console.log("Setting module list...");
 	//获取可用模块列表
 	var localStorage = window.localStorage;
 	var avalModuleList = localStorage.getItem("modules").split(",");
 	for (var i = 0; i < avalModuleList.length; i++) {
-		setModuleBlock(avalModuleList[i]);
+		if (avalModuleList[i].indexOf('SH') == 0) {
+			SHContentStr += setModuleBlock(avalModuleList[i]);
+		}
+		if (avalModuleList[i].indexOf('CX') == 0) {
+			CXContentStr += setModuleBlock(avalModuleList[i]);
+		}
+		if (avalModuleList[i].indexOf('GJ') == 0) {
+			GJContentStr += setModuleBlock(avalModuleList[i]);
+		}
+		if (avalModuleList[i].indexOf('HJ') == 0) {
+			HJContentStr += setModuleBlock(avalModuleList[i]);
+		}
+		if (avalModuleList[i].indexOf('JS') == 0) {
+			JSContentStr += setModuleBlock(avalModuleList[i]);
+		}
+		if (avalModuleList[i].indexOf('SP') == 0) {
+			SPContentStr += setModuleBlock(avalModuleList[i]);
+		}
 	}
+	setModule(SHContentStr, CXContentStr, GJContentStr, HJContentStr, JSContentStr, SPContentStr);
 	//绑定模块点击事件
 	mui("body").on('tap', '.module-item', function() {
 		var moduleId = this.getAttribute("id").substr(5);
@@ -29,46 +55,54 @@ function setModuleList() {
 //添加功能模块
 function setModuleBlock(moduleId) {
 	var localStorage = window.localStorage;
-	var SHContentStr = "";
-	var CXContentStr = "";
-	var GJContentStr = "";
-	var HJContentStr = "";
-	var SPContentStr = "";
-	var JSContentStr = "";
-	if (moduleId.indexOf('SH') == 0) {
-		SHContentStr += '<a class="module-item" href="#" id="Block' + moduleId + '"><div class="module-icon">';
-		SHContentStr += '<img src="res/images/icons/modules/' + moduleId + '.png" width=50%></img></div>';
-		SHContentStr += '<div class="module-name">' + localStorage.getItem(moduleId) + '</div></a>';
-		document.getElementById('SHModule').innerHTML += SHContentStr;
+	var itemStr = '';
+	itemStr += '<a class="module-item" href="#" id="Block' + moduleId + '">';
+	itemStr += '<div class="module-icon">';
+	itemStr += '<img src="res/images/icons/modules/' + moduleId + '.png" width=50%>';
+	itemStr += '</img></div>';
+	itemStr += '<div class="module-name">' + localStorage.getItem(moduleId);
+	itemStr += '</div></a>';
+	return itemStr;
+}
+
+//整合模块html语句
+function setModule(SHModule, CXModule, GJModule, HJModule, JSModule, SPModule) {
+	//	console.log(SHModule != '');
+	if (SHModule != '') {
+		contentStr += '<div class="mui-row"><div class="mui-col-xs-12 bg-aliceblue">';
+		contentStr += '<div class="module-title">日常生活</div>';
+		contentStr += '<div class="module-layer">' + SHModule;
+		contentStr += '</div></div></div>';
 	}
-	if (moduleId.indexOf('CX') == 0) {
-		CXContentStr += '<a class="module-item" href="#" id="Block' + moduleId + '"><div class="module-icon">';
-		CXContentStr += '<img src="res/images/icons/modules/' + moduleId + '.png" width=50%></img></div>';
-		CXContentStr += '<div class="module-name">' + localStorage.getItem(moduleId) + '</div></a>';
-		document.getElementById('CXModule').innerHTML += CXContentStr;
+	if (CXModule != '') {
+		contentStr += '<div class="mui-row"><div class="mui-col-xs-12 bg-aliceblue">';
+		contentStr += '<div class="module-title">外出旅行</div>';
+		contentStr += '<div class="module-layer">' + CXModule;
+		contentStr += '</div></div></div>';
 	}
-	if (moduleId.indexOf('GJ') == 0) {
-		GJContentStr += '<a class="module-item" href="#" id="Block' + moduleId + '"><div class="module-icon">';
-		GJContentStr += '<img src="res/images/icons/modules/' + moduleId + '.png" width=50%></img></div>';
-		GJContentStr += '<div class="module-name">' + localStorage.getItem(moduleId) + '</div></a>';
-		document.getElementById('GJModule').innerHTML += GJContentStr;
+	if (GJModule != '') {
+		contentStr += '<div class="mui-row"><div class="mui-col-xs-12 bg-aliceblue">';
+		contentStr += '<div class="module-title">随身工具</div>';
+		contentStr += '<div class="module-layer">' + GJModule;
+		contentStr += '</div></div></div>';
 	}
-	if (moduleId.indexOf('HJ') == 0) {
-		HJContentStr += '<a class="module-item" href="#" id="Block' + moduleId + '"><div class="module-icon">';
-		HJContentStr += '<img src="res/images/icons/modules/' + moduleId + '.png" width=50%></img></div>';
-		HJContentStr += '<div class="module-name">' + localStorage.getItem(moduleId) + '</div></a>';
-		document.getElementById('HJModule').innerHTML += HJContentStr;
+	if (HJModule != '') {
+		contentStr += '<div class="mui-row"><div class="mui-col-xs-12 bg-aliceblue">';
+		contentStr += '<div class="module-title">周边环境</div>';
+		contentStr += '<div class="module-layer">' + HJModule;
+		contentStr += '</div></div></div>';
 	}
-	if (moduleId.indexOf('SP') == 0) {
-		SPContentStr += '<a class="module-item" href="#" id="Block' + moduleId + '"><div class="module-icon">';
-		SPContentStr += '<img src="res/images/icons/modules/' + moduleId + '.png" width=50%></img></div>';
-		SPContentStr += '<div class="module-name">' + localStorage.getItem(moduleId) + '</div></a>';
-		document.getElementById('SPModule').innerHTML += SPContentStr;
+	if (JSModule != '') {
+		contentStr += '<div class="mui-row"><div class="mui-col-xs-12 bg-aliceblue">';
+		contentStr += '<div class="module-title">驾驶助手</div>';
+		contentStr += '<div class="module-layer">' + JSModule;
+		contentStr += '</div></div></div>';
 	}
-	if (moduleId.indexOf('JS') == 0) {
-		JSContentStr += '<a class="module-item" href="#" id="Block' + moduleId + '"><div class="module-icon">';
-		JSContentStr += '<img src="res/images/icons/modules/' + moduleId + '.png" width=50%></img></div>';
-		JSContentStr += '<div class="module-name">' + localStorage.getItem(moduleId) + '</div></a>';
-		document.getElementById('JSModule').innerHTML += JSContentStr;
+	if (SPModule != '') {
+		contentStr += '<div class="mui-row"><div class="mui-col-xs-12 bg-aliceblue">';
+		contentStr += '<div class="module-title">其他</div>';
+		contentStr += '<div class="module-layer">' + SPModule;
+		contentStr += '</div></div></div>';
 	}
+	document.getElementById('moduleContent').innerHTML += contentStr;
 }

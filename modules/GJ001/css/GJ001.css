@@ -1,26 +1,10 @@
-.mui-bar-nav {
-	height: 49px;
-	color: white;
-	background: #20428A;
-}
-
-.mui-bar-tab {
-	background: #EEEEEE;
-}
-
 .mui-icon-close-filled {
 	padding-right: 10px;
 	padding-bottom: 10px;
 	color: gray;
 }
 
-.header-text-line-1 {
-	padding-top: 4px;
-	font-size: 22px;
-}
-
 .exchange-object {
-	background: white;
 	padding-top: 15px;
 	padding-bottom: 10px;
 	border-bottom: 1px solid lightgray;
@@ -38,6 +22,7 @@
 	color: gray;
 	padding-top: 2px;
 	padding-left: 5px;
+	background-color: #EFEFF4;
 }
 
 .money-type-select {

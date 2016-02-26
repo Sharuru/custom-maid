@@ -14,14 +14,26 @@
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<div class="header-text-line-1">
-				<a class="mui-action-back  mui-icon mui-icon-back" style="color:white;"></a>
+				<a class="mui-action-back mui-icon mui-icon-back color-white"></a>
 				快递
 			</div>
 		</header>
 		<div class="mui-content">
 			<div class="search-layer">
-				<div class="mui-input-row">
-					<input type="search" class="mui-input-clear" placeholder="请输入快递单号" />
+				<div class="mui-row">
+					<div class="mui-col-xs-3 align-center tips-style">
+						<select class="hidden-select">
+							<option value="ems">EMS</option>
+							<option value="huitongkuaidi">百世汇通</option>
+						</select>
+						<a>物流公司</a>
+					</div>
+					<div class="mui-col-xs-9">
+						<div class="mui-input-row mui-search">
+							<input type="search" class="mui-input-clear" placeholder="请输入快递单号" />
+							<span class="mui-icon iconfont icon-check search-icon"></span>
+						</div>
+					</div>
 				</div>
 			</div>
 			<ul class="list list-timeline">
