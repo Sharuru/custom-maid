@@ -23,32 +23,44 @@
 				<div class="mui-row">
 					<div class="mui-col-xs-3 align-center tips-style">
 						<select class="hidden-select">
+							<option value="jd">京东</option>
 							<option value="ems">EMS</option>
+							<option value="zhaijisong">宅急送</option>
 							<option value="huitongkuaidi">百世汇通</option>
+							<option value="shunfeng">顺丰速运</option>
+							<option value="shentong">申通快递</option>
+							<option value="tiantian">天天快递</option>
+							<option value="yunda">韵达快递</option>
+							<option value="yuantong">圆通速递</option>
+							<option value="zhongtong">中通快递</option>
+							<option value="quanfengkuaidi">全峰快递</option>
+							<option value="youzhengguonei">邮政包裹平邮</option>
 						</select>
-						<a>物流公司</a>
+						<a id="selectedExpressName">物流公司</a>
 					</div>
 					<div class="mui-col-xs-9">
 						<div class="mui-input-row mui-search">
-							<input type="search" class="mui-input-clear" placeholder="请输入快递单号" />
-							<span class="mui-icon iconfont icon-check search-icon"></span>
+							<input type="search" class="mui-input-clear" placeholder="请输入快递单号" id="trackingNumInput" />
+							<span class="mui-icon iconfont icon-search search-icon" id="searchButton"></span>
 						</div>
 					</div>
 				</div>
 			</div>
-			<ul class="list list-timeline">
-				<li>aaa</li>
-				<li>aaa</li>
-				<li>aaa</li>
-				<li>aaa</li>
-			</ul>
+			<div class="express-information">
+				<div id="baseInformation"></div>
+				<div id="expressInfoList"></div>
+			</div>
 		</div>
 		<!--<footer style="background-color: red;border: solid 2px;">111</footer>-->
 	</body>
 	<script src="../../res/js/mui.min.js"></script>
 	<script type="text/javascript" src="../../res/js/common.js"></script>
+	<script type="text/javascript" src="js/SH001.js"></script>
 	<script type="text/javascript" charset="utf-8">
 		mui.init();
+		mui.plusReady(function() {
+			initializeSH001();
+		})
 	</script>
 
 </html>

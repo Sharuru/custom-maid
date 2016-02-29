@@ -295,7 +295,8 @@
 					"res/css/common.css",
 					"res/css/iconfont.css",
 					"res/fonts/iconfont.ttf",
-					"modules/SH001/css/SH001.css"
+					"modules/SH001/css/SH001.css",
+					"modules/SH001/js/SH001.js"
 				],
 				"refer": [],
 				"priority": 0

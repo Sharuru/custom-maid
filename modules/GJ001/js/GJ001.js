@@ -48,7 +48,7 @@ function initializeGJ001() {
 		exchangeOneInput.value = (this.value * (1 / currRate)).toFixed(2);
 	});
 	//银行选择
-	mui("body").on('change', '.bank-select', function() {
+	mui("body").on('change', '.hidden-select', function() {
 		//银行名变更
 		document.getElementById('selectedBankName').innerText = this.options[this.selectedIndex].text;
 		//清除输入

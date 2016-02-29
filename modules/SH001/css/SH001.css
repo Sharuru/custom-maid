@@ -56,8 +56,13 @@ input[type='search'] {
 	color: dimgray;
 }
 
-.get-borderd{
-	border: 1px solid red;
+.express-information {
+	height: auto;
+	overflow: hidden;
+}
+
+#baseInformation {
+	padding: 10px 10px 0 30px;
 }
 
 .list {
@@ -72,21 +77,44 @@ input[type='search'] {
 
 .list-timeline {
 	position: relative;
-	padding-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-top: 15px;
+	padding-bottom: 5px;
+	border-top: silver solid 1px;
 }
 
 .list-timeline > li {
-	margin-bottom: 10px;
+	padding-bottom: 10px;
 }
 
 .list-timeline:before {
 	position: absolute;
 	top: 0;
-	left: 50px;
+	left: 40px;
 	bottom: 0;
 	display: block;
-	width: 5px;
+	width: 2px;
 	content: '';
-	background-color: #F7F7F7;
+	background-color: #E3E3E3;
 	z-index: 1;
+}
+
+.list-timeline .list-timeline-icon {
+	position: absolute;
+	top: 10px;
+	left: 28px;
+	width: 26px;
+	height: 26px;
+	padding-top: 5px;
+	font-size: 16px !important;
+	color: #DDDDDD;
+	text-align: center;
+	border-radius: 50%;
+	border: #CCCCCC solid 1px;
+	z-index: 2;
+}
+
+.list-timeline .list-timeline-content {
+	padding-left: 70px;
 }

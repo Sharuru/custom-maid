@@ -21,8 +21,32 @@
 	width: 100%;
 }
 
+.font-w300{
+	font-size: 14px;
+	font-weight: 300;
+	margin: 0 !important;
+}
+
+.font-w500{
+	font-size: 14px;
+	font-weight: 500;
+	margin: 0 !important;
+}
+
 .color-white {
-	color: white;
+	color: white !important;
+}
+
+.color-success{
+	color: green !important;
+}
+
+.color-danger{
+	color: red !important;
+}
+
+.color-warning{
+	color: darkorange !important;
 }
 
 .remove-margin {

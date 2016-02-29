@@ -17,11 +17,11 @@
 	color: #20428A;
 	font-size: 16px;
 	height: 30px;
-	padding-top: 5px;
+	padding-top: 4px;
 	padding-left: 10px;
 	border-right: 2px solid lightgray;
 	border-left: 2px solid lightgray;
-	border-bottom: 1px solid lightgray;
+	border-bottom: 2px solid lightgray;
 	background-color: aliceblue;
 }
 

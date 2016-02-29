@@ -14,5 +14,8 @@
 .icon-near:before { content: "\e601"; }
 .icon-express:before { content: "\e607"; }
 .icon-setting:before { content: "\e600"; }
-.icon-check:before { content: "\e60a"; }
+.icon-search:before { content: "\e60a"; }
 .icon-send:before { content: "\e609"; }
+.icon-expressInfo:before { content: "\e605"; }
+.icon-expressCheck:before { content: "\e604"; }
+.icon-expressMore:before { content: "\e606"; }
