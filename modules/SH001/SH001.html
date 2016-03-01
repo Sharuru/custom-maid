@@ -38,20 +38,22 @@
 						</select>
 						<a id="selectedExpressName">物流公司</a>
 					</div>
-					<div class="mui-col-xs-9">
+					<div class="mui-col-xs-7">
 						<div class="mui-input-row mui-search">
 							<input type="search" class="mui-input-clear" placeholder="请输入快递单号" id="trackingNumInput" />
-							<span class="mui-icon iconfont icon-search search-icon" id="searchButton"></span>
 						</div>
+					</div>
+					<div class="mui-col-xs-2" style="padding-left: 15px;">
+						<span class="mui-icon iconfont icon-search search-icon" id="searchButton"></span>
 					</div>
 				</div>
 			</div>
-			<div class="express-information">
-				<div id="baseInformation"></div>
-				<div id="expressInfoList"></div>
+			<div id="expressInformation"></div>
+			<div id="historyExpressInfo">
+				<p class="font-w300">正在获取历史查询记录...</p>
 			</div>
 		</div>
-		<!--<footer style="background-color: red;border: solid 2px;">111</footer>-->
+		<footer class="footer-info">数据由 快递100 提供</footer>
 	</body>
 	<script src="../../res/js/mui.min.js"></script>
 	<script type="text/javascript" src="../../res/js/common.js"></script>

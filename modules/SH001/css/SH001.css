@@ -6,7 +6,7 @@
 .mui-row {
 	padding-top: 15px;
 	padding-bottom: 10px;
-	border-bottom: 1px solid lightgray;
+	border-bottom: silver solid 1px;
 }
 
 .tips-style {
@@ -16,7 +16,7 @@
 }
 
 input[type='search'] {
-	width: 78% !important;
+	width: 99% !important;
 	margin-bottom: 0 !important;
 	font-size: 16px !important;
 	height: 29px !important;
@@ -45,23 +45,21 @@ input[type='search'] {
 
 .mui-input-row .mui-input-clear ~ .mui-icon-clear {
 	top: 4px !important;
-	right: 22% !important;
+	right: 1% !important;
 }
 
 .search-icon {
-	float: right;
-	margin-right: 8%;
 	margin-top: 5px;
 	font-size: 22px !important;
 	color: dimgray;
 }
 
-.express-information {
+#expressInformation {
 	height: auto;
 	overflow: hidden;
 }
 
-#baseInformation {
+.base-information {
 	padding: 10px 10px 0 30px;
 }
 
@@ -77,11 +75,12 @@ input[type='search'] {
 
 .list-timeline {
 	position: relative;
-	margin-left: 10px;
-	margin-right: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
 	padding-top: 15px;
 	padding-bottom: 5px;
 	border-top: silver solid 1px;
+	border-bottom: silver solid 1px;
 }
 
 .list-timeline > li {
@@ -91,7 +90,7 @@ input[type='search'] {
 .list-timeline:before {
 	position: absolute;
 	top: 0;
-	left: 40px;
+	left: 30px;
 	bottom: 0;
 	display: block;
 	width: 2px;
@@ -103,7 +102,7 @@ input[type='search'] {
 .list-timeline .list-timeline-icon {
 	position: absolute;
 	top: 10px;
-	left: 28px;
+	left: 18px;
 	width: 26px;
 	height: 26px;
 	padding-top: 5px;
@@ -116,5 +115,23 @@ input[type='search'] {
 }
 
 .list-timeline .list-timeline-content {
-	padding-left: 70px;
+	padding-left: 60px;
+}
+
+#historyExpressInfo {
+	height: auto;
+	overflow: hidden;
+	padding: 10px 10px 10px 30px;
+	border-bottom: silver solid 1px;
+}
+
+#historyExpressInfo table {
+	width: 95%;
+	color: #9D9DA1;
+	text-align: center;
+}
+
+.history-record {
+	width: 50%;
+	text-decoration: underline;
 }

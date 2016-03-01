@@ -1,46 +1,71 @@
 //本地 cache 读写 object
 var localStorage = window.localStorage;
 var codeInput = document.getElementById('trackingNumInput');
-var baseInfo = document.getElementById('baseInformation');
-var expressList = document.getElementById('expressInfoList');
+var expressInfo = document.getElementById('expressInformation');
 var clickButton = document.getElementById('searchButton');
+var hisLayer = document.getElementById('historyExpressInfo');
 var companyCode = '';
 var companyName = '';
+var hisList = [];
 
 /**
  * SH001 画面初始化
  */
 function initializeSH001() {
+	//			localStorage.removeItem('historySearch');
+	getHistory();
 	//快递公司选择选择
 	mui("body").on('change', '.hidden-select', function() {
 		//快递公司名称变更
 		document.getElementById('selectedExpressName').innerText = this.options[this.selectedIndex].text;
+		//获取快递公司名称和代码
 		companyCode = this.options[this.selectedIndex].value;
 		companyName = this.options[this.selectedIndex].text;
 		//清除输入
-		codeInput.value = '';
+		//		codeInput.value = '';
 		//切换后设置焦点
 		codeInput.focus();
 	});
 	//查询按钮点击
 	mui("body").on('click', '.search-icon', function() {
+		//未选择快递公司
 		if (companyCode == '') {
-			console.log('请选择快递公司');
+			mui.alert('请选择快递公司');
 			return;
 		}
+		//未输入快递单号
 		if (codeInput.value == '') {
-			console.log('请输入快递单号');
+			mui.alert('请输入快递单号');
 			return;
 		}
-		baseInfo.innerHTML = '';
-		expressList.innerHTML = '';
-		var baseInfoStr = '';
-		baseInfoStr += '<p class="font-w300">' + companyName + ' : ' + codeInput.value + '<\p>';
-		baseInfo.innerHTML = baseInfoStr;
+		//清空原始记录
+		expressInfo.innerHTML = '';
 		getExpressInfo(companyCode, codeInput.value, companyName);
+	});
+	//历史记录再查询
+	mui("body").on('click', '.history-record', function() {
+		var rIndex = parseFloat(this.parentNode.rowIndex + 1);
+		var cIndex = parseFloat(this.cellIndex + 1);
+		var indexNum = rIndex * cIndex - 1;
+		hisList.splice(indexNum, 1);
+		var searchInfo = this.innerHTML;
+		var searchCode = searchInfo.substring(searchInfo.lastIndexOf('="') + 2, searchInfo.indexOf('">'));
+		var searchContext = searchInfo.substring(0, searchInfo.indexOf('<'));
+		var searchNum = searchContext.split(' : ')[1];
+		var searchName = searchContext.split(' : ')[0];
+		//清空原始记录
+		expressInfo.innerHTML = '';
+		getExpressInfo(searchCode, searchNum, searchName);
 	});
 }
 
+/**
+ * 获取快递信息
+ * 
+ * @param String expressCode 物流公司代码
+ * @param String trackingNum 快递单号
+ * @param String expressName 物流公司名称
+ */
 function getExpressInfo(expressCode, trackingNum, expressName) {
 	addDisabled();
 	mui.ajax(serverAddr + 'tools/express', {
@@ -57,18 +82,26 @@ function getExpressInfo(expressCode, trackingNum, expressName) {
 		success: function(requestData) {
 			if (requestData.status == '201') {
 				var errorMsg = '';
-				errorMsg += '<p class="font-w300">' + requestData.message + '</p>';
-				baseInfo.innerHTML = errorMsg;
+				errorMsg += '<div class="base-information"><p class="font-w300">' + requestData.message + '</p><div>';
+				expressInfo.innerHTML = errorMsg;
 				cancleDisabled();
 			} else {
-				var liStr = '';
-				for (var i = requestData.data.length - 1; i > 0; i--) {
-					liStr += '<li><i class="mui-icon iconfont icon-expressInfo list-timeline-icon"></i>';
-					liStr += '<div class="list-timeline-content">';
-					liStr += '<p class="font-w300">' + requestData.data[i].time + '</p>';
-					liStr += '<p class="font-w500">' + requestData.data[i].context + '</p>';
-					liStr += '</div></li>';
+				var hisInfo = {
+					name: expressName,
+					code: expressCode,
+					num: trackingNum
+				};
+				hisList.unshift(hisInfo);
+				if (hisList.length > 10) {
+					hisList.pop();
 				}
+				localStorage.setItem('historySearch', JSON.stringify(hisList));
+				//基础信息：快递公司和快递单号
+				var baseInfoStr = '';
+				baseInfoStr += '<div class="base-information"><p class="font-w300">' + expressName + ' : ' + trackingNum + '<\p></div>';
+				//快递详细信息
+				var liStr = '';
+				//判断最新一条快递信息
 				if (requestData.state == 2) {
 					liStr += '<li><i class="mui-icon iconfont icon-expressInfo list-timeline-icon"></i>';
 				} else if (requestData.state == 3) {
@@ -80,9 +113,17 @@ function getExpressInfo(expressCode, trackingNum, expressName) {
 				liStr += '<p class="font-w300">' + requestData.data[0].time + '</p>';
 				liStr += '<p class="font-w500">' + requestData.data[0].context + '</p>';
 				liStr += '</div></li>';
+				for (var i = 1; i < requestData.data.length; i++) {
+					liStr += '<li><i class="mui-icon iconfont icon-expressInfo list-timeline-icon"></i>';
+					liStr += '<div class="list-timeline-content">';
+					liStr += '<p class="font-w300">' + requestData.data[i].time + '</p>';
+					liStr += '<p class="font-w500">' + requestData.data[i].context + '</p>';
+					liStr += '</div></li>';
+				}
 				liStr = '<ul class="list list-timeline">' + liStr + '</ul>';
-				expressList.innerHTML = liStr;
+				expressInfo.innerHTML = baseInfoStr + liStr;
 				cancleDisabled();
+				getHistory();
 			}
 		},
 		error: function(xhr, type, errorThrown) {
@@ -95,11 +136,59 @@ function getExpressInfo(expressCode, trackingNum, expressName) {
 	});
 }
 
+/**
+ * 获取历史查询记录
+ */
+function getHistory() {
+	var hisSearch = localStorage.getItem('historySearch');
+	var tipsContext = '';
+	if (hisSearch == null) {
+		hisLayer.innerHTML = '<p class="font-w300">暂无历史查询记录...</p>';
+	} else {
+		hisLayer.innerHTML = '<p class="font-w300">历史查询记录</p>';
+		hisList = JSON.parse(hisSearch);
+		var hisContext = '';
+		//判断历史记录数的奇偶
+		if (hisList.length % 2 == 0) {
+			//偶数条记录处理
+			for (var i = 0; i < hisList.length / 2; i++) {
+				hisContext += '<tr><td class="history-record font-w300">' + hisList[2 * i].name + ' : ' + hisList[2 * i].num;
+				hisContext += '<input type="hidden" value="' + hisList[2 * i].code + '" /></td>';
+				hisContext += '<td class="history-record font-w300">' + hisList[2 * i + 1].name + ' : ' + hisList[2 * i + 1].num;
+				hisContext += '<input type="hidden" value="' + hisList[2 * i].code + '" /></td>';
+				hisContext += '</tr>';
+			}
+		} else {
+			//奇数条记录处理
+			for (var i = 0; i < parseInt(hisList.length / 2 + 1); i++) {
+				if (i == parseInt(hisList.length / 2)) {
+					hisContext += '<tr><td class="history-record font-w300">' + hisList[2 * i].name + ' : ' + hisList[2 * i].num;
+					hisContext += '<input type="hidden" value="' + hisList[2 * i].code + '" /></td>';
+					hisContext += '<td class="history-record font-w300"> </td></tr>';
+				} else {
+					hisContext += '<tr><td class="history-record font-w300">' + hisList[2 * i].name + ' : ' + hisList[2 * i].num;
+					hisContext += '<input type="hidden" value="' + hisList[2 * i].code + '" /></td>';
+					hisContext += '<td class="history-record font-w300">' + hisList[2 * i + 1].name + ' : ' + hisList[2 * i + 1].num;
+					hisContext += '<input type="hidden" value="' + hisList[2 * i].code + '" /></td></tr>';
+				}
+			}
+		}
+		hisContext = '<table>' + hisContext + '</table>';
+		hisLayer.innerHTML += hisContext;
+	}
+}
+
+/**
+ * 禁用输入框和查询按钮
+ */
 function addDisabled() {
 	codeInput.disabled = 'disabled';
 	clickButton.disabled = true;
 }
 
+/**
+ * 解除禁用输入框和查询按钮
+ */
 function cancleDisabled() {
 	codeInput.disabled = '';
 	clickButton.disabled = false;

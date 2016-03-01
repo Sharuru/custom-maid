@@ -18,17 +18,25 @@
 	opacity: 0;
 	position: absolute;
 	left: 0px;
+	top: 0px;
 	width: 100%;
 }
 
-.font-w300{
-	font-size: 14px;
+.footer-info{
+	font-size: 10px;
+	font-weight: 200;
+	text-align: center;
+	color: dimgray;
+}
+
+.font-w300 {
+	font-size: 12px;
 	font-weight: 300;
 	margin: 0 !important;
 }
 
-.font-w500{
-	font-size: 14px;
+.font-w500 {
+	font-size: 12px;
 	font-weight: 500;
 	margin: 0 !important;
 }
@@ -37,15 +45,15 @@
 	color: white !important;
 }
 
-.color-success{
+.color-success {
 	color: green !important;
 }
 
-.color-danger{
+.color-danger {
 	color: red !important;
 }
 
-.color-warning{
+.color-warning {
 	color: darkorange !important;
 }
 
