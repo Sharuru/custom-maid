@@ -17,5 +17,6 @@
 .icon-search:before { content: "\e60a"; }
 .icon-send:before { content: "\e609"; }
 .icon-expressInfo:before { content: "\e605"; }
-.icon-expressCheck:before { content: "\e604"; }
-.icon-doubleArrowDown:before { content: "\e606"; }
+.icon-doubleArrowDown:before { content: "\e603"; }
+.icon-favorites:before { content: "\e606"; }
+.icon-unfavorites:before { content: "\e604"; }

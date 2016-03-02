@@ -1,4 +1,4 @@
-.content-layer {
+.input-layer {
 	margin-top: 15px !important;
 	height: auto;
 	margin: auto;
@@ -13,3 +13,15 @@ textarea {
 	line-height: 18px !important;
 }
 
+.larger-icon {
+	color: #9D9DA1;
+	font-size: 18px !important;
+}
+
+.favorites-layer {
+	height: auto;
+	margin: auto;
+	width: 90%;
+	padding: 10px 0 10px 0;
+	overflow: hidden;
+}

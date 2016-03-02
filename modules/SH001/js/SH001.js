@@ -12,7 +12,7 @@ var hisList = [];
  * SH001 画面初始化
  */
 function initializeSH001() {
-	//			localStorage.removeItem('historySearch');
+	//				localStorage.removeItem('historySearch');
 	getHistory();
 	//快递公司选择选择
 	mui("body").on('change', '.hidden-select', function() {
@@ -27,7 +27,7 @@ function initializeSH001() {
 		codeInput.focus();
 	});
 	//查询按钮点击
-	mui("body").on('click', '.search-icon', function() {
+	mui("body").on('tap', '#searchButton', function() {
 		//未选择快递公司
 		if (companyCode == '') {
 			mui.alert('请选择快递公司');
@@ -44,11 +44,12 @@ function initializeSH001() {
 	});
 	//历史记录再查询
 	mui("body").on('click', '.history-record', function() {
-		var rIndex = parseFloat(this.parentNode.rowIndex + 1);
-		var cIndex = parseFloat(this.cellIndex + 1);
-		var indexNum = rIndex * cIndex - 1;
+		var indexNum = 2 * this.parentNode.rowIndex + this.cellIndex;
 		hisList.splice(indexNum, 1);
 		var searchInfo = this.innerHTML;
+		if (searchInfo == ' ') {
+			return;
+		}
 		var searchCode = searchInfo.substring(searchInfo.lastIndexOf('="') + 2, searchInfo.indexOf('">'));
 		var searchContext = searchInfo.substring(0, searchInfo.indexOf('<'));
 		var searchNum = searchContext.split(' : ')[1];
@@ -130,7 +131,7 @@ function getExpressInfo(expressCode, trackingNum, expressName) {
 			//异常处理
 			console.log(type);
 			mui.alert('远程服务器连接失败', '无法获得快递信息', '重试', function() {
-				getExpressInfo(expressCode, trackingNum);
+				getExpressInfo(expressCode, trackingNum, expressName);
 			});
 		}
 	});

@@ -67,6 +67,10 @@
 	color: darkorange !important;
 }
 
+.color-lightgrey {
+	color: #9D9DA1 !important;
+}
+
 .remove-margin {
 	margin: 0 !important;
 }
@@ -121,4 +125,8 @@
 
 .padding-10-l {
 	padding-left: 10px !important;
+}
+
+.padding-10-r {
+	padding-right: 10px !important;
 }
