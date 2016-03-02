@@ -1,0 +1,15 @@
+.content-layer {
+	margin-top: 15px !important;
+	height: auto;
+	margin: auto;
+	width: 90%;
+	overflow: hidden;
+	border-bottom: silver solid 1px;
+}
+
+textarea {
+	margin-bottom: 10px !important;
+	font-size: 14px !important;
+	line-height: 18px !important;
+}
+
