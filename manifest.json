@@ -299,7 +299,10 @@
 					"modules/SH001/css/SH001.css",
 					"modules/SH001/js/SH001.js"
 				],
-				"refer": [],
+				"refer": [
+					"modules/SH001/detail.html",
+					"modules/SH001/expressDetail.html"
+				],
 				"priority": 0
 			},
 			"modules/GJ001/GJ001.html": {
@@ -449,7 +452,11 @@
 			"modules/CX005/CX005.html": {
 				"resources": [
 					"modules/CX005/js/CX005.js",
-					"modules/CX005/css/CX005.css"
+					"modules/CX005/css/CX005.css",
+					"res/css/mui.min.css",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -465,6 +472,34 @@
 					"res/js/common.js",
 					"modules/GJ005/js/GJ005.js",
 					"res/fonts/iconfont.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/SH001/detail.html": {
+				"resources": [
+					"res/css/iconfont.css",
+					"res/fonts/iconfont.ttf",
+					"modules/SH001/css/SH001.css",
+					"res/css/mui.min.css",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/SH001/expressDetail.html": {
+				"resources": [
+					"res/css/iconfont.css",
+					"res/fonts/iconfont.ttf",
+					"modules/SH001/js/expressDetail.js",
+					"modules/SH001/css/expressDetail.css",
+					"res/css/mui.min.css",
+					"res/js/mui.min.js",
+					"res/css/common.css",
+					"res/fonts/mui.ttf",
+					"res/js/common.js"
 				],
 				"refer": [],
 				"priority": 0
