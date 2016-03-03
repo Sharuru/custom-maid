@@ -1,3 +1,10 @@
+.whiteBackground {
+	height: auto;
+	width: 100%;
+	background-color: white;
+	overflow: hidden;
+}
+
 .input-layer {
 	margin-top: 15px !important;
 	height: auto;
@@ -18,10 +25,29 @@ textarea {
 	font-size: 18px !important;
 }
 
-.favorites-layer {
+#favoritesLayer {
 	height: auto;
 	margin: auto;
 	width: 90%;
 	padding: 10px 0 10px 0;
 	overflow: hidden;
+}
+
+.textInput{
+	position: relative;
+}
+
+.clear-icon{
+	position: absolute;
+	font-size: 20px;
+	right: 10px;
+	top: 8px;
+	color: #999;
+	z-index: 2;
+}
+
+
+.delete-icon{
+	font-size: 16px;
+	color: #999;
 }

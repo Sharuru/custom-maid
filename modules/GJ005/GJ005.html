@@ -19,70 +19,76 @@
 			</div>
 		</header>
 		<div class="mui-content">
-			<div class="input-layer">
-				<div class="mui-row">
-					<div class="mui-col-xs-3">
-						<select class="hidden-select" id="fromSelect">
-							<option value="auto">自动检测</option>
-							<option value="zh">中文</option>
-							<option value="en">英文</option>
-							<option value="jp">日语</option>
-							<option value="kor">韩语</option>
-							<option value="spa">西班牙语</option>
-							<option value="fra">法语</option>
-							<option value="th">泰语</option>
-							<option value="ara">阿拉伯语</option>
-							<option value="ru">俄罗斯语</option>
-							<option value="pt">葡萄牙语</option>
-							<option value="de">德语</option>
-							<option value="it">意大利语</option>
-							<option value="nl">荷兰语</option>
-							<option value="el">希腊语</option>
-						</select>
-						<a class="font-w300 padding-10-l" id="fromType">自动检测 ◢</a>
+			<div class="mui-main">
+				<div class="whiteBackground">
+					<div class="input-layer">
+						<div class="mui-row">
+							<div class="mui-col-xs-3">
+								<select class="hidden-select" id="fromSelect">
+									<option value="auto" selected="selected">自动检测</option>
+									<option value="zh">中文</option>
+									<option value="en">英文</option>
+									<option value="jp">日语</option>
+									<option value="kor">韩语</option>
+									<option value="spa">西班牙语</option>
+									<option value="fra">法语</option>
+									<option value="th">泰语</option>
+									<option value="ara">阿拉伯语</option>
+									<option value="ru">俄罗斯语</option>
+									<option value="pt">葡萄牙语</option>
+									<option value="de">德语</option>
+									<option value="it">意大利语</option>
+									<option value="nl">荷兰语</option>
+									<option value="el">希腊语</option>
+								</select>
+								<a class="font-w300 padding-10-l" id="fromType">自动检测 ◢</a>
+							</div>
+							<div class="mui-col-xs-6"></div>
+							<div class="mui-col-xs-3 align-right padding-10-r" id="doFavorites" style="display: none;">
+								<span class="icon iconfont icon-unfavorites larger-icon"></span>
+							</div>
+						</div>
+						<div class="textInput">
+							<textarea class="remove-margin-b" placeholder="请输入需要翻译的文字" id="inputTextarea"></textarea>
+							<span class="mui-icon mui-icon-clear clear-icon" id="clearButton" style="display: none;"></span>
+						</div>
+						<div class="mui-row">
+							<div class="mui-col-xs-12 align-center">
+								<span class="icon iconfont icon-doubleArrowDown color-lightgrey"></span>
+							</div>
+						</div>
+						<div class="mui-row">
+							<div class="mui-col-xs-6">
+								<select class="hidden-select" id="toSelect">
+									<option value="zh" selected="selected">中文</option>
+									<option value="en">英文</option>
+									<option value="jp">日语</option>
+									<option value="kor">韩语</option>
+									<option value="spa">西班牙语</option>
+									<option value="fra">法语</option>
+									<option value="th">泰语</option>
+									<option value="ara">阿拉伯语</option>
+									<option value="ru">俄罗斯语</option>
+									<option value="pt">葡萄牙语</option>
+									<option value="de">德语</option>
+									<option value="it">意大利语</option>
+									<option value="nl">荷兰语</option>
+									<option value="el">希腊语</option>
+								</select>
+								<a class="font-w300 padding-10-l" id="toType">中文 ◢</a>
+							</div>
+						</div>
+						<textarea class="readonly-text" readonly="readonly" id="showTextarea"></textarea>
+						<div class="mui-row">
+							<div class="mui-col-xs-12 align-center">
+								<input type="submit" value="翻译" class="input-button" id="submitButton" />
+							</div>
+						</div>
 					</div>
-					<div class="mui-col-xs-6"></div>
-					<div class="mui-col-xs-3 align-right padding-10-r" id="doFavorites" style="display: none;">
-						<span class="icon iconfont icon-unfavorites larger-icon"></span>
+					<div id="favoritesLayer">
+						<p class="font-w300">正在获取收藏记录...</p>
 					</div>
 				</div>
-				<textarea class="remove-margin-b" placeholder="请输入需要翻译的文字" id="inputTextarea"></textarea>
-				<div class="mui-row">
-					<div class="mui-col-xs-12 align-center">
-						<span class="icon iconfont icon-doubleArrowDown color-lightgrey"></span>
-					</div>
-				</div>
-				<div class="mui-row">
-					<div class="mui-col-xs-6">
-						<select class="hidden-select" id="toSelect">
-							<option value="auto">自动检测</option>
-							<option value="zh">中文</option>
-							<option value="en">英文</option>
-							<option value="jp">日语</option>
-							<option value="kor">韩语</option>
-							<option value="spa">西班牙语</option>
-							<option value="fra">法语</option>
-							<option value="th">泰语</option>
-							<option value="ara">阿拉伯语</option>
-							<option value="ru">俄罗斯语</option>
-							<option value="pt">葡萄牙语</option>
-							<option value="de">德语</option>
-							<option value="it">意大利语</option>
-							<option value="nl">荷兰语</option>
-							<option value="el">希腊语</option>
-						</select>
-						<a class="font-w300 padding-10-l" id="toType">中文 ◢</a>
-					</div>
-				</div>
-				<textarea class="readonly-text" readonly="readonly" id="showTextarea"></textarea>
-				<div class="mui-row">
-					<div class="mui-col-xs-12 align-center">
-						<input type="submit" value="翻译" class="input-button" id="submitButton" />
-					</div>
-				</div>
-			</div>
-			<div class="favorites-layer">
-				<p class="font-w300">正在获取收藏夹内容...</p>
 			</div>
 		</div>
 		<footer class="footer-info">数据由 聚合数据 提供</footer>
