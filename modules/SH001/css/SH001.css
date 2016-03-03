@@ -1,6 +1,7 @@
 .search-layer {
 	height: auto;
 	overflow: hidden;
+	background-color: white;
 }
 
 .mui-row {
@@ -57,6 +58,7 @@ input[type='search'] {
 #expressInformation {
 	height: auto;
 	overflow: hidden;
+	background-color: white;
 }
 
 .base-information {
@@ -123,6 +125,7 @@ input[type='search'] {
 	overflow: hidden;
 	padding: 10px 10px 10px 30px;
 	border-bottom: silver solid 1px;
+	background-color: white;
 }
 
 #historyExpressInfo table {

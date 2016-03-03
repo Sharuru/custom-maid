@@ -12,14 +12,16 @@ var hisList = [];
  * SH001 画面初始化
  */
 function initializeSH001() {
-	//				localStorage.removeItem('historySearch');
+//	localStorage.removeItem('historySearch');
+	companyCode = 'jd';
+	companyName = '京东';
 	getHistory();
 	//快递公司选择选择
 	mui("body").on('change', '.hidden-select', function() {
 		//快递公司名称变更
-		document.getElementById('selectedExpressName').innerText = this.options[this.selectedIndex].text;
+		document.getElementById('selectedExpressName').innerText = this.options[this.selectedIndex].text + ' ◢';
 		//获取快递公司名称和代码
-		companyCode = this.options[this.selectedIndex].value;
+		companyCode = this.value;
 		companyName = this.options[this.selectedIndex].text;
 		//清除输入
 		//		codeInput.value = '';
@@ -68,6 +70,7 @@ function initializeSH001() {
  * @param String expressName 物流公司名称
  */
 function getExpressInfo(expressCode, trackingNum, expressName) {
+	mui.toast('正在获取快递信息...');
 	addDisabled();
 	mui.ajax(serverAddr + 'tools/express', {
 		data: {
@@ -81,22 +84,18 @@ function getExpressInfo(expressCode, trackingNum, expressName) {
 		//超时时间设置为10 秒；
 		timeout: 10000,
 		success: function(requestData) {
-			if (requestData.status == '201') {
+			if (requestData.status == '201' || requestData.status == '400') {
 				var errorMsg = '';
 				errorMsg += '<div class="base-information"><p class="font-w300">' + requestData.message + '</p><div>';
 				expressInfo.innerHTML = errorMsg;
-				cancleDisabled();
+				cancelDisabled();
 			} else {
 				var hisInfo = {
 					name: expressName,
 					code: expressCode,
 					num: trackingNum
 				};
-				hisList.unshift(hisInfo);
-				if (hisList.length > 10) {
-					hisList.pop();
-				}
-				localStorage.setItem('historySearch', JSON.stringify(hisList));
+				setHistory(hisInfo);
 				//基础信息：快递公司和快递单号
 				var baseInfoStr = '';
 				baseInfoStr += '<div class="base-information"><p class="font-w300">' + expressName + ' : ' + trackingNum + '<\p></div>';
@@ -123,7 +122,7 @@ function getExpressInfo(expressCode, trackingNum, expressName) {
 				}
 				liStr = '<ul class="list list-timeline">' + liStr + '</ul>';
 				expressInfo.innerHTML = baseInfoStr + liStr;
-				cancleDisabled();
+				cancelDisabled();
 				getHistory();
 			}
 		},
@@ -138,11 +137,21 @@ function getExpressInfo(expressCode, trackingNum, expressName) {
 }
 
 /**
+ * 添加历史查询记录
+ */
+function setHistory(infoStr) {
+	hisList.unshift(infoStr);
+	if (hisList.length > 10) {
+		hisList.pop();
+	}
+	localStorage.setItem('historySearch', JSON.stringify(hisList));
+}
+
+/**
  * 获取历史查询记录
  */
 function getHistory() {
 	var hisSearch = localStorage.getItem('historySearch');
-	var tipsContext = '';
 	if (hisSearch == null) {
 		hisLayer.innerHTML = '<p class="font-w300">暂无历史查询记录...</p>';
 	} else {
@@ -185,12 +194,14 @@ function getHistory() {
 function addDisabled() {
 	codeInput.disabled = 'disabled';
 	clickButton.disabled = true;
+	clickButton.style.color = '#D3D3D3';
 }
 
 /**
  * 解除禁用输入框和查询按钮
  */
-function cancleDisabled() {
+function cancelDisabled() {
 	codeInput.disabled = '';
 	clickButton.disabled = false;
+	clickButton.style.color = 'dimgray';
 }

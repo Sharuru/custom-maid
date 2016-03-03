@@ -20,3 +20,4 @@
 .icon-doubleArrowDown:before { content: "\e603"; }
 .icon-favorites:before { content: "\e606"; }
 .icon-unfavorites:before { content: "\e604"; }
+.icon-deleteFavorites:before { content: "\e608"; }
