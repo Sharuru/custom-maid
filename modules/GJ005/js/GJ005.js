@@ -176,7 +176,7 @@ function deleteFavor(indexStr) {
  */
 function getFavor() {
 	var allFavorites = localStorage.getItem('favorRecord');
-	if (allFavorites == null) {
+	if (allFavorites == null || allFavorites == '[]') {
 		favorLayer.innerHTML = '<p class="font-w300">暂无收藏记录...</p>';
 	} else {
 		favorLayer.innerHTML = '<p class="font-w300">收藏记录</p>';
