@@ -6,25 +6,23 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
 		<link href="../../res/css/mui.min.css" rel="stylesheet" />
+		<link href="../../res/css/iconfont.css" rel="stylesheet" />
+		<link href="../../res/css/common.css" rel="stylesheet" />
 		<link href="css/CX001.css" rel="stylesheet" />
 	</head>
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<div class="header-text-line-1">
-				<a class="mui-action-back  mui-icon mui-icon-back" style="color:white;"></a>
+				<a class="mui-action-back mui-icon mui-icon-back color-white"></a>
 				火车班次
 			</div>
 		</header>
-		<div class="mui-content" style="height:100%;">
+		<div class="mui-content">
 			<div id="slider" class="mui-slider">
 				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-					<a class="mui-control-item" href="#byTrainContent">
-				按车次查询
-			</a>
-					<a class="mui-control-item" href="#byStationContent">
-				按站到站查询
-			</a>
+					<a class="mui-control-item" href="#byTrainContent">按车次查询</a>
+					<a class="mui-control-item" href="#byStationContent">按站到站查询</a>
 				</div>
 				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6"></div>
 				<div class="mui-slider-group">
@@ -33,7 +31,7 @@
 							<div class="mui-content-padded" style="margin: 5px;">
 								<form class="mui-input-group">
 									<div class="mui-input-row">
-										<label>车次</label>
+										<label class="font-w300-s14 padding-30-l" style="padding-top: 12px;">车次</label>
 										<input id="trainNumberInput" type="text" class="mui-input-clear" placeholder="请输入车次">
 									</div>
 									<div class="mui-button-row">
@@ -41,11 +39,33 @@
 									</div>
 								</form>
 							</div>
-							<div>
-								<h5>查询结果：</h5>
+							<div class="result-layer">
+								<p class="font-w300-s14">查询结果：</p>
 								<div id="findByTrainResultDiv">
 									<div id="findByTrainResulTitle">D1234 高铁</div>
-									<table border="1" width="100%;">
+									<div class="mui-row">
+										<div class="mui-col-xs-4 align-right padding-10-r">
+											<p class="station-name">非洲虹桥</p>
+										</div>
+										<div class="mui-col-xs-3 align-center">
+											<span class="icon iconfont icon-arrowRight"></span>
+										</div>
+										<div class="mui-col-xs-5 align-left padding-10-l">
+											<p class="station-name">阿富汗</p>
+										</div>
+									</div>
+									<div class="mui-row padding-5-t">
+										<div class="mui-col-xs-4 align-right padding-10-r">
+											<p class="time-info">14:52</p>
+										</div>
+										<div class="mui-col-xs-3 align-center">
+											<p class="time-info-small">5小时35分</p>
+										</div>
+										<div class="mui-col-xs-5 align-left padding-10-l">
+											<p class="time-info">20:22</p>
+										</div>
+									</div>
+									<!--<table border="1" width="100%;">
 										<tr>
 											<td width="5%;"></td>
 											<td width="30%;" id="AStartStation" style="height:28px;font-weight: bold;font-size: 28px;text-align: right;">非洲虹桥</td>
@@ -60,7 +80,7 @@
 											<td id="AEndTime" style="text-align: left;font-size: 20px;">12:32</td>
 											<td width="5%;"></td>
 										</tr>
-									</table>
+									</table>-->
 									<div id="findByTrainResultSeat">
 
 									</div>
@@ -76,8 +96,9 @@
 				</div>
 			</div>
 		</div>
-		</div>
-
+		<footer>
+			<div class="footer-info">数据由 <a>聚合数据</a> 提供</div>
+		</footer>
 	</body>
 	<script src="../../res/js/mui.min.js "></script>
 	<script type="text/javascript " src="../../res/js/common.js "></script>

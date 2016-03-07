@@ -1,18 +1,3 @@
-.mui-bar-nav {
-	height: 49px;
-	color: white;
-	background: #20428A;
-}
-
-.mui-bar-tab {
-	background: #EEEEEE;
-}
-
-.header-text-line-1 {
-	padding-top: 4px;
-	font-size: 22px;
-}
-
 .mui-slider-item {
 	border-bottom: 0px !important;
 }
@@ -22,17 +7,24 @@
 	margin-right: -5px;
 }
 
-input[type="text"] {
-	/*text-align: right;*/
+.result-layer {
+	padding: 5px 15px 10px 15px;
 }
 
+.station-name {
+	font-size: 18px !important;
+	color: #000000 !important;
+	margin: 0 !important;
+}
 
-/*	padding-right: 0px;*/
+.time-info {
+	font-size: 16px !important;
+	color: #000000 !important;
+	margin: 0 !important;
+}
 
-
-/*padding-top: 10px;*/
-
-
-/*width: 95%;
-	height: 35px;
-	font-size: 30px;*/
+.time-info-small{
+	font-size: 14px !important;
+	color: #000000 !important;
+	margin: 0 !important;
+}
