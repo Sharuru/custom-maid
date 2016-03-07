@@ -122,7 +122,7 @@ function getTranslation(lanFromType, lanToType, lanContext) {
 		timeout: 10000,
 		success: function(requestData) {
 			if (requestData.errNum != '0') {
-				mui.alert(requestData.errMsg);
+				mui.toast(requestData.errMsg);
 				cancelDisabled();
 			} else {
 				favoritesButton.innerHTML = '<span class="icon iconfont icon-unfavorites larger-icon"></span>';
