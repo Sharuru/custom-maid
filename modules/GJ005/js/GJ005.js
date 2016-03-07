@@ -177,20 +177,20 @@ function deleteFavor(indexStr) {
 function getFavor() {
 	var allFavorites = localStorage.getItem('favorRecord');
 	if (allFavorites == null || allFavorites == '[]') {
-		favorLayer.innerHTML = '<p class="font-w300">暂无收藏记录...</p>';
+		favorLayer.innerHTML = '<p class="font-w300-s14">暂无收藏记录...</p>';
 	} else {
-		favorLayer.innerHTML = '<p class="font-w300">收藏记录</p>';
+		favorLayer.innerHTML = '<p class="font-w300-s14">收藏记录</p>';
 		favorList = JSON.parse(allFavorites);
 		var favorContext = '';
 		for (var i = 0; i < favorList.length; i++) {
 			favorContext += '<div class="mui-row"><div class="mui-col-xs-3">';
-			favorContext += '<p class="font-w300">原: (' + favorList[i].fromNameInfo + ')</p></div>';
-			favorContext += '<div class="mui-col-xs-8"><p class="font-w300">' + favorList[i].fromSrc;
+			favorContext += '<p class="font-w300-s12">原: (' + favorList[i].fromNameInfo + ')</p></div>';
+			favorContext += '<div class="mui-col-xs-8"><p class="font-w300-s12">' + favorList[i].fromSrc;
 			favorContext += '</p></div><div class="mui-col-xs-1 align-right">';
 			favorContext += '<span class="icon iconfont icon-deleteFavorites delete-icon" id="favor' + i + '"></span></div></div>';
 			favorContext += '<div class="mui-row padding-8"><div class="mui-col-xs-3">';
-			favorContext += '<p class="font-w300">译: (' + favorList[i].toNameInfo + ')</p></div>';
-			favorContext += '<div class="mui-col-xs-8"><p class="font-w300">' + favorList[i].toDst;
+			favorContext += '<p class="font-w300-s12">译: (' + favorList[i].toNameInfo + ')</p></div>';
+			favorContext += '<div class="mui-col-xs-8"><p class="font-w300-s12">' + favorList[i].toDst;
 			favorContext += '</p></div><div class="mui-col-xs-1"></div></div>';
 		}
 		favorLayer.innerHTML += favorContext;
