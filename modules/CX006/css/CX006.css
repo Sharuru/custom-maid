@@ -1,9 +1,3 @@
-.mui-bar-nav {
-	height: 49px;
-	color: white;
-	background: #20428A;
-}
-
 .mui-bar-tab {
 	background: #EEEEEE;
 }
@@ -14,11 +8,6 @@
 	color: gray;
 }
 
-.header-text-line-1 {
-	padding-top: 4px;
-	font-size: 22px;
-}
-
 .base-div {
 	background: white;
 	padding-top: 15px;
@@ -27,14 +16,14 @@
 }
 
 .guide-text-left {
-	font-size: 15px;
+	font-size: 14px;
 	color: gray;
 	text-align: left;
 	width: 35%;
 }
 
 .guide-text-right {
-	font-size: 15px;
+	font-size: 14px;
 	color: gray;
 	text-align: right;
 	width: 35%;
