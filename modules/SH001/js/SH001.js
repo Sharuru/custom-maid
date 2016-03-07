@@ -84,7 +84,7 @@ function getExpressInfo(expressCode, trackingNum, expressName) {
 		//超时时间设置为10 秒；
 		timeout: 10000,
 		success: function(requestData) {
-			if (requestData.status == '201' || requestData.status == '400') {
+			if (requestData.status != '200') {
 				mui.toast(requestData.message);
 				cancelDisabled();
 			} else {
