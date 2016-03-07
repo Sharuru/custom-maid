@@ -39,8 +39,9 @@ body {
 	background-color: #F0F0F0;
 }
 
-.input-button {
+.button-style {
 	padding: 3px 10px 2px 10px !important;
+	font-size: 16px;
 	margin-bottom: 10px !important;
 }
 
@@ -65,26 +66,26 @@ footer {
 }
 
 .font-w300-s12 {
-	font-size: 12px;
-	font-weight: 300;
+	font-size: 12px !important;
+	font-weight: 300 !important;
 	margin: 0 !important;
 }
 
 .font-w500-s12 {
-	font-size: 12px;
-	font-weight: 500;
+	font-size: 12px !important;
+	font-weight: 500 !important;
 	margin: 0 !important;
 }
 
 .font-w300-s14 {
-	font-size: 14px;
-	font-weight: 300;
+	font-size: 14px !important;
+	font-weight: 300 !important;
 	margin: 0 !important;
 }
 
 .font-w500-s14 {
-	font-size: 14px;
-	font-weight: 500;
+	font-size: 14px !important;
+	font-weight: 500 !important;
 	margin: 0 !important;
 }
 
@@ -164,8 +165,16 @@ footer {
 	padding-left: 10px !important;
 }
 
+.padding-30-l {
+	padding-left: 30px !important;
+}
+
 .padding-10-r {
 	padding-right: 10px !important;
+}
+
+.padding-5-t {
+	padding-top: 5px !important;
 }
 
 .padding-8 {

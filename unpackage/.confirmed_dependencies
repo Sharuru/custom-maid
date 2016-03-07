@@ -48,7 +48,11 @@
 			"res/images/icons/modules/CX007.png",
 			"res/images/icons/modules/CX002.png",
 			"res/images/icons/modules/SP001.png",
-			"res/images/icons/modules/CX005.png"
+			"res/images/icons/modules/CX005.png",
+			"res/css/mui.min.css",
+			"res/css/iconfont.css",
+			"index.css",
+			"res/js/mui.min.js"
 		],
 		"refer": [
 			"modules/GJ001/GJ001.html",
@@ -56,7 +60,9 @@
 			"modules/CX001/CX001.html",
 			"modules/HJ002/HJ002.html",
 			"modules/HJ001/HJ001.html",
-			"modules/GJ004/GJ004.html"
+			"modules/GJ004/GJ004.html",
+			"modules/SH001/SH001.html",
+			"modules/GJ005/GJ005.html"
 		]
 	},
 	"modules/GJ001/GJ001.html": {
@@ -68,7 +74,8 @@
 			"res/fonts/mui.ttf",
 			"res/css/mui.min.css",
 			"res/js/mui.min.js",
-			"res/js/common.js"
+			"res/js/common.js",
+			"res/css/common.css"
 		]
 	},
 	"modules/CX006/CX006.html": {
@@ -115,7 +122,10 @@
 			"res/js/mui.min.js",
 			"res/js/common.js",
 			"modules/CX001/css/CX001.css",
-			"res/images/modules/GJ001/USD.png"
+			"res/images/modules/GJ001/USD.png",
+			"res/css/iconfont.css",
+			"res/fonts/iconfont.ttf",
+			"res/css/common.css"
 		]
 	},
 	"modules/HJ002/HJ002.html": {
@@ -144,6 +154,32 @@
 			"res/css/mui.min.css",
 			"res/js/mui.min.js",
 			"res/js/common.js"
+		]
+	},
+	"modules/SH001/SH001.html": {
+		"resources": [
+			"modules/SH001/css/SH001.css",
+			"modules/SH001/js/SH001.js",
+			"res/fonts/mui.ttf",
+			"res/css/common.css",
+			"res/css/iconfont.css",
+			"res/css/mui.min.css",
+			"res/fonts/iconfont.ttf",
+			"res/js/mui.min.js",
+			"res/js/common.js"
+		]
+	},
+	"modules/GJ005/GJ005.html": {
+		"resources": [
+			"modules/GJ005/css/GJ005.css",
+			"res/css/iconfont.css",
+			"res/css/mui.min.css",
+			"res/fonts/iconfont.ttf",
+			"res/fonts/mui.ttf",
+			"res/js/mui.min.js",
+			"modules/GJ005/js/GJ005.js",
+			"res/js/common.js",
+			"res/css/common.css"
 		]
 	}
 }

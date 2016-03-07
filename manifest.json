@@ -363,7 +363,8 @@
 					"res/js/common.js",
 					"res/fonts/mui.ttf",
 					"modules/CX006/js/CX006.js",
-					"modules/CX006/css/CX006.css"
+					"modules/CX006/css/CX006.css",
+					"res/css/common.css"
 				],
 				"refer": [
 					"modules/CX006/CITY_LIST.html",
@@ -423,7 +424,10 @@
 					"res/js/mui.min.js",
 					"res/js/common.js",
 					"modules/CX001/css/CX001.css",
-					"res/images/modules/GJ001/USD.png"
+					"res/images/modules/GJ001/USD.png",
+					"res/css/common.css",
+					"res/css/iconfont.css",
+					"res/fonts/iconfont.ttf"
 				],
 				"refer": [],
 				"priority": 0
