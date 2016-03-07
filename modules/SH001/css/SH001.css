@@ -12,14 +12,14 @@
 
 .tips-style {
 	padding-top: 5px;
-	font-size: 14px;
+	font-size: 16px;
 	color: dimgray;
 }
 
 input[type='search'] {
 	width: 99% !important;
 	margin-bottom: 0 !important;
-	font-size: 14px !important;
+	font-size: 16px !important;
 	height: 30px !important;
 	text-align: left !important;
 }
@@ -30,9 +30,9 @@ input[type='search'] {
 
 .mui-search .mui-placeholder {
 	padding-left: 15px !important;
-	font-size: 14px !important;
-	line-height: 30px !important;
-	height: 30px !important;
+	font-size: 16px !important;
+	line-height: 32px !important;
+	height: 32px !important;
 	text-align: left !important;
 }
 

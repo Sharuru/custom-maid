@@ -12,7 +12,7 @@ var hisList = [];
  * SH001 画面初始化
  */
 function initializeSH001() {
-//	localStorage.removeItem('historySearch');
+	//	localStorage.removeItem('historySearch');
 	companyCode = 'jd';
 	companyName = '京东';
 	getHistory();
@@ -85,9 +85,7 @@ function getExpressInfo(expressCode, trackingNum, expressName) {
 		timeout: 10000,
 		success: function(requestData) {
 			if (requestData.status == '201' || requestData.status == '400') {
-				var errorMsg = '';
-				errorMsg += '<div class="base-information"><p class="font-w300">' + requestData.message + '</p><div>';
-				expressInfo.innerHTML = errorMsg;
+				mui.toast(requestData.message);
 				cancelDisabled();
 			} else {
 				var hisInfo = {
@@ -98,7 +96,7 @@ function getExpressInfo(expressCode, trackingNum, expressName) {
 				setHistory(hisInfo);
 				//基础信息：快递公司和快递单号
 				var baseInfoStr = '';
-				baseInfoStr += '<div class="base-information"><p class="font-w300">' + expressName + ' : ' + trackingNum + '<\p></div>';
+				baseInfoStr += '<div class="base-information"><p class="font-w300-s14">' + expressName + ' : ' + trackingNum + '<\p></div>';
 				//快递详细信息
 				var liStr = '';
 				//判断最新一条快递信息
@@ -110,14 +108,14 @@ function getExpressInfo(expressCode, trackingNum, expressName) {
 					liStr += '<li><i class="mui-icon iconfont icon-expressInfo list-timeline-icon color-warning"></i>';
 				}
 				liStr += '<div class="list-timeline-content">';
-				liStr += '<p class="font-w300">' + requestData.data[0].time + '</p>';
-				liStr += '<p class="font-w500">' + requestData.data[0].context + '</p>';
+				liStr += '<p class="font-w300-s14">' + requestData.data[0].time + '</p>';
+				liStr += '<p class="font-w500-s14">' + requestData.data[0].context + '</p>';
 				liStr += '</div></li>';
 				for (var i = 1; i < requestData.data.length; i++) {
 					liStr += '<li><i class="mui-icon iconfont icon-expressInfo list-timeline-icon"></i>';
 					liStr += '<div class="list-timeline-content">';
-					liStr += '<p class="font-w300">' + requestData.data[i].time + '</p>';
-					liStr += '<p class="font-w500">' + requestData.data[i].context + '</p>';
+					liStr += '<p class="font-w300-s14">' + requestData.data[i].time + '</p>';
+					liStr += '<p class="font-w500-s14">' + requestData.data[i].context + '</p>';
 					liStr += '</div></li>';
 				}
 				liStr = '<ul class="list list-timeline">' + liStr + '</ul>';
@@ -153,18 +151,18 @@ function setHistory(infoStr) {
 function getHistory() {
 	var hisSearch = localStorage.getItem('historySearch');
 	if (hisSearch == null) {
-		hisLayer.innerHTML = '<p class="font-w300">暂无历史查询记录...</p>';
+		hisLayer.innerHTML = '<p class="font-w300-s14">暂无历史查询记录...</p>';
 	} else {
-		hisLayer.innerHTML = '<p class="font-w300">历史查询记录</p>';
+		hisLayer.innerHTML = '<p class="font-w300-s14">历史查询记录</p>';
 		hisList = JSON.parse(hisSearch);
 		var hisContext = '';
 		//判断历史记录数的奇偶
 		if (hisList.length % 2 == 0) {
 			//偶数条记录处理
 			for (var i = 0; i < hisList.length / 2; i++) {
-				hisContext += '<tr><td class="history-record font-w300">' + hisList[2 * i].name + ' : ' + hisList[2 * i].num;
+				hisContext += '<tr><td class="history-record font-w300-s12">' + hisList[2 * i].name + ' : ' + hisList[2 * i].num;
 				hisContext += '<input type="hidden" value="' + hisList[2 * i].code + '" /></td>';
-				hisContext += '<td class="history-record font-w300">' + hisList[2 * i + 1].name + ' : ' + hisList[2 * i + 1].num;
+				hisContext += '<td class="history-record font-w300-s12">' + hisList[2 * i + 1].name + ' : ' + hisList[2 * i + 1].num;
 				hisContext += '<input type="hidden" value="' + hisList[2 * i].code + '" /></td>';
 				hisContext += '</tr>';
 			}
@@ -172,13 +170,13 @@ function getHistory() {
 			//奇数条记录处理
 			for (var i = 0; i < parseInt(hisList.length / 2 + 1); i++) {
 				if (i == parseInt(hisList.length / 2)) {
-					hisContext += '<tr><td class="history-record font-w300">' + hisList[2 * i].name + ' : ' + hisList[2 * i].num;
+					hisContext += '<tr><td class="history-record font-w300-s12">' + hisList[2 * i].name + ' : ' + hisList[2 * i].num;
 					hisContext += '<input type="hidden" value="' + hisList[2 * i].code + '" /></td>';
-					hisContext += '<td class="history-record font-w300"> </td></tr>';
+					hisContext += '<td class="history-record font-w300-s12"> </td></tr>';
 				} else {
-					hisContext += '<tr><td class="history-record font-w300">' + hisList[2 * i].name + ' : ' + hisList[2 * i].num;
+					hisContext += '<tr><td class="history-record font-w300-s12">' + hisList[2 * i].name + ' : ' + hisList[2 * i].num;
 					hisContext += '<input type="hidden" value="' + hisList[2 * i].code + '" /></td>';
-					hisContext += '<td class="history-record font-w300">' + hisList[2 * i + 1].name + ' : ' + hisList[2 * i + 1].num;
+					hisContext += '<td class="history-record font-w300-s12">' + hisList[2 * i + 1].name + ' : ' + hisList[2 * i + 1].num;
 					hisContext += '<input type="hidden" value="' + hisList[2 * i].code + '" /></td></tr>';
 				}
 			}
