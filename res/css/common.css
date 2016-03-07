@@ -64,14 +64,26 @@ footer {
 	background-color: #EFEFF4;
 }
 
-.font-w300 {
+.font-w300-s12 {
 	font-size: 12px;
 	font-weight: 300;
 	margin: 0 !important;
 }
 
-.font-w500 {
+.font-w500-s12 {
 	font-size: 12px;
+	font-weight: 500;
+	margin: 0 !important;
+}
+
+.font-w300-s14 {
+	font-size: 14px;
+	font-weight: 300;
+	margin: 0 !important;
+}
+
+.font-w500-s14 {
+	font-size: 14px;
 	font-weight: 500;
 	margin: 0 !important;
 }
