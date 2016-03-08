@@ -3,8 +3,8 @@
 }
 
 .mui-input-group {
-	margin-left: -5px;
-	margin-right: -5px;
+	margin-left: 0px;
+	margin-right: 0px;
 }
 
 .result-layer {
@@ -17,14 +17,50 @@
 	margin: 0 !important;
 }
 
-.time-info {
+.tips-info {
+	font-size: 18px !important;
+	color: #000000 !important;
+	margin: 0 !important;
+}
+
+.tips-info-small{
 	font-size: 16px !important;
 	color: #000000 !important;
 	margin: 0 !important;
 }
 
-.time-info-small{
-	font-size: 14px !important;
-	color: #000000 !important;
+.station-select{
+	padding: 5px 15px 3px 15px;
+	background-color: white;
+	border-bottom: silver solid 1px;
+}
+
+.select-style{
+	font-size: 18px;
+	font-weight: 300;
+	padding-left: 15px;
 	margin: 0 !important;
+}
+
+.start-circle {
+	width: 20px;
+	height: 20px;
+	background-color: dodgerblue;
+	border-radius: 25px;
+}
+
+.arrive-circle {
+	width: 20px;
+	height: 20px;
+	background-color: lightseagreen;
+	border-radius: 25px;
+}
+
+.circle-text {
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	display: block;
+	color: #FFF;
+	text-align: center
 }

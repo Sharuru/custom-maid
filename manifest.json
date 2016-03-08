@@ -429,7 +429,9 @@
 					"res/css/iconfont.css",
 					"res/fonts/iconfont.ttf"
 				],
-				"refer": [],
+				"refer": [
+					"modules/CX001/CITY_LIST.html"
+				],
 				"priority": 0
 			},
 			"modules/HJ002/HJ002.html": {
@@ -519,6 +521,20 @@
 					"res/css/mui.min.css",
 					"res/js/mui.min.js",
 					"res/js/common.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/CX001/CITY_LIST.html": {
+				"resources": [
+					"modules/CX001/js/CITY_LIST.js",
+					"res/css/mui.indexedlist.css",
+					"res/js/mui.indexedlist.min.js",
+					"res/css/mui.min.css",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css",
+					"res/fonts/mui.ttf"
 				],
 				"refer": [],
 				"priority": 0

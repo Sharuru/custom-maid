@@ -19,7 +19,7 @@
 input[type='search'] {
 	width: 99% !important;
 	margin-bottom: 0 !important;
-	font-size: 16px !important;
+	font-size: 18px !important;
 	height: 30px !important;
 	text-align: left !important;
 }
@@ -30,7 +30,7 @@ input[type='search'] {
 
 .mui-search .mui-placeholder {
 	padding-left: 15px !important;
-	font-size: 16px !important;
+	font-size: 18px !important;
 	line-height: 32px !important;
 	height: 32px !important;
 	text-align: left !important;
@@ -92,7 +92,7 @@ input[type='search'] {
 .list-timeline:before {
 	position: absolute;
 	top: 0;
-	left: 30px;
+	left: 20px;
 	bottom: 0;
 	display: block;
 	width: 2px;
@@ -104,7 +104,7 @@ input[type='search'] {
 .list-timeline .list-timeline-icon {
 	position: absolute;
 	top: 10px;
-	left: 18px;
+	left: 8px;
 	width: 26px;
 	height: 26px;
 	padding-top: 5px;
@@ -117,19 +117,19 @@ input[type='search'] {
 }
 
 .list-timeline .list-timeline-content {
-	padding-left: 60px;
+	padding-left: 50px;
 }
 
 #historyExpressInfo {
 	height: auto;
 	overflow: hidden;
-	padding: 10px 10px 10px 30px;
+	padding: 10px 10px 10px 15px;
 	border-bottom: silver solid 1px;
 	background-color: white;
 }
 
 #historyExpressInfo table {
-	width: 95%;
+	width: 99%;
 	color: #9D9DA1;
 	text-align: center;
 }

@@ -65,18 +65,6 @@ footer {
 	background-color: #EFEFF4;
 }
 
-.font-w300-s12 {
-	font-size: 12px !important;
-	font-weight: 300 !important;
-	margin: 0 !important;
-}
-
-.font-w500-s12 {
-	font-size: 12px !important;
-	font-weight: 500 !important;
-	margin: 0 !important;
-}
-
 .font-w300-s14 {
 	font-size: 14px !important;
 	font-weight: 300 !important;
@@ -86,6 +74,24 @@ footer {
 .font-w500-s14 {
 	font-size: 14px !important;
 	font-weight: 500 !important;
+	margin: 0 !important;
+}
+
+.font-w300-s16 {
+	font-size: 16px !important;
+	font-weight: 300 !important;
+	margin: 0 !important;
+}
+
+.font-w500-s16 {
+	font-size: 16px !important;
+	font-weight: 500 !important;
+	margin: 0 !important;
+}
+
+.font-w300-s18 {
+	font-size: 18px !important;
+	font-weight: 300 !important;
 	margin: 0 !important;
 }
 
@@ -161,6 +167,10 @@ footer {
 	text-align: center !important;
 }
 
+.float-left{
+	float: left !important;
+}
+
 .padding-10-l {
 	padding-left: 10px !important;
 }
@@ -173,10 +183,40 @@ footer {
 	padding-right: 10px !important;
 }
 
+.padding-20-r{
+	padding-right: 20px !important;
+}
+
 .padding-5-t {
 	padding-top: 5px !important;
 }
 
-.padding-8 {
+.padding-8-t {
+	padding-top: 8px !important;
+}
+
+.padding-5{
 	padding-bottom: 5px !important;
+}
+
+.padding-8 {
+	padding-bottom: 8px !important;
+}
+
+.border-b{
+	border-bottom: silver solid 1px;
+}
+
+.mui-bar-tab {
+	background: #EEEEEE;
+}
+
+.mui-icon-close-filled {
+	padding-right: 10px;
+	padding-bottom: 10px;
+	color: gray;
+}
+
+.indexed-fixed {
+	height: 35px;
 }

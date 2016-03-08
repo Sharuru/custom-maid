@@ -71,7 +71,7 @@ function initializeGJ005() {
 	//翻译按钮点击
 	mui("body").on('tap', '#submitButton', function() {
 		if (textInput.value == '') {
-			mui.alert('请输入需要翻译的文字');
+			mui.toast('未输入需要翻译的文字');
 			return;
 		}
 		getTranslation(fromTypeStr, toTypeStr, textInput.value);
@@ -177,20 +177,22 @@ function deleteFavor(indexStr) {
 function getFavor() {
 	var allFavorites = localStorage.getItem('favorRecord');
 	if (allFavorites == null || allFavorites == '[]') {
-		favorLayer.innerHTML = '<p class="font-w300-s14">暂无收藏记录...</p>';
+		favorLayer.innerHTML = '<p class="font-w300-s16">暂无收藏记录...</p>';
+		initialSet();
+		textInput.value='';
 	} else {
-		favorLayer.innerHTML = '<p class="font-w300-s14">收藏记录</p>';
+		favorLayer.innerHTML = '<p class="font-w300-s16">收藏记录</p>';
 		favorList = JSON.parse(allFavorites);
 		var favorContext = '';
 		for (var i = 0; i < favorList.length; i++) {
-			favorContext += '<div class="mui-row"><div class="mui-col-xs-3">';
-			favorContext += '<p class="font-w300-s12">原: (' + favorList[i].fromNameInfo + ')</p></div>';
-			favorContext += '<div class="mui-col-xs-8"><p class="font-w300-s12">' + favorList[i].fromSrc;
+			favorContext += '<div class="mui-row padding-10-l"><div class="mui-col-xs-3">';
+			favorContext += '<p class="font-w300-s14">原: (' + favorList[i].fromNameInfo + ')</p></div>';
+			favorContext += '<div class="mui-col-xs-8"><p class="font-w300-s14">' + favorList[i].fromSrc;
 			favorContext += '</p></div><div class="mui-col-xs-1 align-right">';
 			favorContext += '<span class="icon iconfont icon-deleteFavorites delete-icon" id="favor' + i + '"></span></div></div>';
-			favorContext += '<div class="mui-row padding-8"><div class="mui-col-xs-3">';
-			favorContext += '<p class="font-w300-s12">译: (' + favorList[i].toNameInfo + ')</p></div>';
-			favorContext += '<div class="mui-col-xs-8"><p class="font-w300-s12">' + favorList[i].toDst;
+			favorContext += '<div class="mui-row padding-8 padding-10-l"><div class="mui-col-xs-3">';
+			favorContext += '<p class="font-w300-s14">译: (' + favorList[i].toNameInfo + ')</p></div>';
+			favorContext += '<div class="mui-col-xs-8"><p class="font-w300-s14">' + favorList[i].toDst;
 			favorContext += '</p></div><div class="mui-col-xs-1"></div></div>';
 		}
 		favorLayer.innerHTML += favorContext;

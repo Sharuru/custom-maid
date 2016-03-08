@@ -14,12 +14,12 @@
 .money-text {
 	color: gray;
 	text-align: center;
-	font-size: 14px;
+	font-size: 16px;
 	height: 20px;
 }
 
 .exchange-rate-text {
-	font-size: 12px;
+	font-size: 14px;
 	color: gray;
 	padding-top: 2px;
 	padding-left: 5px;
@@ -63,5 +63,5 @@ input[type="number"] {
 	padding-top: 14px;
 	width: 95%;
 	height: 100%;
-	font-size: 28px;
+	font-size: 24px;
 }
