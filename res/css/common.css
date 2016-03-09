@@ -115,6 +115,10 @@ footer {
 	color: #9D9DA1 !important;
 }
 
+.color-black{
+	color: #000000 !important;
+}
+
 .remove-margin {
 	margin: 0 !important;
 }
@@ -171,8 +175,16 @@ footer {
 	float: left !important;
 }
 
+.float-right{
+	float: right !important;
+}
+
 .padding-10-l {
 	padding-left: 10px !important;
+}
+
+.padding-20-l {
+	padding-left: 20px !important;
 }
 
 .padding-30-l {

@@ -49,6 +49,13 @@
 	border-radius: 25px;
 }
 
+.pass-circle {
+	width: 20px;
+	height: 20px;
+	background-color: lightsalmon;
+	border-radius: 25px;
+}
+
 .arrive-circle {
 	width: 20px;
 	height: 20px;
@@ -63,4 +70,8 @@
 	display: block;
 	color: #FFF;
 	text-align: center
+}
+
+.list-block{
+	border-bottom: silver solid 1px;
 }

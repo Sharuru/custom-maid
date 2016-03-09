@@ -3,8 +3,11 @@ var trainNum = document.getElementById('trainNumberInput');
 var findByStationButton = document.getElementById('buttonFindByStation');
 var startPos = document.getElementById('startStation');
 var arrivePos = document.getElementById('arriveStation');
+var startValue = '';
+var endValue = '';
 
 function initializeCX001() {
+	//	getDays('13:20', '6:59', '17小时39分钟');
 	document.getElementById('slider').addEventListener('slide', function(e) {
 		console.log(e.detail.slideNumber);
 	});
@@ -41,7 +44,14 @@ function initializeCX001() {
 	});
 	//查询按钮点击事件
 	findByStationButton.addEventListener('tap', function() {
-		findByStation();
+		if (startPos.innerHTML != '请选择站点') {
+			startValue = startPos.innerHTML;
+		}
+		if (arrivePos.innerHTML != '请选择站点') {
+			endValue = arrivePos.innerHTML;
+		}
+		document.getElementById('resultByStation').innerHTML = ''；
+		findByStation(startValue, endValue);
 	});
 }
 
@@ -143,23 +153,57 @@ function cancelDisabledTrain() {
 	findByTrainNumberButton.innerHTML = '开始查询';
 }
 
-function findByStation() {
+function findByStation(startPosition, endPosition) {
 	addDisabledStation();
 	mui.ajax(serverAddr + '/travel/train/station', {
 		data: {
-			from: startPos.value,
-			to: arrivePos.value
+			from: startPosition,
+			to: endPosition
 		},
 		dataType: 'json',
 		type: 'get',
 		timeout: 10000,
-		success:function(requestData){
+		success: function(requestData) {
 			console.log(JSON.stringify(requestData));
 			//无条目的场合
 			if (requestData.error_code != 0) {
 				mui.toast(requestData.reason);
 				cancelDisabledStation();
 			} else {
+				var contentStr = '';
+				contentStr += '<p class="font-w300-s16">查询结果： </p>';
+				for (var i = 0; i < requestData.result.list.length; i++) {
+					var startTime = requestData.result.list[i].start_time;
+					var totalTime = requestData.result.list[i].run_time;
+					var arriveTips = getDays(startTime, totalTime);
+					contentStr += '<div class="list-block"><div class="mui-row padding-5-t">';
+					contentStr += '<div class="mui-col-xs-12 padding-10-l align-left">';
+					contentStr += '<p class="font-w300-s14 color-black">' + requestData.result.list[i].train_no;
+					contentStr += '<label class="font-w300-s14 padding-10-l">';
+					contentStr += requestData.result.list[i].train_type + '</label></p></div></div>';
+					contentStr += '<div class="mui-row padding-5-t" style="line-height: 22px;">';
+					contentStr += '<div class="mui-col-xs-8 padding-20-l"><div class="start-circle float-left">';
+					contentStr += '<span class="circle-text">' + requestData.result.list[i].start_station_type;
+					contentStr += '</span></div><div class="tips-info-small float-left padding-10-l">';
+					contentStr += requestData.result.list[i].start_station + '<label class="font-w300-s14 padding-10-l">(';
+					contentStr += startTime + ')</label></div></div>';
+					contentStr += '<div class="mui-col-xs-4 align-center"><label class="font-w300-s14">';
+					contentStr += totalTime + '</label></div></div>';
+					contentStr += '<div class="mui-row padding-5" style="line-height: 22px;">';
+					contentStr += '<div class="mui-col-xs-8 padding-20-l">';
+					if (requestData.result.list[i].end_station_type == '终') {
+						contentStr += '<div class="arrive-circle float-left"><span class="circle-text">终';
+					} else {
+						contentStr += '<div class="pass-circle float-left"><span class="circle-text">';
+						contentStr += requestData.result.list[i].end_station_type;
+					}
+					contentStr += '</span></div><div class="tips-info-small float-left padding-10-l">';
+					contentStr += requestData.result.list[i].end_station + '<label class="font-w300-s14 padding-10-l">(';
+					contentStr += requestData.result.list[i].end_time + ')</label></div></div>';
+					contentStr += '<div class="mui-col-xs-4 align-center"><label class="font-w300-s14">';
+					contentStr += arriveTips + '</label></div></div></div>';
+				}
+				document.getElementById('resultByStation').innerHTML = contentStr;
 				cancelDisabledStation();
 			}
 		},
@@ -208,4 +252,35 @@ function cancelDisabledStation() {
 	});
 	findByStationButton.disabled = false;
 	findByStationButton.innerHTML = '开始查询';
+}
+
+function getDays(startT, totalT) {
+	var returnStr = '';
+	var startH = startT.substring(0, startT.indexOf(':'));
+	var startM = startT.substring(startT.indexOf(':') + 1, startT.length);
+	var totalH = totalT.substring(0, totalT.indexOf('小'));
+	if (totalH == '') {
+		totalH = 0;
+	}
+	var totalM = totalT.substring(totalT.indexOf('时') + 1, totalT.indexOf('分'));
+	if (totalM == '') {
+		totalM = 0;
+	}
+	var n = totalH / 24;
+	var m = totalH % 24;
+	if (parseFloat(totalM) + parseFloat(startM) >= 60) {
+		m += 1;
+	}
+	if (m + parseFloat(startH) >= 24) {
+		n += 1;
+	}
+	n = parseInt(n);
+	if (n == 0) {
+		returnStr = '当日到达';
+	} else if (n == 1) {
+		returnStr = '次日达到';
+	} else {
+		returnStr = '第' + parseFloat(n + 1) + '天到达';
+	}
+	return returnStr;
 }
