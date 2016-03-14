@@ -27,20 +27,20 @@ function initializeGJ005() {
 	getFavor();
 
 	//输入文字变更
-	mui("body").on('keydown', '#inputTextarea', function() {
+	mui('.input-layer').on('keydown', '#inputTextarea', function() {
 		clearIcon.style.display = 'block';
 		initialSet();
 	});
 
 	//清空按钮点击
-	mui("body").on('tap', '#clearButton', function() {
+	mui('.input-layer').on('tap', '#clearButton', function() {
 		clearIcon.style.display = 'none';
 		textInput.value = '';
 		initialSet();
 	});
 
 	//删除按钮点击
-	mui("body").on('tap', '.delete-icon', function() {
+	mui('#favoritesLayer').on('tap', '.delete-icon', function() {
 		var favorIndex = this.id.substring(5, this.id.length);
 		var btnArray = ['取消', '确定'];
 		mui.confirm('是否确定删除收藏记录', '', btnArray, function(e) {
@@ -51,7 +51,7 @@ function initializeGJ005() {
 	});
 
 	//语言种类变更
-	mui("body").on('change', '.hidden-select', function() {
+	mui('.input-layer').on('change', '.hidden-select', function() {
 		//判断选择框性质
 		if (this.id.substring(0, 4) == 'from') {
 			fromTypeStr = this.value;
@@ -69,7 +69,7 @@ function initializeGJ005() {
 	});
 
 	//翻译按钮点击
-	mui("body").on('tap', '#submitButton', function() {
+	mui('.input-layer').on('tap', '#submitButton', function() {
 		if (textInput.value == '') {
 			mui.toast('未输入需要翻译的文字');
 			return;
@@ -78,7 +78,7 @@ function initializeGJ005() {
 	});
 
 	//收藏按钮点击
-	mui("body").on('tap', '#doFavorites', function() {
+	mui('.input-layer').on('tap', '#doFavorites', function() {
 		if (isFlg) {
 			favoritesButton.innerHTML = '<span class="icon iconfont icon-unfavorites larger-icon"></span>';
 			cancelFavor();

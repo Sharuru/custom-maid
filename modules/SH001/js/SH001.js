@@ -17,7 +17,7 @@ function initializeSH001() {
 	companyName = '京东';
 	getHistory();
 	//快递公司选择选择
-	mui("body").on('change', '.hidden-select', function() {
+	mui('.search-layer').on('change', '.hidden-select', function() {
 		//快递公司名称变更
 		document.getElementById('selectedExpressName').innerText = this.options[this.selectedIndex].text + ' ◢';
 		//获取快递公司名称和代码
@@ -29,7 +29,7 @@ function initializeSH001() {
 		codeInput.focus();
 	});
 	//查询按钮点击
-	mui("body").on('tap', '#searchButton', function() {
+	mui('.search-layer').on('tap', '#searchButton', function() {
 		//未选择快递公司
 //		if (companyCode == '') {
 //			mui.toast('请选择快递公司');
@@ -45,7 +45,7 @@ function initializeSH001() {
 		getExpressInfo(companyCode, codeInput.value, companyName);
 	});
 	//历史记录再查询
-	mui("body").on('click', '.history-record', function() {
+	mui('#historyExpressInfo').on('click', '.history-record', function() {
 		var indexNum = 2 * this.parentNode.rowIndex + this.cellIndex;
 		hisList.splice(indexNum, 1);
 		var searchInfo = this.innerHTML;

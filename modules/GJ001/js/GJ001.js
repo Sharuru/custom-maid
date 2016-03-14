@@ -18,12 +18,12 @@ function initializeGJ001() {
 	//	exchangeOneInput.focus();
 	//绑定动作
 	//输入框清除按钮点击
-	mui("body").on('click', '.mui-icon-close-filled', function() {
+	mui('.mui-main').on('click', '.mui-icon-close-filled', function() {
 		exchangeOneInput.value = '';
 		exchangeTwoInput.value = '';
 	});
 	//货币对选择
-	mui("body").on('change', '.money-type-select', function() {
+	mui('.mui-main').on('change', '.money-type-select', function() {
 		//选择后设置代表国旗与货币名称
 		document.getElementById(this.id.substring(0, 11) + 'Pic').src = '../../res/images/modules/GJ001/' + localStorage.getItem(this.value) + '.png';
 		document.getElementById(this.id.substring(0, 11) + 'Text').innerText = this.value;
@@ -48,7 +48,7 @@ function initializeGJ001() {
 		exchangeOneInput.value = (this.value * (1 / currRate)).toFixed(2);
 	});
 	//银行选择
-	mui("body").on('change', '.hidden-select', function() {
+	mui('.mui-main').on('change', '.hidden-select', function() {
 		//银行名变更
 		document.getElementById('selectedBankName').innerText = this.options[this.selectedIndex].text;
 		//清除输入

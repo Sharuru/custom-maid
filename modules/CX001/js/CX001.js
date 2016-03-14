@@ -22,7 +22,7 @@ function initializeCX001() {
 		document.getElementById(event.detail.triggerId).style.color = '#000000';
 	});
 	//选择站点点击事件
-	mui("body").on('tap', '.select-style', function() {
+	mui('.station-select').on('tap', '.select-style', function() {
 		var triggerId = this.id;
 		//按钮动效现时完毕后再切换页面
 		setTimeout(function() {
@@ -50,7 +50,7 @@ function initializeCX001() {
 		if (arrivePos.innerHTML != '请选择站点') {
 			endValue = arrivePos.innerHTML;
 		}
-		document.getElementById('resultByStation').innerHTML = ''；
+		document.getElementById('resultByStation').innerHTML = '';
 		findByStation(startValue, endValue);
 	});
 }

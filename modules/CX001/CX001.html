@@ -19,40 +19,41 @@
 			</div>
 		</header>
 		<div class="mui-content">
-			<div id="slider" class="mui-slider">
-				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-					<a class="mui-control-item" href="#byStationContent">按站到站查询</a>
-					<a class="mui-control-item" href="#byTrainContent">按车次查询</a>
-				</div>
-				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6"></div>
-				<div class="mui-slider-group">
-					<div id="byStationContent" class="mui-slider-item mui-control-content mui-active">
-						<div id="scroll2 ">
-							<form class="station-select">
-								<div class="mui-row border-b padding-8" style="padding-top: 4px;">
-									<div class="mui-col-xs-4 padding-10-l">
-										<p class="tips-info-small">出发站</p>
+			<div class="mui-main">
+				<div id="slider" class="mui-slider">
+					<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+						<a class="mui-control-item" href="#byStationContent">按站到站查询</a>
+						<a class="mui-control-item" href="#byTrainContent">按车次查询</a>
+					</div>
+					<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6"></div>
+					<div class="mui-slider-group">
+						<div id="byStationContent" class="mui-slider-item mui-control-content mui-active">
+							<div id="scroll2 ">
+								<form class="station-select">
+									<div class="mui-row border-b padding-8" style="padding-top: 4px;">
+										<div class="mui-col-xs-4 padding-10-l">
+											<p class="tips-info-small">出发站</p>
+										</div>
+										<div class="mui-col-xs-8">
+											<p class="select-style" id="startStation">请选择站点</p>
+										</div>
 									</div>
-									<div class="mui-col-xs-8">
-										<p class="select-style" id="startStation">请选择站点</p>
+									<div class="mui-row border-b padding-8-t padding-8">
+										<div class="mui-col-xs-4 padding-10-l">
+											<p class="tips-info-small">到达站</p>
+										</div>
+										<div class="mui-col-xs-8">
+											<p class="select-style" id="arriveStation">请选择站点</p>
+										</div>
 									</div>
-								</div>
-								<div class="mui-row border-b padding-8-t padding-8">
-									<div class="mui-col-xs-4 padding-10-l">
-										<p class="tips-info-small">到达站</p>
+									<div class="mui-row padding-8-t padding-5">
+										<div class="mui-col-xs-12 align-center">
+											<button type="button" style="width:60%;" class="mui-btn mui-btn-primary" id="buttonFindByStation">开始查询</button>
+										</div>
 									</div>
-									<div class="mui-col-xs-8">
-										<p class="select-style" id="arriveStation">请选择站点</p>
-									</div>
-								</div>
-								<div class="mui-row padding-8-t padding-5">
-									<div class="mui-col-xs-12 align-center">
-										<button type="button" style="width:60%;" class="mui-btn mui-btn-primary" id="buttonFindByStation">开始查询</button>
-									</div>
-								</div>
-							</form>
-							<div class="result-layer" id="resultByStation">
-								<!--<p class="font-w300-s16">查询结果： </p>
+								</form>
+								<div class="result-layer" id="resultByStation">
+									<!--<p class="font-w300-s16">查询结果： </p>
 								<div class="list-block">
 									<div class="mui-row padding-5-t">
 										<div class="mui-col-xs-12 padding-10-l align-left">
@@ -84,21 +85,22 @@
 										</div>
 									</div>
 								</div>-->
+								</div>
 							</div>
 						</div>
-					</div>
-					<div id="byTrainContent" class="mui-slider-item mui-control-content">
-						<div id="scroll1">
-							<form class="mui-input-group">
-								<div class="mui-input-row">
-									<label class="font-w300-s16 padding-30-l" style="padding-top: 11px;">车次</label>
-									<input id="trainNumberInput" type="text" class="mui-input-clear" placeholder="请输入车次">
-								</div>
-								<div class="mui-button-row">
-									<button id="buttonFindByTrain" type="button" style="width:60%;" class="mui-btn mui-btn-primary">开始查询</button>
-								</div>
-							</form>
-							<div class="result-layer" id="resultByTrain"></div>
+						<div id="byTrainContent" class="mui-slider-item mui-control-content">
+							<div id="scroll1">
+								<form class="mui-input-group">
+									<div class="mui-input-row">
+										<label class="font-w300-s16 padding-30-l" style="padding-top: 11px;">车次</label>
+										<input id="trainNumberInput" type="text" class="mui-input-clear" placeholder="请输入车次">
+									</div>
+									<div class="mui-button-row">
+										<button id="buttonFindByTrain" type="button" style="width:60%;" class="mui-btn mui-btn-primary">开始查询</button>
+									</div>
+								</form>
+								<div class="result-layer" id="resultByTrain"></div>
+							</div>
 						</div>
 					</div>
 				</div>

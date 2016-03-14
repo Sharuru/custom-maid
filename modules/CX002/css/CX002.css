@@ -1,0 +1,11 @@
+.main-layer {
+	padding: 10px 15px 5px 15px;
+	height: auto;
+	overflow: hidden;
+	background-color: white;
+}
+
+.result-layer{
+	padding: 10px 15px 5px 15px;
+	height: auto;
+}
