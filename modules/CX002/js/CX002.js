@@ -10,6 +10,9 @@ var tLine = document.getElementById('toLine');
 var tStation = document.getElementById('toStation');
 var tStationSelect = document.getElementById('toStationSelect');
 
+/**
+ * CX002 画面初始化
+ */
 function initializeCX002() {
 	//	console.log("In CX002");
 	//根据当前cityid嵌入对应功能页面
@@ -56,8 +59,57 @@ function initializeCX002() {
 		initToStation = this.value;
 		tStation.innerHTML = this.options[this.selectedIndex].text + ' ◢';
 	});
+	//查询按钮点击事件
+	mui('.main-layer').on('tap', '#findButton', function() {
+		document.getElementById('resultList').innerHTML = '';
+	});
 }
 
+function getResultList() {
+	mui.ajax(serverAddr + 'travel/metro/shanghai', {
+		data: {
+			o: initFromStation,
+			d: initToStation,
+			t: 0
+		},
+		dataType: 'json',
+		type: 'get',
+		timeout: 10000,
+		success: function(requestData) {
+			if (requestData.data.length == 0) {
+				mui.toast('参数错误');
+			} else {
+				var contentStr = '';
+				contentStr += '<p class="font-w300-s16 padding-10-l padding-5">查询结果 ：</p>';
+				contentStr += '<div class="mui-card"><ul class="mui-table-view">';
+				for (var i = 0; i < requestData.data.length; i++) {
+					contentStr += '<li class="mui-table-view-cell mui-collapse">';
+					contentStr += '<a class="mui-navigate-right" href="#">';
+					contentStr += '<label class="font-w300-s14" style="padding-left: 5px;">';
+					contentStr += '方案 ' + requestData.data[i].no + '</label></a>';
+					contentStr += '<div class="mui-collapse-content"><ul class="list list-timeline"><li>';
+					contentStr += '<i class="mui-icon iconfont icon-expressInfo list-timeline-icon"></i>';
+					contentStr += '<div class="list-timeline-content"><p class="font-w300-s18">';
+					contentStr += requestData.data[i].originStationName + '</p></div></li></ul></div></li>';
+				}
+				contentStr+='</div>';
+			}
+		},
+		error: function(xhr, type, errorThrown) {
+			//异常处理
+			console.log(type);
+			mui.alert('远程服务器连接失败', '无法获得地铁换乘信息', '重试', function() {
+				getResultList();
+			});
+		}
+	});
+}
+
+/**
+ * 获取站点选项
+ * 
+ * @param String lineCode 线路编号
+ */
 function getStationOption(lineCode) {
 	var selectOption = '';
 	if (lineCode == '01') {

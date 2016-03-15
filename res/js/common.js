@@ -19,3 +19,22 @@ var serverAddr = 'http://172.16.64.43:8080/MaidGuild/';
 //	//	});
 
 //}
+
+/**
+ * 根据class获取元素
+ * 
+ * @param String tagName 标签名
+ * @param String selectClassName 目标class名
+ */
+function getElementByClass(tagName, selectClassName) {
+	var elementResult = [];
+	var allElement = document.getElementsByTagName(tagName);
+	console.log(allElement.length);
+	for (var i = 0; i < allElement.length; i++) {
+		console.log(allElement[i].className == selectClassName);
+		if (allElement[i].className == selectClassName) {
+			elementResult.push(allElement[i]);
+		}
+	}
+	return elementResult;
+}

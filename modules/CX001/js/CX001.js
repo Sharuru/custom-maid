@@ -13,6 +13,7 @@ function initializeCX001() {
 	});
 	//按车次查询
 	findByTrainNumberButton.addEventListener('tap', function() {
+		document.getElementById('resultByTrain').innerHTML = '';
 		findByTrainNo();
 	});
 	//按站到站查询
@@ -254,6 +255,12 @@ function cancelDisabledStation() {
 	findByStationButton.innerHTML = '开始查询';
 }
 
+/**
+ * 判断到站天数
+ * 
+ * @param String startT 发车时间
+ * @param String totalT 总时长
+ */
 function getDays(startT, totalT) {
 	var returnStr = '';
 	var startH = startT.substring(0, startT.indexOf(':'));

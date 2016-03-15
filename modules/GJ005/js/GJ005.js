@@ -32,6 +32,14 @@ function initializeGJ005() {
 		initialSet();
 	});
 
+	//点击输入框
+	mui('.input-layer').on('tap', '#inputTextarea', function() {
+		if (textInput.value != '') {
+			clearIcon.style.display = 'block';
+			initialSet();
+		}
+	});
+
 	//清空按钮点击
 	mui('.input-layer').on('tap', '#clearButton', function() {
 		clearIcon.style.display = 'none';
@@ -42,10 +50,12 @@ function initializeGJ005() {
 	//删除按钮点击
 	mui('#favoritesLayer').on('tap', '.delete-icon', function() {
 		var favorIndex = this.id.substring(5, this.id.length);
+		var favorInnerHTML = this.parentNode.parentNode.innerHTML;
+		var favorContext = favorInnerHTML.substring(favorInnerHTML.lastIndexOf('4">') + 3, favorInnerHTML.lastIndexOf('</p'));
 		var btnArray = ['取消', '确定'];
 		mui.confirm('是否确定删除收藏记录', '', btnArray, function(e) {
 			if (e.index == 1) {
-				deleteFavor(favorIndex);
+				deleteFavor(favorIndex, favorContext);
 			}
 		})
 	});
@@ -164,10 +174,14 @@ function cancelFavor() {
 /**
  * 删除收藏记录
  */
-function deleteFavor(indexStr) {
+function deleteFavor(indexStr, contextStr) {
 	favorList.splice(indexStr, 1);
 	localStorage.setItem('favorRecord', JSON.stringify(favorList));
 	mui.toast('已删除收藏记录');
+	if (textInput.value == contextStr) {
+		favoritesButton.innerHTML = '<span class="icon iconfont icon-unfavorites larger-icon"></span>';
+		isFlg = false;
+	}
 	getFavor();
 }
 
@@ -178,8 +192,6 @@ function getFavor() {
 	var allFavorites = localStorage.getItem('favorRecord');
 	if (allFavorites == null || allFavorites == '[]') {
 		favorLayer.innerHTML = '<p class="font-w300-s16">暂无收藏记录...</p>';
-		initialSet();
-		textInput.value='';
 	} else {
 		favorLayer.innerHTML = '<p class="font-w300-s16">收藏记录</p>';
 		favorList = JSON.parse(allFavorites);
@@ -214,6 +226,11 @@ function initialSet() {
 function addDisabled() {
 	textInput.disabled = 'disabled';
 	clickButton.disabled = true;
+	document.getElementById('fromSelect').disabled = true;
+	document.getElementById('toSelect').disabled = true;
+	clearIcon.style.display = 'none';
+	//收藏按钮点击事件取消绑定
+	mui('.input-layer').off('tap', '#doFavorites');
 }
 
 /**
@@ -222,6 +239,28 @@ function addDisabled() {
 function cancelDisabled() {
 	textInput.disabled = '';
 	clickButton.disabled = false;
+	document.getElementById('fromSelect').disabled = false;
+	document.getElementById('toSelect').disabled = false;
+	//收藏按钮点击事件再绑定
+	mui('.input-layer').on('tap', '#doFavorites', function() {
+		if (isFlg) {
+			favoritesButton.innerHTML = '<span class="icon iconfont icon-unfavorites larger-icon"></span>';
+			cancelFavor();
+		} else {
+			favoritesButton.innerHTML = '<span class="icon iconfont icon-favorites larger-icon"></span>';
+			var favorInfo = {
+				fromTypeInfo: autoTypeCode,
+				fromNameInfo: autoTypeName,
+				fromSrc: textInput.value,
+				toTypeInfo: toTypeStr,
+				toNameInfo: toNameStr,
+				toDst: textShow.value
+			};
+			addFavor(favorInfo);
+		}
+		isFlg = !isFlg;
+		getFavor();
+	});
 }
 
 /**

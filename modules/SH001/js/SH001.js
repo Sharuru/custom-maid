@@ -17,7 +17,7 @@ function initializeSH001() {
 	companyName = '京东';
 	getHistory();
 	//快递公司选择选择
-	mui('.search-layer').on('change', '.hidden-select', function() {
+	mui('#searchLayer').on('change', '.hidden-select', function() {
 		//快递公司名称变更
 		document.getElementById('selectedExpressName').innerText = this.options[this.selectedIndex].text + ' ◢';
 		//获取快递公司名称和代码
@@ -29,12 +29,12 @@ function initializeSH001() {
 		codeInput.focus();
 	});
 	//查询按钮点击
-	mui('.search-layer').on('tap', '#searchButton', function() {
+	mui('#searchLayer').on('tap', '#searchButton', function() {
 		//未选择快递公司
-//		if (companyCode == '') {
-//			mui.toast('请选择快递公司');
-//			return;
-//		}
+		//		if (companyCode == '') {
+		//			mui.toast('请选择快递公司');
+		//			return;
+		//		}
 		//未输入快递单号
 		if (codeInput.value == '') {
 			mui.toast('快递单号不能为空');
@@ -193,6 +193,10 @@ function addDisabled() {
 	codeInput.disabled = 'disabled';
 	clickButton.disabled = true;
 	clickButton.style.color = '#D3D3D3';
+	var hiddenElement = getElementByClass('select', 'hidden-select');
+	for (var i = 0; i < hiddenElement.length; i++) {
+		hiddenElement[i].disabled = true;
+	}
 }
 
 /**
@@ -202,4 +206,8 @@ function cancelDisabled() {
 	codeInput.disabled = '';
 	clickButton.disabled = false;
 	clickButton.style.color = 'dimgray';
+	var hiddenElement = getElementByClass('select', 'hidden-select');
+	for (var i = 0; i < hiddenElement.length; i++) {
+		hiddenElement[i].disabled = false;
+	}
 }

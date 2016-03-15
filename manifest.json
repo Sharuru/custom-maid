@@ -383,7 +383,8 @@
 					"modules/CX006/js/CITY_LIST.js",
 					"res/js/mui.indexedlist.js",
 					"res/css/mui.indexedlist.css",
-					"res/js/mui.indexedlist.min.js"
+					"res/js/mui.indexedlist.min.js",
+					"res/css/common.css"
 				],
 				"refer": [],
 				"priority": 0
