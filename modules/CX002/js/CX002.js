@@ -62,10 +62,12 @@ function initializeCX002() {
 	//查询按钮点击事件
 	mui('.main-layer').on('tap', '#findButton', function() {
 		document.getElementById('resultList').innerHTML = '';
+		getResultList();
 	});
 }
 
 function getResultList() {
+	addDisabled();
 	mui.ajax(serverAddr + 'travel/metro/shanghai', {
 		data: {
 			o: initFromStation,
@@ -78,21 +80,37 @@ function getResultList() {
 		success: function(requestData) {
 			if (requestData.data.length == 0) {
 				mui.toast('参数错误');
+				cancelDisabled();
 			} else {
 				var contentStr = '';
+				var lineName = '';
+				var baseInfo = '';
 				contentStr += '<p class="font-w300-s16 padding-10-l padding-5">查询结果 ：</p>';
 				contentStr += '<div class="mui-card"><ul class="mui-table-view">';
 				for (var i = 0; i < requestData.data.length; i++) {
+					lineName = dealLineStr(requestData.data[i].interchangeLine);
+					baseInfo = dealBaseInfo(requestData.data[i].passedStationAmount, requestData.data[i].passedDuration, requestData.data[i].price);
 					contentStr += '<li class="mui-table-view-cell mui-collapse">';
 					contentStr += '<a class="mui-navigate-right" href="#">';
-					contentStr += '<label class="font-w300-s14" style="padding-left: 5px;">';
-					contentStr += '方案 ' + requestData.data[i].no + '</label></a>';
+					contentStr += '<label class="font-w300-s14">';
+					contentStr += '线路 ' + requestData.data[i].no + '：</label>';
+					contentStr += '<label class="font-w300-s16 padding-10-l">' + lineName;
+					contentStr += '</label><p class="font-w300-s16">' + baseInfo;
+					contentStr += '</p></a>';
 					contentStr += '<div class="mui-collapse-content"><ul class="list list-timeline"><li>';
 					contentStr += '<i class="mui-icon iconfont icon-expressInfo list-timeline-icon"></i>';
 					contentStr += '<div class="list-timeline-content"><p class="font-w300-s18">';
-					contentStr += requestData.data[i].originStationName + '</p></div></li></ul></div></li>';
+					contentStr += requestData.data[i].originStationName + '</p><p class="font-w300-s14 color-success">';
+					contentStr += '乘坐 '+lineName.split(' - ')[0] + '</p></div></li>';
+					contentStr += dealPassedStation(requestData.data[i].passedStationName, requestData.data[i].interchangeStationName, requestData.data[i].passedDuration, lineName);
+					contentStr += '<li><i class="mui-icon iconfont icon-expressInfo list-timeline-icon">';
+					contentStr += '</i><div class="list-timeline-content"><p class="font-w300-s18">';
+					contentStr += requestData.data[i].destinationStationName + '</p></div></li>';
+					contentStr += '</ul></div></li>';
 				}
-				contentStr+='</div>';
+				contentStr += '</ul></div>';
+				document.getElementById('resultList').innerHTML = contentStr;
+				cancelDisabled();
 			}
 		},
 		error: function(xhr, type, errorThrown) {
@@ -103,6 +121,143 @@ function getResultList() {
 			});
 		}
 	});
+}
+
+/**
+ * 处理换乘线路的显示
+ * 
+ * @param String lineNumStr 换乘线路
+ */
+function dealLineStr(lineNumStr) {
+	var lineNum = lineNumStr.split('-');
+	var lineStr = '';
+	for (var i = 0; i < lineNum.length; i++) {
+		lineStr += ' ' + lineNum[i] + '号线 -';
+	}
+	lineStr = lineStr.substring(0, lineStr.length - 1);
+	return lineStr;
+}
+
+/**
+ * 处理地铁换乘基本信息
+ * 
+ * @param String amountStr 途经站点总数
+ * @param String timeStr 途经站点时间
+ * @param String priceStr 票价
+ */
+function dealBaseInfo(amountStr, timeStr, priceStr) {
+	timeStr = timeStr.substring(timeStr.lastIndexOf('-') + 1, timeStr.length);
+	var timeContent = dealSecondTime(timeStr);
+	var baseStr = '途经 ' + amountStr + ' 站 | 约 ' + timeContent + ' | 票价 ' + priceStr + ' 元';
+	return baseStr;
+}
+
+/**
+ * 处理途经站点显示
+ * 
+ * @param String passStationStr 线路站点
+ * @param String changeStationStr 换乘站点
+ * @param String passDurationStr 站点时间
+ * @param String lineNameStr 线路名称
+ */
+function dealPassedStation(passStationStr, changeStationStr, passDurationStr, lineNameStr) {
+	var innerHtmlStr = '';
+	var currentIndex = 0;
+	var passStataionArr = passStationStr.split('-');
+	var passDurationArr = passDurationStr.split('-');
+	var changeStationArr = changeStationStr.split('-');
+	for (var i = 1; i < passStataionArr.length - 1; i++) {
+		var changeStationStart = '';
+		if (currentIndex < changeStationArr.length) {
+			changeStationStart = changeStationArr[currentIndex].substring(0, changeStationArr[currentIndex].indexOf('('));
+		} else {
+			changeStationStart = '';
+		}
+		if (passStataionArr[i] == changeStationStart) {
+			var workTime = dealSecondTime(parseFloat(passDurationArr[i + 1]) - parseFloat(passDurationArr[i]));
+			innerHtmlStr += '<li><i class = "mui-icon iconfont icon-expressInfo list-timeline-icon color-warning">';
+			innerHtmlStr += '</i><div class="list-timeline-content"><p class="font-w300-s18">';
+			innerHtmlStr += changeStationArr[currentIndex] + '</p><p class="font-w300-s14">';
+			innerHtmlStr += '步行 ' + workTime + '<label class="font-w300-s14 padding-10-l color-success">换乘 ';
+			innerHtmlStr += lineNameStr.split(' - ')[currentIndex + 1] + '</label></p>';
+			i += 1;
+			currentIndex += 1;
+		} else {
+			innerHtmlStr += '<li><div class="list-timeline-content"><p class="font-w300-s16">';
+			innerHtmlStr += passStataionArr[i] + '</p></div></li>';
+		}
+		//		for (var j = 0; j < changeStationArr.length; j++) {
+		//			var changeStationFirst = changeStationArr[j].substring(0, changeStationArr[j].indexOf('('));
+		//			if (passStataionArr[i] != changeStationFirst) {
+		//				innerHtmlStr += '<li><div class="list-timeline-content"><p class="font-w300-s16">';
+		//				innerHtmlStr += passStataionArr[i] + '</p></div></li>';
+		//			} else {
+		//				var workTime = dealSecondTime(parseFloat(passDurationArr[i + 1]) - parseFloat(passDurationArr[i]));
+		//				innerHtmlStr += '<li><i class = "mui-icon iconfont icon-expressInfo list-timeline-icon color-warning">';
+		//				innerHtmlStr += '</i><div class="list-timeline-content"><p class="font-w300-s18">';
+		//				innerHtmlStr += passStataionArr[i] + '</p><p class="font-w300-s16 color-success">';
+		//				innerHtmlStr += '步行 ' + workTime + ' 换乘 ' + lineNameStr.split(' - ')[j + 1] + '</p>';
+		//				i = i + 1;
+		//			}
+		//		}
+	}
+	return innerHtmlStr;
+}
+
+/**
+ * 秒数变换小时分钟
+ * 
+ * @param String secondStr 秒数
+ */
+function dealSecondTime(secondStr) {
+	var returnStr = '';
+	var minTime;
+	if (parseFloat(secondStr) % 60 == 0) {
+		minTime = parseInt(parseFloat(secondStr) / 60);
+	} else {
+		minTime = parseInt(parseFloat(secondStr) / 60) + 1;
+	}
+	if (minTime >= 60) {
+		var hourTime = parseInt(minTime / 60);
+		if (minTime % 60 == 0) {
+			returnStr = hourTime + '小时';
+		} else {
+			returnStr = hourTime + '小时' + parseInt(minTime - hourTime * 60) + '分钟';
+		}
+	} else {
+		returnStr = minTime + '分钟';
+	}
+	return returnStr;
+}
+
+/**
+ * 禁用用户可操作控件
+ */
+function addDisabled() {
+	document.getElementById('findButton').disabled = true;
+	fLine.style.color = '#8f8f94';
+	fStation.style.color = '#8f8f94';
+	tLine.style.color = '#8f8f94';
+	tStation.style.color = '#8f8f94';
+	var hiddenElement = getElementByClass('select', 'hidden-select');
+	for (var i = 0; i < hiddenElement.length; i++) {
+		hiddenElement[i].disabled = true;
+	}
+}
+
+/**
+ * 解除禁用用户可操作控件
+ */
+function cancelDisabled() {
+	document.getElementById('findButton').disabled = false;
+	fLine.style.color = 'black';
+	fStation.style.color = 'black';
+	tLine.style.color = 'black';
+	tStation.style.color = 'black';
+	var hiddenElement = getElementByClass('select', 'hidden-select');
+	for (var i = 0; i < hiddenElement.length; i++) {
+		hiddenElement[i].disabled = false;
+	}
 }
 
 /**

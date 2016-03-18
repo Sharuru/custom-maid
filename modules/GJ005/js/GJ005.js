@@ -135,11 +135,19 @@ function getTranslation(lanFromType, lanToType, lanContext) {
 				mui.toast(requestData.errMsg);
 				cancelDisabled();
 			} else {
-				favoritesButton.innerHTML = '<span class="icon iconfont icon-unfavorites larger-icon"></span>';
-				favoritesButton.style.display = 'block';
-				autoTypeCode = requestData.retData.from;
-				autoTypeName = getTypeName(autoTypeCode);
-				textShow.value = requestData.retData.trans_result[0].dst;
+				var objectFlg = false;
+				for (var keyElement in requestData.retData) {
+					objectFlg = true;
+				}
+				if (objectFlg) {
+					favoritesButton.innerHTML = '<span class="icon iconfont icon-unfavorites larger-icon"></span>';
+					favoritesButton.style.display = 'block';
+					autoTypeCode = requestData.retData.from;
+					autoTypeName = getTypeName(autoTypeCode);
+					textShow.value = requestData.retData.trans_result[0].dst;
+				} else {
+					mui.toast('发生未知错误,请重新操作');
+				}
 				cancelDisabled();
 			}
 		},
@@ -228,6 +236,8 @@ function addDisabled() {
 	clickButton.disabled = true;
 	document.getElementById('fromSelect').disabled = true;
 	document.getElementById('toSelect').disabled = true;
+	document.getElementById('fromType').style.color = '#66AFFF';
+	document.getElementById('toType').style.color = '#66AFFF';
 	clearIcon.style.display = 'none';
 	//收藏按钮点击事件取消绑定
 	mui('.input-layer').off('tap', '#doFavorites');
@@ -241,6 +251,8 @@ function cancelDisabled() {
 	clickButton.disabled = false;
 	document.getElementById('fromSelect').disabled = false;
 	document.getElementById('toSelect').disabled = false;
+	document.getElementById('fromType').style.color = '#007aff';
+	document.getElementById('toType').style.color = '#007aff';
 	//收藏按钮点击事件再绑定
 	mui('.input-layer').on('tap', '#doFavorites', function() {
 		if (isFlg) {

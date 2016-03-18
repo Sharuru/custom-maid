@@ -1,3 +1,5 @@
+/*MUI class*/
+
 .mui-slider-item {
 	border-bottom: 0px !important;
 }
@@ -6,6 +8,17 @@
 	margin-left: 0px;
 	margin-right: 0px;
 }
+
+.mui-button-row {
+	padding-top: 8px !important;
+}
+
+.mui-input-group .mui-button-row {
+	height: 48px !important;
+}
+
+
+/*新建class*/
 
 .result-layer {
 	padding: 5px 15px 10px 15px;
@@ -23,19 +36,19 @@
 	margin: 0 !important;
 }
 
-.tips-info-small{
+.tips-info-small {
 	font-size: 16px !important;
 	color: #000000 !important;
 	margin: 0 !important;
 }
 
-.station-select{
+.station-select {
 	padding: 5px 15px 3px 15px;
 	background-color: white;
-	border-bottom: silver solid 1px;
+	/*border-bottom: silver solid 1px;*/
 }
 
-.select-style{
+.select-style {
 	font-size: 18px;
 	font-weight: 300;
 	padding-left: 15px;
@@ -72,6 +85,6 @@
 	text-align: center
 }
 
-.list-block{
+.list-block {
 	border-bottom: silver solid 1px;
 }

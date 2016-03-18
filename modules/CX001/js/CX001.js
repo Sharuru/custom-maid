@@ -10,6 +10,7 @@ function initializeCX001() {
 	//	getDays('13:20', '6:59', '17小时39分钟');
 	document.getElementById('slider').addEventListener('slide', function(e) {
 		console.log(e.detail.slideNumber);
+		window.scroll(0,0);
 	});
 	//按车次查询
 	findByTrainNumberButton.addEventListener('tap', function() {

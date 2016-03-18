@@ -8,8 +8,10 @@ function initializeCX005() {
 		var wv = plus.webview.create('http://xxbs.sh.gov.cn:8080/weixinpage/index.html');
 		wv.setStyle({
 			top: "49px",
-			bottom: "0px;"
+			bottom: "20px"
+			//			height: "88%",
 		});
 		wv.show();
+		wv.evalJS('$("footer").remove();');
 	}, 200);
 }

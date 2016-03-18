@@ -1,3 +1,5 @@
+/*MUI class*/
+
 .mui-card {
 	margin: 0 !important;
 }
@@ -14,53 +16,7 @@
 	padding: 0 15px !important;
 }
 
-.list {
-	margin: 0 !important;
-	padding: 0 !important;
-	list-style: none;
-}
-
-.list > li {
-	position: relative;
-}
-
-.list-timeline {
-	position: relative;
-	padding-top: 10px !important;
-	padding-bottom: 10px !important;
-	border-bottom: #F0F0F0 solid 1px;
-}
-
-.list-timeline:before {
-	position: absolute;
-	top: 0;
-	left: 20px;
-	bottom: 0;
-	display: block;
-	width: 2px;
-	content: '';
-	background-color: #F0F0F0;
-	z-index: 1;
-}
-
-.list-timeline .list-timeline-icon {
-	position: absolute;
-	top: 0px;
-	left: 10px;
-	width: 22px;
-	height: 22px;
-	padding-top: 4px;
-	font-size: 12px !important;
-	color: #DDDDDD;
-	text-align: center;
-	border-radius: 50%;
-	border: #F0F0F0 solid 1px;
-	z-index: 2;
-}
-
-.list-timeline .list-timeline-content {
-	padding-left: 50px;
-}
+/*新建class*/
 
 .main-layer {
 	padding: 10px 15px 5px 15px;
@@ -71,6 +27,10 @@
 }
 
 .result-layer {
-	padding: 10px 15px 5px 15px;
+	padding: 10px 10px 5px;
 	height: auto;
+}
+
+.list-timeline > li:last-child {
+	padding-bottom: 0 !important;
 }

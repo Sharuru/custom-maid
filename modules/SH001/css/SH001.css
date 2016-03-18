@@ -1,19 +1,9 @@
-#searchLayer {
-	height: auto;
-	overflow: hidden;
-	background-color: white;
-}
+/*MUI class*/
 
 .mui-row {
 	padding-top: 15px;
 	padding-bottom: 10px;
 	border-bottom: silver solid 1px;
-}
-
-.tips-style {
-	padding-top: 5px;
-	font-size: 16px;
-	color: dimgray;
 }
 
 input[type='search'] {
@@ -49,6 +39,21 @@ input[type='search'] {
 	right: 1% !important;
 }
 
+
+/*新建class*/
+
+#searchLayer {
+	height: auto;
+	overflow: hidden;
+	background-color: white;
+}
+
+.tips-style {
+	padding-top: 5px;
+	font-size: 16px;
+	color: dimgray;
+}
+
 .search-icon {
 	margin-top: 5px;
 	font-size: 22px !important;
@@ -65,59 +70,26 @@ input[type='search'] {
 	padding: 10px 10px 0 30px;
 }
 
-.list {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-.list > li {
-	position: relative;
-}
-
 .list-timeline {
-	position: relative;
-	margin-left: 20px;
-	margin-right: 20px;
-	padding-top: 15px;
-	padding-bottom: 5px;
-	border-top: silver solid 1px;
-	border-bottom: silver solid 1px;
+	margin-left: 20px !important;
+	margin-right: 20px !important;
+	padding-top: 15px !important;
+	padding-bottom: 5px !important;
+	border-top: #E6E6E6 solid 1px;
 }
 
 .list-timeline > li {
-	padding-bottom: 10px;
-}
-
-.list-timeline:before {
-	position: absolute;
-	top: 0;
-	left: 20px;
-	bottom: 0;
-	display: block;
-	width: 2px;
-	content: '';
-	background-color: #F0F0F0;
-	z-index: 1;
+	padding-bottom: 10px !important;
 }
 
 .list-timeline .list-timeline-icon {
 	position: absolute;
-	top: 10px;
-	left: 8px;
-	width: 26px;
-	height: 26px;
-	padding-top: 5px;
+	top: 10px !important;
+	left: 8px !important;
+	width: 26px !important;
+	height: 26px !important;
+	padding-top: 5px !important;
 	font-size: 16px !important;
-	color: #DDDDDD;
-	text-align: center;
-	border-radius: 50%;
-	border: #F0F0F0 solid 1px;
-	z-index: 2;
-}
-
-.list-timeline .list-timeline-content {
-	padding-left: 50px;
 }
 
 #historyExpressInfo {

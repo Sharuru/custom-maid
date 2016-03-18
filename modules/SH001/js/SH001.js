@@ -193,6 +193,7 @@ function addDisabled() {
 	codeInput.disabled = 'disabled';
 	clickButton.disabled = true;
 	clickButton.style.color = '#D3D3D3';
+	document.getElementById('selectedExpressName').style.color = '#66AFFF';
 	var hiddenElement = getElementByClass('select', 'hidden-select');
 	for (var i = 0; i < hiddenElement.length; i++) {
 		hiddenElement[i].disabled = true;
@@ -206,6 +207,7 @@ function cancelDisabled() {
 	codeInput.disabled = '';
 	clickButton.disabled = false;
 	clickButton.style.color = 'dimgray';
+	document.getElementById('selectedExpressName').style.color = '#007aff';
 	var hiddenElement = getElementByClass('select', 'hidden-select');
 	for (var i = 0; i < hiddenElement.length; i++) {
 		hiddenElement[i].disabled = false;

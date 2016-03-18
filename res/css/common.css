@@ -1,3 +1,5 @@
+/*MUI class*/
+
 html,
 body {
 	height: 100% !important;
@@ -10,21 +12,25 @@ body {
 	background: #20428A;
 }
 
+.mui-content {
+	height: auto !important;
+	min-height: 99.9%;
+	padding-top: 49px !important;
+	padding-bottom: 15px !important;
+	/*background-color: white;*/
+}
+
+
+/*新建class*/
+
 .header-text-line-1 {
 	padding-top: 4px;
 	font-size: 22px;
 }
 
-.mui-content {
-	height: auto !important;
-	min-height: 99.9%;
-	padding-top: 49px !important;
-	/*background-color: white;*/
-}
-
-.mui-main {
-	padding-bottom: 20px;
-}
+/*.mui-main {
+	padding-bottom: 15px;
+}*/
 
 .hidden-select {
 	opacity: 0;
@@ -37,12 +43,6 @@ body {
 .readonly-text {
 	border: solid 0px;
 	background-color: #F0F0F0;
-}
-
-.button-style {
-	padding: 3px 10px 2px 10px !important;
-	font-size: 16px;
-	margin-bottom: 10px !important;
 }
 
 .mui-row > [class*='mui-col-'] > p {
@@ -115,7 +115,7 @@ footer {
 	color: #9D9DA1 !important;
 }
 
-.color-black{
+.color-black {
 	color: #000000 !important;
 }
 
@@ -171,11 +171,11 @@ footer {
 	text-align: center !important;
 }
 
-.float-left{
+.float-left {
 	float: left !important;
 }
 
-.float-right{
+.float-right {
 	float: right !important;
 }
 
@@ -195,7 +195,7 @@ footer {
 	padding-right: 10px !important;
 }
 
-.padding-20-r{
+.padding-20-r {
 	padding-right: 20px !important;
 }
 
@@ -207,7 +207,7 @@ footer {
 	padding-top: 8px !important;
 }
 
-.padding-5{
+.padding-5 {
 	padding-bottom: 5px !important;
 }
 
@@ -215,9 +215,64 @@ footer {
 	padding-bottom: 8px !important;
 }
 
-.border-b{
-	border-bottom: silver solid 1px;
+.border-b {
+	border-bottom: #E6E6E6 solid 1px;
 }
+
+.list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.list > li {
+	position: relative;
+}
+
+.list-timeline {
+	position: relative;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: #E6E6E6 solid 1px;
+}
+
+.list-timeline > li {
+	padding-bottom: 5px;
+}
+
+.list-timeline:before {
+	position: absolute;
+	top: 0;
+	left: 20px;
+	bottom: 0;
+	display: block;
+	width: 2px;
+	content: '';
+	background-color: #F0F0F0;
+	z-index: 1;
+}
+
+.list-timeline .list-timeline-icon {
+	position: absolute;
+	top: 0px;
+	left: 10px;
+	width: 22px;
+	height: 22px;
+	padding-top: 4px;
+	font-size: 12px !important;
+	color: #DDDDDD;
+	text-align: center;
+	border-radius: 50%;
+	border: #E6E6E6 solid 1px;
+	z-index: 2;
+}
+
+.list-timeline .list-timeline-content {
+	padding-left: 50px;
+}
+
+
+/*暂意义不明*/
 
 .mui-bar-tab {
 	background: #EEEEEE;

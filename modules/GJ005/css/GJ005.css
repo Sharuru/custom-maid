@@ -1,3 +1,14 @@
+/*MUI class*/
+
+textarea {
+	margin-bottom: 10px !important;
+	font-size: 18px !important;
+	line-height: 18px !important;
+}
+
+
+/*新建class*/
+
 .whiteBackground {
 	height: auto;
 	width: 100%;
@@ -14,12 +25,6 @@
 	border-bottom: silver solid 1px;
 }
 
-textarea {
-	margin-bottom: 10px !important;
-	font-size: 18px !important;
-	line-height: 18px !important;
-}
-
 .larger-icon {
 	color: #9D9DA1;
 	font-size: 20px !important;
@@ -33,11 +38,11 @@ textarea {
 	overflow: hidden;
 }
 
-.textInput{
+.textInput {
 	position: relative;
 }
 
-.clear-icon{
+.clear-icon {
 	position: absolute;
 	font-size: 20px;
 	right: 10px;
@@ -46,8 +51,7 @@ textarea {
 	z-index: 2;
 }
 
-
-.delete-icon{
+.delete-icon {
 	font-size: 16px;
 	color: #999;
 }
