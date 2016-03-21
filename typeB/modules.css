@@ -1,0 +1,99 @@
+/* new class */
+
+.location-city {
+	width: auto;
+	float: right;
+}
+
+.base-info {
+	margin: 10px;
+	padding: 10px 15px 0;
+	height: auto;
+	color: white;
+	border-radius: 6px;
+	background: rgba(235, 235, 235, .3);
+	border: rgba(0, 125, 255, .1) solid 1px;
+}
+
+.weather-info {
+	margin: 8px -15px 0;
+	height: 85px;
+	background: rgba(235, 235, 235, .2);
+}
+
+.today-weather {
+	float: left;
+	display: inline;
+	width: 40%;
+	padding: 15px 0;
+	height: 85px;
+}
+
+.today-weather-pic {
+	float: left;
+	display: inline;
+	width: auto;
+	padding-left: 15px;
+	padding-top: 3px;
+}
+
+.today-weather-data {
+	float: right;
+	display: inline;
+	width: 55%;
+	padding-right: 5px;
+	text-align: right;
+}
+
+.today-current-temp {
+	margin-bottom: 5px !important;
+	color: white;
+	font-size: 28px;
+	font-weight: bolder;
+}
+
+.today-base-info {
+	margin-bottom: -5px !important;
+	color: white;
+	font-size: 12px;
+}
+
+.other-weather {
+	float: left;
+	display: inline;
+	padding: 15px 0;
+	height: 85px;
+	width: 60%;
+}
+
+.other-weather-block {
+	width: 32%;
+	text-align: center;
+	float: right;
+	display: inline;
+}
+
+.other-weather-pic {
+	width: auto;
+	margin-bottom: -5px !important;
+}
+
+.other-info {
+	margin-top: -2px !important;
+	margin-bottom: -2px !important;
+	padding-bottom: 0 !important;
+	color: white;
+	font-size: 10px;
+}
+
+.update-time {
+	font-size: 10px;
+	text-align: right;
+}
+
+.module-item {
+	margin: 10px;
+	border-radius: 6px;
+	background: rgba(235, 235, 235, .1);
+	height: 80px;
+}

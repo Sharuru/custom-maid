@@ -1,0 +1,21 @@
+/* MUI class */
+
+.mui-input-group .mui-input-row:after {
+	right: 15px !important;
+	background-color: #c8c7cc;
+}
+
+.mui-input-group:after {
+	height: 0px !important;
+}
+
+.mui-input-group:before {
+	height: 0px !important;
+}
+
+/* new class */
+
+.mui-input-group {
+	background: rgba(235,235,235, .5);
+	border-radius: 6px;
+}

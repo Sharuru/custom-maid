@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="modules.css" rel="stylesheet" />
+		<link href="res/css/mui.min.css" rel="stylesheet" />
+		<link href="res/css/iconfont.css" rel="stylesheet" />
+		<link href="res/css/common.css" rel="stylesheet" />
+		<link href="modules.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div class="header-text">
+				<span class="mui-icon iconfont icon-location location-city" id="locationCity">正在定位...</span>
+			</div>
+		</header>
+		<div class="mui-content">
+			<div id="indexBase"></div>
+			<div id="moduleList">
+				<div class="module-item">
+					<div class="mui-slider">
+						<div class="mui-slider-group">
+							<div class="mui-slider-item">
+								<a href="#" id="BlockSH001" style="width: 20%;">
+									<img src="res/images/icons/modules/SH001.png" />
+								</a>
+							</div>
+							<div class="mui-slider-item">bbbb</div>
+							<div class="mui-slider-item">cccc</div>
+							<div class="mui-slider-item">dddd</div>
+						</div>
+						<div class="mui-slider-indicator">
+							<div class="mui-indicator mui-active"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+						</div>
+					</div>
+				</div>
+				<!--<a href="#" id="BlockCX001">
+					<img src="res/images/icons/modules/CX001.png" width="50" />
+				</a>-->
+			</div>
+		</div>
+	</body>
+	<script src="res/js/mui.min.js"></script>
+	<script type="text/javascript" src="modules.js"></script>
+	<script type="text/javascript" src="res/js/common.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.plusReady(function() {
+			initIndex(); //页面加载完毕时设置可用模块
+		})
+	</script>
+
+</html>
