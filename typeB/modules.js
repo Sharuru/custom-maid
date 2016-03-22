@@ -44,7 +44,7 @@ function setIndexInfo() {
 			var contentStr = '';
 			//设置今日日期信息
 			var dateStr = setDateTimeHeader();
-			contentStr += '<div class="font-w300-s18 color-white">' + dateStr + '</div>';
+			contentStr += '<div class="font-w300-s18">' + dateStr + '</div>';
 			//设置今日天气信息
 			contentStr += '<div class="weather-info"><div class="today-weather"><div class="today-weather-pic">';
 			contentStr += '<img src="' + localStorage.getItem(data.retData.today.type) + '" width="50" />';

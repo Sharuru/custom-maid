@@ -8,15 +8,14 @@ body {
 
 .mui-bar {
 	height: 49px !important;
-	-webkit-box-shadow: 2px 2px 20px rgba(0, 149, 237, .4) !important;
-	box-shadow: 2px 2px 20px rgba(0, 149, 237, .4) !important;
+	-webkit-box-shadow: 2px 2px 20px rgba(0, 75, 151, .4) !important;
+	box-shadow: 2px 2px 20px rgba(0, 75, 151, .4) !important;
 }
 
 .mui-bar-nav {
 	height: 49px;
 	color: white;
-	background: rgba(0, 150, 205, .2);
-	/* 0.2透明度 */
+	background: rgba(0, 75, 151, .8);
 }
 
 .mui-content {
@@ -24,8 +23,9 @@ body {
 	min-height: 100%;
 	padding-top: 49px !important;
 	padding-bottom: 20px !important;
-	background: url(../images/a8ef76094b36acaf3f37a28d7ed98d1000e99cef.jpg);
-	background-size: 100%;
+	/*background: url(../images/a8ef76094b36acaf3f37a28d7ed98d1000e99cef.jpg);*/
+	/*background-size: 100%;*/
+	background-color: #EFEFF4;
 }
 
 footer {
@@ -48,11 +48,6 @@ footer {
 
 .mui-row > [class*='mui-col-'] > p {
 	word-break: break-word;
-}
-
-.mainContent{
-	margin: 10px;
-	height: auto;
 }
 
 .footer-info {

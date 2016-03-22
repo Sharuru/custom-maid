@@ -266,7 +266,8 @@
 					"res/fonts/iconfont.ttf",
 					"res/images/icons/weather/rain-s.png",
 					"res/images/icons/weather/cloudy.png",
-					"res/js/common.js"
+					"res/js/common.js",
+					"res/images/icons/weather/overcast.png"
 				],
 				"refer": [
 					"modules/CX001/CX001.html"

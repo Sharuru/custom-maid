@@ -18,14 +18,54 @@
 			</div>
 		</header>
 		<div class="mui-content">
-			<div class="mainContent">
-				<div class="mui-slider">
-					<div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-						<a class="mui-control-item" href="#byStationContent">按城市查询</a>
-						<a class="mui-control-item" href="#byTrainContent">按车次查询</a>
+			<div class="mui-slider">
+				<div class="mui-slider-group">
+					<div class="mui-slider-item">
+						<div class="search-block">
+							<p class="font-w300-s16 padding-10-l">根据始末城市查询火车信息</p>
+							<div class="search-key">
+								<div class="mui-row">
+									<div class="mui-col-xs-5 padding-10-l">
+										<p class="font-w300-s16 remove-margin-b">始发城市</p>
+									</div>
+									<div class="mui-col-xs-2 align-center">aa</div>
+									<div class="mui-col-xs-5 align-right padding-10-r">
+										<p class="font-w300-s16 remove-margin-b">到达城市</p>
+									</div>
+								</div>
+								<div class="mui-row padding-5-t">
+									<div class="mui-col-xs-5 align-center border-b">
+										<p class="search-tips">请选择城市</p>
+									</div>
+									<div class="mui-col-xs-2"> </div>
+									<div class="mui-col-xs-5 align-center border-b">
+										<p class="search-tips">请选择城市</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mui-slider-item">
+						<div class="search-block">
+							<p class="font-w300-s16 padding-10-l">根据火车车次查询基本信息</p>
+							<div class="search-key">
+								<div class="mui-row padding-10-l">
+									<p class="font-w300-s16 remove-margin-b">车次</p>
+								</div>
+								<div class="mui-input-row align-center">
+									<input id="trainNumberInput" type="text" class="mui-input-clear" placeholder="请输入车次">
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-				<!--<div class="search-layer">
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+		</div>
+		<!--<div class="search-layer">
 					<form class="mui-input-group">
 						<div class="mui-input-row">
 							<label class="font-w300-s18 padding-30-l color-white" style="padding-top: 11px;">车次</label>
@@ -36,7 +76,6 @@
 						</div>
 					</form>
 				</div>-->
-			</div>
 		</div>
 	</body>
 	<script src="../../res/js/mui.min.js "></script>
