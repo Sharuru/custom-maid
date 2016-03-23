@@ -11,14 +11,15 @@
 	height: auto;
 	color: black;
 	border-radius: 6px;
-	background: rgba(250, 250, 250, .9);
+	background: rgba(255, 255, 255, .7);
 	border: rgba(0, 0, 0, .1) solid 1px;
 }
 
 .weather-info {
 	margin: 8px -15px 0;
 	height: 85px;
-	background: rgba(0, 0, 0, .2);
+	background: rgba(100, 149, 237, .4);
+	/*background-color: #6495ED;*/
 }
 
 .today-weather {
@@ -91,19 +92,26 @@
 	text-align: right;
 }
 
-.module-item {
+.module-info{
+	margin: 5px -15px 0;
+	height: auto;
+	background: rgba(119, 119, 119, .1);;
+}
+
+/*.module-item {
 	margin: 20px 10px;
 	border-radius: 6px;
 	background: rgba(255, 255, 255, .9);
 	height: auto;
-}
+}*/
 
 .module-block {
 	float: left;
 	display: inline;
 	padding: 5px;
-	width: 20%;
+	width: 25%;
 	height: auto;
+	border: solid 1px;
 }
 
 .module-pic {
@@ -113,9 +121,9 @@
 }
 
 .module-title {
-	padding-top: 5px;
+	margin-top: -8px;
 	width: 100%;
 	text-align: center;
 	font-size: 16px;
-	color: #555555;
+	color: #777777;
 }

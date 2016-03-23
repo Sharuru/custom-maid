@@ -1,4 +1,4 @@
-function initIndex(){
+function initIndex() {
 	setIndexInfo();
 	mui('#moduleList').on('tap', 'a', function() {
 		var moduleId = this.getAttribute("id").substr(5);
@@ -55,10 +55,10 @@ function setIndexInfo() {
 			//设置预报天气信息 
 			//+1
 			contentStr += '<div class="other-weather"><div class="other-weather-block">';
-			contentStr += '<p class="other-info padding-5">' + data.retData.forecast[0].week + '</p>';
+			contentStr += '<p class="other-info padding-5">' + data.retData.forecast[2].week + '</p>';
 			contentStr += '<div class="other-weather-pic">';
-			contentStr += '<img src="' + localStorage.getItem(data.retData.forecast[0].type) + '" width="25" /></div>';
-			contentStr += '<p class="other-info">' + data.retData.forecast[0].lowtemp + '~' + data.retData.forecast[0].hightemp;
+			contentStr += '<img src="' + localStorage.getItem(data.retData.forecast[2].type) + '" width="25" /></div>';
+			contentStr += '<p class="other-info">' + data.retData.forecast[2].lowtemp + '~' + data.retData.forecast[2].hightemp;
 			//+2
 			contentStr += '</p></div><div class="other-weather-block">';
 			contentStr += '<p class="other-info padding-5">' + data.retData.forecast[1].week + '</p>';
@@ -67,10 +67,10 @@ function setIndexInfo() {
 			contentStr += '<p class="other-info">' + data.retData.forecast[1].lowtemp + '~' + data.retData.forecast[1].hightemp;
 			//+3
 			contentStr += '</p></div><div class="other-weather-block">';
-			contentStr += '<p class="other-info padding-5">' + data.retData.forecast[2].week + '</p>';
+			contentStr += '<p class="other-info padding-5">' + data.retData.forecast[0].week + '</p>';
 			contentStr += '<div class="other-weather-pic">';
-			contentStr += '<img src="' + localStorage.getItem(data.retData.forecast[2].type) + '" width="25" /></div>';
-			contentStr += '<p class="other-info">' + data.retData.forecast[2].lowtemp + '~' + data.retData.forecast[2].hightemp;
+			contentStr += '<img src="' + localStorage.getItem(data.retData.forecast[0].type) + '" width="25" /></div>';
+			contentStr += '<p class="other-info">' + data.retData.forecast[0].lowtemp + '~' + data.retData.forecast[0].hightemp;
 			contentStr += '</p></div></div></div>';
 			//设置更新时间
 			var d = new Date();
@@ -86,7 +86,7 @@ function setIndexInfo() {
 			contentStr += '<div class="update-time">更新时间<label class="padding-10-l">';
 			contentStr += nowHours + ':' + nowMinutes + '</label></div>';
 			contentStr = '<div class="base-info">' + contentStr + '</div>';
-			document.getElementById('indexBase').innerHTML = contentStr;
+			document.getElementById('weatherBase').innerHTML = contentStr;
 		},
 		error: function(xhr, type, errorThrown) {
 			//异常处理

@@ -10,10 +10,10 @@
 		<link href="../../res/css/mui.indexedlist.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body style="overflow-y: hidden;">
 		<header class="mui-bar mui-bar-nav">
 			<div class="header-text">
-				<span class="mui-action-back mui-icon mui-icon-back">选择城市</span>
+				<span class="mui-action-back mui-icon mui-icon-back" id="titleText">选择城市</span>
 			</div>
 		</header>
 		<div class="mui-content">
@@ -495,7 +495,7 @@
 		mui.plusReady(function() {
 			initializeCITY_LIST();
 			//计算高度，魔法！列表高度 = 显示高度 - 搜索栏高度 - 顶栏高度 + 诡异的搜索栏边框高度
-			list.style.height = plus.screen.resolutionHeight - 35 - 49 + 15 + 'px';
+			list.style.height = plus.screen.resolutionHeight - 35 - 44 + 15 + 'px';
 			//创建列表
 			window.indexedList = new mui.IndexedList(list);
 		});

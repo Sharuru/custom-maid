@@ -1,66 +1,108 @@
 /* MUI class */
 
 .mui-slider-indicator {
-	bottom: 6px !important;
+	bottom: 3px !important;
 }
 
 input[type='text'] {
 	margin-bottom: 0 !important;
-	width: 90%;
-	padding: 5px 30px 0 20px !important;
+	width: 80%;
+	padding: 5px 30px 0 25px !important;
 	line-height: 18px !important;
 	height: auto !important;
 	font-size: 18px !important;
-	color: white !important;
 	border: 0 !important;
-	border-bottom: solid red 1px !important;
+	border-bottom: solid #DDDDDD 1px !important;
 	background: none !important;
 }
 
 .mui-input-row .mui-input-clear ~ .mui-icon-clear {
 	top: 3px !important;
-	right: 10px !important;
-	color: aliceblue !important;
-}
-
-input[type='text'] .mui-placeholder {
-	font-size: 16px;
-	line-height: 34px;
-	position: absolute;
-	z-index: 1;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	display: inline-block;
-	height: 34px;
-	text-align: center;
-	color: white !important;
-	border: 0;
-	border-radius: 6px;
-	background: none;
+	right: 30px !important;
 }
 
 
 /* new class */
 
 .search-block {
-	margin: 10px;
+	margin: 0 0 5px;
 	padding: 5px 0 12px;
 	background: rgba(255, 255, 255, .9);
 	border-radius: 6px;
+	border: rgba(0, 0, 0, .1) solid 1px;
 	height: auto;
 }
 
 .search-key {
 	margin: -6px 0 0;
 	padding: 5px 10px;
-	background: rgba(0, 0, 0, .05);
+	background: rgba(100, 149, 237, .1);
 	height: auto;
 }
 
 .search-tips {
 	font-size: 18px !important;
-	color: #E3E3E3;
 	margin-bottom: 0 !important;
+}
+
+.button-padding {
+	padding-top: 8px !important;
+	padding-bottom: 3px !important;
+}
+
+#resultInfo {
+	margin: 0 5px;
+	padding: 5px 5px 0;
+	border-radius: 6px;
+	/*border: #DDDDDD solid 1px;*/
+}
+
+.result-block:last-child {
+	border-bottom-left-radius: 6px !important;
+	border-bottom-right-radius: 6px !important;
+}
+
+.result-block {
+	margin: 0 -5px;
+	padding: 5px 10px;
+	background: rgba(255, 255, 255, .85);
+	border-bottom: #DDDDDD solid 2px;
+}
+
+.start-circle {
+	width: 24px;
+	height: 24px;
+	background-color: dodgerblue;
+	border-radius: 12px;
+}
+
+.pass-circle {
+	width: 24px;
+	height: 24px;
+	background-color: lightsalmon;
+	border-radius: 12px;
+}
+
+.arrive-circle {
+	width: 24px;
+	height: 24px;
+	background-color: lightseagreen;
+	border-radius: 12px;
+}
+
+.circle-text {
+	height: 24px;
+	line-height: 24px;
+	font-size: 14px;
+	display: block;
+	color: #FFF;
+	text-align: center
+}
+
+.detail-block {
+	margin: 0 -5px;
+	padding: 5px 10px;
+	background: rgba(255, 255, 255, .85);
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
 }

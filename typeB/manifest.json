@@ -287,6 +287,22 @@
 					"res/images/a8ef76094b36acaf3f37a28d7ed98d1000e99cef.jpg",
 					"res/fonts/iconfont.ttf"
 				],
+				"refer": [
+					"modules/CityList/CITY_LIST.html"
+				],
+				"priority": 0
+			},
+			"modules/CityList/CITY_LIST.html": {
+				"resources": [
+					"modules/CityList/js/CITY_LIST.js",
+					"res/css/mui.indexedlist.css",
+					"res/js/mui.indexedlist.min.js",
+					"res/css/mui.min.css",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css"
+				],
 				"refer": [],
 				"priority": 0
 			}
@@ -311,7 +327,6 @@
 				"res/images/modules/GJ001/GBP.png",
 				"res/images/modules/GJ001/PHP.png",
 				"res/images/modules/GJ001/EUR.png",
-				"res/css/mui.indexedlist.css",
 				"res/images/modules/GJ001/MOP.png",
 				"res/images/modules/GJ001/SEK.png",
 				"res/images/modules/GJ001/TWD.png",
@@ -319,8 +334,7 @@
 				"res/images/modules/GJ001/AUD.png",
 				"res/js/mui.indexedlist.js",
 				"res/images/modules/GJ001/NOK.png",
-				"res/images/modules/GJ001/SGD.png",
-				"res/js/mui.indexedlist.min.js"
+				"res/images/modules/GJ001/SGD.png"
 			]
 		}
 	}

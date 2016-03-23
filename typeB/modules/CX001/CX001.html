@@ -18,42 +18,50 @@
 			</div>
 		</header>
 		<div class="mui-content">
-			<div class="mui-slider">
+			<div class="mui-slider" id="searchSlider">
 				<div class="mui-slider-group">
 					<div class="mui-slider-item">
 						<div class="search-block">
-							<p class="font-w300-s16 padding-10-l">根据始末城市查询火车信息</p>
+							<p class="font-w300-s16 padding-10-l color-black">根据始末城市查询火车信息</p>
 							<div class="search-key">
 								<div class="mui-row">
 									<div class="mui-col-xs-5 padding-10-l">
-										<p class="font-w300-s16 remove-margin-b">始发城市</p>
+										<p class="font-w300-s16 remove-margin-b color-black">始发城市</p>
 									</div>
-									<div class="mui-col-xs-2 align-center">aa</div>
+									<div class="mui-col-xs-2"> </div>
 									<div class="mui-col-xs-5 align-right padding-10-r">
-										<p class="font-w300-s16 remove-margin-b">到达城市</p>
+										<p class="font-w300-s16 remove-margin-b color-black">到达城市</p>
 									</div>
 								</div>
 								<div class="mui-row padding-5-t">
 									<div class="mui-col-xs-5 align-center border-b">
-										<p class="search-tips">请选择城市</p>
+										<p class="search-tips" id="startStationCity">请选择城市</p>
 									</div>
-									<div class="mui-col-xs-2"> </div>
+									<div class="mui-col-xs-2 align-center">
+										<span class="mui-icon iconfont icon-exchange" style="font-size: 18px;" id="exchangeCity"></span>
+									</div>
 									<div class="mui-col-xs-5 align-center border-b">
-										<p class="search-tips">请选择城市</p>
+										<p class="search-tips" id="arriveStationCity">请选择城市</p>
 									</div>
+								</div>
+								<div class="mui-row button-padding align-center">
+									<button type="button" style="width: 30%;" class="mui-btn mui-btn-primary" id="searchByCity">开始查询</button>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="mui-slider-item">
 						<div class="search-block">
-							<p class="font-w300-s16 padding-10-l">根据火车车次查询基本信息</p>
+							<p class="font-w300-s16 padding-10-l color-black">根据火车车次查询基本信息</p>
 							<div class="search-key">
 								<div class="mui-row padding-10-l">
-									<p class="font-w300-s16 remove-margin-b">车次</p>
+									<p class="font-w300-s16 remove-margin-b color-black">火车车次</p>
 								</div>
 								<div class="mui-input-row align-center">
 									<input id="trainNumberInput" type="text" class="mui-input-clear" placeholder="请输入车次">
+								</div>
+								<div class="mui-row button-padding align-center">
+									<button type="button" style="width: 30%;" class="mui-btn mui-btn-primary" id="searchByNum">开始查询</button>
 								</div>
 							</div>
 						</div>
@@ -64,19 +72,11 @@
 					<div class="mui-indicator"></div>
 				</div>
 			</div>
+			<div id="resultInfo"></div>
 		</div>
-		<!--<div class="search-layer">
-					<form class="mui-input-group">
-						<div class="mui-input-row">
-							<label class="font-w300-s18 padding-30-l color-white" style="padding-top: 11px;">车次</label>
-							<input id="trainNumberInput" type="text" class="mui-input-clear" placeholder="请输入车次">
-						</div>
-						<div class="mui-button-row">
-							<button id="buttonFindByTrain" type="button" style="width:60%;" class="mui-btn mui-btn-primary">开始查询</button>
-						</div>
-					</form>
-				</div>-->
-		</div>
+		<footer>
+			<div class="footer-info ">数据由 <a>聚合数据</a> 提供</div>
+		</footer>
 	</body>
 	<script src="../../res/js/mui.min.js "></script>
 	<script type="text/javascript " src="../../res/js/common.js "></script>
@@ -84,7 +84,7 @@
 	<script type="text/javascript " charset="utf-8 ">
 		mui.init();
 		mui.plusReady(function() {
-			//			initializeCX001();
+			initializeCX001();
 		})
 	</script>
 

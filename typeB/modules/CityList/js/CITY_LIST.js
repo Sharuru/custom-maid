@@ -6,7 +6,7 @@ function initializeCITY_LIST() {
 	var self = plus.webview.currentWebview();
 //	console.log('Get passed: ' + self.triggerId);
 	//设置标题
-	if (self.triggerId == 'startStation') {
+	if (self.triggerId == 'startStationCity') {
 		document.getElementById('titleText').innerText = '出发城市';
 	} else {
 		document.getElementById('titleText').innerText = '到达城市';
