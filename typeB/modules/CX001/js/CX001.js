@@ -1,5 +1,5 @@
 //按始末城市查询功能参数
-var resultContent = document.getElementById('resultInfo');
+var resultContent = mui('.resultInfo')[0];
 var startCityEle = document.getElementById('startStationCity');
 var arriveCityEle = document.getElementById('arriveStationCity');
 var searchListButton = document.getElementById('searchByCity');
@@ -9,6 +9,9 @@ var arriveCity = '';
 var trainNum = document.getElementById('trainNumberInput');
 var searchButton = document.getElementById('searchByNum');
 
+/**
+ * CX001 画面初始化
+ */
 function initializeCX001() {
 	document.getElementById('searchSlider').addEventListener('slide', function(e) {
 		console.log(e.detail.slideNumber);
@@ -63,8 +66,8 @@ function initializeCX001() {
 		resultContent.innerHTML = '';
 		resultContent.style.border = '';
 		console.log('startCity :' + startCity + '   arriveCity :' + arriveCity);
-		//		findByCity(startCity, arriveCity);
-		findByCity('上海虹桥', '北京南');
+		findByCity(startCity, arriveCity);
+		//		findByCity('上海虹桥', '北京南');
 	});
 	//交换按钮点击事件
 	document.getElementById('exchangeCity').addEventListener('tap', function() {
@@ -81,6 +84,12 @@ function initializeCX001() {
 	});
 }
 
+/**
+ * 根据始末城市查找火车信息
+ * 
+ * @param String startPosition
+ * @param String endPosition
+ */
 function findByCity(startPosition, endPosition) {
 	addDisabledCity();
 	mui.ajax(serverAddr + '/travel/train/station', {

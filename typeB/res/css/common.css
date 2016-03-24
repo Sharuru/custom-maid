@@ -13,12 +13,12 @@ body {
 
 .mui-bar-nav {
 	color: white;
-	background: rgba(0, 75, 151, .9);
+	background: rgba(0, 102, 255, .75);
 }
 
 .mui-content {
 	height: auto !important;
-	min-height: 100%;
+	min-height: 99.9%;
 	padding-top: 44px !important;
 	padding-bottom: 20px !important;
 	/*background: url(../images/a8ef76094b36acaf3f37a28d7ed98d1000e99cef.jpg);*/
@@ -50,6 +50,54 @@ footer {
 
 .mui-row > [class*='mui-col-'] > p {
 	word-break: break-word;
+}
+
+.hidden-select {
+	opacity: 0;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+}
+
+.search-block {
+	margin: 0 0 5px;
+	padding: 5px 0 12px;
+	background: rgba(255, 255, 255, .9);
+	border-radius: 6px;
+	border: rgba(0, 0, 0, .1) solid 1px;
+	height: auto;
+}
+
+.search-key {
+	margin: -6px 0 0;
+	padding: 5px 10px;
+	background: rgba(0, 0, 0, .05);
+	height: auto;
+}
+
+.button-padding {
+	padding-top: 8px !important;
+	padding-bottom: 3px !important;
+}
+
+.resultInfo {
+	margin: 0 5px;
+	padding: 5px 5px 0;
+	border-radius: 6px;
+	/*border: #DDDDDD solid 1px;*/
+}
+
+.result-block:last-child {
+	border-bottom-left-radius: 6px !important;
+	border-bottom-right-radius: 6px !important;
+}
+
+.result-block {
+	margin: 0 -5px;
+	padding: 5px 10px;
+	background: rgba(255, 255, 255, .85);
+	border-bottom: #DDDDDD solid 2px;
 }
 
 .footer-info {

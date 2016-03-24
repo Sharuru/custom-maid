@@ -24,49 +24,9 @@ input[type='text'] {
 
 /* new class */
 
-.search-block {
-	margin: 0 0 5px;
-	padding: 5px 0 12px;
-	background: rgba(255, 255, 255, .9);
-	border-radius: 6px;
-	border: rgba(0, 0, 0, .1) solid 1px;
-	height: auto;
-}
-
-.search-key {
-	margin: -6px 0 0;
-	padding: 5px 10px;
-	background: rgba(100, 149, 237, .1);
-	height: auto;
-}
-
 .search-tips {
 	font-size: 18px !important;
 	margin-bottom: 0 !important;
-}
-
-.button-padding {
-	padding-top: 8px !important;
-	padding-bottom: 3px !important;
-}
-
-#resultInfo {
-	margin: 0 5px;
-	padding: 5px 5px 0;
-	border-radius: 6px;
-	/*border: #DDDDDD solid 1px;*/
-}
-
-.result-block:last-child {
-	border-bottom-left-radius: 6px !important;
-	border-bottom-right-radius: 6px !important;
-}
-
-.result-block {
-	margin: 0 -5px;
-	padding: 5px 10px;
-	background: rgba(255, 255, 255, .85);
-	border-bottom: #DDDDDD solid 2px;
 }
 
 .start-circle {

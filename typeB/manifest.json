@@ -267,10 +267,12 @@
 					"res/images/icons/weather/rain-s.png",
 					"res/images/icons/weather/cloudy.png",
 					"res/js/common.js",
-					"res/images/icons/weather/overcast.png"
+					"res/images/icons/weather/overcast.png",
+					"res/images/icons/weather/sunny.png"
 				],
 				"refer": [
-					"modules/CX001/CX001.html"
+					"modules/CX001/CX001.html",
+					"modules/SH001/SH001.html"
 				],
 				"priority": 0
 			},
@@ -302,6 +304,21 @@
 					"res/js/mui.min.js",
 					"res/js/common.js",
 					"res/css/common.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/SH001/SH001.html": {
+				"resources": [
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css",
+					"modules/SH001/css/SH001.css",
+					"modules/SH001/js/SH001.js",
+					"res/fonts/iconfont.ttf"
 				],
 				"refer": [],
 				"priority": 0
