@@ -12,7 +12,7 @@ var hisList = [];
  */
 function initializeSH001() {
 	//700075841153
-	//		localStorage.removeItem('historySearch');
+//				localStorage.removeItem('historySearch');
 	companyCode = 'jd';
 	companyName = '京东';
 	getHistory();
@@ -28,6 +28,7 @@ function initializeSH001() {
 	});
 	//查询按钮点击
 	clickButton.addEventListener('tap', function() {
+		console.log(companyName + '::' + companyCode);
 		//未输入快递单号
 		if (codeInput.value == '') {
 			mui.toast('快递单号不能为空');
@@ -39,27 +40,26 @@ function initializeSH001() {
 		getExpressInfo(companyCode, codeInput.value, companyName);
 	});
 	//历史记录再查询
-	mui('#historyExpressInfo').on('click', '.style-underline', function() {
-		var indexNum = 2 * this.parentNode.rowIndex + this.cellIndex;
+	mui('#historyExpressInfo').on('click', 'p', function() {
+		var indexNum = this.getAttribute('id').substr('6');
 		hisList.splice(indexNum, 1);
 		var searchInfo = this.innerHTML;
-		if (searchInfo == ' ') {
-			return;
-		}
-		var searchCode = searchInfo.substring(searchInfo.lastIndexOf('="') + 2, searchInfo.indexOf('">'));
-		var searchContext = searchInfo.substring(0, searchInfo.indexOf('<'));
-		var searchNum = searchContext.split(': ')[1];
-		var searchName = searchContext.split(': ')[0];
+		companyCode = searchInfo.substring(searchInfo.lastIndexOf('="') + 2, searchInfo.lastIndexOf('"'));
+		var searchContext = searchInfo.substring(searchInfo.indexOf('">') + 2, searchInfo.lastIndexOf('</'));
+		var searchCode = searchContext.split(' : ')[1];
+		companyName = searchContext.split(' : ')[0];
 		//清空原始记录
 		resultContent.innerHTML = '';
 		resultContent.style.border = '';
-		companyCode = searchCode;
-		companyName = searchName;
-		document.getElementById('selectedExpressName').innerHTML = searchName;
-		codeInput.value = searchNum;
-//		mui('.hidden-select').value(searchCode);
-//		alert(mui('.hidden-select').value);
-		getExpressInfo(searchCode, searchNum, searchName);
+		document.getElementById('selectedExpressName').innerHTML = companyName + ' ◢';
+		codeInput.value = searchCode;
+		var selOption = mui('.hidden-select')[0].options;
+		for (var i = 0; i < selOption.length; i++) {
+			if (selOption[i].value = companyCode) {
+				selOption[i].selected = true;
+			}
+		}
+		getExpressInfo(companyCode, searchCode, companyName);
 	});
 }
 
@@ -89,7 +89,11 @@ function getExpressInfo(expressCode, trackingNum, expressName) {
 				mui.toast(requestData.message);
 				cancelDisabled();
 			} else {
+				var searchData = new Date();
+				var dataStr = searchData.getFullYear() + '.';
+				dataStr += searchData.getMonth() + 1 + '.' + searchData.getDate();
 				var hisInfo = {
+					dateTime: dataStr,
 					name: expressName,
 					code: expressCode,
 					num: trackingNum
@@ -164,8 +168,9 @@ function getHistory() {
 		hisContentStr += '<div class="result-block">';
 		hisList = JSON.parse(hisSearch);
 		for (var i = 0; i < hisList.length; i++) {
-			hisContentStr += '<p class="font-w300-s16 style-underline remove-margin-b padding-5">';
-			hisContentStr += hisList[i].name + ' : ' + hisList[i].num;
+			hisContentStr += '<p class="font-w300-s16 remove-margin-b" id="record' + i + '">';
+			hisContentStr += hisList[i].dateTime + '<label class="font-w300-s16 padding-10-l style-underline">';
+			hisContentStr += hisList[i].name + ' : ' + hisList[i].num + '</label>';
 			hisContentStr += '<input type="hidden" value="' + hisList[i].code + '" /></p>';
 		}
 		hisContentStr += '</div>';

@@ -14,7 +14,7 @@ var searchButton = document.getElementById('searchByNum');
  */
 function initializeCX001() {
 	document.getElementById('searchSlider').addEventListener('slide', function(e) {
-		console.log(e.detail.slideNumber);
+//		console.log(e.detail.slideNumber);
 		//		window.scroll(0, 0);
 		resultContent.innerHTML = '';
 		resultContent.style.border = '';
@@ -40,7 +40,7 @@ function initializeCX001() {
 		//按钮动效现时完毕后再切换页面
 		setTimeout(function() {
 			mui.openWindow({
-				url: '../CityList/CITY_LIST.html',
+				url: 'CITY_LIST.html',
 				id: 'PAGE_CITY_LIST',
 				show: {
 					aniShow: 'pop-in',
@@ -65,7 +65,6 @@ function initializeCX001() {
 		}
 		resultContent.innerHTML = '';
 		resultContent.style.border = '';
-		console.log('startCity :' + startCity + '   arriveCity :' + arriveCity);
 		findByCity(startCity, arriveCity);
 		//		findByCity('上海虹桥', '北京南');
 	});
@@ -75,6 +74,8 @@ function initializeCX001() {
 		exchangeEle = startCityEle.innerHTML;
 		startCityEle.innerHTML = arriveCityEle.innerHTML;
 		arriveCityEle.innerHTML = exchangeEle;
+		resultContent.innerHTML = '';
+		resultContent.style.border = '';
 	});
 	//按车次查询
 	searchButton.addEventListener('tap', function() {
@@ -101,7 +102,7 @@ function findByCity(startPosition, endPosition) {
 		type: 'get',
 		timeout: 10000,
 		success: function(requestData) {
-			console.log(JSON.stringify(requestData));
+//			console.log(JSON.stringify(requestData));
 			//无条目的场合
 			if (requestData.error_code != 0) {
 				mui.toast(requestData.reason);
@@ -206,7 +207,7 @@ function findByTrainNo() {
 		type: 'get',
 		timeout: 10000,
 		success: function(requestData) {
-			console.log(JSON.stringify(requestData));
+//			console.log(JSON.stringify(requestData));
 			//无条目的场合
 			if (requestData.error_code != 0) {
 				mui.toast(requestData.reason);

@@ -1,12 +1,12 @@
 function initIndex() {
 	setIndexInfo();
 	mui('#moduleList').on('tap', 'a', function() {
-		var moduleId = this.getAttribute("id").substr(5);
+		var moduleId = this.getAttribute('id').substr(5);
 		mui.openWindow({
 			url: 'modules/' + moduleId + '/' + moduleId + '.html',
 			id: 'PAGE_' + moduleId,
 			show: {
-				aniShow: "pop-in",
+				aniShow: 'pop-in',
 				duration: 200
 			},
 			waiting: {
@@ -20,7 +20,7 @@ function initIndex() {
 function setIndexInfo() {
 	//读取当前省市
 	var localStorage = window.localStorage;
-	var currProvince = localStorage.getItem("province");
+	var currProvince = localStorage.getItem('province');
 	console.log(currProvince);
 	//上报获得天气信息
 	mui.ajax(serverAddr + 'weather/recent', {
@@ -33,14 +33,14 @@ function setIndexInfo() {
 		success: function(data) {
 			//本地保存结果
 			//TODO: 本地缓存
-			localStorage.setItem("weatherJson", JSON.stringify(data));
-			console.log("Weather json: " + JSON.stringify(data));
+			localStorage.setItem('weatherJson', JSON.stringify(data));
+			console.log('Weather json: ' + JSON.stringify(data));
 			//TODO： 省市覆盖
 			localStorage.setItem('province', data.retData.city);
 			localStorage.setItem('cityId', data.retData.cityid);
 			//赋值
 			//设置定位城市信息
-			document.getElementById('locationCity').innerHTML = localStorage.getItem("province");
+			document.getElementById('locationCity').innerHTML = localStorage.getItem('province');
 			var contentStr = '';
 			//设置今日日期信息
 			var dateStr = setDateTimeHeader();
@@ -109,6 +109,6 @@ function setDateTimeHeader() {
 	//拼接日
 	dateString += d.getDate();
 	//拼接星期
-	dateString += " 星期" + "天一二三四五六".charAt(d.getDay());
+	dateString += ' 星期' + '天一二三四五六'.charAt(d.getDay());
 	return dateString;
 }

@@ -272,7 +272,10 @@
 				],
 				"refer": [
 					"modules/CX001/CX001.html",
-					"modules/SH001/SH001.html"
+					"modules/SH001/SH001.html",
+					"modules/GJ001/GJ001.html",
+					"modules/GJ005/GJ005.html",
+					"modules/CX006/CX006.html"
 				],
 				"priority": 0
 			},
@@ -290,7 +293,8 @@
 					"res/fonts/iconfont.ttf"
 				],
 				"refer": [
-					"modules/CityList/CITY_LIST.html"
+					"modules/CityList/CITY_LIST.html",
+					"modules/CX001/CITY_LIST.html"
 				],
 				"priority": 0
 			},
@@ -322,21 +326,96 @@
 				],
 				"refer": [],
 				"priority": 0
+			},
+			"modules/GJ001/GJ001.html": {
+				"resources": [
+					"res/fonts/mui.ttf",
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"modules/GJ001/js/GJ001.js",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css",
+					"modules/GJ001/css/GJ001.css",
+					"res/images/modules/GJ001/USD.png",
+					"res/images/modules/GJ001/CNY.png",
+					"res/images/modules/GJ001/JPY.png",
+					"res/images/modules/GJ001/CAD.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/GJ005/GJ005.html": {
+				"resources": [
+					"res/fonts/mui.ttf",
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/fonts/iconfont.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css",
+					"modules/GJ005/css/GJ005.css",
+					"modules/GJ005/js/GJ005.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/CX006/CX006.html": {
+				"resources": [
+					"modules/CX006/css/CX006.css",
+					"res/fonts/mui.ttf",
+					"modules/CX006/js/CX006.js",
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/fonts/iconfont.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css"
+				],
+				"refer": [
+					"modules/CityList/CITY_LIST.html",
+					"modules/CX006/CITY_LIST.html"
+				],
+				"priority": 0
+			},
+			"modules/CX006/CITY_LIST.html": {
+				"resources": [
+					"res/css/mui.indexedlist.css",
+					"res/js/mui.indexedlist.min.js",
+					"modules/CX006/js/CITY_LIST.js",
+					"res/css/mui.min.css",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/CX001/CITY_LIST.html": {
+				"resources": [
+					"modules/CX001/js/CITY_LIST.js",
+					"res/css/mui.min.css",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/css/mui.indexedlist.css",
+					"res/js/common.js",
+					"res/css/common.css",
+					"res/js/mui.indexedlist.min.js"
+				],
+				"refer": [],
+				"priority": 0
 			}
 		},
 		"idle": {
 			"resources": [
 				"res/images/modules/GJ001/CHF.png",
-				"res/images/modules/GJ001/USD.png",
 				"res/images/modules/GJ001/HKD.png",
 				"res/css/mui.css",
-				"res/images/modules/GJ001/CAD.png",
 				"res/images/modules/GJ001/RUB.png",
 				"res/images/modules/GJ001/THB.png",
-				"res/images/modules/GJ001/JPY.png",
 				"res/images/modules/GJ001/DKK.png",
 				"res/images/modules/GJ001/KRW.png",
-				"res/images/modules/GJ001/CNY.png",
 				"res/images/icons/modules/JS004.png",
 				"res/images/modules/GJ001/NZD.png",
 				"res/js/mui.js",

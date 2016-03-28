@@ -30,29 +30,29 @@ input[type='text'] {
 }
 
 .start-circle {
-	width: 24px;
-	height: 24px;
+	width: 23px;
+	height: 23px;
 	background-color: dodgerblue;
-	border-radius: 12px;
+	border-radius: 50%;
 }
 
 .pass-circle {
-	width: 24px;
-	height: 24px;
+	width: 23px;
+	height: 23px;
 	background-color: lightsalmon;
-	border-radius: 12px;
+	border-radius: 50%;
 }
 
 .arrive-circle {
-	width: 24px;
-	height: 24px;
+	width: 23px;
+	height: 23px;
 	background-color: lightseagreen;
-	border-radius: 12px;
+	border-radius: 50%;
 }
 
 .circle-text {
-	height: 24px;
-	line-height: 24px;
+	height: 23px;
+	line-height: 23px;
 	font-size: 14px;
 	display: block;
 	color: #FFF;

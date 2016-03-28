@@ -82,7 +82,6 @@ footer {
 }
 
 .resultInfo {
-	margin: 0 5px;
 	padding: 5px 5px 0;
 	border-radius: 6px;
 	/*border: #DDDDDD solid 1px;*/
@@ -91,13 +90,14 @@ footer {
 .result-block:last-child {
 	border-bottom-left-radius: 6px !important;
 	border-bottom-right-radius: 6px !important;
+	padding-bottom: 5px !important;
 }
 
 .result-block {
 	margin: 0 -5px;
 	padding: 5px 10px;
 	background: rgba(255, 255, 255, .85);
-	border-bottom: #DDDDDD solid 2px;
+	border-bottom: #DDDDDD solid 1px;
 }
 
 .footer-info {

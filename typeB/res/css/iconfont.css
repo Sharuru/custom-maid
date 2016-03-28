@@ -20,3 +20,7 @@
 .icon-exchange:before { content: "\e602"; }
 .icon-nextStation:before { content: "\e605"; }
 .icon-express:before { content: "\e606"; }
+.icon-delFavor:before { content: "\e609"; }
+.icon-unfavor:before { content: "\e60a"; }
+.icon-favor:before { content: "\e60b"; }
+.icon-d-arrow-down:before { content: "\e60c"; }

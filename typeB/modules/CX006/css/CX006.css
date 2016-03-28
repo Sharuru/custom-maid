@@ -1,0 +1,52 @@
+/* common class */
+
+.search-block {
+	padding-bottom: 7px !important;
+}
+
+
+/* new class */
+
+.search-tips {
+	font-size: 18px !important;
+	margin-bottom: 0 !important;
+}
+
+.start-circle {
+	width: 23px;
+	height: 23px;
+	background-color: dodgerblue;
+	border-radius: 50%;
+}
+
+.arrive-circle {
+	width: 23px;
+	height: 23px;
+	background-color: lightseagreen;
+	border-radius: 50%;
+}
+
+.circle-text {
+	height: 23px;
+	line-height: 23px;
+	font-size: 14px;
+	display: block;
+	color: #FFF;
+	text-align: center
+}
+
+.timeInfo {
+	margin-bottom: 0 !important;
+	padding-top: 4px;
+	padding-left: 15px;
+	font-size: 24px;
+	font-weight: 700;
+	color: black;
+}
+
+.priceInfo{
+	padding-right: 10px;
+	font-size: 26px;
+	font-weight: 700;
+	color: #FF3366;
+}
