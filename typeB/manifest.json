@@ -275,7 +275,9 @@
 					"modules/SH001/SH001.html",
 					"modules/GJ001/GJ001.html",
 					"modules/GJ005/GJ005.html",
-					"modules/CX006/CX006.html"
+					"modules/CX006/CX006.html",
+					"modules/CX002/CX002.html",
+					"modules/GJ002/GJ002.html"
 				],
 				"priority": 0
 			},
@@ -402,6 +404,53 @@
 					"res/js/common.js",
 					"res/css/common.css",
 					"res/js/mui.indexedlist.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/CX002/CX002.html": {
+				"resources": [
+					"modules/CX002/css/CX002.css",
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"modules/CX002/js/CX002.js",
+					"res/js/common.js",
+					"res/css/common.css",
+					"res/fonts/iconfont.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/GJ002/GJ002.html": {
+				"resources": [
+					"res/fonts/mui.ttf",
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css",
+					"modules/GJ002/css/GJ002.css",
+					"modules/GJ002/js/GJ002.js",
+					"res/fonts/iconfont.ttf"
+				],
+				"refer": [
+					"modules/GJ002/Detail.html"
+				],
+				"priority": 0
+			},
+			"modules/GJ002/Detail.html": {
+				"resources": [
+					"modules/GJ002/js/Detail.js",
+					"modules/GJ002/css/GJ002.css",
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css",
+					"res/fonts/iconfont.ttf"
 				],
 				"refer": [],
 				"priority": 0

@@ -24,3 +24,5 @@
 .icon-unfavor:before { content: "\e60a"; }
 .icon-favor:before { content: "\e60b"; }
 .icon-d-arrow-down:before { content: "\e60c"; }
+.icon-toTop:before { content: "\e60d"; }
+.icon-toDetail:before { content: "\e60f"; }

@@ -1,7 +1,18 @@
+/* MUI class */
+
+a:active {
+	color: #F0F0F0 !important;
+}
+
+
 /* common class */
 
 .search-block {
 	padding-bottom: 7px !important;
+}
+
+.resultInfo {
+	margin-bottom: 29px !important;
 }
 
 
@@ -32,7 +43,7 @@
 	font-size: 14px;
 	display: block;
 	color: #FFF;
-	text-align: center
+	text-align: center;
 }
 
 .timeInfo {
@@ -44,9 +55,23 @@
 	color: black;
 }
 
-.priceInfo{
+.priceInfo {
 	padding-right: 10px;
 	font-size: 26px;
 	font-weight: 700;
 	color: #FF3366;
+}
+
+#fixedLayer {
+	position: fixed;
+	bottom: 20px;
+	right: 0;
+	padding: 5px;
+	width: 100%;
+	height: auto;
+	background: rgba(85, 85, 85, .8);
+}
+
+.href-class {
+	color: white !important;
 }

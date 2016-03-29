@@ -3,6 +3,7 @@ var resultContent = mui('.resultInfo')[0];
 var startCityEle = document.getElementById('startStationCity');
 var arriveCityEle = document.getElementById('arriveStationCity');
 var searchListButton = document.getElementById('searchByCity');
+var toTopButton = mui('.topButton')[0];
 var startCity = '';
 var arriveCity = '';
 //按车次查询功能参数
@@ -14,7 +15,7 @@ var searchButton = document.getElementById('searchByNum');
  */
 function initializeCX001() {
 	document.getElementById('searchSlider').addEventListener('slide', function(e) {
-//		console.log(e.detail.slideNumber);
+		//		console.log(e.detail.slideNumber);
 		//		window.scroll(0, 0);
 		resultContent.innerHTML = '';
 		resultContent.style.border = '';
@@ -83,6 +84,23 @@ function initializeCX001() {
 		resultContent.style.border = '';
 		findByTrainNo();
 	});
+	//点击按钮回到顶端
+	toTopButton.addEventListener('tap', function() {
+		setTimeout(function() {
+			window.scrollTo(0, 0);
+		}, 200)
+	});
+}
+
+/**
+ * 滚动到500位置时显示返回顶端按钮
+ */
+window.onscroll = function() {
+	if (document.body.scrollTop > 300) {
+		toTopButton.style.display = 'block';
+	} else {
+		toTopButton.style.display = 'none';
+	}
 }
 
 /**
@@ -102,7 +120,7 @@ function findByCity(startPosition, endPosition) {
 		type: 'get',
 		timeout: 10000,
 		success: function(requestData) {
-//			console.log(JSON.stringify(requestData));
+			//			console.log(JSON.stringify(requestData));
 			//无条目的场合
 			if (requestData.error_code != 0) {
 				mui.toast(requestData.reason);
@@ -207,7 +225,7 @@ function findByTrainNo() {
 		type: 'get',
 		timeout: 10000,
 		success: function(requestData) {
-//			console.log(JSON.stringify(requestData));
+			//			console.log(JSON.stringify(requestData));
 			//无条目的场合
 			if (requestData.error_code != 0) {
 				mui.toast(requestData.reason);

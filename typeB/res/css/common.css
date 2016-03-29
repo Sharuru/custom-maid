@@ -17,6 +17,7 @@ body {
 }
 
 .mui-content {
+	/*position: relative;*/
 	height: auto !important;
 	min-height: 99.9%;
 	padding-top: 44px !important;
@@ -98,6 +99,27 @@ footer {
 	padding: 5px 10px;
 	background: rgba(255, 255, 255, .85);
 	border-bottom: #DDDDDD solid 1px;
+}
+
+.topButton {
+	/* 回到顶端按钮div样式 */
+	position: fixed;
+	bottom: 60px;
+	right: 5px;
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, .5);
+	border: #C7C7CC solid 1px;
+	text-align: center;
+}
+
+.buttonIcon {
+	/* 回到顶端按钮icon样式 */
+	height: 26px;
+	line-height: 26px;
+	font-size: 16px;
+	color: #999999;
 }
 
 .footer-info {

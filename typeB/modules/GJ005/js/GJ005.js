@@ -238,7 +238,7 @@ function addDisabled() {
 	document.getElementById('toType').style.color = '#66AFFF';
 	clearIcon.style.display = 'none';
 	//收藏按钮点击事件取消绑定
-	mui('.input-layer').off('tap');
+	mui('.input-layer').off('tap', '#doFavor');
 }
 
 /**

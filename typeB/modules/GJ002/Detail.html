@@ -8,25 +8,29 @@
 		<link href="../../res/css/mui.min.css" rel="stylesheet" />
 		<link href="../../res/css/iconfont.css" rel="stylesheet" />
 		<link href="../../res/css/common.css" rel="stylesheet" />
-		<link href="css/CX001.css" rel="stylesheet" />
+		<link href="css/GJ002.css" rel="stylesheet" />
 	</head>
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<div class="header-text">
-				<span class="mui-action-back mui-icon mui-icon-back">火车信息</span>
+				<span class="mui-action-back mui-icon mui-icon-back" id="lotName"></span>
 			</div>
 		</header>
 		<div class="mui-content">
+			<div class="resultInfo"></div>
 		</div>
+		<footer>
+			<div class="footer-info">数据由 <a>开彩网</a> 提供</div>
+		</footer>
 	</body>
 	<script src="../../res/js/mui.min.js "></script>
 	<script type="text/javascript " src="../../res/js/common.js "></script>
-	<script type="text/javascript " src="js/CX001.js "></script>
+	<script type="text/javascript " src="js/Detail.js"></script>
 	<script type="text/javascript " charset="utf-8 ">
 		mui.init();
 		mui.plusReady(function() {
-//			initializeCX001();
+			initDetail();
 		})
 	</script>
 
