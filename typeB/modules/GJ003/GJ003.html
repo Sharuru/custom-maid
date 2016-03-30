@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../../res/css/mui.min.css" rel="stylesheet" />
+		<link href="../../res/css/iconfont.css" rel="stylesheet" />
+		<link href="../../res/css/common.css" rel="stylesheet" />
+		<link href="css/GJ003.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div class="header-text">
+				<span class="mui-action-back mui-icon mui-icon-back">证券信息</span>
+			</div>
+		</header>
+		<div class="mui-content">
+			<div class="search-block">
+				<div class="mui-row">
+					<div class="mui-col-xs-10 padding-20-l padding-5-t">
+						<div class="mui-input-row mui-search">
+							<input type="search" class="mui-input-clear" placeholder="请输入证券代码">
+						</div>
+					</div>
+					<div class="mui-col-xs-2 align-center">
+						<span class="mui-icon iconfont icon-search icon-style"></span>
+					</div>
+				</div>
+			</div>
+			<div class="stock-list">
+				<div class="mui-row border-b font-w300-s16" style="color: #007AFF;">
+					<div class="mui-col-xs-4 padding-20-l">证券代码</div>
+					<div class="mui-col-xs-2 align-center">现价</div>
+					<div class="mui-col-xs-3 align-center">涨跌</div>
+					<div class="mui-col-xs-3 align-center">涨幅</div>
+				</div>
+				<div class="mui-row border-b">
+					<div class="mui-col-xs-4 padding-20-l">
+						<p class="font-w300-s18 remove-margin-b color-white">中国银行</p>
+						<p class="font-w300-s16 remove-margin-b color-white">100001</p>
+					</div>
+					<div class="mui-col-xs-2 align-center info-style" style="color: red">5.5</div>
+					<div class="mui-col-xs-3 align-center" style="color: #008000;">3.5</div>
+					<div class="mui-col-xs-3 align-center">涨幅</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../res/js/mui.min.js "></script>
+	<script type="text/javascript " src="../../res/js/common.js "></script>
+	<script type="text/javascript " src="js/GJ003.js "></script>
+	<script type="text/javascript " charset="utf-8 ">
+		mui.init();
+		mui.plusReady(function() {
+			initializeGJ003();
+		})
+	</script>
+
+</html>

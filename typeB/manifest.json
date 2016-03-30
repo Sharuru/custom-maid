@@ -277,7 +277,8 @@
 					"modules/GJ005/GJ005.html",
 					"modules/CX006/CX006.html",
 					"modules/CX002/CX002.html",
-					"modules/GJ002/GJ002.html"
+					"modules/GJ002/GJ002.html",
+					"modules/GJ003/GJ003.html"
 				],
 				"priority": 0
 			},
@@ -450,6 +451,21 @@
 					"res/js/mui.min.js",
 					"res/js/common.js",
 					"res/css/common.css",
+					"res/fonts/iconfont.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/GJ003/GJ003.html": {
+				"resources": [
+					"res/fonts/mui.ttf",
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css",
+					"modules/GJ003/js/GJ003.js",
+					"modules/GJ003/css/GJ003.css",
 					"res/fonts/iconfont.ttf"
 				],
 				"refer": [],

@@ -13,7 +13,7 @@ var resultData;
  * CX005 画面初始化
  */
 function initializeCX006() {
-	console.log(resultData == undefined);
+	//	console.log(resultData == undefined);
 	//传值事件绑定
 	window.addEventListener('setLocation', function(event) {
 		document.getElementById(event.detail.triggerId).innerHTML = event.detail.loc;
@@ -221,6 +221,8 @@ function clearResult() {
 	resultContent.innerHTML = '';
 	resultContent.style.border = '';
 	document.getElementById('fixedLayer').style.display = 'none';
+	stationPopover.innerHTML =
+		'<li class="mui-table-view-cell">清空筛选</li>';
 }
 
 /**

@@ -71,7 +71,7 @@ function initializeSH001() {
  * @param String expressName 物流公司名称
  */
 function getExpressInfo(expressCode, trackingNum, expressName) {
-	mui.toast('正在获取快递信息...');
+//	mui.toast('正在获取快递信息...');
 	addDisabled();
 	mui.ajax(serverAddr + 'tools/express', {
 		data: {
