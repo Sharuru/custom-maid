@@ -8,38 +8,42 @@
 		<link href="../../res/css/mui.min.css" rel="stylesheet" />
 		<link href="../../res/css/iconfont.css" rel="stylesheet" />
 		<link href="../../res/css/common.css" rel="stylesheet" />
-		<link href="css/GJ003.css" rel="stylesheet" />
+		<link href="css/Detail.css" rel="stylesheet" />
 	</head>
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<div class="header-text">
-				<span class="mui-action-back mui-icon mui-icon-back">证券信息</span>
+				<span class="mui-action-back mui-icon mui-icon-back" id="stockName"></span>
 			</div>
 		</header>
 		<div class="mui-content">
-			<div class="search-block">
+			<div class="stock-base">
 				<div class="mui-row">
-					<div class="mui-col-xs-10 padding-20-l padding-5-t">
-						<div class="mui-input-row mui-search">
-							<input type="search" class="mui-input-clear" placeholder="请输入证券代码" id="stockCodeInput">
-						</div>
+					<div class="mui-col-xs-4 align-center">
+						<p style="font-size: 24px;font-weight: 700;margin-bottom: 2px;color: green;">11111.91</p>
+						<label class="font-w300-s16" style="color: green;">-0.59</label>
+						<label class="font-w300-s16 padding-10-l" style="color: green;">-4.72%</label>
 					</div>
-					<div class="mui-col-xs-2 align-center">
-						<span class="mui-icon iconfont icon-search icon-style" id="iconButton"></span>
+					<div class="mui-col-xs-3">
+						<p class="font-w300-s16" style="color: white;margin-bottom: 2px;">开:
+							<label style="color: red;">12.51</label>
+						</p>
+						<p class="font-w300-s16" style="color: white;margin-bottom: 0;">高:
+							<label style="color: red;">12.58</label>
+						</p>
 					</div>
 				</div>
 			</div>
-			<div class="stock-list"></div>
 		</div>
 	</body>
 	<script src="../../res/js/mui.min.js "></script>
 	<script type="text/javascript " src="../../res/js/common.js "></script>
-	<script type="text/javascript " src="js/GJ003.js "></script>
+	<script type="text/javascript " src="js/Detail.js"></script>
 	<script type="text/javascript " charset="utf-8 ">
 		mui.init();
 		mui.plusReady(function() {
-			initializeGJ003();
+			initDetail();
 		})
 	</script>
 

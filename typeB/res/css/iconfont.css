@@ -27,3 +27,5 @@
 .icon-toTop:before { content: "\e60d"; }
 .icon-toDetail:before { content: "\e60f"; }
 .icon-search:before { content: "\e60e"; }
+.icon-delete:before { content: "\e610"; }
+.icon-add:before { content: "\e611"; }

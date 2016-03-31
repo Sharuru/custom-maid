@@ -75,7 +75,7 @@ function checkIsFirstRun(callback) {
 		localStorage.setItem('新台币', 'TWD');
 		//mui.toast('配置完毕');
 	}
-	callback(setLocationHeader);
+	callback(loadIndexPage);
 }
 
 function setLocationHeader(callback) {
@@ -103,7 +103,7 @@ function setLocationHeader(callback) {
 					//赋值
 					//document.getElementById('headerLoaction').innerHTML = localStorage.getItem("province");
 					console.log("Modules: " + localStorage.getItem("modules"));
-					callback(loadIndexPage);
+					callback();
 				},
 				error: function(xhr, type, errorThrown) {
 					//异常处理

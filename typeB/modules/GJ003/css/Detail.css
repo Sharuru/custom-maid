@@ -1,0 +1,17 @@
+/* MUI class */
+
+.mui-row {
+	padding: 5px 0 3px !important;
+}
+
+
+/* new class */
+
+.stock-base {
+	margin: 8px 5px 0;
+	border-radius: 6px;
+	background: rgba(128, 128, 128, .7);
+	height: auto;
+	color: white;
+	font-size: 18px;
+}

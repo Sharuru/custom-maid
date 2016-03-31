@@ -61,9 +61,9 @@ input[type='search'] {
 	color: #555555;
 }
 
-.icon-style:active {
+/*.icon-style:active {
 	color: #AAAAAA;
-}
+}*/
 
 .stock-list {
 	margin: 5px 5px 0;
@@ -75,8 +75,8 @@ input[type='search'] {
 }
 
 .info-style {
-	padding-top: 9px;
-	font-size: 20px;
+	padding-top: 10px;
+	font-size: 18px;
 }
 
 .color-red {
