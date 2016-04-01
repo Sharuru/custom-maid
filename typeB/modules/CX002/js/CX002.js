@@ -87,7 +87,7 @@ function getResultList() {
 				var lineName = '';
 				var baseInfo = '';
 				contentStr +=
-					'<p class="font-w500-s16" style="margin-bottom: 3px;">查询结果</p>' +
+					'<p class="font-s16" style="margin-bottom: 3px;">查询结果</p>' +
 					'<div class="result-block">' +
 					'	<ul class="mui-table-view">';
 				for (var i = 0; i < requestData.data.length; i++) {
@@ -96,13 +96,13 @@ function getResultList() {
 					contentStr +=
 						'	<li class="mui-table-view-cell mui-collapse">' +
 						'		<a class="mui-navigate-right" href="#">' +
-						'			<label class="font-w300-s16">' +
+						'			<label class="font-s16">' +
 						'线路 ' + requestData.data[i].no + '：' +
 						'			</label>' +
-						'			<label class="font-w300-s18 padding-10-l">' +
+						'			<label class="font-s18 padding-10-l">' +
 						lineName +
 						'			</label>' +
-						'			<p class="font-w300-s16">' +
+						'			<p class="font-s16">' +
 						baseInfo +
 						'			</p>' +
 						'		</a>' +
@@ -111,10 +111,10 @@ function getResultList() {
 						'				<li>' +
 						'					<i class="mui-icon iconfont icon-nextStation list-timeline-icon"></i>' +
 						'					<div class="list-timeline-content">' +
-						'						<p class="font-w300-s18">' +
+						'						<p class="font-s18">' +
 						requestData.data[i].originStationName +
 						'						</p>' +
-						'						<p class="font-w300-s14 color-success">' +
+						'						<p class="font-s14 color-success">' +
 						'乘坐 ' + lineName.split(' - ')[0] +
 						'						</p>' +
 						'					</div>' +
@@ -123,7 +123,7 @@ function getResultList() {
 						'				<li>' +
 						'					<i class="mui-icon iconfont icon-nextStation list-timeline-icon"></i>' +
 						'					<div class="list-timeline-content">' +
-						'						<p class="font-w300-s18">' +
+						'						<p class="font-s18">' +
 						requestData.data[i].destinationStationName +
 						'						</p>' +
 						'					</div>' +
@@ -206,12 +206,12 @@ function dealPassedStation(passStationStr, changeStationStr, passDurationStr, li
 				'<li>' +
 				'	<i class = "mui-icon iconfont icon-nextStation list-timeline-icon color-warning"></i>' +
 				'	<div class="list-timeline-content">' +
-				'		<p class="font-w300-s18">' +
+				'		<p class="font-s18">' +
 				changeStationArr[currentIndex] +
 				'		</p>' +
-				'		<p class="font-w300-s14">' +
+				'		<p class="font-s14">' +
 				'步行 ' + workTime +
-				'			<label class="font-w300-s14 padding-10-l color-success">换乘 ' +
+				'			<label class="font-s14 padding-10-l color-success">换乘 ' +
 				lineNameStr.split(' - ')[currentIndex + 1] +
 				'			</label>' +
 				'		</p>' +
@@ -223,7 +223,7 @@ function dealPassedStation(passStationStr, changeStationStr, passDurationStr, li
 			innerHtmlStr +=
 				'<li>' +
 				'	<div class="list-timeline-content">' +
-				'		<p class="font-w300-s16">' +
+				'		<p class="font-s16">' +
 				innerHtmlStr += passStataionArr[i] +
 				'		</p>' +
 				'	</div>' +

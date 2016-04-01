@@ -191,10 +191,10 @@ function deleteFavor(indexStr, contextStr) {
 function getFavor() {
 	var allFavorites = localStorage.getItem('favorRecord');
 	if (allFavorites == null || allFavorites == '[]') {
-		favorLayer.innerHTML = '<p class="font-w300-s16" style="margin-bottom: 3px;">暂无收藏记录...</p>';
+		favorLayer.innerHTML = '<p class="font-s16" style="margin-bottom: 3px;">暂无收藏记录...</p>';
 		favorLayer.style.border = '';
 	} else {
-		favorLayer.innerHTML = '<p class="font-w300-s16" style="margin-bottom: 3px;">收藏记录</p>';
+		favorLayer.innerHTML = '<p class="font-s16" style="margin-bottom: 3px;">收藏记录</p>';
 		favorList = JSON.parse(allFavorites);
 		var favorContext = '';
 		favorContext += '<div class="result-block">';
@@ -202,13 +202,13 @@ function getFavor() {
 			var fromTypeName = getTypeName(favorList[i].fromTypeInfo);
 			var toTypeName = getTypeName(favorList[i].toTypeInfo);
 			favorContext += '<div class="mui-row padding-10-l"><div class="mui-col-xs-3">';
-			favorContext += '<p class="font-w300-s16 remove-margin-b">原: (' + fromTypeName + ')</p></div>';
-			favorContext += '<div class="mui-col-xs-8"><p class="font-w300-s16 remove-margin-b">' + favorList[i].fromSrc;
+			favorContext += '<p class="font-s16 remove-margin-b">原: (' + fromTypeName + ')</p></div>';
+			favorContext += '<div class="mui-col-xs-8"><p class="font-s16 remove-margin-b">' + favorList[i].fromSrc;
 			favorContext += '</p></div><div class="mui-col-xs-1 align-right">';
 			favorContext += '<span class="icon iconfont icon-delFavor delete-icon" id="favor' + i + '"></span></div></div>';
 			favorContext += '<div class="mui-row padding-10-l" style="margin-bottom: 5px;"><div class="mui-col-xs-3">';
-			favorContext += '<p class="font-w300-s16 remove-margin-b">译: (' + toTypeName + ')</p></div>';
-			favorContext += '<div class="mui-col-xs-8"><p class="font-w300-s16 remove-margin-b">' + favorList[i].toDst;
+			favorContext += '<p class="font-s16 remove-margin-b">译: (' + toTypeName + ')</p></div>';
+			favorContext += '<div class="mui-col-xs-8"><p class="font-s16 remove-margin-b">' + favorList[i].toDst;
 			favorContext += '</p></div><div class="mui-col-xs-1"></div></div>';
 		}
 		favorContext += '</div>';

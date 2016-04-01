@@ -129,29 +129,12 @@ footer {
 	color: dimgray;
 }
 
-.font-w300-s12 {
-	font-size: 12px !important;
-	font-weight: 300 !important;
-}
-
-.font-w300-s14 {
-	font-size: 14px !important;
-	font-weight: 300 !important;
-}
-
-.font-w300-s16 {
+.font-s16 {
 	font-size: 16px !important;
-	font-weight: 300 !important;
 }
 
-.font-w500-s16 {
-	font-size: 16px !important;
-	font-weight: 500 !important;
-}
-
-.font-w300-s18 {
+.font-s18 {
 	font-size: 18px !important;
-	font-weight: 300 !important;
 }
 
 .color-white {

@@ -484,7 +484,8 @@
 					"res/js/mui.min.js",
 					"res/js/common.js",
 					"res/css/common.css",
-					"modules/GJ003/css/Detail.css"
+					"modules/GJ003/css/Detail.css",
+					"res/fonts/iconfont.ttf"
 				],
 				"refer": [],
 				"priority": 0

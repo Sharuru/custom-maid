@@ -127,23 +127,23 @@ function findByCity(startPosition, endPosition) {
 				cancelDisabledCity();
 			} else {
 				var contentStr = '';
-				contentStr += '<p class="font-w500-s16" style="margin-bottom: 3px;">查询结果</p>';
+				contentStr += '<p class="font-s16" style="margin-bottom: 3px;">查询结果</p>';
 				for (var i = 0; i < requestData.result.list.length; i++) {
 					var startTime = requestData.result.list[i].start_time;
 					var totalTime = requestData.result.list[i].run_time;
 					var arriveTips = getDays(startTime, totalTime);
 					contentStr += '<div class="result-block"><div class="mui-row padding-10-l">';
-					contentStr += '<p class="font-w300-s18 color-black remove-margin-b">';
+					contentStr += '<p class="font-s18 color-black remove-margin-b">';
 					contentStr += requestData.result.list[i].train_no;
-					contentStr += '<label class="font-w300-s18 padding-10-l">';
+					contentStr += '<label class="font-s18 padding-10-l">';
 					contentStr += requestData.result.list[i].train_type + '</label></p></div>';
 					contentStr += '<div class="mui-row padding-5-t" style="line-height: 24px;">';
 					contentStr += '<div class="mui-col-xs-8 padding-20-l"><div class="start-circle float-left">';
 					contentStr += '<span class="circle-text">' + requestData.result.list[i].start_station_type;
-					contentStr += '</span></div><div class="font-w300-s18 float-left padding-10-l">';
+					contentStr += '</span></div><div class="font-s18 float-left padding-10-l">';
 					contentStr += requestData.result.list[i].start_station;
-					contentStr += '<label class="font-w300-s16 padding-10-l">(' + startTime + ')</label></div></div>';
-					contentStr += '<div class="mui-col-xs-4 align-center"><label class="font-w300-s16">';
+					contentStr += '<label class="font-s16 padding-10-l">(' + startTime + ')</label></div></div>';
+					contentStr += '<div class="mui-col-xs-4 align-center"><label class="font-s16">';
 					contentStr += totalTime + '</label></div></div>';
 					contentStr += '<div class="mui-row" style="line-height: 22px;padding-top: 3px;">';
 					contentStr += '<div class="mui-col-xs-8 padding-20-l">';
@@ -153,10 +153,10 @@ function findByCity(startPosition, endPosition) {
 						contentStr += '<div class="pass-circle float-left"><span class="circle-text">';
 						contentStr += requestData.result.list[i].end_station_type;
 					}
-					contentStr += '</span></div><div class="font-w300-s18 float-left padding-10-l">';
-					contentStr += requestData.result.list[i].end_station + '<label class="font-w300-s16 padding-10-l">(';
+					contentStr += '</span></div><div class="font-s18 float-left padding-10-l">';
+					contentStr += requestData.result.list[i].end_station + '<label class="font-s16 padding-10-l">(';
 					contentStr += requestData.result.list[i].end_time + ')</label></div></div>';
-					contentStr += '<div class="mui-col-xs-4 align-center"><label class="font-w300-s16">';
+					contentStr += '<div class="mui-col-xs-4 align-center"><label class="font-s16">';
 					contentStr += arriveTips + '</label></div></div></div>';
 				}
 				resultContent.innerHTML = contentStr;
@@ -232,22 +232,22 @@ function findByTrainNo() {
 				cancelDisabledNum();
 			} else {
 				var contentStr = '';
-				contentStr += '<p class="font-w500-s16" style="margin-bottom: 3px;">查询结果</p>';
+				contentStr += '<p class="font-s16" style="margin-bottom: 3px;">查询结果</p>';
 				var startTime = requestData.result.list.start_time;
 				var totalTime = requestData.result.list.run_time;
 				var arriveTips = getDays(startTime, totalTime);
 				contentStr += '<div class="detail-block"><div class="mui-row padding-10-l">';
-				contentStr += '<p class="font-w300-s18 color-black remove-margin-b">';
+				contentStr += '<p class="font-s18 color-black remove-margin-b">';
 				contentStr += requestData.result.list.train_no;
-				contentStr += '<label class="font-w300-s18 padding-10-l">';
+				contentStr += '<label class="font-s18 padding-10-l">';
 				contentStr += requestData.result.list.train_type + '</label></p></div>';
 				contentStr += '<div class="mui-row padding-5-t" style="line-height: 24px;">';
 				contentStr += '<div class="mui-col-xs-8 padding-20-l"><div class="start-circle float-left">';
 				contentStr += '<span class="circle-text">' + requestData.result.list.start_station_type;
-				contentStr += '</span></div><div class="font-w300-s18 float-left padding-10-l">';
+				contentStr += '</span></div><div class="font-s18 float-left padding-10-l">';
 				contentStr += requestData.result.list.start_station;
-				contentStr += '<label class="font-w300-s16 padding-10-l">(' + startTime + ')</label></div></div>';
-				contentStr += '<div class="mui-col-xs-4 align-center"><label class="font-w300-s16">';
+				contentStr += '<label class="font-s16 padding-10-l">(' + startTime + ')</label></div></div>';
+				contentStr += '<div class="mui-col-xs-4 align-center"><label class="font-s16">';
 				contentStr += totalTime + '</label></div></div>';
 				contentStr += '<div class="mui-row" style="line-height: 22px;padding-top: 3px;">';
 				contentStr += '<div class="mui-col-xs-8 padding-20-l">';
@@ -257,19 +257,19 @@ function findByTrainNo() {
 					contentStr += '<div class="pass-circle float-left"><span class="circle-text">';
 					contentStr += requestData.result.list.end_station_type;
 				}
-				contentStr += '</span></div><div class="font-w300-s18 float-left padding-10-l">';
-				contentStr += requestData.result.list.end_station + '<label class="font-w300-s16 padding-10-l">(';
+				contentStr += '</span></div><div class="font-s18 float-left padding-10-l">';
+				contentStr += requestData.result.list.end_station + '<label class="font-s16 padding-10-l">(';
 				contentStr += requestData.result.list.end_time + ')</label></div></div>';
-				contentStr += '<div class="mui-col-xs-4 align-center"><label class="font-w300-s16">';
+				contentStr += '<div class="mui-col-xs-4 align-center"><label class="font-s16">';
 				contentStr += arriveTips + '</label></div></div><div class="mui-row padding-10-t">';
-				contentStr += '<div class="mui-col-xs-4 padding-10-l font-w300-s16">参考票价</div></div>';
+				contentStr += '<div class="mui-col-xs-4 padding-10-l font-s16">参考票价</div></div>';
 				if (requestData.result.list.price_list.item.length % 2 == 0) {
 					for (var i = parseInt(requestData.result.list.price_list.item.length / 2 - 1); i >= 0; i--) {
 						contentStr += '<div class="mui-row padding-5-t">';
-						contentStr += '<div class="mui-col-xs-6 align-center font-w300-s16">';
+						contentStr += '<div class="mui-col-xs-6 align-center font-s16">';
 						contentStr += requestData.result.list.price_list.item[2 * i + 1].price_type;
 						contentStr += ' : ￥' + requestData.result.list.price_list.item[2 * i + 1].price;
-						contentStr += '</div><div class="mui-col-xs-6 align-center font-w300-s16">';
+						contentStr += '</div><div class="mui-col-xs-6 align-center font-s16">';
 						contentStr += requestData.result.list.price_list.item[2 * i].price_type;
 						contentStr += ' : ￥' + requestData.result.list.price_list.item[2 * i].price + '</div>';
 					}
@@ -277,14 +277,14 @@ function findByTrainNo() {
 					for (var i = parseInt(requestData.result.list.price_list.item.length / 2); i >= 0; i--) {
 						contentStr += '<div class="mui-row padding-5-t">';
 						if (i == 0) {
-							contentStr += '<div class="mui-col-xs-6 align-center font-w300-s16">';
+							contentStr += '<div class="mui-col-xs-6 align-center font-s16">';
 							contentStr += requestData.result.list.price_list.item[0].price_type;
 							contentStr += ' : ￥' + requestData.result.list.price_list.item[0].price + '</div>';
 						} else {
-							contentStr += '<div class="mui-col-xs-6 align-center font-w300-s16">';
+							contentStr += '<div class="mui-col-xs-6 align-center font-s16">';
 							contentStr += requestData.result.list.price_list.item[2 * i].price_type;
 							contentStr += ' : ￥' + requestData.result.list.price_list.item[2 * i].price;
-							contentStr += '</div><div class="mui-col-xs-6 align-center font-w300-s16">';
+							contentStr += '</div><div class="mui-col-xs-6 align-center font-s16">';
 							contentStr += requestData.result.list.price_list.item[2 * i - 1].price_type;
 							contentStr += ' : ￥' + requestData.result.list.price_list.item[2 * i - 1].price + '</div>';
 						}

@@ -33,7 +33,7 @@ function dealDetail(expectStr, dataStr, redStr, blueStr) {
 		'		<div class="lottery-name">' +
 		'第 ' + expectStr + ' 期' +
 		'		</div>' +
-		'		<div class="font-w300-s16 padding-20-l float-left" style="padding-top: 2px;">' +
+		'		<div class="font-s16 padding-20-l float-left" style="padding-top: 2px;">' +
 		'开奖时间： ' + dataStr +
 		'		</div>' +
 		'	</div>' +

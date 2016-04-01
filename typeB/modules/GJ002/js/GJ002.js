@@ -116,7 +116,7 @@ function getDetailStr(codeStr, nameStr, expectStr, redNumStr, blueNumStr, idFlg)
 		'				<div class="lottery-name">' +
 		nameStr +
 		'				</div>' +
-		'				<div class="font-w300-s16 padding-20-l float-left" style="padding-top: 2px;">' +
+		'				<div class="font-s16 padding-20-l float-left" style="padding-top: 2px;">' +
 		'第 ' + expectStr + ' 期' +
 		'				</div>' +
 		'			</div>' +

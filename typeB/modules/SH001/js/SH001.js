@@ -12,7 +12,7 @@ var hisList = [];
  */
 function initializeSH001() {
 	//700075841153
-//				localStorage.removeItem('historySearch');
+	//				localStorage.removeItem('historySearch');
 	companyCode = 'jd';
 	companyName = '京东';
 	getHistory();
@@ -28,7 +28,7 @@ function initializeSH001() {
 	});
 	//查询按钮点击
 	clickButton.addEventListener('tap', function() {
-		console.log(companyName + '::' + companyCode);
+		//console.log(companyName + '::' + companyCode);
 		//未输入快递单号
 		if (codeInput.value == '') {
 			mui.toast('快递单号不能为空');
@@ -71,7 +71,7 @@ function initializeSH001() {
  * @param String expressName 物流公司名称
  */
 function getExpressInfo(expressCode, trackingNum, expressName) {
-//	mui.toast('正在获取快递信息...');
+	//	mui.toast('正在获取快递信息...');
 	addDisabled();
 	mui.ajax(serverAddr + 'tools/express', {
 		data: {
@@ -100,9 +100,9 @@ function getExpressInfo(expressCode, trackingNum, expressName) {
 				};
 				setHistory(hisInfo);
 				var contentStr = '';
-				contentStr += '<p class="font-w300-s16" style="margin-bottom: 3px;">查询结果</p>';
+				contentStr += '<p class="font-s16" style="margin-bottom: 3px;">查询结果</p>';
 				//基础信息：快递公司和快递单号
-				contentStr += '<div class="result-block"><p class="font-w300-s18 remove-margin-b padding-5 padding-10-l">';
+				contentStr += '<div class="result-block"><p class="font-s18 remove-margin-b padding-5 padding-10-l">';
 				contentStr += expressName + ' : ' + trackingNum + '</p>';
 				//快递详细信息
 				var liStr = '';
@@ -115,14 +115,14 @@ function getExpressInfo(expressCode, trackingNum, expressName) {
 					liStr += '<li><i class="mui-icon iconfont icon-express list-timeline-icon color-warning"></i>';
 				}
 				liStr += '<div class="list-timeline-content">';
-				liStr += '<p class="font-w300-s18 remove-margin-b">' + requestData.data[0].time + '</p>';
-				liStr += '<p class="font-w300-s18 remove-margin-b">' + requestData.data[0].context + '</p>';
+				liStr += '<p class="font-s18 remove-margin-b">' + requestData.data[0].time + '</p>';
+				liStr += '<p class="font-s18 remove-margin-b">' + requestData.data[0].context + '</p>';
 				liStr += '</div></li>';
 				for (var i = 1; i < requestData.data.length; i++) {
 					liStr += '<li><i class="mui-icon iconfont icon-express list-timeline-icon"></i>';
 					liStr += '<div class="list-timeline-content">';
-					liStr += '<p class="font-w300-s18 remove-margin-b">' + requestData.data[i].time + '</p>';
-					liStr += '<p class="font-w300-s18 remove-margin-b">' + requestData.data[i].context + '</p>';
+					liStr += '<p class="font-s18 remove-margin-b">' + requestData.data[i].time + '</p>';
+					liStr += '<p class="font-s18 remove-margin-b">' + requestData.data[i].context + '</p>';
 					liStr += '</div></li>';
 				}
 				liStr = '<ul class="list list-timeline">' + liStr + '</ul>';
@@ -162,14 +162,14 @@ function getHistory() {
 	var hisSearch = localStorage.getItem('historySearch');
 	var hisContentStr = '';
 	if (hisSearch == null) {
-		hisContentStr += '<p class="font-w300-s16" style="margin-bottom: 3px;">暂无历史查询记录...</p>';
+		hisContentStr += '<p class="font-s16" style="margin-bottom: 3px;">暂无历史查询记录...</p>';
 	} else {
-		hisContentStr += '<p class="font-w300-s16" style="margin-bottom: 3px;">历史查询记录</p>';
+		hisContentStr += '<p class="font-s16" style="margin-bottom: 3px;">历史查询记录</p>';
 		hisContentStr += '<div class="result-block">';
 		hisList = JSON.parse(hisSearch);
 		for (var i = 0; i < hisList.length; i++) {
-			hisContentStr += '<p class="font-w300-s16 remove-margin-b" id="record' + i + '">';
-			hisContentStr += hisList[i].dateTime + '<label class="font-w300-s16 padding-10-l style-underline">';
+			hisContentStr += '<p class="font-s16 remove-margin-b" id="record' + i + '">';
+			hisContentStr += hisList[i].dateTime + '<label class="font-s16 padding-10-l style-underline">';
 			hisContentStr += hisList[i].name + ' : ' + hisList[i].num + '</label>';
 			hisContentStr += '<input type="hidden" value="' + hisList[i].code + '" /></p>';
 		}

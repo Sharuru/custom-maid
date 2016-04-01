@@ -171,7 +171,7 @@ function dealResult(dataInfo, orderFlg, keyWord) {
 				'				<div class="start-circle float-left">' +
 				'					<span class="circle-text">始</span>' +
 				'				</div>' +
-				'				<div class="font-w300-s18 float-left padding-10-l">' +
+				'				<div class="font-s18 float-left padding-10-l">' +
 				dataInfo.result.list[curIndex].start +
 				'				</div>' +
 				'			</div>' +
@@ -179,7 +179,7 @@ function dealResult(dataInfo, orderFlg, keyWord) {
 				'				<div class="arrive-circle float-left">' +
 				'					<span class="circle-text">终</span>' +
 				'				</div>' +
-				'				<div class="font-w300-s18 float-left padding-10-l">' +
+				'				<div class="font-s18 float-left padding-10-l">' +
 				dataInfo.result.list[curIndex].arrive +
 				'				</div>' +
 				'			</div>' +
@@ -194,7 +194,7 @@ function dealResult(dataInfo, orderFlg, keyWord) {
 				endInner;
 		}
 	}
-	resultContent.innerHTML = '<p class="font-w500-s16" style="margin-bottom: 3px;">查询结果</p>' + returnInner;
+	resultContent.innerHTML = '<p class="font-s16" style="margin-bottom: 3px;">查询结果</p>' + returnInner;
 	resultContent.style.border = '#DDDDDD solid 1px';
 	document.getElementById('fixedLayer').style.display = 'block';
 }
