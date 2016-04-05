@@ -14,19 +14,22 @@ var currentIndex = 0;
  */
 function initializeGJ003() {
 	refreshFunc();
-	//	mui('.search-block').on('tap', '#iconButton', function() {
-	//		console.log('1');
-	//		checkStockCode(codeInput.value);
-	//	});
-	//	mui('.stock-list').on('tap', '.mui-row', function() {
-	//		getDetail(this.id);
-	//	});
+	mui('.search-block').on('tap', '#iconButton', function() {
+		checkStockCode(codeInput.value);
+	});
+	mui('.stock-list').on('tap', '.mui-row', function() {
+		getStockInfo(this.id, 2);
+	});
+	mui('.topButton').on('tap', '.icon-refresh', function() {
+		mui.toast('正在刷新...');
+		refreshFunc();
+	});
 }
 
 function refreshFunc() {
 	initBlock(askStockBlock);
 	initList(initStockCode);
-//	setTimeout('refreshFunc()', loadTime * 1000);
+	setTimeout('refreshFunc()', loadTime * 1000);
 }
 
 function initBlock(callback) {
@@ -49,27 +52,28 @@ function initList(callback) {
 	codeList = [];
 	currentIndex = 0;
 	listContent.innerHTML = '';
-	listContent.innerHTML =
-		'<div class="mui-row border-b font-w300-s16" style="color: #007AFF;">' +
-		'	<div class="mui-col-xs-4 padding-20-l">证券代码</div>' +
-		'	<div class="mui-col-xs-3 align-center">现价</div>' +
-		'	<div class="mui-col-xs-3 align-center">涨跌</div>' +
-		'	<div class="mui-col-xs-2 align-center">涨幅</div>' +
-		'</div>';
 	callback(askStockInfo);
 }
 
 function initStockCode(callback) {
 	var allCode = localStorage.getItem('stockCode');
-	if (allCode == null && allCode == '[]') {
+	if (allCode == null || allCode == '[]') {
 		return;
 	}
 	codeList = JSON.parse(allCode);
+	document.getElementById('stockListTitle').style.display = 'block';
+	listContent.innerHTML =
+		'<div class="mui-row border-b font-s16" style="color: #007AFF;">' +
+		'	<div class="mui-col-xs-4 padding-20-l">证券代码</div>' +
+		'	<div class="mui-col-xs-3 align-center">现价</div>' +
+		'	<div class="mui-col-xs-3 align-center">涨跌</div>' +
+		'	<div class="mui-col-xs-2 align-center">涨幅</div>' +
+		'</div>';
 	callback();
 }
 
 function askStockInfo() {
-	if (currentIndex >= codeList.length) {
+	if (codeList.length == 0 || currentIndex >= codeList.length) {
 		return;
 	}
 	getStockInfo(codeList[currentIndex], 1);
@@ -99,7 +103,8 @@ function getStockInfo(codeStr, funcFlg) {
 				} else if (funcFlg == 1) {
 					initStockList(requestData);
 				} else {
-
+					var hasFlg = checkStockFlg(codeStr);
+					goDetail(requestData.result[0].data.name, codeStr, hasFlg);
 				}
 			}
 		},
@@ -118,7 +123,7 @@ function initStockBlock(resultStr) {
 	//成交量除数
 	var numDivi = 10000;
 	//成交额除数
-	var amountDivi = 10000;
+	var numFlg = 10000;
 	var codeNumStr = resultData.data.gid;
 	if (codeNumStr.match('sz')) {
 		numDivi = numDivi * 100;
@@ -134,7 +139,7 @@ function initStockBlock(resultStr) {
 	var traNumStr = '';
 	if (traNum == 0) {
 		traNumStr = traNum;
-	} else if (traNum < numDivi) {
+	} else if (traNum < numFlg) {
 		traNumStr = traNum + '万';
 	} else {
 		traNumStr = parseFloat(traNum / numDivi).toFixed(2) + '亿';
@@ -142,12 +147,12 @@ function initStockBlock(resultStr) {
 	//计算成交额
 	var traAmount = parseFloat(resultData.data.traAmount);
 	var traAmountStr = '';
-	if (traAmount >= 0 && traAmount < amountDivi) {
+	if (traAmount >= 0 && traAmount < numFlg) {
 		traAmountStr = traAmount;
-	} else if (traAmount >= amountDivi && traAmount < amountDivi * amountDivi) {
-		traAmountStr = parseFloat(traAmount / amountDivi).toFixed(2) + '万';
+	} else if (traAmount >= numFlg && traAmount < numFlg * numFlg) {
+		traAmountStr = parseFloat(traAmount / numFlg).toFixed(2) + '万';
 	} else {
-		traAmountStr = parseFloat(traAmount / (amountDivi * amountDivi)).toFixed(2) + '亿';
+		traAmountStr = parseFloat(traAmount / (numFlg * numFlg)).toFixed(2) + '亿';
 	}
 	var contentStr = '';
 	contentStr +=
@@ -162,15 +167,15 @@ function initStockBlock(resultStr) {
 		'	</div>';
 	if (sumData > 0) {
 		contentStr +=
-			'<div class="mui-row color-red" style="margin-bottom: 3px;">' +
-			'	<span class="mui-icon iconfont icon-up" style="font-size: 20px;"></span>';
+			'<div class="mui-row color-danger" style="margin-bottom: 3px;">' +
+			'	<span class="mui-icon iconfont icon-up" style="font-size: 18px;"></span>';
 	} else if (sumData < 0) {
 		contentStr +=
-			'<div class="mui-row color-green" style="margin-bottom: 3px;">' +
-			'	<span class="mui-icon iconfont icon-down" style="font-size: 20px;"></span>';
+			'<div class="mui-row color-success" style="margin-bottom: 3px;">' +
+			'	<span class="mui-icon iconfont icon-down" style="font-size: 18px;"></span>';
 	} else {
 		contentStr +=
-			'<div class="mui-row" style="margin-bottom: 3px;">';
+			'<div class="mui-row color-white" style="margin-bottom: 3px;">';
 	}
 	contentStr +=
 		'		<label class="slider-now-price">' +
@@ -190,12 +195,12 @@ function initStockBlock(resultStr) {
 		'					<td>今开:</td>';
 	if (startPrice > basePrice) {
 		contentStr +=
-			'				<td class="align-right color-red">' +
+			'				<td class="align-right color-danger">' +
 			startPrice +
 			'				</td>';
 	} else if (startPrice < basePrice) {
 		contentStr +=
-			'				<td class="align-right color-green">' +
+			'				<td class="align-right color-success">' +
 			startPrice +
 			'				</td>';
 	} else {
@@ -210,12 +215,12 @@ function initStockBlock(resultStr) {
 		'					<td>最高:</td>';
 	if (maxPrice > basePrice) {
 		contentStr +=
-			'				<td class="align-right color-red">' +
+			'				<td class="align-right color-danger">' +
 			maxPrice +
 			'				</td>';
 	} else if (maxPrice < basePrice) {
 		contentStr +=
-			'				<td class="align-right color-green">' +
+			'				<td class="align-right color-success">' +
 			maxPrice +
 			'				</td>';
 	} else {
@@ -246,12 +251,12 @@ function initStockBlock(resultStr) {
 		'					<td>最低:</td>';
 	if (minPrice > basePrice) {
 		contentStr +=
-			'				<td class="align-right color-red">' +
+			'				<td class="align-right color-danger">' +
 			minPrice +
 			'				</td>';
 	} else if (minPrice < basePrice) {
 		contentStr +=
-			'				<td class="align-right color-green">' +
+			'				<td class="align-right color-success">' +
 			minPrice +
 			'				</td>';
 	} else {
@@ -278,6 +283,7 @@ function initStockBlock(resultStr) {
 }
 
 function initStockList(resultStr) {
+	console.log('stockList');
 	var resultData = resultStr.result[0];
 	var codeNum = resultData.data.gid;
 	codeNum = codeNum.substring(2, codeNum.length);
@@ -286,33 +292,33 @@ function initStockList(resultStr) {
 	contentStr +=
 		'<div class="mui-row border-b" id="' + resultData.data.gid + '">' +
 		'	<div class="mui-col-xs-4 padding-20-l">' +
-		'		<p class="font-w300-s18 remove-margin-b color-white">' +
+		'		<p class="font-s18 remove-margin-b color-white">' +
 		resultData.dapandata.name +
 		'		</p>' +
-		'		<p class="font-w300-s16 remove-margin-b color-white">' +
+		'		<p class="font-s16 remove-margin-b color-white">' +
 		codeNum +
 		'		</p>' +
 		'	</div>';
 	if (sumData > 0) {
 		contentStr +=
-			'<div class="mui-col-xs-3 align-center info-style color-red">' +
+			'<div class="mui-col-xs-3 align-center info-style color-danger">' +
 			parseFloat(resultData.dapandata.dot).toFixed(2) +
 			'</div>' +
-			'<div class="mui-col-xs-3 align-center info-style color-red">' +
+			'<div class="mui-col-xs-3 align-center info-style color-danger">' +
 			sumData +
 			'</div>' +
-			'<div class="mui-col-xs-2 align-center info-style color-red">' +
+			'<div class="mui-col-xs-2 align-center info-style color-danger">' +
 			parseFloat(resultData.dapandata.rate).toFixed(2) + '%' +
 			'</div>';
 	} else if (sumData < 0) {
 		contentStr +=
-			'<div class="mui-col-xs-3 align-center info-style color-green">' +
+			'<div class="mui-col-xs-3 align-center info-style color-success">' +
 			parseFloat(resultData.dapandata.dot).toFixed(2) +
 			'</div>' +
-			'<div class="mui-col-xs-3 align-center info-style color-green">' +
+			'<div class="mui-col-xs-3 align-center info-style color-success">' +
 			sumData +
 			'</div>' +
-			'<div class="mui-col-xs-2 align-center info-style color-green">' +
+			'<div class="mui-col-xs-2 align-center info-style color-success">' +
 			parseFloat(resultData.dapandata.rate).toFixed(2) + '%' +
 			'</div>';
 	} else {
@@ -356,41 +362,10 @@ function checkStockCode(checkStr) {
 		mui.toast("请输入沪深证券代码");
 		return;
 	}
-	getDetail(codeNumStr);
+	getStockInfo(codeNumStr, 2);
 }
 
-function getDetail(codeStr) {
-	addDisabled();
-	mui.ajax(serverAddr + 'tools/stock', {
-		data: {
-			code: codeStr
-		},
-		dataType: 'json',
-		type: 'get',
-		timeout: 10000,
-		success: function(requestData) {
-			console.log(JSON.stringify(requestData));
-			if (requestData.error_code != 0) {
-				mui.toast('证券代码不存在');
-			} else {
-				mui.toast('正在跳转...');
-				var codeId = requestData.result[0].data.gid;
-				codeId = codeId.substring(2, codeId.length);
-				goDetail(requestData.result[0].data.name, codeId, requestData);
-				cancelDisabled();
-			}
-		},
-		error: function(xhr, type, errorThrown) {
-			//异常处理
-			console.log(type);
-			mui.alert('远程服务器连接失败', '无法获得证券信息', '重试', function() {
-				goDetail(codeStr);
-			});
-		}
-	});
-}
-
-function goDetail(nameStr, codeStr, dataStr) {
+function goDetail(nameStr, codeStr, flgStr) {
 	console.log('Setting screen...');
 	//有数据，画面迁移
 	mui.openWindow({
@@ -403,12 +378,27 @@ function goDetail(nameStr, codeStr, dataStr) {
 		extras: {
 			stockName: nameStr,
 			stockNum: codeStr,
-			stockData: dataStr
+			stockFlg: flgStr
 		},
 		waiting: {
 			autoShow: false
 		}
 	});
+}
+
+function checkStockFlg(codeStr) {
+	var returnNum = 0;
+	var allCode = localStorage.getItem('stockCode');
+	if (allCode == null || allCode == '[]') {
+		return returnNum;
+	}
+	codeList = JSON.parse(allCode);
+	for (var i = 0; i < codeList.length; i++) {
+		if (codeStr == codeList[i]) {
+			returnNum = 1;
+		}
+	}
+	return returnNum;
 }
 
 function addDisabled() {

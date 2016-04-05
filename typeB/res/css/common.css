@@ -65,7 +65,7 @@ footer {
 	margin: 0 0 5px;
 	padding: 5px 0 12px;
 	background: rgba(255, 255, 255, .9);
-	border-radius: 6px;
+	border-radius: 5px;
 	border: rgba(0, 0, 0, .1) solid 1px;
 	height: auto;
 }
@@ -84,7 +84,7 @@ footer {
 
 .resultInfo {
 	padding: 5px 5px 0;
-	border-radius: 6px;
+	border-radius: 5px;
 	/*border: #DDDDDD solid 1px;*/
 }
 

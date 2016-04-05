@@ -14,13 +14,6 @@ var resultContent = mui('.resultInfo')[0];
  * CX002 画面初始化
  */
 function initializeCX002() {
-	//console.log("In CX002");
-	//根据当前cityid嵌入对应功能页面
-	//currView = plus.webview.currentWebview();
-	//var content = plus.webview.create(localStorage.getItem('cityId') + '.html', 'PAGE_METRO', {
-	//top: '399px'
-	//});
-	//currView.append(content);
 	initFromLine = '01';
 	initFromStation = '0111';
 	initToLine = '02';
@@ -224,7 +217,7 @@ function dealPassedStation(passStationStr, changeStationStr, passDurationStr, li
 				'<li>' +
 				'	<div class="list-timeline-content">' +
 				'		<p class="font-s16">' +
-				innerHtmlStr += passStataionArr[i] +
+				passStataionArr[i] +
 				'		</p>' +
 				'	</div>' +
 				'</li>';

@@ -330,7 +330,7 @@ a:active {
 .mui-error {
 	margin: 88px 35px;
 	padding: 10px;
-	border-radius: 6px;
+	border-radius: 5px;
 	background-color: #bbb;
 }
 .mui-subtitle {
@@ -1354,7 +1354,7 @@ input[type='submit'].mui-active:enabled,
 	overflow: hidden;
 	margin: 0 15px;
 	border: 1px solid #ddd;
-	border-radius: 6px;
+	border-radius: 5px;
 	background-color: white;
 	background-clip: padding-box;
 }
@@ -1373,7 +1373,7 @@ input[type='submit'].mui-active:enabled,
 	margin-bottom: 0;
 	border-top: 0;
 	border-bottom: 0;
-	border-radius: 6px;
+	border-radius: 5px;
 }
 .mui-card .mui-table-view .mui-table-view-divider:first-child,
 .mui-card .mui-table-view .mui-table-view-cell:first-child {
@@ -2005,7 +2005,7 @@ input[type='search'] {
 	height: 34px;
 	text-align: center;
 	border: 0;
-	border-radius: 6px;
+	border-radius: 5px;
 	background-color: rgba(0, 0, 0, .1);
 }
 input[type='search']:focus {
@@ -2336,7 +2336,7 @@ select:focus {
 	opacity: .8;
 	color: #333;
 	border: 1px solid #ddd;
-	border-radius: 6px;
+	border-radius: 5px;
 	background-color: #fff;
 	text-shadow: 0 1px 0 #f3f3f3;
 }
@@ -2360,7 +2360,7 @@ select:focus {
 	text-align: center;
 	color: #999;
 	border: 0;
-	border-radius: 6px;
+	border-radius: 5px;
 	background: none;
 }
 .mui-search .mui-placeholder .mui-icon {
@@ -2704,7 +2704,7 @@ select:focus {
 	display: inline-block;
 	margin: 0 auto;
 	padding-left: 0;
-	border-radius: 6px;
+	border-radius: 5px;
 }
 .mui-pagination > li {
 	display: inline;
@@ -2788,7 +2788,7 @@ select:focus {
 	display: inline-block;
 	padding: 5px 14px;
 	border: 1px solid #ddd;
-	border-radius: 6px;
+	border-radius: 5px;
 	background-color: #fff;
 	background-clip: padding-box;
 }

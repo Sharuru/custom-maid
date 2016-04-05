@@ -29,5 +29,6 @@
 .icon-search:before { content: "\e60e"; }
 .icon-delete:before { content: "\e610"; }
 .icon-add:before { content: "\e611"; }
-.icon-up:before { content: "\e612"; }
-.icon-down:before { content: "\e613"; }
+.icon-up:before { content: "\e615"; }
+.icon-down:before { content: "\e614"; }
+.icon-refresh:before { content: "\e613"; }

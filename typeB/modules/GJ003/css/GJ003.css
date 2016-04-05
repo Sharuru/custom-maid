@@ -51,6 +51,12 @@ input[type='search'] {
 	margin-bottom: 0 !important;
 }
 
+.buttonIcon {
+	height: 28px !important;
+	line-height: 28px !important;
+	font-size: 18px !important;
+}
+
 
 /* new class */
 
@@ -93,11 +99,15 @@ input[type='search'] {
 
 .stock-list {
 	margin: 0 5px 0;
-	border-radius: 6px;
+	border-radius: 5px;
 	background: rgba(128, 128, 128, .6);
 	height: auto;
 	color: white;
 	font-size: 18px;
+}
+
+.stock-list .mui-row {
+	padding: 2px 0 1px;
 }
 
 .info-style {
@@ -105,10 +115,12 @@ input[type='search'] {
 	font-size: 18px;
 }
 
-.color-red {
-	color: red;
-}
-
-.color-green {
-	color: green;
+.stock-base {
+	margin: 8px 5px 0;
+	padding: 5px 20px 3px;
+	border-radius: 5px;
+	background: rgba(128, 128, 128, .7);
+	height: auto;
+	color: white;
+	font-size: 18px;
 }

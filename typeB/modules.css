@@ -10,7 +10,7 @@
 	padding: 10px 15px 0;
 	height: auto;
 	color: black;
-	border-radius: 6px;
+	border-radius: 5px;
 	background: rgba(255, 255, 255, .7);
 	border: rgba(0, 0, 0, .1) solid 1px;
 }
@@ -41,7 +41,7 @@
 .today-weather-data {
 	float: right;
 	display: inline;
-	width: 55%;
+	width: 50%;
 	padding-right: 5px;
 	text-align: right;
 }
@@ -100,7 +100,7 @@
 
 /*.module-item {
 	margin: 20px 10px;
-	border-radius: 6px;
+	border-radius: 5px;
 	background: rgba(255, 255, 255, .9);
 	height: auto;
 }*/

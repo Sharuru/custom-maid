@@ -44,10 +44,10 @@ function setIndexInfo() {
 			var contentStr = '';
 			//设置今日日期信息
 			var dateStr = setDateTimeHeader();
-			contentStr += '<div class="font-w300-s18">' + dateStr + '</div>';
+			contentStr += '<div class="font-s18">' + dateStr + '</div>';
 			//设置今日天气信息
 			contentStr += '<div class="weather-info"><div class="today-weather"><div class="today-weather-pic">';
-			contentStr += '<img src="' + localStorage.getItem(data.retData.today.type) + '" width="50" />';
+			contentStr += '<img src="' + getWeatherSrc(data.retData.today.type) + '" width="58" />';
 			contentStr += '</div><div class="today-weather-data">';
 			contentStr += '<p class="today-current-temp">' + data.retData.today.curTemp + '</p>';
 			contentStr += '<p class="today-base-info">' + data.retData.today.lowtemp + '~' + data.retData.today.hightemp + '</p>';
@@ -57,19 +57,19 @@ function setIndexInfo() {
 			contentStr += '<div class="other-weather"><div class="other-weather-block">';
 			contentStr += '<p class="other-info padding-5">' + data.retData.forecast[2].week + '</p>';
 			contentStr += '<div class="other-weather-pic">';
-			contentStr += '<img src="' + localStorage.getItem(data.retData.forecast[2].type) + '" width="25" /></div>';
+			contentStr += '<img src="' + getWeatherSrc(data.retData.forecast[2].type) + '" width="26" /></div>';
 			contentStr += '<p class="other-info">' + data.retData.forecast[2].lowtemp + '~' + data.retData.forecast[2].hightemp;
 			//+2
 			contentStr += '</p></div><div class="other-weather-block">';
 			contentStr += '<p class="other-info padding-5">' + data.retData.forecast[1].week + '</p>';
 			contentStr += '<div class="other-weather-pic">';
-			contentStr += '<img src="' + localStorage.getItem(data.retData.forecast[1].type) + '" width="25" /></div>';
+			contentStr += '<img src="' + getWeatherSrc(data.retData.forecast[1].type) + '" width="26" /></div>';
 			contentStr += '<p class="other-info">' + data.retData.forecast[1].lowtemp + '~' + data.retData.forecast[1].hightemp;
 			//+3
 			contentStr += '</p></div><div class="other-weather-block">';
 			contentStr += '<p class="other-info padding-5">' + data.retData.forecast[0].week + '</p>';
 			contentStr += '<div class="other-weather-pic">';
-			contentStr += '<img src="' + localStorage.getItem(data.retData.forecast[0].type) + '" width="25" /></div>';
+			contentStr += '<img src="' + getWeatherSrc(data.retData.forecast[0].type) + '" width="26" /></div>';
 			contentStr += '<p class="other-info">' + data.retData.forecast[0].lowtemp + '~' + data.retData.forecast[0].hightemp;
 			contentStr += '</p></div></div></div>';
 			//设置更新时间
@@ -111,4 +111,21 @@ function setDateTimeHeader() {
 	//拼接星期
 	dateString += ' 星期' + '天一二三四五六'.charAt(d.getDay());
 	return dateString;
+}
+
+function getWeatherSrc(typeStr) {
+	var returnSrc = 'res/images/icons/weather/unknown.png';
+	var kindList = [];
+	var allKind = localStorage.getItem('allKindWeather');
+	if (allKind == null || allKind == '[]') {
+		mui.toast('天气配置出错');
+		return returnSrc;
+	}
+	kindList = JSON.parse(allKind);
+	for (var i = 0; i < kindList.length; i++) {
+		if (kindList[i].weatherType == typeStr) {
+			returnSrc = kindList[i].weatherSrc;
+		}
+	}
+	return returnSrc;
 }
