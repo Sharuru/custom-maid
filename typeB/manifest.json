@@ -503,7 +503,31 @@
 					"res/js/common.js",
 					"res/css/common.css",
 					"modules/HJ003/js/HJ003.js",
-					"modules/HJ003/css/HJ003.css"
+					"modules/HJ003/css/HJ003.css",
+					"res/fonts/iconfont.ttf",
+					"res/images/icons/weather/heavy-storm.png",
+					"res/css/mui.css",
+					"res/images/icons/weather/light-rain.png",
+					"res/images/icons/weather/cloudy.png",
+					"res/images/icons/weather/sunny.png",
+					"res/images/icons/weather/overcast.png",
+					"res/images/icons/weather/shower.png"
+				],
+				"refer": [
+					"modules/HJ003/CITY_DETAIL.html"
+				],
+				"priority": 0
+			},
+			"modules/HJ003/CITY_DETAIL.html": {
+				"resources": [
+					"res/css/mui.indexedlist.css",
+					"res/css/mui.min.css",
+					"res/fonts/mui.ttf",
+					"res/css/common.css",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"modules/HJ003/css/CITY_DETAIL.css",
+					"modules/HJ003/js/CITY_DETAIL.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -513,7 +537,6 @@
 			"resources": [
 				"res/images/modules/GJ001/CHF.png",
 				"res/images/modules/GJ001/HKD.png",
-				"res/css/mui.css",
 				"res/images/modules/GJ001/RUB.png",
 				"res/images/modules/GJ001/THB.png",
 				"res/images/modules/GJ001/DKK.png",

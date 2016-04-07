@@ -105,9 +105,9 @@ function setDateTimeHeader() {
 	//拼接年
 	var dateString = d.getFullYear() + '.';
 	//拼接月
-	dateString += d.getMonth() + 1 + '.';
+	dateString += d.getMonth() + 1;
 	//拼接日
-	dateString += d.getDate();
+	dateString += '.' + d.getDate();
 	//拼接星期
 	dateString += ' 星期' + '天一二三四五六'.charAt(d.getDay());
 	return dateString;

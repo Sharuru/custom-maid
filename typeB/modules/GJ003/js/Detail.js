@@ -4,6 +4,9 @@ var loadTime = 60;
 var codeList = [];
 var isFlg = false;
 
+/**
+ * Detail 页面初始化
+ */
 function initDetail() {
 	var self = plus.webview.currentWebview();
 	document.getElementById('stockName').innerHTML = self.stockName +
@@ -15,6 +18,7 @@ function initDetail() {
 		document.getElementById('hasFlg').innerHTML = '<span class="mui-icon iconfont icon-delete" style="font-size: 18px;padding-top: 13px;"> 自选</span>';
 	}
 	getDetail(self.stockNum);
+	//添加或取消自选操作
 	mui('.header-text').on('tap', '#hasFlg', function() {
 		if (isFlg) {
 			deleteStock(self.stockNum);
@@ -25,6 +29,11 @@ function initDetail() {
 	});
 }
 
+/**
+ * 获取证券信息
+ * 
+ * @param String codeStr 证券代码
+ */
 function getDetail(codeStr) {
 	resultContent.innerHTML = '';
 	mui.ajax(serverAddr + 'tools/stock', {
@@ -39,6 +48,7 @@ function getDetail(codeStr) {
 			if (requestData.error_code != 0) {
 				mui.toast('出现未知错误');
 			} else {
+				//处理结果显示
 				dealInfo(requestData);
 			}
 		},
@@ -50,11 +60,17 @@ function getDetail(codeStr) {
 			});
 		}
 	});
+	//定时刷新
 	setTimeout(function() {
 		getDetail(codeStr);
 	}, loadTime * 1000);
 }
 
+/**
+ * 处理数据显示
+ * 
+ * @param JSON objEle 结果集
+ */
 function dealInfo(objEle) {
 	//	console.log(objEle.stockData);
 	var resultData = objEle.result[0];
@@ -300,6 +316,12 @@ function dealInfo(objEle) {
 	resultContent.innerHTML = contentStr;
 }
 
+/**
+ * 判断颜色
+ * 
+ * @param float priceNum
+ * @param float baseNum
+ */
 function checkColor(priceNum, baseNum) {
 	var returnStr = '';
 	if (priceNum > baseNum) {
@@ -312,6 +334,11 @@ function checkColor(priceNum, baseNum) {
 	return returnStr;
 }
 
+/**
+ * 添加自选
+ * 
+ * @param String codeStr
+ */
 function addStock(codeStr) {
 	var allCode = localStorage.getItem('stockCode');
 	if (allCode != null && allCode != '[]') {
@@ -323,6 +350,11 @@ function addStock(codeStr) {
 	mui.toast('添加自选');
 }
 
+/**
+ * 删除自选
+ * 
+ * @param String codeStr
+ */
 function deleteStock(codeStr) {
 	var allCode = localStorage.getItem('stockCode');
 	if (allCode != null && allCode != '[]') {

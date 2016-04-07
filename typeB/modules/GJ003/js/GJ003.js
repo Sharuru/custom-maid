@@ -26,12 +26,20 @@ function initializeGJ003() {
 	});
 }
 
+/**
+ * 定时刷新
+ */
 function refreshFunc() {
 	initBlock(askStockBlock);
 	initList(initStockCode);
 	setTimeout('refreshFunc()', loadTime * 1000);
 }
 
+/**
+ * 大盘指数初始化
+ * 
+ * @param {Object} callback
+ */
 function initBlock(callback) {
 	blockIndex = 0;
 	for (var i = 0; i < mui('.mui-slider-item').length; i++) {
@@ -40,6 +48,9 @@ function initBlock(callback) {
 	callback();
 }
 
+/**
+ * 发送请求查询大盘信息
+ */
 function askStockBlock() {
 	var stockBlockCode = blockCode.split(',');
 	if (blockIndex >= stockBlockCode.length) {
@@ -48,6 +59,11 @@ function askStockBlock() {
 	getStockInfo(stockBlockCode[blockIndex], 0);
 }
 
+/**
+ * 自选股列表初始化
+ * 
+ * @param {Object} callback
+ */
 function initList(callback) {
 	codeList = [];
 	currentIndex = 0;
@@ -55,6 +71,11 @@ function initList(callback) {
 	callback(askStockInfo);
 }
 
+/**
+ * 自选股代码集合初始化
+ * 
+ * @param {Object} callback
+ */
 function initStockCode(callback) {
 	var allCode = localStorage.getItem('stockCode');
 	if (allCode == null || allCode == '[]') {
@@ -72,6 +93,9 @@ function initStockCode(callback) {
 	callback();
 }
 
+/**
+ * 发送请求查询自选股信息
+ */
 function askStockInfo() {
 	if (codeList.length == 0 || currentIndex >= codeList.length) {
 		return;
@@ -118,6 +142,11 @@ function getStockInfo(codeStr, funcFlg) {
 	});
 }
 
+/**
+ * 处理大盘数据显示
+ * 
+ * @param JSON resultStr 结果集
+ */
 function initStockBlock(resultStr) {
 	var resultData = resultStr.result[0];
 	//成交量除数
@@ -282,6 +311,11 @@ function initStockBlock(resultStr) {
 	askStockBlock();
 }
 
+/**
+ * 处理自选股数据显示
+ * 
+ * @param JSON resultStr 结果集
+ */
 function initStockList(resultStr) {
 	console.log('stockList');
 	var resultData = resultStr.result[0];
@@ -340,6 +374,11 @@ function initStockList(resultStr) {
 	askStockInfo();
 }
 
+/**
+ * 处理证券代码输入
+ * 
+ * @param String checkStr 输入值
+ */
 function checkStockCode(checkStr) {
 	var stockCodeStr = '';
 	if (!/^\d{6}$/g.test(checkStr)) {
@@ -365,6 +404,13 @@ function checkStockCode(checkStr) {
 	getStockInfo(codeNumStr, 2);
 }
 
+/**
+ * 跳转证券详情页面
+ * 
+ * @param String nameStr 证券名称
+ * @param String codeStr 证券代码
+ * @param int flgStr 自选标志符
+ */
 function goDetail(nameStr, codeStr, flgStr) {
 	console.log('Setting screen...');
 	//有数据，画面迁移
@@ -386,6 +432,11 @@ function goDetail(nameStr, codeStr, flgStr) {
 	});
 }
 
+/**
+ * 判断证券是否自选
+ * 
+ * @param String codeStr 证券代码
+ */
 function checkStockFlg(codeStr) {
 	var returnNum = 0;
 	var allCode = localStorage.getItem('stockCode');
@@ -401,12 +452,18 @@ function checkStockFlg(codeStr) {
 	return returnNum;
 }
 
+/**
+ * 禁用用户操作
+ */
 function addDisabled() {
 	codeInput.disabled = 'disabled';
 	searchButton.style.color = '#AAAAAA';
 	mui('.search-block').off('tap', '#iconButton');
 }
 
+/**
+ * 解除禁用用户操作
+ */
 function cancelDisabled() {
 	codeInput.disabled = '';
 	searchButton.style.color = '#555555';

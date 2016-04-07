@@ -62,7 +62,7 @@
 .other-weather {
 	float: left;
 	display: inline;
-	padding: 15px 0;
+	padding: 20px 0 15px;
 	height: 85px;
 	width: 60%;
 }
@@ -80,7 +80,7 @@
 }
 
 .other-info {
-	margin-top: -2px !important;
+	margin-top: -7px !important;
 	margin-bottom: -2px !important;
 	padding-bottom: 0 !important;
 	color: white;

@@ -1,3 +1,6 @@
+/**
+ * Detail 页面初始化
+ */
 function initDetail() {
 	mui('.resultInfo')[0].innerHTML = '';
 	var self = plus.webview.currentWebview();
@@ -5,6 +8,11 @@ function initDetail() {
 	dealList(self);
 }
 
+/**
+ * 显示数据处理
+ * 
+ * @param JSON objEle 数据集
+ */
 function dealList(objEle) {
 	//	console.log(objEle.lotData);
 	for (var i = 0; i < objEle.lotData.length; i++) {
@@ -25,6 +33,14 @@ function dealList(objEle) {
 	}
 }
 
+/**
+ * 开奖结果显示
+ * 
+ * @param String expectStr 期数
+ * @param String dataStr 开奖时间
+ * @param String redStr 红球
+ * @param String blueStr 蓝球
+ */
 function dealDetail(expectStr, dataStr, redStr, blueStr) {
 	var contentStr = '';
 	contentStr +=

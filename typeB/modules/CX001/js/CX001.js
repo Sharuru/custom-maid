@@ -192,7 +192,7 @@ function cancelDisabledCity() {
 		//按钮动效现时完毕后再切换页面
 		setTimeout(function() {
 			mui.openWindow({
-				url: '../CityList/CITY_LIST.html',
+				url: 'CITY_LIST.html',
 				id: 'PAGE_CITY_LIST',
 				show: {
 					aniShow: 'pop-in',
