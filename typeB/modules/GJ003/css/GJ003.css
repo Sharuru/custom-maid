@@ -14,9 +14,9 @@ input[type='search'] {
 
 .mui-search .mui-placeholder {
 	padding-left: 15px !important;
-	top: 1px !important;
+	top: 3px !important;
 	font-size: 18px !important;
-	line-height: 32px !important;
+	line-height: normal !important;
 	height: 32px !important;
 	text-align: left !important;
 }

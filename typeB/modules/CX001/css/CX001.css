@@ -4,21 +4,38 @@
 	bottom: 3px !important;
 }
 
-input[type='text'] {
+input[type='search'] {
 	margin-bottom: 0 !important;
-	width: 80%;
-	padding: 5px 30px 0 25px !important;
-	line-height: 18px !important;
+	padding: 5px 19px 0 15px !important;
+	width: 98%;
 	height: auto !important;
+	text-align: left !important;
 	font-size: 18px !important;
 	border: 0 !important;
 	border-bottom: solid #DDDDDD 1px !important;
 	background: none !important;
 }
 
+.mui-search .mui-placeholder {
+	padding-left: 15px !important;
+	top: 2px !important;
+	font-size: 18px !important;
+	line-height: normal !important;
+	height: auto !important;
+	text-align: left !important;
+}
+
+.mui-search .mui-placeholder .mui-icon {
+	display: none !important;
+}
+
+.mui-search:before {
+	content: '' !important;
+}
+
 .mui-input-row .mui-input-clear ~ .mui-icon-clear {
-	top: 3px !important;
-	right: 30px !important;
+	top: 5px !important;
+	right: 0 !important;
 }
 
 
@@ -30,29 +47,29 @@ input[type='text'] {
 }
 
 .start-circle {
-	width: 23px;
-	height: 23px;
+	width: 21px;
+	height: 21px;
 	background-color: dodgerblue;
 	border-radius: 50%;
 }
 
 .pass-circle {
-	width: 23px;
-	height: 23px;
+	width: 21px;
+	height: 21px;
 	background-color: lightsalmon;
 	border-radius: 50%;
 }
 
 .arrive-circle {
-	width: 23px;
-	height: 23px;
+	width: 21px;
+	height: 21px;
 	background-color: lightseagreen;
 	border-radius: 50%;
 }
 
 .circle-text {
-	height: 23px;
-	line-height: 23px;
+	height: 21px;
+	line-height: normal;
 	font-size: 14px;
 	display: block;
 	color: #FFF;

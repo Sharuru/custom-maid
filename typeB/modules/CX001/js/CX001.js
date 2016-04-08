@@ -138,8 +138,13 @@ function findByCity(startPosition, endPosition) {
 					contentStr += '<label class="font-s18 padding-10-l">';
 					contentStr += requestData.result.list[i].train_type + '</label></p></div>';
 					contentStr += '<div class="mui-row padding-5-t" style="line-height: 24px;">';
-					contentStr += '<div class="mui-col-xs-8 padding-20-l"><div class="start-circle float-left">';
-					contentStr += '<span class="circle-text">' + requestData.result.list[i].start_station_type;
+					contentStr += '<div class="mui-col-xs-8 padding-20-l">';
+					if (requestData.result.list[i].start_station_type == '始') {
+						contentStr += '<div class="start-circle float-left"><span class="circle-text">始';
+					} else {
+						contentStr += '<div class="pass-circle float-left"><span class="circle-text">';
+						contentStr += requestData.result.list[i].start_station_type;
+					}
 					contentStr += '</span></div><div class="font-s18 float-left padding-10-l">';
 					contentStr += requestData.result.list[i].start_station;
 					contentStr += '<label class="font-s16 padding-10-l">(' + startTime + ')</label></div></div>';

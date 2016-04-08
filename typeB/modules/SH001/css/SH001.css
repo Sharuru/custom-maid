@@ -1,21 +1,39 @@
 /* MUI class */
 
-input[type='text'] {
+.mui-input-row .mui-input-clear ~ .mui-icon-clear {
+	top: 0 !important;
+	right: -2px !important;
+}
+
+input[type='search'] {
 	margin-bottom: 0 !important;
-	width: 98%;
 	padding: 0 25px 0 9px !important;
-	line-height: 18px !important;
+	width: 98%;
 	height: auto !important;
+	text-align: left !important;
 	font-size: 18px !important;
 	border: 0 !important;
 	border-bottom: solid #DDDDDD 1px !important;
 	background: none !important;
 }
 
-.mui-input-row .mui-input-clear ~ .mui-icon-clear {
-	top: 0 !important;
-	right: -2px !important;
+.mui-search .mui-placeholder {
+	padding-left: 9px !important;
+	top: -2px !important;
+	font-size: 18px !important;
+	line-height: normal !important;
+	height: auto !important;
+	text-align: left !important;
 }
+
+.mui-search .mui-placeholder .mui-icon {
+	display: none !important;
+}
+
+.mui-search:before {
+	content: '' !important;
+}
+
 
 /* common class */
 .search-block{
