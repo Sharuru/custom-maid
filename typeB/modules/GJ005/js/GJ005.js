@@ -61,10 +61,10 @@ function initializeGJ005() {
 		//判断选择框性质
 		if (this.id.substring(0, 4) == 'from') {
 			initFromType = this.value;
-			document.getElementById('fromType').innerText = this.options[this.selectedIndex].text + ' ◢';
+			document.getElementById('fromType').innerText = this.options[this.selectedIndex].text + '<span class="mui-icon iconfont icon-moreSelect" style="font-size: 14px;"></span>';
 		} else {
 			initToType = this.value;
-			document.getElementById('toType').innerText = this.options[this.selectedIndex].text + ' ◢';
+			document.getElementById('toType').innerText = this.options[this.selectedIndex].text + '<span class="mui-icon iconfont icon-moreSelect" style="font-size: 14px;"></span>';
 		}
 		//切换后设置焦点
 		textInput.focus();

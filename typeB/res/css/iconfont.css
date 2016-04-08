@@ -18,7 +18,7 @@
 .icon-otherModule:before { content: "\e608"; }
 .icon-location:before { content: "\e601"; }
 .icon-exchange:before { content: "\e602"; }
-.icon-nextStation:before { content: "\e605"; }
+.icon-nextStation:before { content: "\e616"; }
 .icon-express:before { content: "\e606"; }
 .icon-delFavor:before { content: "\e609"; }
 .icon-unfavor:before { content: "\e60a"; }
@@ -32,3 +32,4 @@
 .icon-up:before { content: "\e615"; }
 .icon-down:before { content: "\e614"; }
 .icon-refresh:before { content: "\e613"; }
+.icon-moreSelect:before { content: "\e612"; }

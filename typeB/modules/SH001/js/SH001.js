@@ -19,7 +19,7 @@ function initializeSH001() {
 	//快递公司选择选择
 	mui('.search-key').on('change', '.hidden-select', function() {
 		//快递公司名称变更
-		document.getElementById('selectedExpressName').innerHTML = this.options[this.selectedIndex].text + ' ◢';
+		document.getElementById('selectedExpressName').innerHTML = this.options[this.selectedIndex].text + '<span class="mui-icon iconfont icon-moreSelect" style="font-size: 14px;"></span>';
 		//获取快递公司名称和代码
 		companyCode = this.value;
 		companyName = this.options[this.selectedIndex].text;
@@ -51,7 +51,7 @@ function initializeSH001() {
 		//清空原始记录
 		resultContent.innerHTML = '';
 		resultContent.style.border = '';
-		document.getElementById('selectedExpressName').innerHTML = companyName + ' ◢';
+		document.getElementById('selectedExpressName').innerHTML = companyName + '<span class="mui-icon iconfont icon-moreSelect" style="font-size: 14px;"></span>';
 		codeInput.value = searchCode;
 		var selOption = mui('.hidden-select')[0].options;
 		for (var i = 0; i < selOption.length; i++) {

@@ -9,6 +9,7 @@ var tLine = document.getElementById('toLine');
 var tStation = document.getElementById('toStation');
 var tStationSelect = document.getElementById('toStationSelect');
 var resultContent = mui('.resultInfo')[0];
+var selectIcon = '<span class="mui-icon iconfont icon-moreSelect" style="font-size: 14px;"></span>';
 
 /**
  * CX002 画面初始化
@@ -22,35 +23,35 @@ function initializeCX002() {
 	document.getElementById('fromLineSelect').addEventListener('change', function() {
 		//起点地铁线变更
 		initFromLine = this.value;
-		fLine.innerHTML = this.options[this.selectedIndex].text + ' ◢';
+		fLine.innerHTML = this.options[this.selectedIndex].text + selectIcon;
 		fStationSelect.innerHTML = getStationOption(initFromLine);
 		//起点地铁站点初始化,延迟200
 		setTimeout(function() {
-			fStation.innerHTML = fStationSelect.options[fStationSelect.selectedIndex].text + ' ◢';
+			fStation.innerHTML = fStationSelect.options[fStationSelect.selectedIndex].text + selectIcon;
 			initFromStation = fStationSelect.value;
 		}, 200);
 	});
 	//起点站点变换
 	document.getElementById('fromStationSelect').addEventListener('change', function() {
 		initFromStation = this.value;
-		fStation.innerHTML = this.options[this.selectedIndex].text + ' ◢';
+		fStation.innerHTML = this.options[this.selectedIndex].text + selectIcon;
 	});
 	//终点线路变换
 	document.getElementById('toLineSelect').addEventListener('change', function() {
 		//终点地铁线变更
 		initToLine = this.value;
-		tLine.innerHTML = this.options[this.selectedIndex].text + ' ◢';
+		tLine.innerHTML = this.options[this.selectedIndex].text + selectIcon;
 		tStationSelect.innerHTML = getStationOption(initToLine);
 		//终点地铁站点初始化,延迟200
 		setTimeout(function() {
-			tStation.innerHTML = tStationSelect.options[tStationSelect.selectedIndex].text + ' ◢';
+			tStation.innerHTML = tStationSelect.options[tStationSelect.selectedIndex].text + selectIcon;
 			initToStation = tStationSelect.value;
 		}, 200);
 	});
 	//终点站点变换
 	document.getElementById('toStationSelect').addEventListener('change', function() {
 		initToStation = this.value;
-		tStation.innerHTML = this.options[this.selectedIndex].text + ' ◢';
+		tStation.innerHTML = this.options[this.selectedIndex].text + selectIcon;
 	});
 	//查询按钮点击事件
 	document.getElementById('searchButton').addEventListener('tap', function() {

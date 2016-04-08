@@ -47,7 +47,7 @@ function setIndexInfo() {
 			contentStr += '<div class="font-s18">' + dateStr + '</div>';
 			//设置今日天气信息
 			contentStr += '<div class="weather-info"><div class="today-weather"><div class="today-weather-pic">';
-			contentStr += '<img src="' + getWeatherSrc(data.retData.today.type) + '" width="58" />';
+			contentStr += '<img src="' + getWeatherSrc(data.retData.today.type) + '" width="100%" />';
 			contentStr += '</div><div class="today-weather-data">';
 			contentStr += '<p class="today-current-temp">' + data.retData.today.curTemp + '</p>';
 			contentStr += '<p class="today-base-info">' + data.retData.today.lowtemp + '~' + data.retData.today.hightemp + '</p>';

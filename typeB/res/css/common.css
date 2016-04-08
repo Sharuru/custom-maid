@@ -12,6 +12,7 @@ body {
 }
 
 .mui-bar-nav {
+	height: 49px !important;
 	color: white;
 	background: rgba(0, 102, 255, .75);
 }
@@ -20,7 +21,7 @@ body {
 	/*position: relative;*/
 	height: auto !important;
 	min-height: 99.9%;
-	padding-top: 44px !important;
+	padding-top: 49px !important;
 	padding-bottom: 20px !important;
 	/*background: url(../images/a8ef76094b36acaf3f37a28d7ed98d1000e99cef.jpg);*/
 	/*background-size: 100%;*/
@@ -45,6 +46,7 @@ footer {
 /* new class */
 
 .header-text {
+	padding-top: 3px;
 	height: 100%;
 	width: 100%;
 }
