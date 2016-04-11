@@ -544,7 +544,24 @@
 					"res/js/mui.min.js",
 					"res/js/common.js",
 					"modules/CX005/css/CX005.css",
-					"res/css/common.css"
+					"res/css/common.css",
+					"res/fonts/iconfont.ttf"
+				],
+				"refer": [
+					"modules/CX005/CITY_LIST.html"
+				],
+				"priority": 0
+			},
+			"modules/CX005/CITY_LIST.html": {
+				"resources": [
+					"modules/CX005/css/CITY_LIST.css",
+					"modules/CX005/js/CITY_LIST.js",
+					"res/css/mui.indexedlist.css",
+					"res/js/mui.indexedlist.min.js",
+					"res/css/mui.min.css",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js"
 				],
 				"refer": [],
 				"priority": 0

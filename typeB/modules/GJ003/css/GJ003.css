@@ -30,12 +30,12 @@ input[type='search'] {
 }
 
 .mui-input-row .mui-input-clear ~ .mui-icon-clear {
-	top: 5px !important;
+	top: 7px !important;
 	right: 0px !important;
 }
 
 .mui-slider-indicator {
-	bottom: -3px !important;
+	bottom: -5px !important;
 }
 
 .mui-slider-indicator .mui-indicator {

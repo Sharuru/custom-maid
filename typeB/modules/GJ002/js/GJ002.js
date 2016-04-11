@@ -109,7 +109,7 @@ function getList() {
 function getDetailStr(codeStr, nameStr, expectStr, redNumStr, blueNumStr, idFlg) {
 	var contentStr = '';
 	contentStr +=
-		'<div class="result-block">' +
+		'<div class="result-block"">' +
 		'	<div class="mui-row">' +
 		'		<div class="mui-col-xs-10">' +
 		'			<div class="lottery-Info">' +

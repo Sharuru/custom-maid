@@ -317,7 +317,7 @@ function initStockBlock(resultStr) {
  * @param JSON resultStr 结果集
  */
 function initStockList(resultStr) {
-	console.log('stockList');
+	//console.log('stockList');
 	var resultData = resultStr.result[0];
 	var codeNum = resultData.data.gid;
 	codeNum = codeNum.substring(2, codeNum.length);
