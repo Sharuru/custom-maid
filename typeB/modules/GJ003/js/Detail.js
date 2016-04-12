@@ -32,7 +32,7 @@ function initDetail() {
 /**
  * 获取证券信息
  * 
- * @param String codeStr 证券代码
+ * @param {String} codeStr 证券代码
  */
 function getDetail(codeStr) {
 	resultContent.innerHTML = '';
@@ -69,7 +69,7 @@ function getDetail(codeStr) {
 /**
  * 处理数据显示
  * 
- * @param JSON objEle 结果集
+ * @param {JSON} objEle 结果集
  */
 function dealInfo(objEle) {
 	//	console.log(objEle.stockData);
@@ -319,8 +319,8 @@ function dealInfo(objEle) {
 /**
  * 判断颜色
  * 
- * @param float priceNum
- * @param float baseNum
+ * @param {float} priceNum
+ * @param {float} baseNum
  */
 function checkColor(priceNum, baseNum) {
 	var returnStr = '';
@@ -337,7 +337,7 @@ function checkColor(priceNum, baseNum) {
 /**
  * 添加自选
  * 
- * @param String codeStr
+ * @param {String} codeStr
  */
 function addStock(codeStr) {
 	var allCode = localStorage.getItem('stockCode');
@@ -353,7 +353,7 @@ function addStock(codeStr) {
 /**
  * 删除自选
  * 
- * @param String codeStr
+ * @param {String} codeStr
  */
 function deleteStock(codeStr) {
 	var allCode = localStorage.getItem('stockCode');

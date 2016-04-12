@@ -64,8 +64,8 @@ function initializeGJ001() {
 /*
  * 设置计算时使用汇率
  * 
- * @param String m1 货币种类名1
- * @param String m2 货币种类名2
+ * @param {String} m1 货币种类名1
+ * @param {String} m2 货币种类名2
  */
 function setCurrRate(m1, m2) {
 	//货币汇率
@@ -98,8 +98,8 @@ function setCurrRate(m1, m2) {
 /*
  * 设置汇率文字
  * 
- * @param String m1 货币种类名1
- * @param String m2 货币种类名2
+ * @param {String} m1 货币种类名1
+ * @param {String} m2 货币种类名2
  */
 function setRateText(m1, m2) {
 	if (currRate == 'NaN') {
@@ -115,8 +115,8 @@ function setRateText(m1, m2) {
 /*
  * 获得汇率数据
  * 
- * @param String m1 货币种类名1
- * @param String m2 货币种类名2
+ * @param {String} m1 货币种类名1
+ * @param {String} m2 货币种类名2
  */
 function getExchangeRate(m1, m2) {
 	//锁定界面

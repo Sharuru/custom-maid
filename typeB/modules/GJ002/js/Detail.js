@@ -11,7 +11,7 @@ function initDetail() {
 /**
  * 显示数据处理
  * 
- * @param JSON objEle 数据集
+ * @param {JSON} objEle 数据集
  */
 function dealList(objEle) {
 	//	console.log(objEle.lotData);
@@ -36,10 +36,10 @@ function dealList(objEle) {
 /**
  * 开奖结果显示
  * 
- * @param String expectStr 期数
- * @param String dataStr 开奖时间
- * @param String redStr 红球
- * @param String blueStr 蓝球
+ * @param {String} expectStr 期数
+ * @param {String} dataStr 开奖时间
+ * @param {String} redStr 红球
+ * @param {String} blueStr 蓝球
  */
 function dealDetail(expectStr, dataStr, redStr, blueStr) {
 	var contentStr = '';

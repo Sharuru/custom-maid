@@ -66,9 +66,9 @@ function initializeSH001() {
 /**
  * 获取快递信息
  * 
- * @param String expressCode 物流公司代码
- * @param String trackingNum 快递单号
- * @param String expressName 物流公司名称
+ * @param {String} expressCode 物流公司代码
+ * @param {String} trackingNum 快递单号
+ * @param {String} expressName 物流公司名称
  */
 function getExpressInfo(expressCode, trackingNum, expressName) {
 	//	mui.toast('正在获取快递信息...');

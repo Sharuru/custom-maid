@@ -106,8 +106,8 @@ window.onscroll = function() {
 /**
  * 根据始末城市查找火车信息
  * 
- * @param String startPosition
- * @param String endPosition
+ * @param {String} startPosition
+ * @param {String} endPosition
  */
 function findByCity(startPosition, endPosition) {
 	addDisabledCity();
@@ -332,8 +332,8 @@ function cancelDisabledNum() {
 /**
  * 判断到站天数
  * 
- * @param String startT 发车时间
- * @param String totalT 总时长
+ * @param {String} startT 发车时间
+ * @param {String} totalT 总时长
  */
 function getDays(startT, totalT) {
 	var returnStr = '';

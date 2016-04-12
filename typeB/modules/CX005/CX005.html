@@ -19,18 +19,12 @@
 		</header>
 		<div class="mui-content">
 			<div class="search-block">
-				<div class="mui-row">
-					<label class="font-s16 padding-10-l">
-						所属城市：
-					</label>
-					<label class="font-s18 padding-10-l" id="cityLoc">
-						<span class="mui-icon iconfont icon-location"></span>正在定位中...
-					</label>
-					<!--<div class="mui-col-xs-3 align-right padding-10-r">
-						<span class="mui-icon iconfont icon-thisTime" style="font-size: 18px;"></span>
-						<label class="font-s16">实时</label>
-					</div>-->
-				</div>
+				<label class="font-s16 padding-10-l">
+					所属城市：
+				</label>
+				<label class="font-s18 padding-10-l" id="cityLoc">
+					<span class="mui-icon iconfont icon-location"></span>正在定位中...
+				</label>
 				<div class="mui-row padding-10-l padding-5-t">
 					<div class="mui-col-xs-1 radio-type">
 						<input type="radio" value="0" name="busRadio" checked="checked" onclick="checkValue(this.value);" />
@@ -47,8 +41,8 @@
 				</div>
 				<div class="mui-row padding-20-l padding-20-r">
 					<div class="mui-col-xs-12">
-						<div class="mui-input-row mui-search" id="inputArea">
-							<input type="search" class="mui-input-clear" placeholder="请输入公交线路" />
+						<div class="mui-input-row mui-search">
+							<input type="search" class="mui-input-clear" placeholder="请输入公交线路" id="inputStr" />
 						</div>
 					</div>
 				</div>
@@ -56,50 +50,11 @@
 					<button type="button" style="width: 30%;" class="mui-btn mui-btn-primary" id="searchButton">开始查询</button>
 				</div>
 			</div>
-			<div class="resultInfo">
-				<p class="font-s16" style="margin-bottom: 3px;">查询结果</p>
-				<div class="result-block">
-					<ul class="mui-table-view">
-						<li class="mui-table-view-cell mui-collapse">
-							<a class="mui-navigate-right" href="#">
-								<label class="font-s16">线路:</label>
-								<label class="font-s18 padding-10-l">911路</label>
-								<!--<label class="font-s16 padding-10-l">(首:</label>
-								<label style="padding-left: 5px;">6:00</label>
-								<label class="padding-10-l">末:</label>
-								<label style="padding-left: 5px;">22:00)</label>-->
-								<p class="color-black">
-									<label class="font-s16">方向:</label>
-									<label class="font-s16 padding-10-l">老西门 - 万科城市花园</label>
-								</p>
-							</a>
-							<div class="mui-collapse-content">
-								<ul class="list list-timeline">
-									<li>
-										<i class="mui-icon iconfont icon-nextStation list-timeline-icon"></i>
-										<div class="list-timeline-content">
-											<p class="font-s18 remove-margin-b">老西门</p>
-										</div>
-									</li>
-									<li>
-										<i class="mui-icon iconfont icon-nextStation list-timeline-icon"></i>
-										<div class="list-timeline-content">
-											<p class="font-s16 remove-margin-b">小北门</p>
-										</div>
-									</li>
-									<li>
-										<i class="mui-icon iconfont icon-nextStation list-timeline-icon"></i>
-										<div class="list-timeline-content">
-											<p class="font-s16 remove-margin-b">淮海东路云南南路</p>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
+			<div class="resultInfo"></div>
 		</div>
+		<footer>
+			<div class="footer-info ">数据由 <a>天翼电信</a> 提供</div>
+		</footer>
 	</body>
 	<script src="../../res/js/mui.min.js "></script>
 	<script type="text/javascript " src="../../res/js/common.js "></script>

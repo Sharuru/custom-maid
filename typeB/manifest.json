@@ -272,7 +272,8 @@
 					"res/images/icons/weather/rain-m.png",
 					"res/images/icons/weather/unknown.png",
 					"res/images/icons/weather/light-rain.png",
-					"res/images/icons/weather/moderate-rain.png"
+					"res/images/icons/weather/moderate-rain.png",
+					"res/images/icons/weather/shower.png"
 				],
 				"refer": [
 					"modules/CX001/CX001.html",
@@ -548,7 +549,9 @@
 					"res/fonts/iconfont.ttf"
 				],
 				"refer": [
-					"modules/CX005/CITY_LIST.html"
+					"modules/CX005/CITY_LIST.html",
+					"modules/CX005/ACTUALBUS.html",
+					"modules/CX005/BUS_DETAIL.html"
 				],
 				"priority": 0
 			},
@@ -562,6 +565,28 @@
 					"res/fonts/mui.ttf",
 					"res/js/mui.min.js",
 					"res/js/common.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/CX005/ACTUALBUS.html": {
+				"resources": [
+					"modules/CX005/js/ACTUALBUS.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/CX005/BUS_DETAIL.html": {
+				"resources": [
+					"modules/CX005/js/BUS_DETAIL.js",
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/fonts/iconfont.ttf",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"modules/CX005/css/CX005.css",
+					"res/css/common.css"
 				],
 				"refer": [],
 				"priority": 0

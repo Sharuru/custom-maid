@@ -101,8 +101,8 @@ window.onscroll = function() {
 /**
  * 根据两地城市查询长途车信息
  * 
- * @param String startPos 始发城市
- * @param String arrivePos 终点城市
+ * @param {String} startPos 始发城市
+ * @param {String} arrivePos 终点城市
  */
 function findResult(startPos, arrivePos) {
 	addDisabled();
@@ -141,9 +141,9 @@ function findResult(startPos, arrivePos) {
 /**
  * 处理查询结果
  * 
- * @param JSON dataInfo 查询结果
- * @param String orderFlg 时间排序标志
- * @param String keyWord 筛选条件
+ * @param {JSON} dataInfo 查询结果
+ * @param {String} orderFlg 时间排序标志
+ * @param {String} keyWord 筛选条件
  */
 function dealResult(dataInfo, orderFlg, keyWord) {
 	if (dataInfo == undefined) {
@@ -202,7 +202,7 @@ function dealResult(dataInfo, orderFlg, keyWord) {
 /**
  * 设置筛选 popover
  * 
- * @param JSON dataInfo
+ * @param {JSON} dataInfo
  */
 function setSelector(dataInfo) {
 	var station = []

@@ -9,7 +9,7 @@ var currentIndex = 0;
 function initializeGJ002() {
 	resultContent.innerHTML = '';
 	getAjax();
-	mui('.resultInfo').on('tap', '.toDetail', function() {
+	mui('.resultInfo').on('tap', '.result-block', function() {
 		//console.log(this.id.replace('lottery', ''));
 		var lotId = this.id.replace('lottery', '');
 		//没有数据
@@ -18,8 +18,8 @@ function initializeGJ002() {
 		} else {
 			//有数据，画面迁移
 			mui.openWindow({
-				url: 'Detail.html',
-				id: 'Detail',
+				url: 'DETAIL.html',
+				id: 'PAGE_DETAIL',
 				show: {
 					aniShow: 'pop-in',
 					duration: 200
@@ -99,17 +99,17 @@ function getList() {
 /**
  * 显示彩票信息
  * 
- * @param String codeStr 彩种编码
- * @param String nameStr 彩种名称
- * @param String expectStr 开奖期数
- * @param String redNumStr 红球
- * @param String blueNumStr 蓝球
- * @param String idFlg 编号
+ * @param {String} codeStr 彩种编码
+ * @param {String} nameStr 彩种名称
+ * @param {String} expectStr 开奖期数
+ * @param {String} redNumStr 红球
+ * @param {String} blueNumStr 蓝球
+ * @param {String} idFlg 编号
  */
 function getDetailStr(codeStr, nameStr, expectStr, redNumStr, blueNumStr, idFlg) {
 	var contentStr = '';
 	contentStr +=
-		'<div class="result-block"">' +
+		'<div class="result-block" id="lottery' + idFlg + '">' +
 		'	<div class="mui-row">' +
 		'		<div class="mui-col-xs-10">' +
 		'			<div class="lottery-Info">' +
@@ -143,7 +143,7 @@ function getDetailStr(codeStr, nameStr, expectStr, redNumStr, blueNumStr, idFlg)
 		'			</div>' +
 		'		</div>' +
 		'		<div class="mui-col-xs-2 align-right">' +
-		'			<span class="mui-icon iconfont icon-toDetail toDetail" id="lottery' + idFlg + '"></span>' +
+		'			<span class="mui-icon iconfont icon-toDetail toDetail"></span>' +
 		'		</div>' +
 		'	</div>' +
 		'</div>';
@@ -153,7 +153,7 @@ function getDetailStr(codeStr, nameStr, expectStr, redNumStr, blueNumStr, idFlg)
 /**
  * 根据彩种编码获取彩种名称
  * 
- * @param String lotteryCode 彩种编码
+ * @param {String} lotteryCode 彩种编码
  */
 function getLotteryName(lotteryCode) {
 	var nameStr;

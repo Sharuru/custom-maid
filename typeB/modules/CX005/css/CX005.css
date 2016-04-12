@@ -86,3 +86,54 @@ input[type='search'] {
 	padding-top: 2px;
 	text-align: right;
 }
+
+.icon-div {
+	width: 28px;
+	float: left;
+}
+
+.start-time {
+	width: 21px;
+	height: 21px;
+	background-color: #FF5053;
+}
+
+.end-time {
+	width: 21px;
+	height: 21px;
+	background-color: #2AC845;
+}
+
+.start-station {
+	width: 21px;
+	height: 21px;
+	background-color: dodgerblue;
+}
+
+.end-station {
+	width: 21px;
+	height: 21px;
+	background-color: lightsalmon;
+}
+
+.time-text {
+	height: 21px;
+	line-height: normal;
+	font-size: 16px;
+	display: block;
+	color: #FFF;
+	text-align: center;
+}
+
+.time-info {
+	height: 21px;
+	line-height: 24px;
+	font-size: 18px;
+	display: block;
+}
+
+.toDetail {
+	padding: 30px 5px 0 20px;
+	font-size: 16px;
+	color: #AAAAAA;
+}

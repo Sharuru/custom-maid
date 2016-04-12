@@ -104,9 +104,9 @@ function initializeGJ005() {
 /**
  * 获取翻译内容
  * 
- * @param String lanFromType 需要翻译的语言种类
- * @param String lanToType 翻译成的语言种类
- * @param String lanContext 翻译的文字
+ * @param {String} lanFromType 需要翻译的语言种类
+ * @param {String} lanToType 翻译成的语言种类
+ * @param {String} lanContext 翻译的文字
  */
 function getTranslation(lanFromType, lanToType, lanContext) {
 	addDisabled();

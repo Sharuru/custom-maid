@@ -115,7 +115,7 @@ function getResultList() {
 						'				</li>' +
 						dealPassedStation(requestData.data[i].passedStationName, requestData.data[i].interchangeStationName, requestData.data[i].passedDuration, lineName) +
 						'				<li>' +
-						'					<i class="mui-icon iconfont icon-nextStation list-timeline-icon"></i>' +
+						'					<i class="mui-icon iconfont icon-express list-timeline-icon"></i>' +
 						'					<div class="list-timeline-content">' +
 						'						<p class="font-s18">' +
 						requestData.data[i].destinationStationName +
@@ -147,7 +147,7 @@ function getResultList() {
 /**
  * 处理换乘线路的显示
  * 
- * @param String lineNumStr 换乘线路
+ * @param {String} lineNumStr 换乘线路
  */
 function dealLineStr(lineNumStr) {
 	var lineNum = lineNumStr.split('-');
@@ -162,9 +162,9 @@ function dealLineStr(lineNumStr) {
 /**
  * 处理地铁换乘基本信息
  * 
- * @param String amountStr 途经站点总数
- * @param String timeStr 途经站点时间
- * @param String priceStr 票价
+ * @param {String} amountStr 途经站点总数
+ * @param {String} timeStr 途经站点时间
+ * @param {String} priceStr 票价
  */
 function dealBaseInfo(amountStr, timeStr, priceStr) {
 	timeStr = timeStr.substring(timeStr.lastIndexOf('-') + 1, timeStr.length);
@@ -176,10 +176,10 @@ function dealBaseInfo(amountStr, timeStr, priceStr) {
 /**
  * 处理途经站点显示
  * 
- * @param String passStationStr 线路站点
- * @param String changeStationStr 换乘站点
- * @param String passDurationStr 站点时间
- * @param String lineNameStr 线路名称
+ * @param {String} passStationStr 线路站点
+ * @param {String} changeStationStr 换乘站点
+ * @param {String} passDurationStr 站点时间
+ * @param {String} lineNameStr 线路名称
  */
 function dealPassedStation(passStationStr, changeStationStr, passDurationStr, lineNameStr) {
 	var innerHtmlStr = '';
@@ -230,7 +230,7 @@ function dealPassedStation(passStationStr, changeStationStr, passDurationStr, li
 /**
  * 秒数变换小时分钟
  * 
- * @param String secondStr 秒数
+ * @param {String} secondStr 秒数
  */
 function dealSecondTime(secondStr) {
 	var returnStr = '';
@@ -286,7 +286,7 @@ function cancelDisabled() {
 /**
  * 获取站点选项
  * 
- * @param String lineCode 线路编号
+ * @param {String} lineCode 线路编号
  */
 function getStationOption(lineCode) {
 	var selectOption = '';

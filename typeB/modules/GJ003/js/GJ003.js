@@ -38,7 +38,7 @@ function refreshFunc() {
 /**
  * 大盘指数初始化
  * 
- * @param {Object} callback
+ * @param {Function} callback
  */
 function initBlock(callback) {
 	blockIndex = 0;
@@ -62,7 +62,7 @@ function askStockBlock() {
 /**
  * 自选股列表初始化
  * 
- * @param {Object} callback
+ * @param {Function} callback
  */
 function initList(callback) {
 	codeList = [];
@@ -74,7 +74,7 @@ function initList(callback) {
 /**
  * 自选股代码集合初始化
  * 
- * @param {Object} callback
+ * @param {Function} callback
  */
 function initStockCode(callback) {
 	var allCode = localStorage.getItem('stockCode');
@@ -106,8 +106,8 @@ function askStockInfo() {
 /**
  * 根据证券代码获取证券信息
  * 
- * @param String codeStr 证券代码
- * @param int funcFlg 操作标志
+ * @param {String} codeStr 证券代码
+ * @param {int} funcFlg 操作标志
  */
 function getStockInfo(codeStr, funcFlg) {
 	mui.ajax(serverAddr + 'tools/stock', {
@@ -145,7 +145,7 @@ function getStockInfo(codeStr, funcFlg) {
 /**
  * 处理大盘数据显示
  * 
- * @param JSON resultStr 结果集
+ * @param {JSON} resultStr 结果集
  */
 function initStockBlock(resultStr) {
 	var resultData = resultStr.result[0];
@@ -314,7 +314,7 @@ function initStockBlock(resultStr) {
 /**
  * 处理自选股数据显示
  * 
- * @param JSON resultStr 结果集
+ * @param {JSON} resultStr 结果集
  */
 function initStockList(resultStr) {
 	//console.log('stockList');
@@ -377,7 +377,7 @@ function initStockList(resultStr) {
 /**
  * 处理证券代码输入
  * 
- * @param String checkStr 输入值
+ * @param {String} checkStr 输入值
  */
 function checkStockCode(checkStr) {
 	var stockCodeStr = '';
@@ -407,16 +407,16 @@ function checkStockCode(checkStr) {
 /**
  * 跳转证券详情页面
  * 
- * @param String nameStr 证券名称
- * @param String codeStr 证券代码
- * @param int flgStr 自选标志符
+ * @param {String} nameStr 证券名称
+ * @param {String} codeStr 证券代码
+ * @param {int} flgStr 自选标志符
  */
 function goDetail(nameStr, codeStr, flgStr) {
 	console.log('Setting screen...');
 	//有数据，画面迁移
 	mui.openWindow({
-		url: 'Detail.html',
-		id: 'Detail',
+		url: 'DETAIL.html',
+		id: 'PAGE_DETAIL',
 		show: {
 			aniShow: 'pop-in',
 			duration: 200
@@ -435,7 +435,7 @@ function goDetail(nameStr, codeStr, flgStr) {
 /**
  * 判断证券是否自选
  * 
- * @param String codeStr 证券代码
+ * @param {String} codeStr 证券代码
  */
 function checkStockFlg(codeStr) {
 	var returnNum = 0;
