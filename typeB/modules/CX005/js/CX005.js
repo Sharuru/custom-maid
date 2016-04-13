@@ -4,6 +4,7 @@ var cityEle = document.getElementById('cityLoc');
 var inputEle = document.getElementById('inputStr');
 var buttonEle = document.getElementById('searchButton');
 var resultContent = mui('.resultInfo')[0];
+var lineData = '';
 
 /**
  * CX005 页面初始化
@@ -43,8 +44,8 @@ function initializeCX005() {
 		//按钮动效现时完毕后再切换页面
 		setTimeout(function() {
 			mui.openWindow({
-				url: 'ACTUALBUS.html',
-				id: 'PAGE_ACTUALBUS',
+				url: 'ACTUAL_BUS.html',
+				id: 'PAGE_ACTUAL_BUS',
 				show: {
 					aniShow: 'pop-in',
 					duration: 200
@@ -61,8 +62,11 @@ function initializeCX005() {
 
 	//跳转公交线路详情
 	mui('.resultInfo').on('tap', '.result-block', function() {
-		var lindId = this.id;
-		if (/^bus/.test(lindId)) {
+		var lineId = this.id;
+		var lineName = this.getAttribute('name');
+		if (/^bus/.test(lineId)) {
+			getLineInfo(cityStr, lineName, lineId.replace('bus', ''), inputEle.value);
+		} else {
 			setTimeout(function() {
 				mui.openWindow({
 					url: 'BUS_DETAIL.html',
@@ -72,11 +76,13 @@ function initializeCX005() {
 						duration: 200
 					},
 					extras: {
-						//cityName: cityStr,
-						//stationName: inputEle.value,
-						cityName: '上海',
-						stationName: '上海南站',
-						data: lindId.replace('bus', '')
+						cityName: cityStr,
+						stationName: ' ',
+						//cityName: '上海',
+						//stationName: '桂林西街',
+						busIdFlg: lineId.replace('line', ''),
+						busName: lineName,
+						busList: lineData
 					},
 					waiting: {
 						autoShow: false
@@ -114,10 +120,10 @@ function checkValue(valueStr) {
  * @param {String} radioStr 单选按钮value值
  */
 function initInfo(radioStr) {
-	//	if (inputEle.value == '') {
-	//		mui.toast('未输入相关信息');
-	//		return;
-	//	}
+	if (inputEle.value == '') {
+		mui.toast('未输入相关信息');
+		return;
+	}
 	addDisabled();
 	resultContent.innerHTML = '';
 	resultContent.style.border = '';
@@ -125,22 +131,22 @@ function initInfo(radioStr) {
 		getBusLineInfo(cityStr, inputEle.value, showButton);
 	} else {
 		//getBusList(cityStr, inputEle.value);
-		getBusList('上海', '上海南站');
+		getBusList('上海', '桂林西街');
 	}
 }
 
 /**
  * 查询公交线路信息
  * 
- * @param {String} cityStr 所属城市
+ * @param {String} cityNameStr 所属城市
  * @param {String} inputStr 公交线路
  * @param {Function} callback 回调函数
  */
-function getBusLineInfo(cityStr, inputStr, callback) {
+function getBusLineInfo(cityNameStr, inputStr, callback) {
 	//console.log(cityStr + ' : ' + inputStr);
 	mui.ajax(serverAddr + 'travel/busInfo', {
 		data: {
-			city: cityStr,
+			city: cityNameStr,
 			bus: inputStr
 		},
 		dataType: 'json',
@@ -152,6 +158,7 @@ function getBusLineInfo(cityStr, inputStr, callback) {
 				mui.toast('没有找到匹配的公交线路信息');
 				cancelDisabled();
 			} else {
+				lineData = JSON.stringify(requestData.result);
 				resultContent.innerHTML = dealResult(requestData);
 				resultContent.style.border = '#DDDDDD solid 1px';
 				cancelDisabled();
@@ -162,7 +169,7 @@ function getBusLineInfo(cityStr, inputStr, callback) {
 			//异常处理
 			console.log(type);
 			mui.alert('远程服务器连接失败', '无法获得公交信息', '重试', function() {
-				getBusLineInfo(cityStr, inputStr);
+				getBusLineInfo(cityNameStr, inputStr, callback);
 			});
 		}
 	});
@@ -171,14 +178,14 @@ function getBusLineInfo(cityStr, inputStr, callback) {
 /**
  * 查询经过站点的公交线路
  * 
- * @param {String} cityStr
+ * @param {String} cityNameStr
  * @param {String} inputStr
  */
-function getBusList(cityStr, inputStr) {
+function getBusList(cityNameStr, inputStr) {
 	//console.log(cityStr + ' : ' + inputStr);
 	mui.ajax(serverAddr + 'travel/busList', {
 		data: {
-			city: cityStr,
+			city: cityNameStr,
 			station: inputStr
 		},
 		dataType: 'json',
@@ -223,9 +230,7 @@ function dealResult(resultData) {
 		'			<label class="font-s16">实时公交</label>' +
 		'		</a>' +
 		'	</div>' +
-		'</div>' +
-		'<div class="result-block">' +
-		'	<ul class="mui-table-view">';
+		'</div>';
 	for (var i = 0; i < resultData.result.length; i++) {
 		var lineName = resultData.result[i].name;
 		var lineState = '';
@@ -235,72 +240,52 @@ function dealResult(resultData) {
 			lineState = '(已停运)';
 		}
 		contentStr +=
-			'	<li class="mui-table-view-cell mui-collapse">' +
-			'		<a class="mui-navigate-right" href="#">' +
-			'			<label class="font-s16">线路:</label>' +
-			'			<label class="font-s18 padding-10-l">' +
+			'<div class="result-block" id="line' + resultData.result[i].line_id + '" name="' + resultData.result[i].key_name + '">' +
+			'	<div class="mui-row">' +
+			'		<div class="mui-col-xs-10">' +
+			'			<div class="mui-row padding-10-l padding-5-t">' +
+			'				<label style="font-size: 20px;">' +
 			lineName.substring(0, lineName.lastIndexOf('（')) +
-			'			</label>' +
-			'			<label class="font-s16 padding-10-l" style="color: #007AFF;">' +
+			'				</label>' +
+			'				<label class="font-s16 padding-10-l" style="color: #007AFF;">' +
 			lineState +
-			'			</label>' +
-			'			<p class="color-black">' +
-			'				<label class="font-s16">方向:</label>' +
-			'				<label class="font-s16 padding-10-l">' +
+			'				</label>' +
+			'			</div>' +
+			'			<div class="mui-row padding-10-l">' +
+			'				<label class="font-s16">' +
 			lineName.substring(lineName.lastIndexOf('（') + 1, lineName.lastIndexOf('）')) +
 			'				</label>' +
-			'			</p>' +
-			'		</a>' +
-			'		<div class="mui-collapse-content">' +
-			'			<ul class="list list-timeline">' +
-			dealStationdes(resultData.result[i].stationdes) +
-			'			</ul>' +
+			'			</div>' +
+			'			<div class="mui-row padding-5 padding-10-l">' +
+			'				<div class="mui-col-xs-5">' +
+			'					<div class="icon-div">' +
+			'						<div class="start-time">' +
+			'							<span class="time-text">首</span>' +
+			'						</div>' +
+			'					</div>' +
+			'					<div class="time-info">' +
+			dealTimeStr(resultData.result[i].start_time) +
+			'					</div>' +
+			'				</div>' +
+			'				<div class="mui-col-xs-5">' +
+			'					<div class="icon-div">' +
+			'						<div class="end-time">' +
+			'							<span class="time-text">末</span>' +
+			'						</div>' +
+			'					</div>' +
+			'					<div class="time-info">' +
+			dealTimeStr(resultData.result[i].end_time) +
+			'					</div>' +
+			'				</div>' +
+			'			</div>' +
 			'		</div>' +
-			'	</li>';
-	}
-	contentStr +=
-		'	</ul>' +
-		'</div>';
-	return contentStr;
-}
-
-/**
- * 显示公交线路的公交站点
- * 
- * @param {List} stationdes 站点集
- */
-function dealStationdes(stationdes) {
-	var returnStr = '';
-	returnStr +=
-		'<li>' +
-		'	<i class="mui-icon iconfont icon-nextStation list-timeline-icon color-success"></i>' +
-		'	<div class="list-timeline-content">' +
-		'		<p class="font-s18 remove-margin-b">' +
-		stationdes[0].name +
-		'		</p>' +
-		'	</div>' +
-		'</li>';
-	for (var j = 1; j < stationdes.length - 1; j++) {
-		returnStr +=
-			'<li>' +
-			'	<i class="mui-icon iconfont icon-nextStation list-timeline-icon"></i>' +
-			'	<div class="list-timeline-content">' +
-			'		<p class="font-s16 remove-margin-b">' +
-			stationdes[j].name +
-			'		</p>' +
+			'		<div class="mui-col-xs-2 align-right">' +
+			'			<span class="mui-icon iconfont icon-toDetail toDetail"></span>' +
+			'		</div>' +
 			'	</div>' +
-			'</li>';
+			'</div>';
 	}
-	returnStr +=
-		'<li>' +
-		'	<i class="mui-icon iconfont icon-express list-timeline-icon color-warning"></i>' +
-		'	<div class="list-timeline-content">' +
-		'		<p class="font-s18 remove-margin-b">' +
-		stationdes[stationdes.length - 1].name +
-		'		</p>' +
-		'	</div>' +
-		'</li>';
-	return returnStr;
+	return contentStr;
 }
 
 /**
@@ -322,7 +307,7 @@ function dealBusList(resultList) {
 	contentStr += '<p class="font-s16" style="margin-bottom: 3px;">查询结果</p>';
 	for (var i = 0; i < resultList.length; i++) {
 		contentStr +=
-			'<div class="result-block" id="bus' + resultList[i].key_name + '">' +
+			'<div class="result-block" id="bus' + resultList[i].line_id + '" name="' + resultList[i].key_name + '">' +
 			'	<div class="mui-row">' +
 			'		<div class="mui-col-xs-10">' +
 			'			<div class="mui-row padding-10-l padding-5-t">' +
@@ -332,7 +317,7 @@ function dealBusList(resultList) {
 			'			</div>' +
 			'			<div class="mui-row padding-10-l">' +
 			'				<label class="font-s16">' +
-			resultList[i].front_name + '-' + resultList[i].terminal_name +
+			resultList[i].front_name + ' - ' + resultList[i].terminal_name +
 			'				</label>' +
 			'			</div>' +
 			'			<div class="mui-row padding-5 padding-10-l">' +
@@ -376,6 +361,56 @@ function dealTimeStr(timeValue) {
 	var timeStr = '';
 	timeStr = timeValue.substring(0, 2) + ':' + timeValue.substring(2, timeValue.length);
 	return timeStr;
+}
+
+function getLineInfo(cityNameStr, busNameStr, idFlgStr, inputValue) {
+	mui.toast('正在获取数据...');
+	mui.ajax(serverAddr + 'travel/busInfo', {
+		data: {
+			city: cityNameStr,
+			bus: busNameStr
+		},
+		dataType: 'json',
+		type: 'get',
+		timeout: 10000,
+		success: function(requestData) {
+			//console.log(JSON.stringify(requestData));
+			if (requestData.error_code != 0 || requestData == null) {
+				mui.toast('没有找到匹配的公交线路信息');
+			} else {
+				lineData = JSON.stringify(requestData.result);
+				setTimeout(function() {
+					mui.openWindow({
+						url: 'BUS_DETAIL.html',
+						id: 'PAGE_BUS_DETAIL',
+						show: {
+							aniShow: 'pop-in',
+							duration: 200
+						},
+						extras: {
+							cityName: cityNameStr,
+							stationName: inputValue,
+							//cityName: '上海',
+							//stationName: '桂林西街',
+							busIdFlg: idFlgStr,
+							busName: busNameStr,
+							busList: lineData
+						},
+						waiting: {
+							autoShow: false
+						}
+					});
+				}, 200);
+			}
+		},
+		error: function(xhr, type, errorThrown) {
+			//异常处理
+			console.log(type);
+			mui.alert('远程服务器连接失败', '无法获得公交信息', '重试', function() {
+				getLineInfo(cityNameStr, busNameStr, idFlgStr, inputValue);
+			});
+		}
+	});
 }
 
 /**

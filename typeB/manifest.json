@@ -551,7 +551,8 @@
 				"refer": [
 					"modules/CX005/CITY_LIST.html",
 					"modules/CX005/ACTUALBUS.html",
-					"modules/CX005/BUS_DETAIL.html"
+					"modules/CX005/BUS_DETAIL.html",
+					"modules/CX005/ACTUAL_BUS.html"
 				],
 				"priority": 0
 			},
@@ -587,6 +588,13 @@
 					"res/js/common.js",
 					"modules/CX005/css/CX005.css",
 					"res/css/common.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/CX005/ACTUAL_BUS.html": {
+				"resources": [
+					"modules/CX005/js/ACTUAL_BUS.js"
 				],
 				"refer": [],
 				"priority": 0
