@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="modules.css" rel="stylesheet" />
+		<link href="res/css/mui.min.css" rel="stylesheet" />
+		<link href="res/css/iconfont.css" rel="stylesheet" />
+		<link href="res/css/common.css" rel="stylesheet" />
+		<link href="modules.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div class="header-text">
+				<span class="mui-icon iconfont icon-homePage float-left"> 首页</span>
+				<span class="mui-icon iconfont icon-location location-city" id="locationCity">正在定位...</span>
+			</div>
+		</header>
+		<div class="mui-content">
+			<div id="weatherBase"></div>
+			<div id="moduleList">
+				<a class="module-block" href="#" id="BlockSH001">
+					<div class="module-pic">
+						<img src="res/images/icons/modules/SH001.png" width="100%" />
+					</div>
+					<div class="module-title">快递</div>
+				</a>
+				<a class="module-block" href="#" id="BlockCX001">
+					<div class="module-pic">
+						<img src="res/images/icons/modules/CX001.png" width="100%" />
+					</div>
+					<div class="module-title">火车</div>
+				</a>
+				<a class="module-block" href="#" id="BlockGJ001">
+					<div class="module-pic">
+						<img src="res/images/icons/modules/GJ001.png" width="100%" />
+					</div>
+					<div class="module-title">汇率</div>
+				</a>
+				<a class="module-block" href="#" id="BlockGJ005">
+					<div class="module-pic">
+						<img src="res/images/icons/modules/GJ005.png" width="100%" />
+					</div>
+					<div class="module-title">翻译</div>
+				</a>
+				<a class="module-block" href="#" id="BlockCX006">
+					<div class="module-pic">
+						<img src="res/images/icons/modules/CX006.png" width="100%" />
+					</div>
+					<div class="module-title">长途</div>
+				</a>
+				<a class="module-block" href="#" id="BlockCX002">
+					<div class="module-pic">
+						<img src="res/images/icons/modules/CX002.png" width="100%" />
+					</div>
+					<div class="module-title">地铁</div>
+				</a>
+				<a class="module-block" href="#" id="BlockGJ002">
+					<div class="module-pic">
+						<img src="res/images/icons/modules/GJ002.png" width="100%" />
+					</div>
+					<div class="module-title">彩票</div>
+				</a>
+				<a class="module-block" href="#" id="BlockGJ003">
+					<div class="module-pic">
+						<img src="res/images/icons/modules/GJ003.png" width="100%" />
+					</div>
+					<div class="module-title">证券</div>
+				</a><a class="module-block" href="#" id="BlockHJ003">
+					<div class="module-pic">
+						<img src="res/images/icons/modules/HJ003.png" width="100%" />
+					</div>
+					<div class="module-title">天气</div>
+				</a><a class="module-block" href="#" id="BlockCX005">
+					<div class="module-pic">
+						<img src="res/images/icons/modules/CX005.png" width="100%" />
+					</div>
+					<div class="module-title">公交</div>
+				</a>
+			</div>
+		</div>
+	</body>
+	<script src="res/js/mui.min.js"></script>
+	<script type="text/javascript" src="modules.js"></script>
+	<script type="text/javascript" src="res/js/common.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.plusReady(function() {
+			initIndex(); //页面加载完毕时设置可用模块
+		})
+	</script>
+
+</html>

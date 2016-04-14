@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../../res/css/mui.min.css" rel="stylesheet" />
+		<link href="../../res/css/iconfont.css" rel="stylesheet" />
+		<link href="../../res/css/common.css" rel="stylesheet" />
+		<link href="css/GJ001.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div class="header-text">
+				<span class="mui-action-back mui-icon mui-icon-back">汇率换算</span>
+			</div>
+		</header>
+		<div class="mui-content">
+			<div class="exchange-object">
+				<table border="0">
+					<tr>
+						<td style="height: 60px;text-align: center;width:25%;"><img id="exchangeOnePic" src="../../res/images/modules/GJ001/USD.png" width="70%;"></img>
+							<select id="exchangeOneSelect" class="money-type-select">
+								<option value="人民币">人民币 CNY</option>
+								<option value="美元" selected="selected">美元 USD</option>
+								<option value="欧元">欧元 EUR</option>
+								<option value="港币">港币 HKD</option>
+								<option value="日元">日元 JPY</option>
+								<option value="英镑">英镑 GBP</option>
+								<option value="澳大利亚元">澳大利亚元 AUD</option>
+								<option value="加拿大元">加拿大元 CAD</option>
+								<option value="泰国铢">泰国铢 THB</option>
+								<option value="新加坡元">新加坡元 SGD</option>
+								<option value="挪威克朗">挪威克朗 NOK</option>
+								<option value="林吉特">林吉特 MYR</option>
+								<option value="澳门元">澳门元 MOP</option>
+								<option value="韩国元">韩国元 KRW</option>
+								<option value="瑞士法郎">瑞士法郎 CHF</option>
+								<option value="丹麦克朗">丹麦克朗 DKK</option>
+								<option value="瑞典克朗">瑞典克朗 SEK</option>
+								<option value="卢布">卢布 RUB</option>
+								<option value="新西兰元">新西兰元 NZD</option>
+								<option value="菲律宾比索">菲律宾比索 PHP</option>
+								<option value="新台币">新台币 TWD</option>
+							</select>
+						</td>
+						<td></td>
+						<td rowspan="2" style="height: 80px;">
+							<input type="number" disabled="disabled" id="exchangeOneInput" placeholder="请等待..." />
+						</td>
+						<td rowspan="2"><span class="mui-icon mui-icon-close-filled"></span></td>
+					</tr>
+					<tr>
+						<td id="exchangeOneText" class="money-text">美元
+						</td>
+						<td>◢</td>
+					</tr>
+				</table>
+			</div>
+			<div class="exchange-object">
+				<table border="0">
+					<tr>
+						<td style="height: 60px;text-align: center;width:25%;"><img id="exchangeTwoPic" src="../../res/images/modules/GJ001/CNY.png" width="70%;"></img>
+							<select id="exchangeTwoSelect" class="money-type-select">
+								<option value="人民币" selected="selected">人民币 CNY</option>
+								<option value="美元">美元 USD</option>
+								<option value="欧元">欧元 EUR</option>
+								<option value="港币">港币 HKD</option>
+								<option value="日元">日元 JPY</option>
+								<option value="英镑">英镑 GBP</option>
+								<option value="澳大利亚元">澳大利亚元 AUD</option>
+								<option value="加拿大元">加拿大元 CAD</option>
+								<option value="泰国铢">泰国铢 THB</option>
+								<option value="新加坡元">新加坡元 SGD</option>
+								<option value="挪威克朗">挪威克朗 NOK</option>
+								<option value="林吉特">林吉特 MYR</option>
+								<option value="澳门元">澳门元 MOP</option>
+								<option value="韩国元">韩国元 KRW</option>
+								<option value="瑞士法郎">瑞士法郎 CHF</option>
+								<option value="丹麦克朗">丹麦克朗 DKK</option>
+								<option value="瑞典克朗">瑞典克朗 SEK</option>
+								<option value="卢布">卢布 RUB</option>
+								<option value="新西兰元">新西兰元 NZD</option>
+								<option value="菲律宾比索">菲律宾比索 PHP</option>
+								<option value="新台币">新台币 TWD</option>
+							</select>
+						</td>
+						<td></td>
+						<td rowspan="2" style="height: 80px;">
+							<input type="number" disabled="disabled " id="exchangeTwoInput" placeholder="请等待..." />
+							<td rowspan="2"><span class="mui-icon mui-icon-close-filled"></span></td>
+						</td>
+					</tr>
+					<tr>
+						<td id="exchangeTwoText" class="money-text">人民币</td>
+						<td>◢</td>
+					</tr>
+				</table>
+			</div>
+			<div id="exchangeRateText" class="exchange-rate-text">正在获取汇率信息...</div>
+		</div>
+		<footer>
+			<div class="bank-text">
+				<select id="bankSelect" class="hidden-select">
+					<option value="0">工商银行</option>
+					<option value="1">招商银行</option>
+					<option value="2">建设银行</option>
+					<option value="3" selected="selected">中国银行</option>
+					<option value="4">交通银行</option>
+					<option value="5">农业银行</option>
+				</select>
+				数据由 <a id="selectedBankName">中国银行</a> 提供
+			</div>
+		</footer>
+	</body>
+	<script src="../../res/js/mui.min.js "></script>
+	<script type="text/javascript " src="../../res/js/common.js "></script>
+	<script type="text/javascript " src="js/GJ001.js "></script>
+	<script type="text/javascript " charset="utf-8 ">
+		mui.init();
+		mui.plusReady(function() {
+			initializeGJ001();
+		})
+	</script>
+
+</html>

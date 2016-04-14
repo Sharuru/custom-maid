@@ -1,0 +1,81 @@
+/* MUI class */
+
+.mui-input-row .mui-input-clear ~ .mui-icon-clear {
+	top: 0 !important;
+	right: -2px !important;
+}
+
+input[type='search'] {
+	margin-bottom: 0 !important;
+	padding: 0 25px 0 9px !important;
+	width: 98%;
+	height: auto !important;
+	text-align: left !important;
+	font-size: 18px !important;
+	border: 0 !important;
+	border-bottom: solid #DDDDDD 1px !important;
+	background: none !important;
+}
+
+.mui-search .mui-placeholder {
+	padding-left: 9px !important;
+	top: -2px !important;
+	font-size: 18px !important;
+	line-height: normal !important;
+	height: auto !important;
+	text-align: left !important;
+}
+
+.mui-search .mui-placeholder .mui-icon {
+	display: none !important;
+}
+
+.mui-search:before {
+	content: '' !important;
+}
+
+
+/* common class */
+.search-block{
+	padding-bottom: 7px !important;
+}
+
+.result-block{
+	padding-bottom: 0 !important;
+}
+
+.list-timeline {
+	margin-left: 10px !important;
+	margin-right: 10px !important;
+	padding-top: 15px !important;
+	padding-bottom: 0 !important;
+	border-top: #E6E6E6 solid 1px;
+	border-bottom: 0 !important;
+}
+
+.list-timeline > li {
+	padding-bottom: 10px !important;
+}
+
+.list-timeline .list-timeline-icon {
+	position: absolute;
+	top: 10px !important;
+	left: 8px !important;
+	width: 26px !important;
+	height: 26px !important;
+	font-size: 16px !important;
+}
+
+/* new class */
+
+#historyExpressInfo{
+	margin: 5px 0 0;
+	padding: 5px 5px 0;
+	border-radius: 5px;
+	/*border: #DDDDDD solid 1px;*/
+	/*background: rgba(255, 255, 255, .85);*/
+}
+
+.style-underline {
+	text-decoration: underline;
+}

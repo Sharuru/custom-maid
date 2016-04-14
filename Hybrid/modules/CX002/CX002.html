@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../../res/css/mui.min.css" rel="stylesheet" />
+		<link href="../../res/css/iconfont.css" rel="stylesheet" />
+		<link href="../../res/css/common.css" rel="stylesheet" />
+		<link href="css/CX002.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div class="header-text">
+				<span class="mui-action-back mui-icon mui-icon-back">地铁信息</span>
+			</div>
+		</header>
+		<div class="mui-content">
+			<div class="search-block">
+				<p class="font-s16 padding-10-l color-black">查询地铁换乘信息</p>
+				<div class="search-key">
+					<div class="mui-row">
+						<div class="mui-col-xs-2 align-center">
+							<p class="font-s16 remove-margin-b">起点 :</p>
+						</div>
+						<div class="mui-col-xs-4">
+							<select class="hidden-select" id="fromLineSelect">
+								<option value="01" selected="selected">1号线</option>
+								<option value="02">2号线</option>
+								<option value="03">3号线</option>
+								<option value="04">4号线</option>
+								<option value="05">5号线</option>
+								<option value="06">6号线</option>
+								<option value="07">7号线</option>
+								<option value="08">8号线</option>
+								<option value="09">9号线</option>
+								<option value="10">10号线</option>
+								<option value="11">11号线</option>
+								<option value="12">12号线</option>
+								<option value="13">13号线</option>
+								<option value="16">16号线</option>
+							</select>
+							<label class="font-s18" id="fromLine">1号线<span class="mui-icon iconfont icon-moreSelect" style="font-size: 14px;"></span></label>
+						</div>
+						<div class="mui-col-xs-6">
+							<select class="hidden-select" id="fromStationSelect">
+								<option value="0111" selected="selected">莘庄</option>
+								<option value="0112">外环路</option>
+								<option value="0113">莲花路</option>
+								<option value="0114">锦江乐园</option>
+								<option value="0115">上海南站</option>
+								<option value="0116">漕宝路</option>
+								<option value="0117">上海体育馆</option>
+								<option value="0118">徐家汇</option>
+								<option value="0119">衡山路</option>
+								<option value="0120">常熟路</option>
+								<option value="0121">陕西南路</option>
+								<option value="0122">黄陂南路</option>
+								<option value="0123">人民广场</option>
+								<option value="0124">新闸路</option>
+								<option value="0125">汉中路</option>
+								<option value="0126">上海火车站</option>
+								<option value="0127">中山北路</option>
+								<option value="0128">延长路</option>
+								<option value="0129">上海马戏城</option>
+								<option value="0130">汶水路</option>
+								<option value="0131">彭浦新村</option>
+								<option value="0132">共康路</option>
+								<option value="0133">通河新村</option>
+								<option value="0134">呼兰路</option>
+								<option value="0135">共富新村</option>
+								<option value="0136">宝安公路</option>
+								<option value="0137">友谊西路</option>
+								<option value="0138">富锦路</option>
+							</select>
+							<label class="font-s18" id="fromStation">莘庄<span class="mui-icon iconfont icon-moreSelect" style="font-size: 14px;"></span></label>
+						</div>
+					</div>
+					<div class="mui-row padding-5-t">
+						<div class="mui-col-xs-2 align-center">
+							<p class="font-s16 remove-margin-b">终点 :</p>
+						</div>
+						<div class="mui-col-xs-4">
+							<select class="hidden-select" id="toLineSelect">
+								<option value="01">1号线</option>
+								<option value="02" selected="selected">2号线</option>
+								<option value="03">3号线</option>
+								<option value="04">4号线</option>
+								<option value="05">5号线</option>
+								<option value="06">6号线</option>
+								<option value="07">7号线</option>
+								<option value="08">8号线</option>
+								<option value="09">9号线</option>
+								<option value="10">10号线</option>
+								<option value="11">11号线</option>
+								<option value="12">12号线</option>
+								<option value="13">13号线</option>
+								<option value="16">16号线</option>
+							</select>
+							<label class="font-s18" id="toLine">2号线<span class="mui-icon iconfont icon-moreSelect" style="font-size: 14px;"></span></label>
+						</div>
+						<div class="mui-col-xs-6">
+							<select class="hidden-select" id="toStationSelect">
+								<option value="0234" selected="selected">徐泾东</option>
+								<option value="0235">虹桥火车站</option>
+								<option value="0236">虹桥2号航站楼</option>
+								<option value="0237">淞虹路</option>
+								<option value="0238">北新泾</option>
+								<option value="0239">威宁路</option>
+								<option value="0240">娄山关路</option>
+								<option value="0241">中山公园</option>
+								<option value="0242">江苏路</option>
+								<option value="0243">静安寺</option>
+								<option value="0244">南京西路</option>
+								<option value="0245">人民广场</option>
+								<option value="0246">南京东路</option>
+								<option value="0247">陆家嘴</option>
+								<option value="0248">东昌路</option>
+								<option value="0249">世纪大道</option>
+								<option value="0250">上海科技馆</option>
+								<option value="0251">世纪公园</option>
+								<option value="0252">龙阳路</option>
+								<option value="0253">张江高科</option>
+								<option value="0254">金科路</option>
+								<option value="0255">广兰路</option>
+								<option value="0256">唐镇</option>
+								<option value="0257">创新中路</option>
+								<option value="0258">华夏东路</option>
+								<option value="0259">川沙</option>
+								<option value="0260">凌空路</option>
+								<option value="0261">远东大道</option>
+								<option value="0262">海天三路</option>
+								<option value="0263">浦东国际机场</option>
+							</select>
+							<label class="font-s18" id="toStation">徐泾东<span class="mui-icon iconfont icon-moreSelect" style="font-size: 14px;"></span></label>
+						</div>
+					</div>
+					<div class="mui-row button-padding align-center">
+						<button type="button" style="width: 30%;" class="mui-btn mui-btn-primary" id="searchButton">开始查询</button>
+					</div>
+				</div>
+			</div>
+			<div class="resultInfo"></div>
+		</div>
+		<footer>
+			<div class="footer-info">数据由 <a>上海地铁</a> 提供</div>
+		</footer>
+	</body>
+	<script src="../../res/js/mui.min.js "></script>
+	<script type="text/javascript " src="../../res/js/common.js "></script>
+	<script type="text/javascript " src="js/CX002.js "></script>
+	<script type="text/javascript " charset="utf-8 ">
+		mui.init();
+		mui.plusReady(function() {
+			initializeCX002();
+		})
+	</script>
+
+</html>

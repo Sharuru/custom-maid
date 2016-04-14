@@ -1,0 +1,35 @@
+/* common class */
+
+.mui-content {
+	padding-bottom: 0 !important;
+}
+
+
+/* new class */
+
+.city-background {
+	padding-top: 5px;
+	padding-bottom: 8px;
+	height: auto;
+	background: rgba(255, 255, 255, .9);
+}
+
+.province-title {
+	padding: 5px 0 5px 20px;
+	font-size: 22px;
+	color: #333333;
+}
+
+.city-list {
+	padding: 5px 0 5px 25px;
+	height: auto;
+	border-left: #DDDDDD solid 1px;
+}
+
+.city-module {
+	float: left;
+	width: 25%;
+	text-align: left;
+	font-size: 18px;
+	color: #555555;
+}

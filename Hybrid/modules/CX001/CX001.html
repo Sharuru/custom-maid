@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../../res/css/mui.min.css" rel="stylesheet" />
+		<link href="../../res/css/iconfont.css" rel="stylesheet" />
+		<link href="../../res/css/common.css" rel="stylesheet" />
+		<link href="css/CX001.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div class="header-text">
+				<span class="mui-action-back mui-icon mui-icon-back">火车信息</span>
+			</div>
+		</header>
+		<div class="mui-content">
+			<div class="mui-slider" id="searchSlider">
+				<div class="mui-slider-group">
+					<div class="mui-slider-item">
+						<div class="search-block">
+							<p class="font-s16 padding-10-l color-black">根据始末城市查询火车信息</p>
+							<div class="search-key">
+								<div class="mui-row">
+									<div class="mui-col-xs-5 padding-10-l">
+										<p class="font-s16 remove-margin-b color-black">始发城市</p>
+									</div>
+									<div class="mui-col-xs-2"> </div>
+									<div class="mui-col-xs-5 align-right padding-10-r">
+										<p class="font-s16 remove-margin-b color-black">到达城市</p>
+									</div>
+								</div>
+								<div class="mui-row padding-5-t">
+									<div class="mui-col-xs-5 align-center border-b">
+										<p class="search-tips" id="startStationCity">请选择城市</p>
+									</div>
+									<div class="mui-col-xs-2 align-center">
+										<span class="mui-icon iconfont icon-exchange" style="font-size: 18px;" id="exchangeCity"></span>
+									</div>
+									<div class="mui-col-xs-5 align-center border-b">
+										<p class="search-tips" id="arriveStationCity">请选择城市</p>
+									</div>
+								</div>
+								<div class="mui-row button-padding align-center">
+									<button type="button" style="width: 30%;" class="mui-btn mui-btn-primary" id="searchByCity">开始查询</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mui-slider-item">
+						<div class="search-block">
+							<p class="font-s16 padding-10-l color-black">根据火车车次查询基本信息</p>
+							<div class="search-key">
+								<div class="mui-row padding-10-l">
+									<p class="font-s16 remove-margin-b color-black">火车车次</p>
+								</div>
+								<div class="mui-row">
+									<div class="mui-col-xs-1"> </div>
+									<div class="mui-col-xs-10">
+										<div class="mui-input-row mui-search">
+											<input id="trainNumberInput" type="search" class="mui-input-clear" placeholder="请输入车次">
+										</div>
+									</div>
+								</div>
+								<div class="mui-row button-padding align-center">
+									<button type="button" style="width: 30%;" class="mui-btn mui-btn-primary" id="searchByNum">开始查询</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+			<div class="resultInfo"></div>
+			<div class="topButton" style="display: none;">
+				<span class="mui-icon iconfont icon-toTop buttonIcon"></span>
+			</div>
+		</div>
+		<footer>
+			<div class="footer-info ">数据由 <a>聚合数据</a> 提供</div>
+		</footer>
+	</body>
+	<script src="../../res/js/mui.min.js "></script>
+	<script type="text/javascript " src="../../res/js/common.js "></script>
+	<script type="text/javascript " src="js/CX001.js "></script>
+	<script type="text/javascript " charset="utf-8 ">
+		mui.init();
+		mui.plusReady(function() {
+			initializeCX001();
+		})
+	</script>
+
+</html>

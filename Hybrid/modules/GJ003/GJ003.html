@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../../res/css/mui.min.css" rel="stylesheet" />
+		<link href="../../res/css/iconfont.css" rel="stylesheet" />
+		<link href="../../res/css/common.css" rel="stylesheet" />
+		<link href="css/GJ003.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div class="header-text">
+				<span class="mui-action-back mui-icon mui-icon-back">证券信息</span>
+			</div>
+		</header>
+		<div class="mui-content">
+			<div class="search-block">
+				<div class="mui-row" style="padding-top: 2px;">
+					<div class="mui-col-xs-10 padding-20-l">
+						<div class="mui-input-row mui-search">
+							<input type="search" class="mui-input-clear" placeholder="请输入证券代码" id="stockCodeInput">
+						</div>
+					</div>
+					<div class="mui-col-xs-2 align-center">
+						<span class="mui-icon iconfont icon-search icon-style" id="iconButton"></span>
+					</div>
+				</div>
+			</div>
+			<!--<div class="resultInfo">
+				<div class="stock-list"></div>
+			</div>-->
+			<div class="mui-slider">
+				<div class="mui-slider-group">
+					<div class="mui-slider-item"></div>
+					<div class="mui-slider-item"></div>
+					<div class="mui-slider-item"></div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+			<p class="font-s16" style="margin: 3px 10px;display: none;" id="stockListTitle">自选股</p>
+			<div class="stock-list"></div>
+			<div class="topButton">
+				<span class="mui-icon iconfont icon-refresh buttonIcon"></span>
+			</div>
+		</div>
+		<footer>
+			<div class="footer-info">数据由 <a>聚合数据</a> 提供</div>
+		</footer>
+	</body>
+	<script src="../../res/js/mui.min.js "></script>
+	<script type="text/javascript " src="../../res/js/common.js "></script>
+	<script type="text/javascript " src="js/GJ003.js "></script>
+	<script type="text/javascript " charset="utf-8 ">
+		mui.init();
+		mui.plusReady(function() {
+			initializeGJ003();
+		})
+	</script>
+
+</html>

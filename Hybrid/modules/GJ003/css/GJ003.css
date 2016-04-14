@@ -1,0 +1,126 @@
+/* MUI class */
+
+input[type='search'] {
+	margin-bottom: 0 !important;
+	font-size: 18px !important;
+	height: 32px !important;
+	text-align: left !important;
+}
+
+.mui-search input[type='search'] {
+	padding-left: 15px !important;
+	padding-right: 30px !important;
+}
+
+.mui-search .mui-placeholder {
+	padding-left: 15px !important;
+	top: 3px !important;
+	font-size: 18px !important;
+	line-height: normal !important;
+	height: 32px !important;
+	text-align: left !important;
+}
+
+.mui-search .mui-placeholder .mui-icon {
+	display: none !important;
+}
+
+.mui-search:before {
+	content: '' !important;
+}
+
+.mui-input-row .mui-input-clear ~ .mui-icon-clear {
+	top: 7px !important;
+	right: 0px !important;
+}
+
+.mui-slider-indicator {
+	bottom: -5px !important;
+}
+
+.mui-slider-indicator .mui-indicator {
+	-webkit-box-shadow: 0 0 1px 1px rgba(221, 221, 221, .7) !important;
+	box-shadow: 0 0 1px 1px rgba(221, 221, 221, .7) !important;
+}
+
+
+/* common class */
+
+.search-block {
+	padding-bottom: 7px !important;
+	margin-bottom: 0 !important;
+}
+
+.buttonIcon {
+	height: 28px !important;
+	line-height: 28px !important;
+	font-size: 18px !important;
+}
+
+
+/* new class */
+
+.input-background {
+	margin: 0 0 0 20px;
+	height: auto;
+	width: 70%;
+}
+
+.icon-style {
+	padding-top: 2px;
+	font-size: 26px;
+	color: #555555;
+}
+
+.stock-slider {
+	margin: 5px 0 0;
+	padding: 5px 15px 10px;
+	border-radius: 5px;
+	background: rgba(128, 128, 128, .6);
+	height: auto;
+}
+
+.slider-name {
+	margin-bottom: 5px;
+	font-size: 22px;
+	color: white;
+}
+
+.slider-now-price {
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.slider-table {
+	width: 95%;
+	font-size: 16px;
+	color: white;
+}
+
+.stock-list {
+	margin: 0 5px 0;
+	border-radius: 5px;
+	background: rgba(128, 128, 128, .6);
+	height: auto;
+	color: white;
+	font-size: 18px;
+}
+
+.stock-list .mui-row {
+	padding: 2px 0 1px;
+}
+
+.info-style {
+	padding-top: 10px;
+	font-size: 18px;
+}
+
+.stock-base {
+	margin: 8px 5px 0;
+	padding: 5px 20px 3px;
+	border-radius: 5px;
+	background: rgba(128, 128, 128, .7);
+	height: auto;
+	color: white;
+	font-size: 18px;
+}
