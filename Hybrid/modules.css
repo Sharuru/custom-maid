@@ -6,7 +6,6 @@
 }
 
 .base-info {
-	margin-bottom: 5px;
 	padding: 10px 15px 0;
 	height: auto;
 	color: black;
@@ -92,6 +91,15 @@
 	text-align: right;
 }
 
+.module-block{
+	float: left;
+	width: 20%;
+	height: auto;
+	text-align: center;
+	background: rgba(255, 255, 255, .7);
+	border: rgba(0, 0, 255, .1) solid 1px;
+}
+
 .module-info{
 	margin: 5px -15px 0;
 	height: auto;
@@ -105,14 +113,14 @@
 	height: auto;
 }*/
 
-.module-block {
+/*.module-block {
 	float: left;
 	display: inline;
 	padding: 5px;
 	width: 25%;
 	height: auto;
 	border: solid 1px;
-}
+}*/
 
 .module-pic {
 	margin: auto;

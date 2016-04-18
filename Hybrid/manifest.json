@@ -350,7 +350,8 @@
 					"res/images/modules/GJ001/USD.png",
 					"res/images/modules/GJ001/CNY.png",
 					"res/images/modules/GJ001/JPY.png",
-					"res/images/modules/GJ001/CAD.png"
+					"res/images/modules/GJ001/CAD.png",
+					"res/images/modules/GJ001/EUR.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -614,7 +615,6 @@
 				"res/images/modules/GJ001/MYR.png",
 				"res/images/modules/GJ001/GBP.png",
 				"res/images/modules/GJ001/PHP.png",
-				"res/images/modules/GJ001/EUR.png",
 				"res/images/modules/GJ001/MOP.png",
 				"res/images/modules/GJ001/SEK.png",
 				"res/images/modules/GJ001/TWD.png",

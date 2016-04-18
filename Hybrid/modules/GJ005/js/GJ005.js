@@ -201,15 +201,27 @@ function getFavor() {
 		for (var i = 0; i < favorList.length; i++) {
 			var fromTypeName = getTypeName(favorList[i].fromTypeInfo);
 			var toTypeName = getTypeName(favorList[i].toTypeInfo);
-			favorContext += '<div class="mui-row padding-10-l"><div class="mui-col-xs-3">';
-			favorContext += '<p class="font-s16 remove-margin-b">原: (' + fromTypeName + ')</p></div>';
-			favorContext += '<div class="mui-col-xs-8"><p class="font-s16 remove-margin-b">' + favorList[i].fromSrc;
-			favorContext += '</p></div><div class="mui-col-xs-1 align-right">';
-			favorContext += '<span class="icon iconfont icon-delFavor delete-icon" id="favor' + i + '"></span></div></div>';
-			favorContext += '<div class="mui-row padding-10-l" style="margin-bottom: 5px;"><div class="mui-col-xs-3">';
-			favorContext += '<p class="font-s16 remove-margin-b">译: (' + toTypeName + ')</p></div>';
-			favorContext += '<div class="mui-col-xs-8"><p class="font-s16 remove-margin-b">' + favorList[i].toDst;
-			favorContext += '</p></div><div class="mui-col-xs-1"></div></div>';
+			favorContext +=
+				'<div class="mui-row padding-10-l">' +
+				'	<div class="mui-col-xs-3">' +
+				'		<p class="font-s16 remove-margin-b">原: (' + fromTypeName + ')</p>' +
+				'	</div>' +
+				'	<div class="mui-col-xs-8">' +
+				'		<p class="font-s16 remove-margin-b">' + favorList[i].fromSrc + '</p>' +
+				'	</div>' +
+				'	<div class="mui-col-xs-1 align-right">' +
+				'		<span class="icon iconfont icon-delFavor delete-icon" id="favor' + i + '"></span>' +
+				'	</div>' +
+				'</div>' +
+				'<div class="mui-row padding-10-l" style="margin-bottom: 5px;">' +
+				'	<div class="mui-col-xs-3">' +
+				'		<p class="font-s16 remove-margin-b">译: (' + toTypeName + ')</p>' +
+				'	</div>' +
+				'	<div class="mui-col-xs-8">' +
+				'		<p class="font-s16 remove-margin-b">' + favorList[i].toDst + '</p>' +
+				'	</div>' +
+				'	<div class="mui-col-xs-1"></div>' +
+				'</div>';
 		}
 		favorContext += '</div>';
 		favorLayer.innerHTML += favorContext;

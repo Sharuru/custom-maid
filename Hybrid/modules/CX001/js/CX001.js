@@ -132,37 +132,43 @@ function findByCity(startPosition, endPosition) {
 					var startTime = requestData.result.list[i].start_time;
 					var totalTime = requestData.result.list[i].run_time;
 					var arriveTips = getDays(startTime, totalTime);
-					contentStr += '<div class="result-block"><div class="mui-row padding-10-l">';
-					contentStr += '<p class="font-s18 color-black remove-margin-b">';
-					contentStr += requestData.result.list[i].train_no;
-					contentStr += '<label class="font-s18 padding-10-l">';
-					contentStr += requestData.result.list[i].train_type + '</label></p></div>';
-					contentStr += '<div class="mui-row padding-5-t" style="line-height: 24px;">';
-					contentStr += '<div class="mui-col-xs-8 padding-20-l">';
-					if (requestData.result.list[i].start_station_type == '始') {
-						contentStr += '<div class="start-circle float-left"><span class="circle-text">始';
-					} else {
-						contentStr += '<div class="pass-circle float-left"><span class="circle-text">';
-						contentStr += requestData.result.list[i].start_station_type;
-					}
-					contentStr += '</span></div><div class="font-s18 float-left padding-10-l">';
-					contentStr += requestData.result.list[i].start_station;
-					contentStr += '<label class="font-s16 padding-10-l">(' + startTime + ')</label></div></div>';
-					contentStr += '<div class="mui-col-xs-4 align-center"><label class="font-s16">';
-					contentStr += totalTime + '</label></div></div>';
-					contentStr += '<div class="mui-row" style="line-height: 22px;padding-top: 3px;">';
-					contentStr += '<div class="mui-col-xs-8 padding-20-l">';
-					if (requestData.result.list[i].end_station_type == '终') {
-						contentStr += '<div class="arrive-circle float-left"><span class="circle-text">终';
-					} else {
-						contentStr += '<div class="pass-circle float-left"><span class="circle-text">';
-						contentStr += requestData.result.list[i].end_station_type;
-					}
-					contentStr += '</span></div><div class="font-s18 float-left padding-10-l">';
-					contentStr += requestData.result.list[i].end_station + '<label class="font-s16 padding-10-l">(';
-					contentStr += requestData.result.list[i].end_time + ')</label></div></div>';
-					contentStr += '<div class="mui-col-xs-4 align-center"><label class="font-s16">';
-					contentStr += arriveTips + '</label></div></div></div>';
+					contentStr +=
+						'<div class="result-block">' +
+						'	<div class="mui-row padding-10-l">' +
+						'		<p class="font-s18 color-black remove-margin-b">' +
+						requestData.result.list[i].train_no +
+						'			<label class="font-s18 padding-10-l">' +
+						requestData.result.list[i].train_type +
+						'			</label>' +
+						'		</p>' +
+						'	</div>' +
+						'	<div class="mui-row padding-5-t" style="line-height: 24px;">' +
+						'		<div class="mui-col-xs-8 padding-20-l">' +
+						checkType(requestData.result.list[i].start_station_type) +
+						'			<div class="font-s18 float-left padding-10-l">' +
+						requestData.result.list[i].start_station +
+						'				<label class="font-s16 padding-10-l">(' + startTime + ')</label>' +
+						'			</div>' +
+						'		</div>' +
+						'		<div class="mui-col-xs-4 align-center">' +
+						'			<label class="font-s16">' + totalTime + '</label>' +
+						'		</div>' +
+						'	</div>' +
+						'	<div class="mui-row" style="line-height: 22px;padding-top: 3px;">' +
+						'		<div class="mui-col-xs-8 padding-20-l">' +
+						checkType(requestData.result.list[i].end_station_type) +
+						'			<div class="font-s18 float-left padding-10-l">' +
+						requestData.result.list[i].end_station +
+						'				<label class="font-s16 padding-10-l">' +
+						'(' + requestData.result.list[i].end_time + ')' +
+						'				</label>' +
+						'</div>' +
+						'		</div>' +
+						'		<div class="mui-col-xs-4 align-center">' +
+						'			<label class="font-s16">' + arriveTips + '</label>' +
+						'		</div>' +
+						'	</div>' +
+						'</div>';
 				}
 				resultContent.innerHTML = contentStr;
 				resultContent.style.border = '#DDDDDD solid 1px';
@@ -241,61 +247,81 @@ function findByTrainNo() {
 				var startTime = requestData.result.list.start_time;
 				var totalTime = requestData.result.list.run_time;
 				var arriveTips = getDays(startTime, totalTime);
-				contentStr += '<div class="detail-block"><div class="mui-row padding-10-l">';
-				contentStr += '<p class="font-s18 color-black remove-margin-b">';
-				contentStr += requestData.result.list.train_no;
-				contentStr += '<label class="font-s18 padding-10-l">';
-				contentStr += requestData.result.list.train_type + '</label></p></div>';
-				contentStr += '<div class="mui-row padding-5-t" style="line-height: 24px;">';
-				contentStr += '<div class="mui-col-xs-8 padding-20-l"><div class="start-circle float-left">';
-				contentStr += '<span class="circle-text">' + requestData.result.list.start_station_type;
-				contentStr += '</span></div><div class="font-s18 float-left padding-10-l">';
-				contentStr += requestData.result.list.start_station;
-				contentStr += '<label class="font-s16 padding-10-l">(' + startTime + ')</label></div></div>';
-				contentStr += '<div class="mui-col-xs-4 align-center"><label class="font-s16">';
-				contentStr += totalTime + '</label></div></div>';
-				contentStr += '<div class="mui-row" style="line-height: 22px;padding-top: 3px;">';
-				contentStr += '<div class="mui-col-xs-8 padding-20-l">';
-				if (requestData.result.list.end_station_type == '终') {
-					contentStr += '<div class="arrive-circle float-left"><span class="circle-text">终';
-				} else {
-					contentStr += '<div class="pass-circle float-left"><span class="circle-text">';
-					contentStr += requestData.result.list.end_station_type;
-				}
-				contentStr += '</span></div><div class="font-s18 float-left padding-10-l">';
-				contentStr += requestData.result.list.end_station + '<label class="font-s16 padding-10-l">(';
-				contentStr += requestData.result.list.end_time + ')</label></div></div>';
-				contentStr += '<div class="mui-col-xs-4 align-center"><label class="font-s16">';
-				contentStr += arriveTips + '</label></div></div><div class="mui-row padding-10-t">';
-				contentStr += '<div class="mui-col-xs-4 padding-10-l font-s16">参考票价</div></div>';
+				contentStr +=
+					'<div class="detail-block">' +
+					'	<div class="mui-row padding-10-l">' +
+					'		<p class="font-s18 color-black remove-margin-b">' +
+					requestData.result.list.train_no +
+					'			<label class="font-s18 padding-10-l">' +
+					requestData.result.list.train_type +
+					'			</label>' +
+					'		</p>' +
+					'	</div>' +
+					'	<div class="mui-row padding-5-t" style="line-height: 24px;">' +
+					'		<div class="mui-col-xs-8 padding-20-l">' +
+					checkType(requestData.result.list.start_station_type) +
+					'			<div class="font-s18 float-left padding-10-l">' +
+					requestData.result.list.start_station +
+					'				<label class="font-s16 padding-10-l">(' + startTime + ')</label>' +
+					'			</div>' +
+					'		</div>' +
+					'		<div class="mui-col-xs-4 align-center">' +
+					'			<label class="font-s16">' + totalTime + '</label>' +
+					'		</div>' +
+					'	</div>' +
+					'	<div class="mui-row" style="line-height: 22px;padding-top: 3px;">' +
+					'		<div class="mui-col-xs-8 padding-20-l">' +
+					checkType(requestData.result.list.end_station_type) +
+					'			<div class="font-s18 float-left padding-10-l">' +
+					requestData.result.list.end_station +
+					'				<label class="font-s16 padding-10-l">' +
+					'(' + requestData.result.list.end_time + ')' +
+					'				</label>' +
+					'			</div>' +
+					'		</div>' +
+					'		<div class="mui-col-xs-4 align-center">' +
+					'			<label class="font-s16">' + arriveTips + '</label>' +
+					'		</div>' +
+					'	</div>' +
+					'	<div class="mui-row padding-10-t">' +
+					'		<div class="mui-col-xs-4 padding-10-l font-s16">参考票价</div>' +
+					'	</div>';
 				if (requestData.result.list.price_list.item.length % 2 == 0) {
 					for (var i = parseInt(requestData.result.list.price_list.item.length / 2 - 1); i >= 0; i--) {
-						contentStr += '<div class="mui-row padding-5-t">';
-						contentStr += '<div class="mui-col-xs-6 align-center font-s16">';
-						contentStr += requestData.result.list.price_list.item[2 * i + 1].price_type;
-						contentStr += ' : ￥' + requestData.result.list.price_list.item[2 * i + 1].price;
-						contentStr += '</div><div class="mui-col-xs-6 align-center font-s16">';
-						contentStr += requestData.result.list.price_list.item[2 * i].price_type;
-						contentStr += ' : ￥' + requestData.result.list.price_list.item[2 * i].price + '</div>';
+						contentStr +=
+							'<div class="mui-row padding-5-t">' +
+							'	<div class="mui-col-xs-6 align-center font-s16">' +
+							requestData.result.list.price_list.item[2 * i + 1].price_type + ' : ￥' + requestData.result.list.price_list.item[2 * i + 1].price +
+							'	</div>' +
+							'	<div class="mui-col-xs-6 align-center font-s16">' +
+							requestData.result.list.price_list.item[2 * i].price_type + ' : ￥' + requestData.result.list.price_list.item[2 * i].price +
+							'	</div>' +
+							'</div>';
 					}
 				} else {
 					for (var i = parseInt(requestData.result.list.price_list.item.length / 2); i >= 0; i--) {
-						contentStr += '<div class="mui-row padding-5-t">';
+						contentStr +=
+							'<div class="mui-row padding-5-t">';
 						if (i == 0) {
-							contentStr += '<div class="mui-col-xs-6 align-center font-s16">';
-							contentStr += requestData.result.list.price_list.item[0].price_type;
-							contentStr += ' : ￥' + requestData.result.list.price_list.item[0].price + '</div>';
+							contentStr +=
+								'<div class="mui-col-xs-6 align-center font-s16">' +
+								requestData.result.list.price_list.item[0].price_type + ' : ￥' + requestData.result.list.price_list.item[0].price +
+								'</div>';
 						} else {
-							contentStr += '<div class="mui-col-xs-6 align-center font-s16">';
-							contentStr += requestData.result.list.price_list.item[2 * i].price_type;
-							contentStr += ' : ￥' + requestData.result.list.price_list.item[2 * i].price;
-							contentStr += '</div><div class="mui-col-xs-6 align-center font-s16">';
-							contentStr += requestData.result.list.price_list.item[2 * i - 1].price_type;
-							contentStr += ' : ￥' + requestData.result.list.price_list.item[2 * i - 1].price + '</div>';
+							contentStr +=
+								'<div class="mui-col-xs-6 align-center font-s16">' +
+								requestData.result.list.price_list.item[2 * i].price_type + ' : ￥' + requestData.result.list.price_list.item[2 * i].price +
+								'</div>' +
+								'<div class="mui-col-xs-6 align-center font-s16">' +
+								requestData.result.list.price_list.item[2 * i - 1].price_type + ' : ￥' + requestData.result.list.price_list.item[2 * i - 1].price +
+								'</div>';
 						}
+						contentStr +=
+							'</div>';
 					}
 				}
-				contentStr += '</div>';
+				contentStr +=
+					'</div>';
 				resultContent.innerHTML = contentStr;
 				resultContent.style.border = '#DDDDDD solid 1px';
 				cancelDisabledNum();
@@ -362,6 +388,32 @@ function getDays(startT, totalT) {
 		returnStr = '次日达到';
 	} else {
 		returnStr = '第' + parseFloat(n + 1) + '天到达';
+	}
+	return returnStr;
+}
+
+/**
+ * 判断始终站点
+ * 
+ * @param {String} typeStr 站点种类
+ */
+function checkType(typeStr) {
+	var returnStr = '';
+	if (typeStr == '始') {
+		returnStr +=
+			'<div class="start-circle float-left">' +
+			'	<span class="circle-text">始</span>' +
+			'</div>';
+	} else if (typeStr == '终') {
+		returnStr +=
+			'<div class="arrive-circle float-left">' +
+			'	<span class="circle-text">终</span>' +
+			'</div>';
+	} else {
+		returnStr +=
+			'<div class="pass-circle float-left">' +
+			'	<span class="circle-text">' + typeStr + '</span>' +
+			'</div>';
 	}
 	return returnStr;
 }
