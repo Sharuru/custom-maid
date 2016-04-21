@@ -13,8 +13,8 @@ body {
 
 .mui-bar-nav {
 	height: 49px !important;
-	color: white;
-	background: rgba(0, 102, 255, .75);
+	color: white !important;
+	background: rgba(0, 102, 255, .75) !important;
 }
 
 .mui-content {
@@ -25,7 +25,7 @@ body {
 	padding-bottom: 20px !important;
 	/*background: url(../images/a8ef76094b36acaf3f37a28d7ed98d1000e99cef.jpg);*/
 	/*background-size: 100%;*/
-	background-color: #EFEFF4;
+	background-color: #EFEFF4 !important;
 }
 
 .mui-btn {
@@ -35,11 +35,11 @@ body {
 
 footer {
 	position: relative;
-	margin-top: -20px;
-	height: 20px;
-	clear: both;
-	width: 100%;
-	background-color: #EFEFF4;
+	margin-top: -20px !important;
+	height: 20px !important;
+	clear: both !important;
+	width: 100% !important;
+	background-color: #EFEFF4 !important;
 }
 
 

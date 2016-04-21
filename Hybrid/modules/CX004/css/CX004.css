@@ -1,0 +1,127 @@
+/* MUI class */
+
+input[type='search'] {
+	margin-bottom: 0 !important;
+	font-size: 18px !important;
+	height: 32px !important;
+	text-align: left !important;
+}
+
+.mui-search input[type='search'] {
+	padding-left: 15px !important;
+	padding-right: 30px !important;
+}
+
+.mui-search .mui-placeholder {
+	padding-left: 15px !important;
+	top: 3px !important;
+	font-size: 18px !important;
+	line-height: normal !important;
+	height: 32px !important;
+	text-align: left !important;
+}
+
+.mui-search .mui-placeholder .mui-icon {
+	display: none !important;
+}
+
+.mui-search:before {
+	content: '' !important;
+}
+
+.mui-input-row .mui-input-clear ~ .mui-icon-clear {
+	top: 7px !important;
+	right: 0px !important;
+}
+
+.mui-table-view-cell:after {
+	left: 0 !important;
+}
+
+.mui-table-view-cell > a:not(.mui-btn) {
+	padding: 5px 10px !important;
+}
+
+.mui-table-view-cell.mui-collapse .mui-collapse-content {
+	padding: 0 15px !important;
+}
+
+
+/* common class */
+
+.search-block {
+	padding-bottom: 5px !important;
+}
+
+.result-block {
+	padding: 0 !important;
+}
+
+.result-block:last-child {
+	border-bottom-left-radius: 6px !important;
+	border-bottom-right-radius: 6px !important;
+	padding-bottom: 0 !important;
+}
+
+.list-timeline .list-timeline-icon {
+	position: absolute;
+	top: 2px !important;
+	left: 11px !important;
+	width: 20px;
+	height: 20px;
+	padding-top: 2px !important;
+	font-size: 14px !important;
+	color: #DDDDDD;
+	text-align: center;
+	border-radius: 50%;
+	border: 0 !important;
+	z-index: 2;
+}
+
+
+/* new class */
+
+.radio-type {
+	padding-right: 5px;
+	padding-top: 2px;
+	text-align: right;
+}
+
+.icon-div {
+	width: 28px;
+	float: left;
+}
+
+.start-time {
+	width: 21px;
+	height: 21px;
+	background-color: #FF5053;
+}
+
+.end-time {
+	width: 21px;
+	height: 21px;
+	background-color: #2AC845;
+}
+
+.time-text {
+	height: 21px;
+	line-height: normal;
+	font-size: 16px;
+	display: block;
+	color: #FFF;
+	text-align: center;
+}
+
+.time-info {
+	height: 21px;
+	line-height: 24px;
+	font-size: 18px;
+	display: block;
+}
+
+.toDetail {
+	padding: 30px 5px 0 20px;
+	font-size: 16px;
+	color: #AAAAAA;
+}

@@ -1,0 +1,77 @@
+/* MUI class */
+
+a:active {
+	color: #F0F0F0 !important;
+}
+
+
+/* common class */
+
+.search-block {
+	padding-bottom: 7px !important;
+}
+
+.resultInfo {
+	margin-bottom: 29px !important;
+}
+
+
+/* new class */
+
+.search-tips {
+	font-size: 18px !important;
+	margin-bottom: 0 !important;
+}
+
+.start-circle {
+	width: 21px;
+	height: 21px;
+	background-color: dodgerblue;
+	border-radius: 50%;
+}
+
+.arrive-circle {
+	width: 21px;
+	height: 21px;
+	background-color: lightseagreen;
+	border-radius: 50%;
+}
+
+.circle-text {
+	height: 21px;
+	line-height: normal;
+	font-size: 14px;
+	display: block;
+	color: #FFF;
+	text-align: center;
+}
+
+.timeInfo {
+	margin-bottom: 0 !important;
+	padding-top: 4px;
+	padding-left: 15px;
+	font-size: 24px;
+	font-weight: 700;
+	color: black;
+}
+
+.priceInfo {
+	padding-right: 10px;
+	font-size: 26px;
+	font-weight: 700;
+	color: #FF3366;
+}
+
+#fixedLayer {
+	position: fixed;
+	bottom: 20px;
+	right: 0;
+	padding: 5px;
+	width: 100%;
+	height: auto;
+	background: rgba(85, 85, 85, .8);
+}
+
+.href-class {
+	color: white !important;
+}

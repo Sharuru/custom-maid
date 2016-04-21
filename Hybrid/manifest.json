@@ -285,7 +285,11 @@
 					"modules/GJ002/GJ002.html",
 					"modules/GJ003/GJ003.html",
 					"modules/HJ003/HJ003.html",
-					"modules/CX005/CX005.html"
+					"modules/CX005/CX005.html",
+					"modules/HJ001/HJ001.html",
+					"modules/HJ002/HJ002.html",
+					"modules/GJ004/GJ004.html",
+					"modules/CX004/CX004.html"
 				],
 				"priority": 0
 			},
@@ -516,7 +520,8 @@
 					"res/images/icons/weather/cloudy.png",
 					"res/images/icons/weather/sunny.png",
 					"res/images/icons/weather/overcast.png",
-					"res/images/icons/weather/shower.png"
+					"res/images/icons/weather/shower.png",
+					"res/images/icons/weather/moderate-rain.png"
 				],
 				"refer": [
 					"modules/HJ003/CITY_DETAIL.html"
@@ -596,6 +601,60 @@
 			"modules/CX005/ACTUAL_BUS.html": {
 				"resources": [
 					"modules/CX005/js/ACTUAL_BUS.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/HJ001/HJ001.html": {
+				"resources": [
+					"res/fonts/mui.ttf",
+					"modules/HJ001/css/HJ001.css",
+					"modules/HJ001/js/HJ001.js",
+					"res/css/mui.min.css",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css",
+					"res/css/iconfont.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/HJ002/HJ002.html": {
+				"resources": [
+					"modules/HJ002/js/HJ002.js",
+					"res/fonts/mui.ttf",
+					"modules/HJ002/css/HJ002.css",
+					"res/images/icons/weather/shower.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/GJ004/GJ004.html": {
+				"resources": [
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/fonts/iconfont.ttf",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"modules/GJ004/js/GJ004.js",
+					"res/js/common.js",
+					"res/css/common.css",
+					"modules/GJ004/css/GJ004.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/CX004/CX004.html": {
+				"resources": [
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/fonts/iconfont.ttf",
+					"modules/CX004/js/CX004.js",
+					"modules/CX004/css/CX004.css",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css"
 				],
 				"refer": [],
 				"priority": 0

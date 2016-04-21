@@ -127,27 +127,17 @@ function checkIsFirstRun(callback) {
 		localStorage.setItem('SH005', '影院');
 		localStorage.setItem('CX001', '火车');
 		localStorage.setItem('CX002', '地铁');
-		localStorage.setItem('CX003', '航班');
-		localStorage.setItem('CX004', '路况');
-		localStorage.setItem('CX005', '公交');
-		localStorage.setItem('CX006', '长途汽车');
-		localStorage.setItem('CX007', '出行');
+		localStorage.setItem('CX003', '长途汽车');
+		localStorage.setItem('CX004', '公交');
+		localStorage.setItem('CX005', '出行');
 		localStorage.setItem('GJ001', '汇率换算');
-		localStorage.setItem('GJ002', '彩票信息');
-		localStorage.setItem('GJ003', '股票信息');
-		localStorage.setItem('GJ004', '114 查号');
-		localStorage.setItem('GJ005', '在线翻译');
+		localStorage.setItem('GJ002', '彩票');
+		localStorage.setItem('GJ003', '证券');
+		localStorage.setItem('GJ004', '在线翻译');
 		localStorage.setItem('HJ001', '台风查询');
-		localStorage.setItem('HJ002', '空气水质查询');
-		localStorage.setItem('HJ003', '天气');
-		localStorage.setItem('SP001', '图书馆服务');
-		localStorage.setItem('SP002', '志愿者服务');
-		localStorage.setItem('JS001', '电子监控');
-		localStorage.setItem('JS002', '违章提醒');
-		localStorage.setItem('JS003', '驾照违法查询');
-		localStorage.setItem('JS004', '车辆年检预约');
+		localStorage.setItem('HJ002', '天气');
 		//通用模块
-		localStorage.setItem('comModuleList', 'SH001,CX001,CX003,CX006,GJ001,GJ002,GJ003,GJ004,GJ005,GJ005,HJ001');
+		localStorage.setItem('comModuleList', 'SH001,CX001,CX003,CX004,GJ001,GJ002,GJ003,GJ004,HJ001,HJ002');
 		localStorage.setItem('isFirstRun', '0');
 		//币种字典
 		localStorage.setItem('人民币', 'CNY');
