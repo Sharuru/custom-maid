@@ -37,7 +37,7 @@ function setModuleBody() {
 	mui("body").on('tap', '.module-item', function() {
 		var moduleId = this.getAttribute("id").substr(5);
 		mui.openWindow({
-			url: 'modules/' + moduleId + '/' + moduleId + '.html',
+			url: 'playground.html',
 			id: 'PAGE_' + moduleId,
 			show: {
 				aniShow: "pop-in",

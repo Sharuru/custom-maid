@@ -109,8 +109,12 @@ function checkValue(valueStr) {
 	radioFlg = valueStr;
 	if (valueStr == '0') {
 		mui('.mui-placeholder')[0].innerHTML = '请输入公交线路';
+		inputEle.value = '';
+		inputEle.focus();
 	} else if (valueStr == '1') {
 		mui('.mui-placeholder')[0].innerHTML = '请输入公交站点';
+		inputEle.value = '';
+		inputEle.focus();
 	}
 }
 
@@ -130,8 +134,8 @@ function initInfo(radioStr) {
 	if (radioStr == '0') {
 		getBusLineInfo(cityStr, inputEle.value, showButton);
 	} else {
-		//getBusList(cityStr, inputEle.value);
-		getBusList('上海', '桂林西街');
+		getBusList(cityStr, inputEle.value);
+		//getBusList('上海', '桂林西街');
 	}
 }
 

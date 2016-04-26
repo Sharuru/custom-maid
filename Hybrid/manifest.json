@@ -656,6 +656,16 @@
 					"res/js/common.js",
 					"res/css/common.css"
 				],
+				"refer": [
+					"modules/CX004/BUS_DETAIL.html"
+				],
+				"priority": 0
+			},
+			"modules/CX004/BUS_DETAIL.html": {
+				"resources": [
+					"modules/CX004/js/BUS_DETAIL.js",
+					"res/js/mui.min.js"
+				],
 				"refer": [],
 				"priority": 0
 			}

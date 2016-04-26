@@ -1,149 +1,149 @@
 {
-	"index.html": {
-		"resources": [
-			"res/css/iconfont.css",
-			"res/css/mui.min.css",
-			"res/fonts/iconfont.ttf",
-			"res/images/icons/loading.png",
-			"res/js/mui.min.js",
-			"res/images/icons/location-mark.png",
-			"index.js",
-			"res/js/common.js",
-			"index.css",
-			"res/images/icons/weather/sunny.png",
-			"modules.html",
-			"res/images/icons/weather/rain-m.png",
-			"res/images/icons/weather/rain-s.png",
-			"res/images/icons/weather/cloudy.png"
-		],
-		"refer": [
-			"modules.html"
-		]
-	},
-	"modules.html": {
-		"resources": [
-			"res/images/icons/modules/JS003.png",
-			"res/images/icons/modules/HJ002.png",
-			"res/images/icons/modules/GJ002.png",
-			"res/images/icons/modules/SH003.png",
-			"res/images/icons/modules/SP002.png",
-			"res/images/icons/modules/SH004.png",
-			"modules.js",
-			"res/images/icons/modules/HJ003.png",
-			"res/images/icons/modules/SH002.png",
-			"modules.css",
-			"res/images/icons/modules/GJ001.png",
-			"res/images/icons/modules/CX003.png",
-			"res/images/icons/modules/CX001.png",
-			"res/images/icons/modules/JS002.png",
-			"res/images/icons/modules/GJ005.png",
-			"res/images/icons/modules/SH005.png",
-			"res/images/icons/modules/CX004.png",
-			"res/images/icons/modules/SH001.png",
-			"res/images/icons/modules/GJ004.png",
-			"res/images/icons/modules/GJ003.png",
-			"res/images/icons/modules/CX006.png",
-			"res/images/icons/modules/HJ001.png",
-			"res/images/icons/modules/JS001.png",
-			"res/images/icons/modules/CX007.png",
-			"res/images/icons/modules/CX002.png",
-			"res/images/icons/modules/SP001.png",
-			"res/images/icons/modules/CX005.png"
-		],
-		"refer": [
-			"modules/GJ001/GJ001.html",
-			"modules/CX006/CX006.html",
-			"modules/CX001/CX001.html",
-			"modules/HJ002/HJ002.html",
-			"modules/HJ001/HJ001.html",
-			"modules/GJ004/GJ004.html"
-		]
-	},
-	"modules/GJ001/GJ001.html": {
-		"resources": [
-			"res/images/modules/GJ001/USD.png",
-			"modules/GJ001/css/GJ001.css",
-			"modules/GJ001/js/GJ001.js",
-			"res/images/modules/GJ001/CNY.png",
-			"res/fonts/mui.ttf",
-			"res/css/mui.min.css",
-			"res/js/mui.min.js",
-			"res/js/common.js"
-		]
-	},
-	"modules/CX006/CX006.html": {
-		"resources": [
-			"modules/CX006/css/CX006.css",
-			"modules/CX006/js/CX006.js",
-			"res/css/mui.min.css",
-			"res/fonts/mui.ttf",
-			"res/js/mui.min.js",
-			"res/js/common.js"
-		],
-		"refer": [
-			"modules/CX006/CITY_LIST.html",
-			"modules/CX006/RESULT_LIST.html"
-		]
-	},
-	"modules/CX006/CITY_LIST.html": {
-		"resources": [
-			"modules/CX006/css/CITY_LIST.css",
-			"res/css/mui.indexedlist.css",
-			"res/js/mui.indexedlist.min.js",
-			"modules/CX006/js/CITY_LIST.js",
-			"res/css/mui.min.css",
-			"res/fonts/mui.ttf",
-			"res/js/mui.min.js",
-			"res/js/common.js"
-		]
-	},
-	"modules/CX006/RESULT_LIST.html": {
-		"resources": [
-			"modules/CX006/css/RESULT_LIST.css",
-			"res/css/mui.min.css",
-			"res/fonts/mui.ttf",
-			"res/js/mui.min.js",
-			"modules/CX006/js/RESULT_LIST.js",
-			"res/js/common.js"
-		]
-	},
-	"modules/CX001/CX001.html": {
-		"resources": [
-			"modules/CX001/js/CX001.js",
-			"res/fonts/mui.ttf",
-			"res/css/mui.min.css",
-			"res/js/mui.min.js",
-			"res/js/common.js",
-			"modules/CX001/css/CX001.css",
-			"res/images/modules/GJ001/USD.png"
-		]
-	},
-	"modules/HJ002/HJ002.html": {
-		"resources": [
-			"res/fonts/mui.ttf",
-			"res/css/mui.min.css",
-			"res/js/mui.min.js",
-			"res/js/common.js"
-		]
-	},
-	"modules/HJ001/HJ001.html": {
-		"resources": [
-			"res/css/mui.min.css",
-			"res/fonts/mui.ttf",
-			"modules/HJ001/css/HJ001.css",
-			"res/js/mui.min.js",
-			"res/js/common.js",
-			"modules/HJ001/js/HJ001.js"
-		]
-	},
-	"modules/GJ004/GJ004.html": {
-		"resources": [
-			"res/fonts/mui.ttf",
-			"modules/GJ004/js/GJ004.js",
-			"modules/GJ004/css/GJ004.css",
-			"res/css/mui.min.css",
-			"res/js/mui.min.js",
-			"res/js/common.js"
-		]
-	}
+  "index.html": {
+    "resources": [
+      "res/css/iconfont.css",
+      "res/css/mui.min.css",
+      "res/fonts/iconfont.ttf",
+      "res/images/icons/loading.png",
+      "res/js/mui.min.js",
+      "res/images/icons/location-mark.png",
+      "index.js",
+      "res/js/common.js",
+      "index.css",
+      "res/images/icons/weather/sunny.png",
+      "modules.html",
+      "res/images/icons/weather/rain-m.png",
+      "res/images/icons/weather/rain-s.png",
+      "res/images/icons/weather/cloudy.png"
+    ],
+    "refer": [
+      "modules.html"
+    ]
+  },
+  "modules.html": {
+    "resources": [
+      "res/images/icons/modules/JS003.png",
+      "res/images/icons/modules/HJ002.png",
+      "res/images/icons/modules/GJ002.png",
+      "res/images/icons/modules/SH003.png",
+      "res/images/icons/modules/SP002.png",
+      "res/images/icons/modules/SH004.png",
+      "modules.js",
+      "res/images/icons/modules/HJ003.png",
+      "res/images/icons/modules/SH002.png",
+      "modules.css",
+      "res/images/icons/modules/GJ001.png",
+      "res/images/icons/modules/CX003.png",
+      "res/images/icons/modules/CX001.png",
+      "res/images/icons/modules/JS002.png",
+      "res/images/icons/modules/GJ005.png",
+      "res/images/icons/modules/SH005.png",
+      "res/images/icons/modules/CX004.png",
+      "res/images/icons/modules/SH001.png",
+      "res/images/icons/modules/GJ004.png",
+      "res/images/icons/modules/GJ003.png",
+      "res/images/icons/modules/CX006.png",
+      "res/images/icons/modules/HJ001.png",
+      "res/images/icons/modules/JS001.png",
+      "res/images/icons/modules/CX007.png",
+      "res/images/icons/modules/CX002.png",
+      "res/images/icons/modules/SP001.png",
+      "res/images/icons/modules/CX005.png"
+    ],
+    "refer": [
+      "modules/GJ001/GJ001.html",
+      "modules/CX006/CX006.html",
+      "modules/CX001/CX001.html",
+      "modules/HJ002/HJ002.html",
+      "modules/HJ001/HJ001.html",
+      "modules/GJ004/GJ004.html"
+    ]
+  },
+  "modules/GJ001/GJ001.html": {
+    "resources": [
+      "res/images/modules/GJ001/USD.png",
+      "modules/GJ001/css/GJ001.css",
+      "modules/GJ001/js/GJ001.js",
+      "res/images/modules/GJ001/CNY.png",
+      "res/fonts/mui.ttf",
+      "res/css/mui.min.css",
+      "res/js/mui.min.js",
+      "res/js/common.js"
+    ]
+  },
+  "modules/CX006/CX006.html": {
+    "resources": [
+      "modules/CX006/css/CX006.css",
+      "modules/CX006/js/CX006.js",
+      "res/css/mui.min.css",
+      "res/fonts/mui.ttf",
+      "res/js/mui.min.js",
+      "res/js/common.js"
+    ],
+    "refer": [
+      "modules/CX006/CITY_LIST.html",
+      "modules/CX006/RESULT_LIST.html"
+    ]
+  },
+  "modules/CX006/CITY_LIST.html": {
+    "resources": [
+      "modules/CX006/css/CITY_LIST.css",
+      "res/css/mui.indexedlist.css",
+      "res/js/mui.indexedlist.min.js",
+      "modules/CX006/js/CITY_LIST.js",
+      "res/css/mui.min.css",
+      "res/fonts/mui.ttf",
+      "res/js/mui.min.js",
+      "res/js/common.js"
+    ]
+  },
+  "modules/CX006/RESULT_LIST.html": {
+    "resources": [
+      "modules/CX006/css/RESULT_LIST.css",
+      "res/css/mui.min.css",
+      "res/fonts/mui.ttf",
+      "res/js/mui.min.js",
+      "modules/CX006/js/RESULT_LIST.js",
+      "res/js/common.js"
+    ]
+  },
+  "modules/CX001/CX001.html": {
+    "resources": [
+      "modules/CX001/js/CX001.js",
+      "res/fonts/mui.ttf",
+      "res/css/mui.min.css",
+      "res/js/mui.min.js",
+      "res/js/common.js",
+      "modules/CX001/css/CX001.css",
+      "res/images/modules/GJ001/USD.png"
+    ]
+  },
+  "modules/HJ002/HJ002.html": {
+    "resources": [
+      "res/fonts/mui.ttf",
+      "res/css/mui.min.css",
+      "res/js/mui.min.js",
+      "res/js/common.js"
+    ]
+  },
+  "modules/HJ001/HJ001.html": {
+    "resources": [
+      "res/css/mui.min.css",
+      "res/fonts/mui.ttf",
+      "modules/HJ001/css/HJ001.css",
+      "res/js/mui.min.js",
+      "res/js/common.js",
+      "modules/HJ001/js/HJ001.js"
+    ]
+  },
+  "modules/GJ004/GJ004.html": {
+    "resources": [
+      "res/fonts/mui.ttf",
+      "modules/GJ004/js/GJ004.js",
+      "modules/GJ004/css/GJ004.css",
+      "res/css/mui.min.css",
+      "res/js/mui.min.js",
+      "res/js/common.js"
+    ]
+  }
 }
