@@ -57,7 +57,7 @@ function getCityWeather(cityStr) {
 				getCityWeather(cityStr);
 			});
 		}
-	})
+	});
 }
 
 function weatherDetail(cityName, resultData) {

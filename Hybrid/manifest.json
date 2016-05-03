@@ -289,7 +289,12 @@
 					"modules/HJ001/HJ001.html",
 					"modules/HJ002/HJ002.html",
 					"modules/GJ004/GJ004.html",
-					"modules/CX004/CX004.html"
+					"modules/CX004/CX004.html",
+					"modules/SH003/SH003.html",
+					"modules/SH004/SH004.html",
+					"modules/CX003/CX003.html",
+					"modules/SH002/SH002.html",
+					"modules/SH005/SH005.html"
 				],
 				"priority": 0
 			},
@@ -624,7 +629,18 @@
 					"modules/HJ002/js/HJ002.js",
 					"res/fonts/mui.ttf",
 					"modules/HJ002/css/HJ002.css",
-					"res/images/icons/weather/shower.png"
+					"res/images/icons/weather/shower.png",
+					"res/images/icons/weather/light-rain.png",
+					"res/css/mui.min.css",
+					"res/css/iconfont.css",
+					"res/fonts/iconfont.ttf",
+					"res/images/icons/weather/overcast.png",
+					"res/css/common.css",
+					"res/js/common.js",
+					"res/images/icons/weather/cloudy.png",
+					"res/images/icons/weather/moderate-rain.png",
+					"res/js/mui.min.js",
+					"res/images/icons/weather/sunny.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -665,6 +681,150 @@
 				"resources": [
 					"modules/CX004/js/BUS_DETAIL.js",
 					"res/js/mui.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/SH003/SH003.html": {
+				"resources": [
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css",
+					"modules/SH003/js/SH003.js",
+					"modules/SH003/css/SH003.css",
+					"res/fonts/iconfont.ttf"
+				],
+				"refer": [
+					"modules/SH003/MAP_DETAIL.html"
+				],
+				"priority": 0
+			},
+			"modules/CX003/CX003.html": {
+				"resources": [
+					"modules/CX003/css/CX003.css",
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/fonts/iconfont.ttf",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css",
+					"modules/CX003/js/CX003.js"
+				],
+				"refer": [
+					"modules/CX003/CITY_LIST.html"
+				],
+				"priority": 0
+			},
+			"modules/CX003/CITY_LIST.html": {
+				"resources": [
+					"modules/CX003/js/CITY_LIST.js",
+					"res/css/mui.indexedlist.css",
+					"modules/CX003/css/CITY_LIST.css",
+					"res/js/mui.indexedlist.min.js",
+					"res/css/mui.min.css",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/SH002/SH002.html": {
+				"resources": [
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css",
+					"modules/SH002/css/SH002.css",
+					"modules/SH002/js/SH002.js",
+					"res/fonts/iconfont.ttf"
+				],
+				"refer": [
+					"modules/SH002/MAP_DETAIL.html"
+				],
+				"priority": 0
+			},
+			"modules/SH002/MAP_DETAIL.html": {
+				"resources": [
+					"modules/SH002/js/MAP_DETAIL.js",
+					"modules/SH002/css/SH002.css",
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css",
+					"res/images/icons/myPosition.png",
+					"res/fonts/iconfont.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/SH003/MAP_DETAIL.html": {
+				"resources": [
+					"modules/SH003/js/MAP_DETAIL.js",
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/fonts/iconfont.ttf",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"modules/SH003/css/SH003.css",
+					"res/js/common.js",
+					"res/css/common.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/SH004/SH004.html": {
+				"resources": [
+					"modules/SH004/js/SH004.js",
+					"modules/SH004/css/SH004.css",
+					"res/fonts/mui.ttf",
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/fonts/iconfont.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css"
+				],
+				"refer": [
+					"modules/SH004/MAP_DETAIL.html"
+				],
+				"priority": 0
+			},
+			"modules/SH004/MAP_DETAIL.html": {
+				"resources": [
+					"modules/SH004/js/MAP_DETAIL.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/SH005/SH005.html": {
+				"resources": [
+					"modules/SH005/css/SH005.css",
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css",
+					"modules/SH005/js/SH005.js",
+					"res/fonts/iconfont.ttf"
+				],
+				"refer": [
+					"modules/SH005/MAP_DETAIL.html"
+				],
+				"priority": 0
+			},
+			"modules/SH005/MAP_DETAIL.html": {
+				"resources": [
+					"modules/SH005/js/MAP_DETAIL.js"
 				],
 				"refer": [],
 				"priority": 0

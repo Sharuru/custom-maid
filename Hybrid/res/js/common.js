@@ -1,6 +1,6 @@
 //var serverAddr = 'http://192.157.231.72:8080/MaidGuild/';
-var serverAddr = 'http://172.16.64.43:8080/MaidGuild/';
-//var serverAddr='http://112.74.125.171:8080/MaidGuild/';
+//ar serverAddr = 'http://172.16.64.43:8080/MaidGuild/';
+var serverAddr='http://112.74.125.171:8080/MaidGuild/';
 
 //function getLocation() {
 //	//TODO: 虚拟机调试不能使用百度 SDK 应当使用 GPS 模拟

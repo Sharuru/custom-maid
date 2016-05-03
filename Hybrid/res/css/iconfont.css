@@ -35,3 +35,6 @@
 .icon-moreSelect:before { content: "\e612"; }
 .icon-thisTime:before { content: "\e617"; }
 .icon-toStation:before { content: "\e618"; }
+.icon-turnReview:before { content: "\e61d"; }
+.icon-myPosition:before { content: "\e61b"; }
+.icon-position:before { content: "\e61c"; }

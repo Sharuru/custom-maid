@@ -1,0 +1,46 @@
+#mapDiv {
+	width: 100%;
+	height: 78%;
+	position: fixed;
+	top: 49px;
+	bottom: 0px;
+	line-height: 300px;
+	text-align: center;
+	background: #FFFFFF;
+	border-bottom: #DDDDDD solid 1px;
+}
+
+.mapDataInfo {
+	width: 100%;
+	height: auto;
+	position: fixed;
+	top: 78%;
+	bottom: 0px;
+	margin-top: 49px;
+	background: #FFFFFF;
+}
+
+.list-layer {
+	width: 100%;
+	height: auto;
+	background: #FFFFFF;
+}
+
+.row-module {
+	height: auto;
+	padding: 12px 20px 7px 20px;
+	background-color: white;
+	border-bottom: #DDDDDD solid 1px;
+	overflow: hidden;
+}
+
+.place-name {
+	font-size: 16px !important;
+	font-weight: 500 !important;
+	color: #333333 !important;
+}
+
+.turn-page {
+	color: #999999;
+	font-size: 14px;
+}
