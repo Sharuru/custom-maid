@@ -65,27 +65,29 @@ function initList(resultData, totalNum) {
 	});
 
 	mui('.list-layer').on('tap', '.row-module', function() {
-		var infoStr = this.getAttribute('name');
-		var indexNum = this.getAttribute('id').replace('list', '');
-		var nameStr = mui('.place-name')[indexNum].innerHTML;
-		setTimeout(function() {
-			mui.openWindow({
-				url: 'MAP_DETAIL.html',
-				id: 'PAGE_MAP_DETAIL',
-				show: {
-					aniShow: 'pop-in',
-					duration: 200
-				},
-				extras: {
-					pointStr: infoStr,
-					myPointStr: myPoint,
-					placeName: nameStr
-				},
-				waiting: {
-					autoShow: false
-				}
-			});
-		}, 200);
+		if (this.getAttribute('id') != null) {
+			var infoStr = this.getAttribute('name');
+			var indexNum = this.getAttribute('id').replace('list', '');
+			var nameStr = mui('.place-name')[indexNum].innerHTML;
+			setTimeout(function() {
+				mui.openWindow({
+					url: 'MAP_DETAIL.html',
+					id: 'PAGE_MAP_DETAIL',
+					show: {
+						aniShow: 'pop-in',
+						duration: 200
+					},
+					extras: {
+						pointStr: infoStr,
+						myPointStr: myPoint,
+						placeName: nameStr
+					},
+					waiting: {
+						autoShow: false
+					}
+				});
+			}, 200);
+		}
 	})
 }
 
