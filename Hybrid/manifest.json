@@ -273,7 +273,8 @@
 					"res/images/icons/weather/unknown.png",
 					"res/images/icons/weather/light-rain.png",
 					"res/images/icons/weather/moderate-rain.png",
-					"res/images/icons/weather/shower.png"
+					"res/images/icons/weather/shower.png",
+					"res/images/icons/weather/thunder-shower.png"
 				],
 				"refer": [
 					"modules/CX001/CX001.html",

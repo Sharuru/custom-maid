@@ -14,10 +14,36 @@
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<div class="header-text">
-				<span class="mui-action-back mui-icon mui-icon-back">出行导航</span>
+				<span class="mui-action-back mui-icon mui-icon-back">出行线路</span>
 			</div>
 		</header>
 		<div class="mui-content">
+			<div class="search-block">
+				<div class="mui-row padding-20-r padding-20-l">
+					<div class="mui-col-xs-2 padding-5-t align-left">
+						<label class="font-s16">起点 :</label>
+					</div>
+					<div class="mui-col-xs-10">
+						<div class="mui-input-row mui-search">
+							<input type="search" class="mui-input-clear" placeholder="输入起点" />
+						</div>
+					</div>
+				</div>
+				<div class="mui-row padding-20-r padding-20-l padding-5-t">
+					<div class="mui-col-xs-2 padding-5-t align-left">
+						<label class="font-s16">终点 :</label>
+					</div>
+					<div class="mui-col-xs-10">
+						<div class="mui-input-row mui-search">
+							<input type="search" class="mui-input-clear" placeholder="输入终点" />
+						</div>
+					</div>
+				</div>
+				<div class="mui-row button-padding align-center">
+					<button type="button" style="width: 30%;" class="mui-btn mui-btn-primary" id="searchButton">开始查询</button>
+				</div>
+			</div>
+			<div style="width: 100%;" id="mapLBS"></div>
 		</div>
 	</body>
 	<script src="../../res/js/mui.min.js "></script>
