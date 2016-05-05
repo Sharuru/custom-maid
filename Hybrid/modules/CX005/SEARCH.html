@@ -14,38 +14,32 @@
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<div class="header-text">
-				<span class="mui-action-back mui-icon mui-icon-back">出行线路</span>
+				<span class="mui-action-back mui-icon mui-icon-back">查询</span>
 			</div>
 		</header>
 		<div class="mui-content">
-			<div class="poi-search">
-				<div class="mui-row">
+			<div class="search-block">
+				<div class="mui-row" style="border: #DDDDDD solid 1px;width: 90%;margin: auto;">
 					<div class="mui-col-xs-10">
-						<div class="label-tip">
-							<label class="font-s18" style="color: #BBBBBB;">查询站点、地铁、公交</label>
+						<div class="mui-input-row mui-search">
+							<input type="search" class="mui-input-clear" placeholder="查询站点、地铁、公交" id="searchInput" />
 						</div>
 					</div>
 					<div class="mui-col-xs-2 align-center">
-						<span class="mui-icon iconfont icon-search icon-style"></span>
+						<button type="button" style="width: 100%;height: 28px;border-radius: 0;" class="mui-btn mui-btn-primary" id="searchButton">搜索</button>
 					</div>
 				</div>
 			</div>
-			<div style="width: 100%;" id="mapLBS"></div>
-			<div class="floatIcon">
-				<span class="mui-icon iconfont icon-routeSearch buttonIcon"></span>
-			</div>
-			<div id="addressInfo"></div>
 		</div>
 	</body>
 	<script src="../../res/js/mui.min.js "></script>
 	<script type="text/javascript " src="../../res/js/common.js "></script>
-	<script type="text/javascript " src="js/CX005.js "></script>
+	<script type="text/javascript " src="js/SEARCH.js"></script>
 	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=CqTmA6FQhjfbDQl2dQMLIBnu"></script>
-	<script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
 	<script type="text/javascript " charset="utf-8 ">
 		mui.init();
 		mui.plusReady(function() {
-			initializeCX005();
+			initAutoSearch();
 		})
 	</script>
 

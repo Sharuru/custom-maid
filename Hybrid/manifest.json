@@ -564,7 +564,8 @@
 					"modules/CX005/CITY_LIST.html",
 					"modules/CX005/ACTUALBUS.html",
 					"modules/CX005/BUS_DETAIL.html",
-					"modules/CX005/ACTUAL_BUS.html"
+					"modules/CX005/ACTUAL_BUS.html",
+					"modules/CX005/SEARCH.html"
 				],
 				"priority": 0
 			},
@@ -826,6 +827,22 @@
 			"modules/SH005/MAP_DETAIL.html": {
 				"resources": [
 					"modules/SH005/js/MAP_DETAIL.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/CX005/SEARCH.html": {
+				"resources": [
+					"modules/CX005/css/SEARCH.css",
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/fonts/iconfont.ttf",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css",
+					"modules/CX005/css/CX005.css",
+					"modules/CX005/js/SEARCH.js"
 				],
 				"refer": [],
 				"priority": 0
