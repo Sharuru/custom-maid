@@ -11,7 +11,6 @@ var hisList = [];
  * SH001 画面初始化
  */
 function initializeSH001() {
-	//700075841153
 	//				localStorage.removeItem('historySearch');
 	companyCode = 'jd';
 	companyName = '京东';

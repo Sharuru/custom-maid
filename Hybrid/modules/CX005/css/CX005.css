@@ -39,10 +39,6 @@ input[type='search'] {
 
 /* common class */
 
-.mui-content {
-	padding-bottom: 0 !important;
-}
-
 .search-block {
 	margin-bottom: 0 !important;
 	padding-bottom: 5px !important;
@@ -99,6 +95,23 @@ input[type='search'] {
 .address-block {
 	width: 100%;
 	height: auto;
-	padding: 5px 15px 3px 15px;
+	padding: 8px 15px 5px 15px;
 	background: rgb(255, 255, 255);
+	border: #DDDDDD solid 1px;
+}
+
+.hisInfo {
+	width: 100%;
+	margin-top: 5px;
+	background: rgb(255, 255, 255);
+}
+
+.his-row{
+	padding: 5px 10px 3px;
+	border-bottom: #DDDDDD solid 1px;
+}
+
+.searchIcon{
+	font-size: 14px;
+	line-height: normal;
 }

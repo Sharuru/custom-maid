@@ -1,3 +1,62 @@
+/* MUI class */
+
+input[type='search'] {
+	margin-bottom: 0 !important;
+	font-size: 18px !important;
+	height: 32px !important;
+	text-align: left !important;
+}
+
+.mui-search input[type='search'] {
+	padding-left: 15px !important;
+	padding-right: 30px !important;
+}
+
+.mui-search .mui-placeholder {
+	padding-left: 15px !important;
+	top: 3px !important;
+	font-size: 18px !important;
+	line-height: normal !important;
+	height: 32px !important;
+	text-align: left !important;
+}
+
+.mui-search .mui-placeholder .mui-icon {
+	display: none !important;
+}
+
+.mui-search:before {
+	content: '' !important;
+}
+
+.mui-input-row .mui-input-clear ~ .mui-icon-clear {
+	top: 7px !important;
+	right: 0px !important;
+}
+
+.mui-input-range .mui-tooltip {
+	font-size: 16px !important;
+	line-height: 24px !important;
+	top: -22px !important;
+	width: 24px !important;
+	height: 24px !important;
+}
+
+.mui-input-range input[type='range']::-webkit-slider-thumb {
+	width: 20px;
+	height: 20px;
+	border-color: #0062cc;
+	border-radius: 50%;
+	background-color: #007aff;
+	background-clip: padding-box;
+	-webkit-appearance: none !important;
+}
+
+.mui-input-row.mui-input-range {
+	padding-right: 0 !important;
+}
+
+
 /* new class */
 
 .location-city {
@@ -91,20 +150,30 @@
 	text-align: right;
 }
 
-.module-block{
+.module-background {
+	width: 100%;
+	height: auto;
+	margin-top: 3px;
+	padding-top: 5px;
+	border-radius: 5px;
+	background: rgba(255, 255, 255, .7);
+	border: rgba(0, 0, 0, .1) solid 1px;
+}
+
+.module-block {
 	float: left;
 	width: 20%;
 	height: auto;
 	text-align: center;
 	background: rgba(255, 255, 255, .7);
-	border: rgba(0, 0, 255, .1) solid 1px;
 }
 
-.module-info{
+.module-info {
 	margin: 5px -15px 0;
 	height: auto;
-	background: rgba(119, 119, 119, .1);;
+	background: rgba(119, 119, 119, .1);
 }
+
 
 /*.module-item {
 	margin: 20px 10px;
@@ -113,25 +182,16 @@
 	height: auto;
 }*/
 
-/*.module-block {
-	float: left;
-	display: inline;
-	padding: 5px;
-	width: 25%;
-	height: auto;
-	border: solid 1px;
-}*/
-
 .module-pic {
 	margin: auto;
-	width: 80%;
+	width: 60%;
 	text-align: center;
 }
 
 .module-title {
-	margin-top: -8px;
+	margin-top: -5px;
 	width: 100%;
 	text-align: center;
-	font-size: 16px;
+	font-size: 14px;
 	color: #777777;
 }

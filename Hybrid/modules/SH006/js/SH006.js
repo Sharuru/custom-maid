@@ -1,18 +1,20 @@
 var myPoint = '';
+var searchKeyObj = '';
 var rangeObj = '';
 var pageNumber = 0;
 var resultContent = mui('.mui-content')[0];
 
-function initializeSH005() {
+function initializeSH006() {
 	mui.toast('正在获取数据...');
 	var self = plus.webview.currentWebview();
+	searchKeyObj = self.searchKey;
 	rangeObj = self.dataObj;
 	var geolocationObj = new BMap.Geolocation();
 	geolocationObj.getCurrentPosition(function(r) {
 		if (this.getStatus() == BMAP_STATUS_SUCCESS) {
 			setTimeout(function() {
 				myPoint = r.point.lat + ',' + r.point.lng;
-				getList(myPoint, pageNumber, rangeObj);
+				getList(myPoint, pageNumber, searchKeyObj, rangeObj);
 			}, 1000);
 		} else {
 			mui.toast('获取当前位置失败');
@@ -22,10 +24,10 @@ function initializeSH005() {
 	});
 }
 
-function getList(pointStr, pageNum, rangeData) {
+function getList(pointStr, pageNum, keyObj, rangeData) {
 	mui.ajax(serverAddr + 'life/place', {
 		data: {
-			query: '影院',
+			query: keyObj,
 			location: pointStr,
 			radius: rangeData,
 			pageNum: pageNum
@@ -39,7 +41,7 @@ function getList(pointStr, pageNum, rangeData) {
 				mui.toast('发生未知错误');
 			} else {
 				if (requestData.results.length == 0) {
-					mui.toast('查询不到周边影院信息');
+					mui.toast('查询不到周边兴趣点信息');
 				} else {
 					initList(requestData.results, requestData.total);
 				}
@@ -49,7 +51,7 @@ function getList(pointStr, pageNum, rangeData) {
 			//异常处理
 			console.log(type);
 			mui.alert('远程服务器连接失败', '无法获得影院信息', '重试', function() {
-				getList(pointStr, pageNum, rangeData);
+				getList(pointStr, keyObj, pageNum, rangeData);
 			});
 		}
 	});
@@ -61,13 +63,13 @@ function initList(resultData, totalNum) {
 	mui('.list-layer').on('tap', '#turnReview', function() {
 		resultContent.innerHTML = '';
 		pageNumber = pageNumber - 1;
-		getList(myPoint, pageNumber, rangeObj);
+		getList(myPoint, pageNumber, searchKeyObj, rangeObj);
 	});
 
 	mui('.list-layer').on('tap', '#turnNext', function() {
 		resultContent.innerHTML = '';
 		pageNumber = pageNumber + 1;
-		getList(myPoint, pageNumber, rangeObj);
+		getList(myPoint, pageNumber, searchKeyObj, rangeObj);
 	});
 
 	mui('.list-layer').on('tap', '.row-module', function() {

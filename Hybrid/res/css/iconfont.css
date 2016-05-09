@@ -38,3 +38,7 @@
 .icon-turnReview:before { content: "\e61d"; }
 .icon-routeSearch:before { content: "\e61e"; }
 .icon-goSign:before { content: "\e61a"; }
+.icon-driving:before { content: "\e619"; }
+.icon-transit:before { content: "\e605"; }
+.icon-walking:before { content: "\e61c"; }
+.icon-riding:before { content: "\e61b"; }

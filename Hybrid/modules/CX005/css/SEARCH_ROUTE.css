@@ -13,6 +13,7 @@ input[type='search'] {
 .mui-search input[type='search'] {
 	padding-left: 15px !important;
 	padding-right: 30px !important;
+	padding-top: 15px !important;
 }
 
 .mui-search .mui-placeholder {
@@ -33,18 +34,43 @@ input[type='search'] {
 }
 
 .mui-input-row .mui-input-clear ~ .mui-icon-clear {
-	top: 7px !important;
+	top: 5px !important;
 	right: 0px !important;
 }
 
 
 /* common class */
 
-.mui-content {
-	padding-bottom: 0 !important;
-}
-
 .search-block {
 	margin-bottom: 0 !important;
 	padding-bottom: 5px !important;
+}
+
+.route-type {
+	font-size: 28px;
+	color: #777777;
+}
+
+.location-result {
+	padding: 5px 0 3px;
+	border-bottom: #DDDDDD solid 1px;
+	background: rgb(255, 255, 255);
+}
+
+.route-result {
+	padding: 3px 0 0;
+	background: rgb(255, 255, 255);
+}
+
+.transit-scheme {
+	padding: 2px 15px;
+	border-bottom: #DDDDDD solid 1px;
+}
+
+#mapInfo {
+	width: 100%;
+	height: 300px;
+	line-height: 200px;
+	text-align: center;
+	border: #DDDDDD solid 1px;
 }

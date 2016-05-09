@@ -236,7 +236,6 @@ function dealResult(resultData) {
 		'	</div>' +
 		'</div>';
 	for (var i = 0; i < resultData.result.length; i++) {
-		var lineName = resultData.result[i].name;
 		var lineState = '';
 		if (resultData.result[i].status == '1') {
 			lineState = '(正常运行)';
@@ -249,7 +248,7 @@ function dealResult(resultData) {
 			'		<div class="mui-col-xs-10">' +
 			'			<div class="mui-row padding-10-l padding-5-t">' +
 			'				<label style="font-size: 20px;">' +
-			lineName.substring(0, lineName.lastIndexOf('（')) +
+			resultData.result[i].key_name +
 			'				</label>' +
 			'				<label class="font-s16 padding-10-l" style="color: #007AFF;">' +
 			lineState +
@@ -257,7 +256,7 @@ function dealResult(resultData) {
 			'			</div>' +
 			'			<div class="mui-row padding-10-l">' +
 			'				<label class="font-s16">' +
-			lineName.substring(lineName.lastIndexOf('（') + 1, lineName.lastIndexOf('）')) +
+			resultData.result[i].front_name + '-' + resultData.result[i].terminal_name +
 			'				</label>' +
 			'			</div>' +
 			'			<div class="mui-row padding-5 padding-10-l">' +

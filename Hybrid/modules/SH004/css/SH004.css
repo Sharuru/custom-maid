@@ -1,13 +1,12 @@
 #mapDiv {
 	width: 100%;
-	height: 78%;
-	position: fixed;
-	top: 49px;
-	bottom: 0px;
-	line-height: 300px;
-	text-align: center;
-	background: #FFFFFF;
 	border-bottom: #DDDDDD solid 1px;
+}
+
+#infoDiv {
+	width: 100%;
+	height: auto;
+	background: rgb(255, 255, 255);
 }
 
 .mapDataInfo {
@@ -38,6 +37,11 @@
 	font-size: 16px !important;
 	font-weight: 500 !important;
 	color: #333333 !important;
+}
+
+.place-address {
+	font-size: 14px !important;
+	margin-bottom: 0 !important;
 }
 
 .turn-page {

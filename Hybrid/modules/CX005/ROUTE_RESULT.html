@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../../res/css/mui.min.css" rel="stylesheet" />
+		<link href="../../res/css/iconfont.css" rel="stylesheet" />
+		<link href="../../res/css/common.css" rel="stylesheet" />
+		<link href="css/SEARCH_ROUTE.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div class="header-text">
+				<span class="mui-action-back mui-icon mui-icon-back">线路查询</span>
+			</div>
+		</header>
+		<div class="mui-content">
+			<div class="search-block" style="padding-bottom: 2px;">
+				<div class="mui-row align-center">
+					<div class="mui-col-xs-3">
+						<span class="mui-icon iconfont icon-driving route-type" onclick="changeRouteType(0);"></span>
+					</div>
+					<div class="mui-col-xs-3">
+						<span class="mui-icon iconfont icon-transit route-type" onclick="changeRouteType(1);"></span>
+					</div>
+					<div class="mui-col-xs-3">
+						<span class="mui-icon iconfont icon-riding route-type" onclick="changeRouteType(2);"></span>
+					</div>
+					<div class="mui-col-xs-3">
+						<span class="mui-icon iconfont icon-walking route-type" onclick="changeRouteType(3);"></span>
+					</div>
+				</div>
+			</div>
+			<div id="mapInfo">地图加载中...</div>
+			<div id="locationInfo"></div>
+			<div id="resultInfo">
+				<!--<div class="route-result">
+					<div class="mui-row padding-10-l">
+						<p class="font-s18 remove-margin-b">方案1:
+							<label class="font-s16 remove-margin-b">1小时20分钟 | 41.5公里 | 5元</label>
+						</p>
+					</div>
+				</div>-->
+			</div>
+		</div>
+		<footer>
+			<div class="footer-info ">数据由 <a>百度Web服务</a> 提供</div>
+		</footer>
+	</body>
+	<script src="../../res/js/mui.min.js "></script>
+	<script type="text/javascript " src="../../res/js/common.js "></script>
+	<script type="text/javascript " src="js/ROUTE_RESULT.js"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=CqTmA6FQhjfbDQl2dQMLIBnu"></script>
+	<script type="text/javascript " charset="utf-8 ">
+		mui.init();
+		mui.plusReady(function() {
+			initResult();
+		})
+	</script>
+
+</html>

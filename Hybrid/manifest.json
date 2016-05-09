@@ -274,7 +274,8 @@
 					"res/images/icons/weather/light-rain.png",
 					"res/images/icons/weather/moderate-rain.png",
 					"res/images/icons/weather/shower.png",
-					"res/images/icons/weather/thunder-shower.png"
+					"res/images/icons/weather/thunder-shower.png",
+					"res/fonts/mui.ttf"
 				],
 				"refer": [
 					"modules/CX001/CX001.html",
@@ -295,7 +296,8 @@
 					"modules/SH004/SH004.html",
 					"modules/CX003/CX003.html",
 					"modules/SH002/SH002.html",
-					"modules/SH005/SH005.html"
+					"modules/SH005/SH005.html",
+					"modules/SH006/SH006.html"
 				],
 				"priority": 0
 			},
@@ -457,7 +459,8 @@
 					"res/fonts/iconfont.ttf"
 				],
 				"refer": [
-					"modules/GJ002/Detail.html"
+					"modules/GJ002/Detail.html",
+					"modules/GJ002/DETAIL.html"
 				],
 				"priority": 0
 			},
@@ -565,7 +568,8 @@
 					"modules/CX005/ACTUALBUS.html",
 					"modules/CX005/BUS_DETAIL.html",
 					"modules/CX005/ACTUAL_BUS.html",
-					"modules/CX005/SEARCH.html"
+					"modules/CX005/SEARCH.html",
+					"modules/CX005/SEARCH_ROUTE.html"
 				],
 				"priority": 0
 			},
@@ -843,6 +847,76 @@
 					"res/css/common.css",
 					"modules/CX005/css/CX005.css",
 					"modules/CX005/js/SEARCH.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/CX005/SEARCH_ROUTE.html": {
+				"resources": [
+					"modules/CX005/js/SEARCH_ROUTE.js",
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css",
+					"modules/CX005/css/SEARCH.css",
+					"modules/CX005/css/SEARCH_ROUTE.css"
+				],
+				"refer": [
+					"modules/CX005/ROUTE_RESULT.html"
+				],
+				"priority": 0
+			},
+			"modules/CX005/ROUTE_RESULT.html": {
+				"resources": [
+					"modules/CX005/js/ROUTE_RESULT.js",
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css",
+					"res/fonts/iconfont.ttf",
+					"modules/CX005/css/SEARCH_ROUTE.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/SH006/SH006.html": {
+				"resources": [
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"modules/SH006/css/SH006.css",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css",
+					"modules/SH006/js/SH006.js",
+					"res/fonts/iconfont.ttf"
+				],
+				"refer": [
+					"modules/SH006/MAP_DETAIL.html"
+				],
+				"priority": 0
+			},
+			"modules/SH006/MAP_DETAIL.html": {
+				"resources": [
+					"modules/SH006/js/MAP_DETAIL.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/GJ002/DETAIL.html": {
+				"resources": [
+					"modules/GJ002/css/GJ002.css",
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css",
+					"modules/GJ002/js/DETAIL.js"
 				],
 				"refer": [],
 				"priority": 0

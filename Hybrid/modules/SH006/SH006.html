@@ -8,28 +8,29 @@
 		<link href="../../res/css/mui.min.css" rel="stylesheet" />
 		<link href="../../res/css/iconfont.css" rel="stylesheet" />
 		<link href="../../res/css/common.css" rel="stylesheet" />
-		<link href="css/SH005.css" rel="stylesheet" />
+		<link href="css/SH006.css" rel="stylesheet" />
 	</head>
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<div class="header-text">
-				<span class="mui-action-back mui-icon mui-icon-back">位置信息</span>
+				<span class="mui-action-back mui-icon mui-icon-back">周边查询</span>
 			</div>
 		</header>
-		<div class="mui-content" style="padding-bottom: 0 !important;">
-			<div id="mapDiv">地图加载中...</div>
-			<div id="infoDiv"></div>
+		<div class="mui-content">
 		</div>
+		<footer>
+			<div class="footer-info">数据由 <a>百度Web服务</a> 提供</div>
+		</footer>
 	</body>
 	<script src="../../res/js/mui.min.js "></script>
 	<script type="text/javascript " src="../../res/js/common.js "></script>
 	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=CqTmA6FQhjfbDQl2dQMLIBnu"></script>
-	<script type="text/javascript " src="js/MAP_DETAIL.js"></script>
+	<script type="text/javascript " src="js/SH006.js"></script>
 	<script type="text/javascript " charset="utf-8 ">
 		mui.init();
 		mui.plusReady(function() {
-			initMap();
+			initializeSH006();
 		});
 	</script>
 

@@ -2,12 +2,60 @@ function initIndex() {
 	setIndexInfo();
 	mui('#moduleList').on('tap', 'a', function() {
 		var moduleId = this.getAttribute('id').substr(5);
+		if (moduleId == 'SH002' || moduleId == 'SH003' || moduleId == 'SH004' || moduleId == 'SH005') {
+			var rangeData = document.getElementById('rangeObj').value + '000';
+			mui.openWindow({
+				url: 'modules/' + moduleId + '/' + moduleId + '.html',
+				id: 'PAGE_' + moduleId,
+				show: {
+					aniShow: 'pop-in',
+					duration: 200
+				},
+				extras: {
+					dataObj: rangeData
+				},
+				waiting: {
+					//取消加载动画，模拟原生感
+					autoShow: false
+				}
+			});
+		} else {
+			mui.openWindow({
+				url: 'modules/' + moduleId + '/' + moduleId + '.html',
+				id: 'PAGE_' + moduleId,
+				show: {
+					aniShow: 'pop-in',
+					duration: 200
+				},
+				waiting: {
+					//取消加载动画，模拟原生感
+					autoShow: false
+				}
+			});
+		}
+	});
+
+	mui('.mui-input-range').on('change', 'input', function() {
+		document.getElementById('rangeValue').innerHTML = document.getElementById('rangeObj').value;
+	});
+
+	mui('.module-background').on('tap', '#lifeSearch', function() {
+		var searchStr = document.getElementById('inputStr').value;
+		if (searchStr == '') {
+			mui.toast('未输入关键字');
+			return;
+		}
+		var rangeData = document.getElementById('rangeObj').value + '000';
 		mui.openWindow({
-			url: 'modules/' + moduleId + '/' + moduleId + '.html',
-			id: 'PAGE_' + moduleId,
+			url: 'modules/SH006/SH006.html',
+			id: 'PAGE_SH006',
 			show: {
 				aniShow: 'pop-in',
 				duration: 200
+			},
+			extras: {
+				dataObj: rangeData,
+				searchKey: searchStr
 			},
 			waiting: {
 				//取消加载动画，模拟原生感

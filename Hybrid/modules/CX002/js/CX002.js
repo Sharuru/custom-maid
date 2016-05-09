@@ -258,6 +258,7 @@ function dealSecondTime(secondStr) {
  */
 function addDisabled() {
 	document.getElementById('searchButton').disabled = true;
+	document.getElementById('searchButton').innerHTML='正在查询...';
 	fLine.style.color = '#8f8f94';
 	fStation.style.color = '#8f8f94';
 	tLine.style.color = '#8f8f94';
@@ -273,6 +274,7 @@ function addDisabled() {
  */
 function cancelDisabled() {
 	document.getElementById('searchButton').disabled = false;
+	document.getElementById('searchButton').innerHTML='开始查询';
 	fLine.style.color = 'black';
 	fStation.style.color = 'black';
 	tLine.style.color = 'black';
