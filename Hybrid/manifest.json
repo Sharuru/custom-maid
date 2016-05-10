@@ -492,7 +492,8 @@
 					"res/fonts/iconfont.ttf"
 				],
 				"refer": [
-					"modules/GJ003/Detail.html"
+					"modules/GJ003/Detail.html",
+					"modules/GJ003/DETAIL.html"
 				],
 				"priority": 0
 			},
@@ -917,6 +918,21 @@
 					"res/js/common.js",
 					"res/css/common.css",
 					"modules/GJ002/js/DETAIL.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/GJ003/DETAIL.html": {
+				"resources": [
+					"modules/GJ003/js/DETAIL.js",
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"res/fonts/iconfont.ttf",
+					"modules/GJ003/css/GJ003.css",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css"
 				],
 				"refer": [],
 				"priority": 0

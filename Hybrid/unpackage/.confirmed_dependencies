@@ -222,7 +222,8 @@
 			"modules/GJ002/js/GJ002.js"
 		],
 		"refer": [
-			"modules/GJ002/Detail.html"
+			"modules/GJ002/Detail.html",
+			"modules/GJ002/DETAIL.html"
 		]
 	},
 	"modules/GJ003/GJ003.html": {
@@ -236,6 +237,9 @@
 			"res/js/mui.min.js",
 			"res/js/common.js",
 			"res/css/common.css"
+		],
+		"refer": [
+			"modules/GJ003/DETAIL.html"
 		]
 	},
 	"modules/HJ003/CITY_DETAIL.html": {
@@ -514,6 +518,31 @@
 	"modules/SH006/MAP_DETAIL.html": {
 		"resources": [
 			"modules/SH006/js/MAP_DETAIL.js"
+		]
+	},
+	"modules/GJ002/DETAIL.html": {
+		"resources": [
+			"modules/GJ002/js/DETAIL.js",
+			"modules/GJ002/css/GJ002.css",
+			"res/css/iconfont.css",
+			"res/css/mui.min.css",
+			"res/fonts/mui.ttf",
+			"res/js/mui.min.js",
+			"res/js/common.js",
+			"res/css/common.css"
+		]
+	},
+	"modules/GJ003/DETAIL.html": {
+		"resources": [
+			"modules/GJ003/js/DETAIL.js",
+			"res/css/iconfont.css",
+			"res/css/mui.min.css",
+			"res/fonts/iconfont.ttf",
+			"modules/GJ003/css/GJ003.css",
+			"res/fonts/mui.ttf",
+			"res/js/mui.min.js",
+			"res/js/common.js",
+			"res/css/common.css"
 		]
 	}
 }

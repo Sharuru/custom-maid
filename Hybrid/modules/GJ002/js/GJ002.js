@@ -15,6 +15,7 @@ function initializeGJ002() {
 		//没有数据
 		if (lotteryList.length == 0) {
 			mui.toast('出现未知错误');
+			return;
 		} else {
 			//有数据，画面迁移
 			mui.openWindow({

@@ -201,7 +201,7 @@ function getStepsInfo(stepsObj) {
 			returnStr +=
 				'<div class="mui-row border-b" style="padding: 5px 15px 3px">' +
 				'	<div class="mui-col-xs-2 align-center">' +
-				'		<span class="mui-icon iconfont icon-express color-danger"></span>' +
+				'		<span class="mui-icon iconfont icon-express color-warning"></span>' +
 				'	</div>' +
 				'	<div class="mui-col-xs-10 padding-10-l">' +
 				infoObj[0].stepInstruction +

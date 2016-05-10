@@ -123,23 +123,15 @@ function getTranslation(lanFromType, lanToType, lanContext) {
 		//超时时间设置为10 秒；
 		timeout: 10000,
 		success: function(requestData) {
-			if (requestData.errNum != '0') {
-				mui.toast(requestData.errMsg);
+			if (typeof requestData.error_code != 'undefined') {
+				mui.toast(requestData.error_msg);
 				cancelDisabled();
 			} else {
-				var objectFlg = false;
-				for (var keyElement in requestData.retData) {
-					objectFlg = true;
-				}
-				if (objectFlg) {
-					favorButton.innerHTML = '<span class="icon iconfont icon-unfavor larger-icon"></span>';
-					favorButton.style.display = 'block';
-					initFromType = requestData.retData.from;
-					//					autoTypeName = getTypeName(autoTypeCode);
-					textShow.value = requestData.retData.trans_result[0].dst;
-				} else {
-					mui.toast('发生未知错误,请重新操作');
-				}
+				favorButton.innerHTML = '<span class="icon iconfont icon-unfavor larger-icon"></span>';
+				favorButton.style.display = 'block';
+				initFromType = requestData.from;
+				//					autoTypeName = getTypeName(autoTypeCode);
+				textShow.value = requestData.trans_result[0].dst;
 				cancelDisabled();
 			}
 		},
@@ -244,6 +236,7 @@ function initialSet() {
 function addDisabled() {
 	textInput.disabled = 'disabled';
 	clickButton.disabled = true;
+	clickButton.innerHTML = '翻译中...';
 	document.getElementById('fromSelect').disabled = true;
 	document.getElementById('toSelect').disabled = true;
 	document.getElementById('fromType').style.color = '#66AFFF';
@@ -259,6 +252,7 @@ function addDisabled() {
 function cancelDisabled() {
 	textInput.disabled = '';
 	clickButton.disabled = false;
+	clickButton.innerHTML = '翻译';
 	document.getElementById('fromSelect').disabled = false;
 	document.getElementById('toSelect').disabled = false;
 	document.getElementById('fromType').style.color = '#007aff';
