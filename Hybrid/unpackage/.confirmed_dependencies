@@ -456,7 +456,8 @@
   },
   "modules/SH005/MAP_DETAIL.html": {
     "resources": [
-      "modules/SH005/js/MAP_DETAIL.js"
+      "modules/SH005/js/MAP_DETAIL.js",
+      "res/css/mui.min.css"
     ],
     "refer": []
   },
