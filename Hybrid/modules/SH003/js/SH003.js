@@ -22,7 +22,7 @@ function initializeSH003() {
 	});
 }
 
-function getList(pointStr, pageNum，rangeData) {
+function getList(pointStr, pageNum,rangeData) {
 	mui.ajax(serverAddr + 'life/place', {
 		data: {
 			query: '团购',

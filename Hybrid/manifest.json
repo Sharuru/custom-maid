@@ -197,7 +197,7 @@
                     "xhdpi": "", /*720P高分屏启动图片，分辨率：720x1242*/
                     "xxhdpi": ""/*1080P高分屏启动图片，分辨率：1080x1882*/
                 }
-            }
+            },"debug":true
         }
     },
 	"dependencies": {
@@ -807,7 +807,14 @@
 			},
 			"modules/SH004/MAP_DETAIL.html": {
 				"resources": [
-					"modules/SH004/js/MAP_DETAIL.js"
+					"modules/SH004/js/MAP_DETAIL.js",
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
+					"modules/SH004/css/SH004.css",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css"
 				],
 				"refer": [],
 				"priority": 0
