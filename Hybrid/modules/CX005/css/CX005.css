@@ -3,7 +3,7 @@
 input[type='search'] {
 	margin-bottom: 0 !important;
 	font-size: 18px !important;
-	height: 28px !important;
+	height: 32px !important;
 	text-align: left !important;
 	background: rgba(255, 255, 255, .9);
 	border-radius: 0 !important;
@@ -18,7 +18,7 @@ input[type='search'] {
 	padding-left: 15px !important;
 	top: 2px !important;
 	font-size: 18px !important;
-	line-height: normal !important;
+	line-height: 28px !important;
 	height: 32px !important;
 	text-align: left !important;
 }

@@ -197,7 +197,7 @@
                     "xhdpi": "", /*720P高分屏启动图片，分辨率：720x1242*/
                     "xxhdpi": ""/*1080P高分屏启动图片，分辨率：1080x1882*/
                 }
-            },"debug":true
+            }
         }
     },
 	"dependencies": {
@@ -680,7 +680,8 @@
 					"res/css/common.css"
 				],
 				"refer": [
-					"modules/CX004/BUS_DETAIL.html"
+					"modules/CX004/BUS_DETAIL.html",
+					"modules/CX004/ACTUAL_BUS.html"
 				],
 				"priority": 0
 			},
@@ -808,13 +809,7 @@
 			"modules/SH004/MAP_DETAIL.html": {
 				"resources": [
 					"modules/SH004/js/MAP_DETAIL.js",
-					"res/css/iconfont.css",
-					"res/css/mui.min.css",
-					"modules/SH004/css/SH004.css",
-					"res/fonts/mui.ttf",
-					"res/js/mui.min.js",
-					"res/js/common.js",
-					"res/css/common.css"
+					"res/js/mui.min.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -838,8 +833,7 @@
 			},
 			"modules/SH005/MAP_DETAIL.html": {
 				"resources": [
-					"modules/SH005/js/MAP_DETAIL.js",
-					"res/css/mui.min.css"
+					"modules/SH005/js/MAP_DETAIL.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -937,6 +931,19 @@
 					"res/css/mui.min.css",
 					"res/fonts/iconfont.ttf",
 					"modules/GJ003/css/GJ003.css",
+					"res/fonts/mui.ttf",
+					"res/js/mui.min.js",
+					"res/js/common.js",
+					"res/css/common.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/CX004/ACTUAL_BUS.html": {
+				"resources": [
+					"modules/CX004/js/ACTUAL_BUS.js",
+					"res/css/iconfont.css",
+					"res/css/mui.min.css",
 					"res/fonts/mui.ttf",
 					"res/js/mui.min.js",
 					"res/js/common.js",

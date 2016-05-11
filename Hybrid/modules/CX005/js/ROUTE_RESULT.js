@@ -57,6 +57,11 @@ function changeRouteType(index) {
 
 function initDrivingRoute(dataObj) {
 	var mapObj = new BMap.Map("mapInfo");
+	var scaleOpts = {
+		anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+		offset: new BMap.Size(5, 5)
+	};
+	mapObj.addControl(new BMap.ScaleControl(scaleOpts));
 	var startP = new BMap.Point(dataObj.origin.originPt.lng, dataObj.origin.originPt.lat);
 	var endP = new BMap.Point(dataObj.destination.destinationPt.lng, dataObj.destination.destinationPt.lat);
 	mapObj.centerAndZoom(startP, 12);
@@ -71,6 +76,11 @@ function initDrivingRoute(dataObj) {
 
 function initTransitRoute(dataObj) {
 	var mapObj = new BMap.Map("mapInfo");
+	var scaleOpts = {
+		anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+		offset: new BMap.Size(5, 5)
+	};
+	mapObj.addControl(new BMap.ScaleControl(scaleOpts));
 	var startP = new BMap.Point(dataObj.origin.originPt.lng, dataObj.origin.originPt.lat);
 	var endP = new BMap.Point(dataObj.destination.destinationPt.lng, dataObj.destination.destinationPt.lat);
 	mapObj.centerAndZoom(startP, 12);
@@ -83,22 +93,13 @@ function initTransitRoute(dataObj) {
 	transit.search(startP, endP);
 }
 
-//function initRidingRoute(dataObj) {
-//	var mapObj = new BMap.Map("mapInfo");
-//	var startP = new BMap.Point(dataObj.origin.originPt.lng, dataObj.origin.originPt.lat);
-//	var endP = new BMap.Point(dataObj.destination.destinationPt.lng, dataObj.destination.destinationPt.lat);
-//	mapObj.centerAndZoom(startP, 12);
-//	var riding = new BMap.RidingRoute(mapObj, {
-//		renderOptions: {
-//			map: mapObj,
-//			autoViewport: true
-//		}
-//	});
-//	riding.search(startP, endP);
-//}
-
 function initWalkingRoute(dataObj) {
 	var mapObj = new BMap.Map("mapInfo");
+	var scaleOpts = {
+		anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+		offset: new BMap.Size(5, 5)
+	};
+	mapObj.addControl(new BMap.ScaleControl(scaleOpts));
 	var startP = new BMap.Point(dataObj.origin.originPt.lng, dataObj.origin.originPt.lat);
 	var endP = new BMap.Point(dataObj.destination.destinationPt.lng, dataObj.destination.destinationPt.lat);
 	mapObj.centerAndZoom(startP, 12);
@@ -113,7 +114,13 @@ function initWalkingRoute(dataObj) {
 
 function initDataShow(dataObj) {
 	var contentStr = '';
-	contentStr += '<div class="route-result">';
+	contentStr +=
+		'<div class="mui-row border-b">' +
+		'	<p class="disAndDurInfo remove-margin-b">' +
+		getDisAndDur(dataObj.routes[0].distance, dataObj.routes[0].duration) +
+		'	</p>' +
+		'</div>' +
+		'<div class="route-result">';
 	var stepObj = dataObj.routes[0].steps;
 	contentStr +=
 		'<div class="mui-row font-s16" style="padding: 5px 15px 2px;">' +
@@ -180,6 +187,16 @@ function getBaseInfo(distanceObj, durationObj, priceObj) {
 		distanceStr = parseFloat(distanceObj / 1000).toFixed(1);
 	}
 	baseStr += dealSecondTime(durationObj) + ' | ' + distanceStr + '公里 | ' + priceObj.substring(0, priceObj.length - 2) + '元';
+	return baseStr;
+}
+
+function getDisAndDur(distanceObj, durationObj) {
+	var baseStr = '';
+	var distanceStr = '';
+	if (parseFloat(distanceObj) > 999) {
+		distanceStr = parseFloat(distanceObj / 1000).toFixed(1);
+	}
+	baseStr += '全程' + distanceStr + '公里, 耗时' + dealSecondTime(durationObj);
 	return baseStr;
 }
 

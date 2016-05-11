@@ -18,7 +18,7 @@ input[type='search'] {
 
 .mui-search .mui-placeholder {
 	padding-left: 15px !important;
-	top: 2px !important;
+	top: 5px !important;
 	font-size: 18px !important;
 	line-height: normal !important;
 	height: auto !important;
@@ -69,7 +69,7 @@ input[type='search'] {
 
 .circle-text {
 	height: 21px;
-	line-height: normal;
+	line-height: 23px;
 	font-size: 14px;
 	display: block;
 	color: #FFF;
